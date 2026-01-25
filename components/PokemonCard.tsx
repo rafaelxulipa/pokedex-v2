@@ -11,10 +11,14 @@ interface PokemonCardProps {
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
-  const { favorites, toggleFavorite, comparisonList, toggleComparison, isShinyMode } = useGlobal();
+  const { favorites, toggleFavorite, comparisonList, toggleComparison, isShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
   
   const isFavorite = favorites.includes(pokemon.id);
   const isComparing = comparisonList.includes(pokemon.id);
+  const isLocalShiny = shinyPokemon.includes(pokemon.id);
+  
+  // Display shiny if Global Mode is ON OR Local Toggle is ON
+  const displayShiny = isShinyMode || isLocalShiny;
 
   const mainType = pokemon.types[0].type.name;
   const bgColor = TYPE_COLORS[mainType] || 'bg-gray-400';
@@ -34,7 +38,13 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
     toggleComparison(pokemon.id);
   };
 
-  const spriteUrl = isShinyMode 
+  const handleShinyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleShinyPokemon(pokemon.id);
+  };
+
+  const spriteUrl = displayShiny 
     ? (pokemon.sprites.other['official-artwork'].front_shiny || pokemon.sprites.front_shiny || pokemon.sprites.other['official-artwork'].front_default)
     : (pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default);
 
@@ -46,9 +56,9 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
         <div className={`absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-[0.08] dark:opacity-[0.15] ${bgColor} blur-3xl group-hover:opacity-20 transition-opacity duration-500`}></div>
         <div className={`absolute top-20 -left-10 w-32 h-32 rounded-full opacity-[0.05] dark:opacity-[0.1] ${bgColor} blur-2xl`}></div>
 
-        {/* Shiny Indicator on Card */}
-        {isShinyMode && (
-           <div className="absolute top-3 right-3 text-yellow-500 opacity-50 z-20">
+        {/* Shiny Indicator on Card (Visual Cue when active via toggle) */}
+        {displayShiny && (
+           <div className="absolute top-3 right-3 text-yellow-500 opacity-50 z-20 pointer-events-none">
              <Sparkles size={16} fill="currentColor" />
            </div>
         )}
@@ -59,6 +69,13 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
               {formattedId}
             </span>
             <div className="flex gap-1.5">
+               <button 
+                onClick={handleShinyClick}
+                className={`p-2 rounded-full transition-all duration-200 ${displayShiny ? 'bg-yellow-100 text-yellow-500 dark:bg-yellow-900/30 dark:text-yellow-400' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-yellow-500 dark:hover:text-yellow-400'}`}
+                title="Toggle Shiny"
+              >
+                <Sparkles size={16} fill={displayShiny ? "currentColor" : "none"} />
+              </button>
                <button 
                 onClick={handleCompareClick}
                 className={`p-2 rounded-full transition-all duration-200 ${isComparing ? 'bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-200' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-blue-500 dark:hover:text-blue-400'}`}

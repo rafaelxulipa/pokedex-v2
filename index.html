@@ -25,6 +25,20 @@
                 card: '#1E1E1E',
                 text: '#E0E0E0'
               }
+            },
+            keyframes: {
+              'flow-h': {
+                '0%': { backgroundPosition: '100% 0' },
+                '100%': { backgroundPosition: '-100% 0' },
+              },
+              'flow-v': {
+                '0%': { backgroundPosition: '0 100%' },
+                '100%': { backgroundPosition: '0 -100%' },
+              }
+            },
+            animation: {
+              'flow-h': 'flow-h 1.5s linear infinite',
+              'flow-v': 'flow-v 1.5s linear infinite',
             }
           }
         }

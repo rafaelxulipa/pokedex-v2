@@ -37,6 +37,10 @@ export interface PokemonDetail {
   types: PokemonType[];
   stats: PokemonStat[];
   abilities: PokemonAbility[];
+  species: {
+    name: string;
+    url: string;
+  };
   sprites: {
     front_default: string;
     front_shiny: string;
@@ -49,6 +53,14 @@ export interface PokemonDetail {
         front_default: string;
       };
     };
+  };
+}
+
+export interface PokemonVariety {
+  is_default: boolean;
+  pokemon: {
+    name: string;
+    url: string;
   };
 }
 
@@ -69,6 +81,7 @@ export interface PokemonSpecies {
     url: string;
   };
   gender_rate: number;
+  varieties: PokemonVariety[];
 }
 
 export interface EvolutionDetail {

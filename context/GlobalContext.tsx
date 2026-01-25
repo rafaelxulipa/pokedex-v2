@@ -11,6 +11,8 @@ interface GlobalContextType {
   clearComparison: () => void;
   isShinyMode: boolean;
   toggleShinyMode: () => void;
+  shinyPokemon: number[];
+  toggleShinyPokemon: (id: number) => void;
   t: typeof translations['en'];
 }
 
@@ -74,7 +76,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     localStorage.removeItem('comparisonList');
   };
 
-  // Shiny Mode State
+  // Shiny Mode State (Global)
   const [isShinyMode, setIsShinyMode] = useState<boolean>(() => {
     const saved = localStorage.getItem('isShinyMode');
     return saved === 'true';
@@ -85,6 +87,20 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         const newValue = !prev;
         localStorage.setItem('isShinyMode', String(newValue));
         return newValue;
+    });
+  };
+
+  // Individual Shiny Pokemon State
+  const [shinyPokemon, setShinyPokemon] = useState<number[]>(() => {
+    const saved = localStorage.getItem('shinyPokemon');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const toggleShinyPokemon = (id: number) => {
+    setShinyPokemon((prev) => {
+        const newList = prev.includes(id) ? prev.filter(p => p !== id) : [...prev, id];
+        localStorage.setItem('shinyPokemon', JSON.stringify(newList));
+        return newList;
     });
   };
 
@@ -102,6 +118,8 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         clearComparison,
         isShinyMode,
         toggleShinyMode,
+        shinyPokemon,
+        toggleShinyPokemon,
         t,
       }}
     >
