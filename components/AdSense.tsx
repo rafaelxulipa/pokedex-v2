@@ -12,13 +12,15 @@ interface AdSenseProps {
   style?: React.CSSProperties;
   format?: 'auto' | 'fluid' | 'rectangle' | 'vertical' | 'horizontal';
   responsive?: string;
+  slot?: string;
 }
 
 const AdSense: React.FC<AdSenseProps> = ({ 
   className = "", 
   style = { display: 'block' }, 
   format = 'auto',
-  responsive = 'true'
+  responsive = 'true',
+  slot = '8207137273'
 }) => {
   useEffect(() => {
     try {
@@ -42,8 +44,8 @@ const AdSense: React.FC<AdSenseProps> = ({
         <ins
             className="adsbygoogle"
             style={style}
-            data-ad-client="ca-pub-SEU_ID_AQUI" 
-            data-ad-slot="SEU_SLOT_ID_AQUI"
+            data-ad-client="ca-pub-0079702856690089" 
+            data-ad-slot={slot}
             data-ad-format={format}
             data-full-width-responsive={responsive}
         />

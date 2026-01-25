@@ -433,7 +433,7 @@ const PokemonDetails: React.FC = () => {
                 {/* 1. ADVERTISEMENT BLOCK (Inside Stats Card) */}
                 <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block text-center">Advertisement</span>
-                    <AdSense format="rectangle" className="min-h-[250px]" />
+                    <AdSense format="auto" className="min-h-[250px]" slot="8207137273" />
                 </div>
             </div>
         </div>
@@ -452,7 +452,7 @@ const PokemonDetails: React.FC = () => {
         <div className="w-full max-w-4xl mx-auto mb-16">
             <div className="bg-gray-50 dark:bg-dark-card/50 p-4 rounded-xl border border-dashed border-gray-200 dark:border-gray-700">
                  <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block text-center">Advertisement</span>
-                 <AdSense format="horizontal" className="min-h-[100px]" />
+                 <AdSense format="horizontal" className="min-h-[100px]" slot="7629704157" />
             </div>
         </div>
 
