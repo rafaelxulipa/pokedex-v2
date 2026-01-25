@@ -45,6 +45,9 @@ export const translations = {
     female: "Female",
     genderless: "Genderless",
     weaknesses: "Weaknesses",
+    alternateForms: "Alternate Forms",
+    default: "Default",
+    defaultForm: "Default Form",
   },
   pt: {
     searchPlaceholder: "Pesquisar Pokémon...",
@@ -92,6 +95,9 @@ export const translations = {
     female: "Fêmea",
     genderless: "Sem Gênero",
     weaknesses: "Fraquezas",
+    alternateForms: "Formas Alternativas",
+    default: "Padrão",
+    defaultForm: "Forma Padrão",
   },
   es: {
     searchPlaceholder: "Buscar Pokémon...",
@@ -139,6 +145,9 @@ export const translations = {
     female: "Hembra",
     genderless: "Sin Género",
     weaknesses: "Debilidades",
+    alternateForms: "Formas Alternativas",
+    default: "Por Defecto",
+    defaultForm: "Forma Base",
   },
   de: {
     searchPlaceholder: "Pokémon suchen...",
@@ -186,6 +195,9 @@ export const translations = {
     female: "Weiblich",
     genderless: "Geschlechtslos",
     weaknesses: "Schwächen",
+    alternateForms: "Alternative Formen",
+    default: "Standard",
+    defaultForm: "Standardform",
   },
   zh: {
     searchPlaceholder: "搜索宝可梦...",
@@ -233,6 +245,9 @@ export const translations = {
     female: "雌性",
     genderless: "无性别",
     weaknesses: "弱点",
+    alternateForms: "其他形态",
+    default: "默认",
+    defaultForm: "默认形态",
   },
   ja: {
     searchPlaceholder: "ポケモンを検索...",
@@ -280,6 +295,9 @@ export const translations = {
     female: "メス",
     genderless: "性別不明",
     weaknesses: "弱点",
+    alternateForms: "他のフォルム",
+    default: "通常",
+    defaultForm: "通常フォルム",
   }
 };
 

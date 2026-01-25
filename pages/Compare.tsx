@@ -7,11 +7,10 @@ import StatChart from '../components/StatChart';
 import TypeBadge from '../components/TypeBadge';
 import { ArrowLeft, Scale, XCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import AdSense from '../components/AdSense';
 
 const Compare: React.FC = () => {
-  const { comparisonList, t, removeComparison } = useGlobal(); // Assuming removeComparison exists or we use toggle
-  // Actually context provides toggleComparison, let's use that.
-  const { toggleComparison } = useGlobal();
+  const { comparisonList, t, toggleComparison } = useGlobal();
   const navigate = useNavigate();
 
   const [pokemons, setPokemons] = useState<PokemonDetail[]>([]);
@@ -154,6 +153,14 @@ const Compare: React.FC = () => {
                                 {p2.stats.reduce((acc, curr) => acc + curr.base_stat, 0)}
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                {/* 2. ADVERTISEMENT BLOCK (Comparison Page) */}
+                <div className="w-full mt-8">
+                     <div className="bg-gray-50 dark:bg-dark-card/50 p-4 rounded-xl border border-dashed border-gray-200 dark:border-gray-700">
+                        <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block text-center">Advertisement</span>
+                        <AdSense format="horizontal" className="min-h-[100px]" />
                     </div>
                 </div>
 

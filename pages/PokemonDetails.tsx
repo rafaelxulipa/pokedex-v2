@@ -67,7 +67,7 @@ const PokemonDetails: React.FC = () => {
     if (clean.includes('galar')) return `Galarian ${speciesName}`;
     if (clean.includes('hisui')) return `Hisuian ${speciesName}`;
     if (clean.includes('paldea')) return `Paldean ${speciesName}`;
-    if (clean === '') return 'Default Form';
+    if (clean === '') return t.defaultForm;
     
     return `${speciesName} (${clean})`;
   };
@@ -102,14 +102,10 @@ const PokemonDetails: React.FC = () => {
       if (data) {
         setPokemon(data);
         const spec = await fetchPokemonSpecies(data.id);
-        // Sometimes species ID differs from Pokemon ID (for variants), so we fetch species using the URL from the pokemon object is safer, 
-        // but fetching via data.species.url logic is safer:
-        // However, the previous logic assumed ID matches. Let's stick to fetch by ID unless we want to be 100% robust against edge cases where ID mismatches.
-        // For forms, `data.species.url` is the source of truth.
+        
         let correctSpecies = spec;
         
-        // If the ID passed was a variant ID (e.g., 10034 for Mega Venusaur), `fetchPokemonSpecies` above might fail or return wrong one if using ID directly.
-        // Actually, fetchPokemonDetails returns `species: { name, url }`. Let's use that URL.
+        // Fetch species via URL if available to handle forms/variants correctly
         const speciesUrl = data.species?.url;
         if (speciesUrl) {
             const speciesRes = await fetch(speciesUrl);
@@ -124,8 +120,7 @@ const PokemonDetails: React.FC = () => {
             const tree = parseEvolutions(evoData.chain);
             setEvolutionTree(tree);
 
-            // Auto-select path logic needs to look for the SPECIES ID in the tree, not necessarily the VARIANT ID
-            // The evolution tree uses Species IDs.
+            // Auto-select path logic
             const urlParts = data.species.url.split('/');
             const currentSpeciesId = parseInt(urlParts[urlParts.length - 2]);
 
@@ -208,16 +203,14 @@ const PokemonDetails: React.FC = () => {
     if (!details || details.length === 0) return null;
     const d = details[0]; // Primary trigger
 
-    // Use "Active" styling by default since we are in linear mode (shown path is active)
-    const isActive = true;
-
     return (
-        <div className={`flex flex-col items-center justify-center gap-1 z-20 transition-all duration-500`}>
+        <div className="relative group flex flex-col items-center justify-center gap-1 z-20">
             {/* Main Trigger Icon - Floating Bubble with Animation */}
             <div className={`
-                p-2 rounded-full border shadow-lg relative group transition-all duration-300
+                p-2 rounded-full border shadow-lg relative transition-all duration-300
                 bg-blue-100 dark:bg-blue-900/50 border-blue-400 dark:border-blue-500 text-blue-600 dark:text-blue-200 
                 ring-2 ring-blue-300/50 dark:ring-blue-600/50 shadow-blue-500/30
+                group-hover:scale-110 group-hover:ring-4
             `}>
                 {d.trigger.name === 'trade' && <RefreshCw size={16} className="animate-spin-slow" />}
                 {d.trigger.name === 'level-up' && !d.min_happiness && !d.min_beauty && <Zap size={16} className="fill-current animate-pulse" />}
@@ -229,10 +222,11 @@ const PokemonDetails: React.FC = () => {
                 {['trade', 'level-up', 'use-item', 'shed'].indexOf(d.trigger.name) === -1 && !d.min_happiness && <ArrowRight size={16} />}
             </div>
 
-            {/* Detailed Labels with Backdrop */}
+            {/* Tooltip with Backdrop */}
             <div className={`
-                flex flex-col items-center text-[10px] font-bold px-2 py-1 rounded-md backdrop-blur-md border transition-colors duration-500 text-center shadow-sm
-                bg-blue-50/90 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700
+                absolute bottom-full mb-3 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-all duration-300 pointer-events-none transform translate-y-2 group-hover:translate-y-0
+                flex flex-col items-center text-[10px] font-bold px-3 py-2 rounded-lg backdrop-blur-md border shadow-xl min-w-[80px] z-50
+                bg-blue-50/95 dark:bg-gray-800/95 text-blue-700 dark:text-blue-200 border-blue-200 dark:border-blue-700
             `}>
                 {d.min_level && <span>Lvl {d.min_level}</span>}
                 {d.item && <span className="text-indigo-600 dark:text-indigo-300">{formatName(d.item.name)}</span>}
@@ -241,9 +235,12 @@ const PokemonDetails: React.FC = () => {
                 {d.held_item && <span className="whitespace-nowrap">Hold {formatName(d.held_item.name)}</span>}
                 {d.min_happiness && <span>Happy</span>}
                 {d.time_of_day && <span className="capitalize flex items-center gap-1">{d.time_of_day === 'day' ? <Sun size={10}/> : <Moon size={10}/>} {d.time_of_day}</span>}
-                {d.location && <span className="truncate w-full flex items-center gap-1"><MapPin size={10}/> {formatName(d.location.name)}</span>}
+                {d.location && <span className="truncate max-w-[100px] flex items-center gap-1"><MapPin size={10}/> {formatName(d.location.name)}</span>}
                 {d.known_move && <span>Move: {formatName(d.known_move.name)}</span>}
                 {d.needs_overworld_rain && <span className="flex items-center gap-1"><CloudRain size={10}/> Rain</span>}
+
+                {/* Arrow */}
+                <div className="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-blue-50/95 dark:bg-gray-800/95 border-r border-b border-blue-200 dark:border-blue-700 rotate-45"></div>
             </div>
         </div>
     );
@@ -670,7 +667,7 @@ const PokemonDetails: React.FC = () => {
              <div className="mb-12 animate-fade-in-up">
                 <div className="flex items-center justify-center gap-2 mb-8">
                      <Layers className="text-blue-500" size={28} />
-                     <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center">Alternate Forms</h3>
+                     <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center">{t.alternateForms}</h3>
                 </div>
                 
                 <div className="bg-white dark:bg-dark-card p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
@@ -707,7 +704,7 @@ const PokemonDetails: React.FC = () => {
                                         {formatVarietyName(variety.pokemon.name, species.name)}
                                     </span>
                                     {variety.is_default && (
-                                        <span className="mt-1 text-[9px] uppercase tracking-wider bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-500">Default</span>
+                                        <span className="mt-1 text-[9px] uppercase tracking-wider bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-500">{t.default}</span>
                                     )}
                                 </button>
                              );
