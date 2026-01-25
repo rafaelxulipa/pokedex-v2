@@ -1,0 +1,5 @@
+{
+  "name": "Pokedex do Otávio",
+  "description": "A modern, responsive Pokédex featuring dark mode, search, and detailed statistics using the PokéAPI.",
+  "requestFramePermissions": []
+}
