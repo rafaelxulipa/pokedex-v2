@@ -160,7 +160,7 @@ const Compare: React.FC = () => {
                 <div className="w-full mt-8">
                      <div className="bg-gray-50 dark:bg-dark-card/50 p-4 rounded-xl border border-dashed border-gray-200 dark:border-gray-700">
                         <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block text-center">Advertisement</span>
-                        <AdSense format="horizontal" className="min-h-[100px]" />
+                        <AdSense format="horizontal" className="min-h-[100px]" slot="7629704157" />
                     </div>
                 </div>
 

@@ -670,8 +670,8 @@ const PokemonDetails: React.FC = () => {
                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center">{t.alternateForms}</h3>
                 </div>
                 
-                <div className="bg-white dark:bg-dark-card p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
-                    <div className="flex overflow-x-auto pb-4 gap-4 no-scrollbar">
+                <div className="bg-white dark:bg-dark-card py-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <div className="flex overflow-x-auto px-6 pb-4 pt-2 gap-4 no-scrollbar">
                         {species.varieties.map((variety) => {
                              const urlParts = variety.pokemon.url.split('/');
                              const vId = parseInt(urlParts[urlParts.length - 2]);
