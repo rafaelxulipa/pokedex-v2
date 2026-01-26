@@ -1,7 +1,9 @@
+
 export const translations = {
   en: {
     searchPlaceholder: "Search Pokémon...",
     allTypes: "All Types",
+    allRegions: "All Regions",
     favoritesOnly: "Favorites Only",
     about: "About",
     baseStats: "Base Stats",
@@ -48,10 +50,22 @@ export const translations = {
     alternateForms: "Alternate Forms",
     default: "Default",
     defaultForm: "Default Form",
+    generations: {
+        gen1: "Gen 1 - Kanto",
+        gen2: "Gen 2 - Johto",
+        gen3: "Gen 3 - Hoenn",
+        gen4: "Gen 4 - Sinnoh",
+        gen5: "Gen 5 - Unova",
+        gen6: "Gen 6 - Kalos",
+        gen7: "Gen 7 - Alola",
+        gen8: "Gen 8 - Galar",
+        gen9: "Gen 9 - Paldea"
+    }
   },
   pt: {
     searchPlaceholder: "Pesquisar Pokémon...",
     allTypes: "Todos os Tipos",
+    allRegions: "Todas Regiões",
     favoritesOnly: "Favoritos",
     about: "Sobre",
     baseStats: "Estatísticas Base",
@@ -98,10 +112,22 @@ export const translations = {
     alternateForms: "Formas Alternativas",
     default: "Padrão",
     defaultForm: "Forma Padrão",
+    generations: {
+        gen1: "Gen 1 - Kanto",
+        gen2: "Gen 2 - Johto",
+        gen3: "Gen 3 - Hoenn",
+        gen4: "Gen 4 - Sinnoh",
+        gen5: "Gen 5 - Unova",
+        gen6: "Gen 6 - Kalos",
+        gen7: "Gen 7 - Alola",
+        gen8: "Gen 8 - Galar",
+        gen9: "Gen 9 - Paldea"
+    }
   },
   es: {
     searchPlaceholder: "Buscar Pokémon...",
     allTypes: "Todos los Tipos",
+    allRegions: "Todas Regiones",
     favoritesOnly: "Favoritos",
     about: "Sobre",
     baseStats: "Estadísticas Base",
@@ -148,10 +174,22 @@ export const translations = {
     alternateForms: "Formas Alternativas",
     default: "Por Defecto",
     defaultForm: "Forma Base",
+    generations: {
+        gen1: "Gen 1 - Kanto",
+        gen2: "Gen 2 - Johto",
+        gen3: "Gen 3 - Hoenn",
+        gen4: "Gen 4 - Sinnoh",
+        gen5: "Gen 5 - Teselia",
+        gen6: "Gen 6 - Kalos",
+        gen7: "Gen 7 - Alola",
+        gen8: "Gen 8 - Galar",
+        gen9: "Gen 9 - Paldea"
+    }
   },
   de: {
     searchPlaceholder: "Pokémon suchen...",
     allTypes: "Alle Typen",
+    allRegions: "Alle Regionen",
     favoritesOnly: "Favoriten",
     about: "Über",
     baseStats: "Basiswerte",
@@ -198,10 +236,22 @@ export const translations = {
     alternateForms: "Alternative Formen",
     default: "Standard",
     defaultForm: "Standardform",
+    generations: {
+        gen1: "Gen 1 - Kanto",
+        gen2: "Gen 2 - Johto",
+        gen3: "Gen 3 - Hoenn",
+        gen4: "Gen 4 - Sinnoh",
+        gen5: "Gen 5 - Einall",
+        gen6: "Gen 6 - Kalos",
+        gen7: "Gen 7 - Alola",
+        gen8: "Gen 8 - Galar",
+        gen9: "Gen 9 - Paldea"
+    }
   },
   zh: {
     searchPlaceholder: "搜索宝可梦...",
     allTypes: "所有属性",
+    allRegions: "所有地区",
     favoritesOnly: "仅收藏",
     about: "关于",
     baseStats: "种族值",
@@ -248,10 +298,22 @@ export const translations = {
     alternateForms: "其他形态",
     default: "默认",
     defaultForm: "默认形态",
+    generations: {
+        gen1: "第一世代 - 关都",
+        gen2: "第二世代 - 城都",
+        gen3: "第三世代 - 丰缘",
+        gen4: "第四世代 - 神奥",
+        gen5: "第五世代 - 合众",
+        gen6: "第六世代 - 卡洛斯",
+        gen7: "第七世代 - 阿罗拉",
+        gen8: "第八世代 - 伽勒尔",
+        gen9: "第九世代 - 帕底亚"
+    }
   },
   ja: {
     searchPlaceholder: "ポケモンを検索...",
     allTypes: "全てのタイプ",
+    allRegions: "全ての地方",
     favoritesOnly: "お気に入りのみ",
     about: "詳細",
     baseStats: "種族値",
@@ -298,6 +360,17 @@ export const translations = {
     alternateForms: "他のフォルム",
     default: "通常",
     defaultForm: "通常フォルム",
+    generations: {
+        gen1: "第1世代 - カントー",
+        gen2: "第2世代 - ジョウト",
+        gen3: "第3世代 - ホウエン",
+        gen4: "第4世代 - シンオウ",
+        gen5: "第5世代 - イッシュ",
+        gen6: "第6世代 - カロス",
+        gen7: "第7世代 - アローラ",
+        gen8: "第8世代 - ガラル",
+        gen9: "第9世代 - パルデア"
+    }
   }
 };
 

@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, Ruler, Weight, Sparkles, Heart, Scale, ChevronLeft, ChevronRight, ArrowRight, Zap, RefreshCw, Gem, ArrowDown, MousePointerClick, Sun, Moon, CloudRain, Clock, MapPin, Layers } from 'lucide-react';
+import { ArrowLeft, Ruler, Weight, Sparkles, Heart, Scale, ChevronLeft, ChevronRight, ArrowRight, Zap, RefreshCw, Gem, ArrowDown, MousePointerClick, Sun, Moon, CloudRain, Clock, MapPin, Layers, CloudLightning } from 'lucide-react';
 import { fetchPokemonDetails, fetchPokemonSpecies, fetchEvolutionChain, fetchTypeDetails } from '../services/pokeApi';
 import { PokemonDetail, PokemonSpecies, EvolutionNode, EvolutionDetail } from '../types';
 import { TYPE_COLORS } from '../constants';
@@ -74,6 +75,7 @@ const PokemonDetails: React.FC = () => {
     // Handle specific prefixes/suffixes
     if (clean.includes('mega')) return `Mega ${speciesName} ${clean.replace('mega', '').trim()}`;
     if (clean.includes('gmax')) return `Gigantamax ${speciesName}`;
+    if (clean.includes('eternamax')) return `Eternamax ${speciesName}`;
     if (clean.includes('alola')) return `Alolan ${speciesName}`;
     if (clean.includes('galar')) return `Galarian ${speciesName}`;
     if (clean.includes('hisui')) return `Hisuian ${speciesName}`;
@@ -695,18 +697,35 @@ const PokemonDetails: React.FC = () => {
                              const vId = parseInt(urlParts[urlParts.length - 2]);
                              const isCurrent = vId === pokemon.id;
                              
+                             // Detect specific G-MAX or ETERNAMAX forms for styling
+                             const isGmax = variety.pokemon.name.includes('-gmax');
+                             const isEternamax = variety.pokemon.name.includes('-eternamax');
+                             const isDynamaxForm = isGmax || isEternamax;
+
                              return (
                                 <button
                                     key={vId}
                                     onClick={() => navigate(`/pokemon/${vId}`)}
                                     className={`
-                                        flex-shrink-0 flex flex-col items-center w-36 p-3 rounded-2xl transition-all duration-300 border
+                                        flex-shrink-0 flex flex-col items-center w-36 p-3 rounded-2xl transition-all duration-300 border relative overflow-hidden
                                         ${isCurrent 
                                             ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 scale-105 shadow-md' 
-                                            : 'bg-gray-50 dark:bg-gray-800 border-transparent hover:bg-gray-100 dark:hover:bg-gray-700'
+                                            : isDynamaxForm 
+                                                ? 'bg-pink-50 dark:bg-pink-900/10 border-pink-300 dark:border-pink-800 hover:bg-pink-100 dark:hover:bg-pink-900/30' 
+                                                : 'bg-gray-50 dark:bg-gray-800 border-transparent hover:bg-gray-100 dark:hover:bg-gray-700'
                                         }
                                     `}
                                 >
+                                    {/* Gigantamax/Eternamax Badge */}
+                                    {isDynamaxForm && (
+                                        <div className="absolute top-0 right-0 p-1.5 z-10">
+                                             <div className="bg-pink-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full shadow-sm flex items-center gap-0.5">
+                                                <CloudLightning size={10} fill="currentColor" />
+                                                {isGmax ? 'G-MAX' : 'DYNA'}
+                                             </div>
+                                        </div>
+                                    )}
+
                                     <div className="w-20 h-20 mb-2">
                                         <img 
                                             src={isShiny 
@@ -714,11 +733,11 @@ const PokemonDetails: React.FC = () => {
                                                 : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${vId}.png`
                                             }
                                             alt={variety.pokemon.name}
-                                            className="w-full h-full object-contain"
+                                            className={`w-full h-full object-contain ${isDynamaxForm ? 'drop-shadow-[0_0_5px_rgba(236,72,153,0.5)]' : ''}`}
                                             loading="lazy"
                                         />
                                     </div>
-                                    <span className={`text-xs text-center font-bold capitalize leading-tight ${isCurrent ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-300'}`}>
+                                    <span className={`text-xs text-center font-bold capitalize leading-tight ${isCurrent ? 'text-blue-600 dark:text-blue-400' : isDynamaxForm ? 'text-pink-600 dark:text-pink-400' : 'text-gray-600 dark:text-gray-300'}`}>
                                         {formatVarietyName(variety.pokemon.name, species.name)}
                                     </span>
                                     {variety.is_default && (

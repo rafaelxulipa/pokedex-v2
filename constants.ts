@@ -1,3 +1,4 @@
+
 export const POKEAPI_URL = 'https://pokeapi.co/api/v2';
 
 export const TYPE_COLORS: Record<string, string> = {
@@ -29,3 +30,15 @@ export const STAT_LABELS: Record<string, string> = {
   'special-defense': 'Sp. Def',
   'speed': 'Speed',
 };
+
+export const GENERATIONS = [
+  { key: 'gen1', start: 1, end: 151 },
+  { key: 'gen2', start: 152, end: 251 },
+  { key: 'gen3', start: 252, end: 386 },
+  { key: 'gen4', start: 387, end: 493 },
+  { key: 'gen5', start: 494, end: 649 },
+  { key: 'gen6', start: 650, end: 721 },
+  { key: 'gen7', start: 722, end: 809 },
+  { key: 'gen8', start: 810, end: 905 },
+  { key: 'gen9', start: 906, end: 1025 },
+];
