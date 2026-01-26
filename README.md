@@ -1,4 +1,4 @@
-# Pokedex do Otávio (v2)
+# Rotom Pokedex (v2)
 
 ![Project Banner](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
 

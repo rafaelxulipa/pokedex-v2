@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, Ruler, Weight, Sparkles, Heart, Scale, ChevronLeft, ChevronRight, ArrowRight, Zap, RefreshCw, Gem, ArrowDown, MousePointerClick, Sun, Moon, CloudRain, Clock, MapPin, Layers } from 'lucide-react';
 import { fetchPokemonDetails, fetchPokemonSpecies, fetchEvolutionChain, fetchTypeDetails } from '../services/pokeApi';
@@ -52,9 +52,20 @@ const PokemonDetails: React.FC = () => {
   // State to track which branch is selected for parents with multiple children
   // Key: Parent ID, Value: Selected Child ID
   const [selectedBranches, setSelectedBranches] = useState<Record<number, number>>({});
+  const formsScrollRef = useRef<HTMLDivElement>(null);
 
   const isLocalShiny = pokemon ? shinyPokemon.includes(pokemon.id) : false;
   const isShiny = globalShinyMode || isLocalShiny;
+
+  const handleFormsScroll = (direction: 'left' | 'right') => {
+    if (formsScrollRef.current) {
+        const scrollAmount = 300;
+        formsScrollRef.current.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
+            behavior: 'smooth',
+        });
+    }
+  };
 
   // Formatter for Variety Names (Mega, Gmax, etc)
   const formatVarietyName = (name: string, speciesName: string) => {
@@ -215,7 +226,7 @@ const PokemonDetails: React.FC = () => {
                 {d.trigger.name === 'trade' && <RefreshCw size={16} className="animate-spin-slow" />}
                 {d.trigger.name === 'level-up' && !d.min_happiness && !d.min_beauty && <Zap size={16} className="fill-current animate-pulse" />}
                 {(d.min_happiness || d.min_beauty || d.min_affection) && <Heart size={16} className="text-pink-500 fill-current animate-bounce" />}
-                {(d.item || d.use_item) && <Gem size={16} className="text-blue-500 animate-pulse" />}
+                {d.item && <Gem size={16} className="text-blue-500 animate-pulse" />}
                 {d.trigger.name === 'shed' && <Sparkles size={16} className="animate-spin" />}
                 
                 {/* Fallback for others */}
@@ -230,7 +241,6 @@ const PokemonDetails: React.FC = () => {
             `}>
                 {d.min_level && <span>Lvl {d.min_level}</span>}
                 {d.item && <span className="text-indigo-600 dark:text-indigo-300">{formatName(d.item.name)}</span>}
-                {d.use_item && <span className="text-indigo-600 dark:text-indigo-300">{formatName(d.use_item.name)}</span>}
                 {d.trigger.name === 'trade' && <span>Trade</span>}
                 {d.held_item && <span className="whitespace-nowrap">Hold {formatName(d.held_item.name)}</span>}
                 {d.min_happiness && <span>Happy</span>}
@@ -670,8 +680,16 @@ const PokemonDetails: React.FC = () => {
                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center">{t.alternateForms}</h3>
                 </div>
                 
-                <div className="bg-white dark:bg-dark-card py-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
-                    <div className="flex overflow-x-auto px-6 pb-4 pt-2 gap-4 no-scrollbar">
+                <div className="bg-white dark:bg-dark-card py-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden relative group">
+                    <button 
+                        onClick={() => handleFormsScroll('left')}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
+                        aria-label="Scroll left"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    
+                    <div ref={formsScrollRef} className="flex overflow-x-auto px-6 pb-4 pt-2 gap-4 no-scrollbar">
                         {species.varieties.map((variety) => {
                              const urlParts = variety.pokemon.url.split('/');
                              const vId = parseInt(urlParts[urlParts.length - 2]);
@@ -710,6 +728,14 @@ const PokemonDetails: React.FC = () => {
                              );
                         })}
                     </div>
+
+                     <button 
+                        onClick={() => handleFormsScroll('right')}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
+                        aria-label="Scroll right"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
                 </div>
              </div>
         )}

@@ -48,7 +48,7 @@ const Header: React.FC = () => {
              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white border-[3px] border-gray-900 rounded-full z-20"></div>
            </div>
            <span className="text-xl md:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            Pokedex do <span className="text-red-500">Otávio</span>
+            <span className="text-red-500">Rotom</span> Pokedex
            </span>
         </Link>
 
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="py-12 mt-auto text-center border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-card transition-colors">
             <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">
-                © {new Date().getFullYear()} Pokedex do Otávio. <span className="text-red-500">♥</span> {t.footer}
+                © {new Date().getFullYear()} Rotom Pokedex. <span className="text-red-500">♥</span> {t.footer}
             </p>
         </footer>
     );
