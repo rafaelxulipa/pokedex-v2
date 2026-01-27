@@ -60,6 +60,25 @@ export const translations = {
         gen7: "Gen 7 - Alola",
         gen8: "Gen 8 - Galar",
         gen9: "Gen 9 - Paldea"
+    },
+    memoryGame: {
+        title: "Memory Game",
+        selectLevel: "Select a Level",
+        easy: "Easy",
+        medium: "Medium",
+        hard: "Hard",
+        moves: "Moves",
+        matched: "Matched",
+        winTitle: "You Won!",
+        winMessage: "Congratulations! You matched all the Pokémon.",
+        playAgain: "Change Level",
+        reset: "Reset",
+        timer: "Time",
+        nextStage: "Next Stage",
+        stage: "Stage",
+        gameOverTitle: "Game Over",
+        gameOverMessage: "Time's up! Better luck next time.",
+        tryAgain: "Try Again"
     }
   },
   pt: {
@@ -122,6 +141,25 @@ export const translations = {
         gen7: "Gen 7 - Alola",
         gen8: "Gen 8 - Galar",
         gen9: "Gen 9 - Paldea"
+    },
+    memoryGame: {
+        title: "Jogo da Memória",
+        selectLevel: "Selecione o Nível",
+        easy: "Fácil",
+        medium: "Médio",
+        hard: "Difícil",
+        moves: "Jogadas",
+        matched: "Pares",
+        winTitle: "Você Venceu!",
+        winMessage: "Parabéns! Você encontrou todos os pares.",
+        playAgain: "Mudar Nível",
+        reset: "Reiniciar",
+        timer: "Tempo",
+        nextStage: "Próxima Fase",
+        stage: "Fase",
+        gameOverTitle: "Fim de Jogo",
+        gameOverMessage: "O tempo acabou! Mais sorte na próxima vez.",
+        tryAgain: "Tentar Novamente"
     }
   },
   es: {
@@ -184,6 +222,25 @@ export const translations = {
         gen7: "Gen 7 - Alola",
         gen8: "Gen 8 - Galar",
         gen9: "Gen 9 - Paldea"
+    },
+    memoryGame: {
+        title: "Juego de Memoria",
+        selectLevel: "Selecciona un Nivel",
+        easy: "Fácil",
+        medium: "Medio",
+        hard: "Difícil",
+        moves: "Movimientos",
+        matched: "Pares",
+        winTitle: "¡Ganaste!",
+        winMessage: "¡Felicidades! Encontraste todos los Pokémon.",
+        playAgain: "Cambiar Nivel",
+        reset: "Reiniciar",
+        timer: "Tiempo",
+        nextStage: "Siguiente Nivel",
+        stage: "Nivel",
+        gameOverTitle: "Fin del Juego",
+        gameOverMessage: "¡Se acabó el tiempo! Mejor suerte la próxima vez.",
+        tryAgain: "Intentar de Nuevo"
     }
   },
   de: {
@@ -246,6 +303,25 @@ export const translations = {
         gen7: "Gen 7 - Alola",
         gen8: "Gen 8 - Galar",
         gen9: "Gen 9 - Paldea"
+    },
+    memoryGame: {
+        title: "Memory-Spiel",
+        selectLevel: "Wähle ein Level",
+        easy: "Einfach",
+        medium: "Mittel",
+        hard: "Schwer",
+        moves: "Züge",
+        matched: "Paare",
+        winTitle: "Gewonnen!",
+        winMessage: "Glückwunsch! Du hast alle Pokémon gefunden.",
+        playAgain: "Level ändern",
+        reset: "Zurücksetzen",
+        timer: "Zeit",
+        nextStage: "Nächste Stufe",
+        stage: "Stufe",
+        gameOverTitle: "Spiel vorbei",
+        gameOverMessage: "Die Zeit ist um! Viel Glück beim nächsten Mal.",
+        tryAgain: "Erneut versuchen"
     }
   },
   zh: {
@@ -308,6 +384,25 @@ export const translations = {
         gen7: "第七世代 - 阿罗拉",
         gen8: "第八世代 - 伽勒尔",
         gen9: "第九世代 - 帕底亚"
+    },
+    memoryGame: {
+        title: "记忆游戏",
+        selectLevel: "选择难度",
+        easy: "简单",
+        medium: "中等",
+        hard: "困难",
+        moves: "步数",
+        matched: "配对",
+        winTitle: "你赢了！",
+        winMessage: "恭喜！你找到了所有宝可梦。",
+        playAgain: "更换难度",
+        reset: "重置",
+        timer: "时间",
+        nextStage: "下一关",
+        stage: "阶段",
+        gameOverTitle: "游戏结束",
+        gameOverMessage: "时间到！下次好运。",
+        tryAgain: "再试一次"
     }
   },
   ja: {
@@ -370,6 +465,25 @@ export const translations = {
         gen7: "第7世代 - アローラ",
         gen8: "第8世代 - ガラル",
         gen9: "第9世代 - パルデア"
+    },
+    memoryGame: {
+        title: "神経衰弱",
+        selectLevel: "レベルを選択",
+        easy: "かんたん",
+        medium: "ふつう",
+        hard: "むずかしい",
+        moves: "手数",
+        matched: "ペア",
+        winTitle: "クリア！",
+        winMessage: "おめでとうございます！すべてのポケモンをマッチしました。",
+        playAgain: "レベル変更",
+        reset: "リセット",
+        timer: "時間",
+        nextStage: "次のステージ",
+        stage: "ステージ",
+        gameOverTitle: "ゲームオーバー",
+        gameOverMessage: "時間切れです！次の機会に頑張ってください。",
+        tryAgain: "再挑戦"
     }
   }
 };

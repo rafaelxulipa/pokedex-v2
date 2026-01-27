@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { GlobalProvider, useGlobal } from './context/GlobalContext';
 import Home from './pages/Home';
 import PokemonDetails from './pages/PokemonDetails';
 import Compare from './pages/Compare';
+import MemoryGame from './pages/MemoryGame';
 import RotomCursor from './components/RotomCursor';
-import { Moon, Sun, ChevronDown, Check } from 'lucide-react';
+import { Moon, Sun, ChevronDown, Check, BrainCircuit } from 'lucide-react';
 import { Language } from './translations';
 
 // Language Options with Flags
@@ -21,7 +22,7 @@ const LANGUAGES: { code: Language; name: string; flag: string }[] = [
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
-  const { language, setLanguage } = useGlobal();
+  const { language, setLanguage, t } = useGlobal();
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -53,6 +54,21 @@ const Header: React.FC = () => {
         </Link>
 
         <div className="flex items-center gap-3">
+          {/* Memory Game Link */}
+           <NavLink 
+                to="/memory-game"
+                className={({ isActive }) => 
+                  `p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border ${
+                    isActive 
+                      ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700' 
+                      : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
+                  }`
+                }
+                title={t.memoryGame.title}
+            >
+              <BrainCircuit size={20} />
+            </NavLink>
+
           {/* Custom Language Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
@@ -123,6 +139,7 @@ const App: React.FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/pokemon/:id" element={<PokemonDetails />} />
                 <Route path="/compare" element={<Compare />} />
+                <Route path="/memory-game" element={<MemoryGame />} />
               </Routes>
             </main>
             <Footer />
