@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Lightbulb, TriangleAlert, Gift, Sparkles, StickyNote, X } from 'lucide-react';
-import { GuideBlock, GuideImage, GuideRun } from '../types';
+import { GuideBlock, GuideImage, GuideRun, GuideTeam } from '../types';
+import { SPRITE_BASE } from '../utils/pokemon';
 import { guideAsset } from '../services/guides';
 import AdSense from './AdSense';
 import { useGlobal } from '../context/GlobalContext';
@@ -23,6 +24,43 @@ const CALLOUTS = {
   trivia: { label: 'Curiosidade', icon: Sparkles, box: 'bg-blue-50 dark:bg-blue-900/20 border-blue-500', text: 'text-blue-700 dark:text-blue-300' },
   note: { label: 'Nota', icon: StickyNote, box: 'bg-blue-50 dark:bg-blue-900/20 border-blue-500', text: 'text-blue-700 dark:text-blue-300' },
 } as const;
+
+// A trainer's team: portrait, name and one line per Pokémon (icons come from the PokéAPI sprites)
+const TeamCard: React.FC<{ team: GuideTeam; slug: string; accent: string }> = ({ team, slug, accent }) => (
+  <div className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-card shadow-xs overflow-hidden">
+    <div className="flex items-center gap-3 px-4 py-3 text-white" style={{ backgroundColor: accent }}>
+      {team.portrait && (
+        <img src={guideAsset(slug, team.portrait.src)} alt="" width={team.portrait.w} height={team.portrait.h} loading="lazy" className="h-12 w-auto rounded-lg bg-white/20" />
+      )}
+      <div className="min-w-0">
+        {team.label && (
+          <p className="flex items-center gap-1.5 text-xs font-semibold text-white/80">
+            {team.starter && <img src={`${SPRITE_BASE}/${team.starter}.png`} alt="" width={24} height={24} className="h-6 w-6" />}
+            {team.label}
+          </p>
+        )}
+        <p className="font-extrabold leading-tight">{team.trainer} usa:</p>
+      </div>
+    </div>
+    <ul className="divide-y divide-gray-100 dark:divide-gray-800">
+      {team.members.map((m, i) => (
+        <li key={i} className="flex items-center gap-3 px-4 py-1.5">
+          {m.id ? (
+            <img src={`${SPRITE_BASE}/${m.id}.png`} alt="" width={48} height={48} loading="lazy" className="h-12 w-12 shrink-0 [image-rendering:pixelated]" />
+          ) : (
+            <span className="h-12 w-12 shrink-0" />
+          )}
+          <span className="flex-1 min-w-0">
+            <span className="block text-sm font-bold text-gray-800 dark:text-gray-100">{m.name}</span>
+            {m.note && <span className="block text-xs text-gray-500 dark:text-gray-400">{m.note}</span>}
+          </span>
+          <span className="text-sm font-bold tabular-nums" style={{ color: accent }}>Nv. {m.lv}</span>
+        </li>
+      ))}
+    </ul>
+    {team.note && <p className="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-800">{team.note}</p>}
+  </div>
+);
 
 interface GuideBlocksProps {
   slug: string;
@@ -69,6 +107,7 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
 
   // Width of a single picture, following its size in the original layout (but never tiny on phones)
   const singleWidth = (img: GuideImage): React.CSSProperties => {
+    if (img.natural) return { width: img.w, maxWidth: '100%' };
     const fw = img.fw ?? 1;
     return { width: `max(${fw * 100}%, min(100%, 280px))`, maxWidth: Math.max(img.w, 320) };
   };
@@ -134,7 +173,7 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
               <figure key={index} className="my-6 flex flex-col items-center">
                 <div className="flex flex-wrap justify-center items-start gap-2" style={{ width: `${Math.max(total, 0.3) * 100}%`, minWidth: 'min(100%, 260px)' }}>
                   {block.imgs.map((img, i) => (
-                    <div key={i} style={{ flex: `${img.fw ?? 0.5} 1 0%`, minWidth: 72 }}>
+                    <div key={i} style={img.natural ? { flex: 'none', width: img.w, maxWidth: '100%' } : { flex: `${img.fw ?? 0.5} 1 0%`, minWidth: 72 }}>
                       {picture(img, img.alt ?? block.caption ?? '', !!img.card)}
                     </div>
                   ))}
@@ -143,6 +182,42 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
               </figure>
             );
           }
+          case 'team':
+            return (
+              <div key={index} className="my-6 mx-auto max-w-sm">
+                <TeamCard team={block} slug={slug} accent={accent} />
+              </div>
+            );
+          case 'teams':
+            return (
+              <div key={index} className="my-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {block.teams.map((team, i) => (
+                  <TeamCard key={i} team={team} slug={slug} accent={accent} />
+                ))}
+              </div>
+            );
+          case 'table':
+            return (
+              <div key={index} className="my-6 overflow-x-auto rounded-2xl border border-gray-100 dark:border-gray-800">
+                <table className="w-full text-sm">
+                  <tbody>
+                    {block.rows.map((row, r) => (
+                      <tr key={r} className={r === 0 && row.every((c) => c.b) ? 'bg-gray-50 dark:bg-gray-800/50' : ''}>
+                        {row.map((cell, c) => (
+                          <td
+                            key={c}
+                            rowSpan={cell.rs}
+                            className={`px-3 py-2 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 ${cell.b ? 'font-bold text-gray-900 dark:text-white' : ''}`}
+                          >
+                            {cell.t}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
           case 'caption':
             return <p key={index} className="mb-4 text-sm text-gray-500 dark:text-gray-400 text-center">{block.text}</p>;
           default:

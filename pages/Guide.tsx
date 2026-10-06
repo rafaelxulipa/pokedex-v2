@@ -212,11 +212,13 @@ const Guide: React.FC = () => {
 
         <GuideSearch slug={slug} className="mb-10 max-w-xl" />
 
+        {guide.downloads.length > 0 && (
         <section className="mb-12">
           <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-1">{t.guides.downloadTitle}</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{t.guides.downloadHint}</p>
           <GuideDownloads slug={slug} downloads={guide.downloads} accent={accent} />
         </section>
+        )}
 
         <section className="mb-12">
           <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-4">{t.guides.chapters}</h2>
@@ -324,12 +326,14 @@ const Guide: React.FC = () => {
             ) : <span />}
           </nav>
 
+          {guide.downloads.length > 0 ? (
           <section className="mt-12">
             <h2 className="text-lg font-extrabold text-gray-900 dark:text-white mb-1">{t.guides.downloadTitle}</h2>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{t.guides.downloadHint}</p>
             <GuideDownloads slug={slug} downloads={guide.downloads} accent={accent} />
-            <p className="mt-6 text-xs text-gray-400">{guide.credit}</p>
           </section>
+          ) : null}
+          <p className="mt-8 text-xs text-gray-400">{guide.credit}</p>
         </main>
       </div>
 

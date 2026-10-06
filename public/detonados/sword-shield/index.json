@@ -1,0 +1,685 @@
+{
+ "slug": "sword-shield",
+ "title": "Detonado Pokémon Sword & Shield",
+ "subtitle": "Galar do começo ao fim: Wild Area, ginásios, campeonato e pós-jogo",
+ "console": "Nintendo Switch 1 e 2",
+ "description": "Detonado completo em português de Pokémon Sword e Shield, com capturas de tela, mapas, times dos líderes e rivais e a história de Galar.",
+ "credit": "Texto original e organização: Pokémon Mythology · pokemythology.net",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "",
+ "accent": "#2f6fd6",
+ "cover": "cover.webp",
+ "downloads": [],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Parte 1: Postwick, a Cidade Agrícola",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "postwick-a-cidade-agricola",
+     "text": "Postwick, a Cidade Agrícola"
+    },
+    {
+     "id": "slumbering-weald-a-mata-adormecida",
+     "text": "Slumbering Weald, a Mata Adormecida"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Parte 2: Wedgehurst, a Calma Cidade com um Laboratório",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "wedgehurst-a-calma-cidade-com-um-laboratorio",
+     "text": "Wedgehurst, a Calma Cidade com um Laboratório"
+    },
+    {
+     "id": "wild-area-o-vasto-lar-de-pokemons-selvagens",
+     "text": "Wild Area, o Vasto Lar de Pokémons Selvagens"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Parte 3: Motostoke, a Cidade Industrial",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "motostoke-a-cidade-industrial",
+     "text": "Motostoke, a Cidade Industrial"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Parte 4: Galar Mine, uma Mina de Carvão",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "galar-mine-uma-mina-de-carvao",
+     "text": "Galar Mine, uma Mina de Carvão"
+    },
+    {
+     "id": "turffield-a-cidade-do-campo-relvado",
+     "text": "Turffield, a Cidade do Campo Relvado"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Parte 5: Hulbury, a Cidade do Porto de Galar",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "hulbury-a-cidade-do-porto-de-galar",
+     "text": "Hulbury, a Cidade do Porto de Galar"
+    },
+    {
+     "id": "galar-mine-n-2-a-mina-continua",
+     "text": "Galar Mine Nº 2, a Mina Continua…"
+    },
+    {
+     "id": "motostoke-outskirts-o-caminho-para-o-3-ginasio",
+     "text": "Motostoke Outskirts, o Caminho para o 3º Ginásio"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Parte 6: Wild Area, o Retorno!",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "wild-area-o-retorno",
+     "text": "Wild Area, o Retorno!"
+    },
+    {
+     "id": "hammerlocke-a-cidade-do-castelo",
+     "text": "Hammerlocke, a Cidade do Castelo"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Parte 7: Stow-On-Side, a Cidade do Grande Mural",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "stow-on-side-a-cidade-do-grande-mural",
+     "text": "Stow-On-Side, a Cidade do Grande Mural"
+    },
+    {
+     "id": "glimwood-tangle-a-floresta-luminosa",
+     "text": "Glimwood Tangle, a Floresta Luminosa"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Parte 8: Ballonlea, a Cidade dos Cogumelos Luminosos",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "ballonlea-a-cidade-dos-cogumelos-luminosos",
+     "text": "Ballonlea, a Cidade dos Cogumelos Luminosos"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Parte 9: Circhester, a Cidade da Fonte Termal",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "circhester-a-cidade-da-fonte-termal",
+     "text": "Circhester, a Cidade da Fonte Termal"
+    },
+    {
+     "id": "circhester-bay-route-9-tunnel-e-outer-spikemuth",
+     "text": "Circhester Bay, Route 9 Tunnel e Outer Spikemuth"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Parte 10: Spikemuth, a Cidade Punk",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "spikemuth-a-cidade-punk",
+     "text": "Spikemuth, a Cidade Punk"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Parte 11: Wyndon, a Metrópole de Galar",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "wyndon-a-metropole-de-galar",
+     "text": "Wyndon, a Metrópole de Galar"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Parte 12: Rose Tower, o Quartel General da Macro Cosmos",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "rose-tower-o-quartel-general-da-macro-cosmos",
+     "text": "Rose Tower, o Quartel General da Macro Cosmos"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Parte 13: Energy Plant e o Darkest Day",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "energy-plant-e-o-darkest-day",
+     "text": "Energy Plant e o Darkest Day"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "title": "Parte 14: Os Descendentes dos Reis de Galar",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "os-descendentes-dos-reis-de-galar",
+     "text": "Os Descendentes dos Reis de Galar"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "title": "Parte 15: A Invasão dos Pokémons Dynamax nos Ginásios de Galar",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-invasao-dos-pokemons-dynamax-nos-ginasios-de-galar",
+     "text": "A Invasão dos Pokémons Dynamax nos Ginásios de Galar"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "title": "Parte 16: Zacian e Zamazenta",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "zacian-e-zamazenta",
+     "text": "Zacian e Zamazenta"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "title": "Parte 17: Batalha Final Contra Hop",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "batalha-final-contra-hop",
+     "text": "Batalha Final Contra Hop"
+    },
+    {
+     "id": "recompensas-de-campeao",
+     "text": "Recompensas de Campeão"
+    },
+    {
+     "id": "emprego-no-restaurante",
+     "text": "Emprego no Restaurante"
+    },
+    {
+     "id": "a-revanche-contra-marnie",
+     "text": "A Revanche Contra Marnie"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "title": "Parte 18: A Batalha Contra Morimoto",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-batalha-contra-morimoto",
+     "text": "A Batalha Contra Morimoto"
+    },
+    {
+     "id": "battle-tower",
+     "text": "Battle Tower"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "title": "Parte 19: Nova Disputa na Champion Cup",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "nova-disputa-na-champion-cup",
+     "text": "Nova Disputa na Champion Cup"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "title": "Parte 20: Atualizações de Jogo",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "atualizacoes-de-jogo",
+     "text": "Atualizações de Jogo"
+    },
+    {
+     "id": "isle-of-armor",
+     "text": "Isle Of Armor"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "title": "Parte 21: Master Dojo – a Primeira Prova",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "master-dojo-a-primeira-prova",
+     "text": "Master Dojo – a Primeira Prova"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "title": "Parte 22: Master Dojo – a Segunda Prova",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "master-dojo-a-segunda-prova",
+     "text": "Master Dojo – a Segunda Prova"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "title": "Parte 23: Master Dojo – a Terceira Prova",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "master-dojo-a-terceira-prova",
+     "text": "Master Dojo – a Terceira Prova"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "title": "Parte 24: Towers Of Two Fists: Tower Of Darkness e Tower Of Water",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "towers-of-two-fists-tower-of-darkness-e-tower-of-water",
+     "text": "Towers Of Two Fists: Tower Of Darkness e Tower Of Water"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "title": "Parte 25: O Mistério do Gigantamax Urshifu",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "o-misterio-do-gigantamax-urshifu",
+     "text": "O Mistério do Gigantamax Urshifu"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "title": "Parte 26: A Revanche Contra Klara/Avery",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-revanche-contra-klara-avery",
+     "text": "A Revanche Contra Klara/Avery"
+    },
+    {
+     "id": "a-caca-dos-alolan-digletts",
+     "text": "A Caça dos Alolan Digletts"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "title": "Parte 27: Honey e as Melhorias no Dojo",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "honey-e-as-melhorias-no-dojo",
+     "text": "Honey e as Melhorias no Dojo"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "title": "Parte 28: Battle Court: o Treino Restrito do Master Dojo",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "battle-court-o-treino-restrito-do-master-dojo",
+     "text": "Battle Court: o Treino Restrito do Master Dojo"
+    },
+    {
+     "id": "crown-tundra",
+     "text": "Crown Tundra"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "title": "Parte 29: Dynamax Adventures",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "dynamax-adventures",
+     "text": "Dynamax Adventures"
+    }
+   ]
+  },
+  {
+   "n": 30,
+   "title": "Parte 30: Os Lendários da Crown Tundra",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "os-lendarios-da-crown-tundra",
+     "text": "Os Lendários da Crown Tundra"
+    }
+   ]
+  },
+  {
+   "n": 31,
+   "title": "Parte 31: Em Busca das Pegadas – Cobalion, Terrakion, Virizion e Keldeo",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "em-busca-das-pegadas-cobalion-terrakion-virizion-e-keldeo",
+     "text": "Em Busca das Pegadas – Cobalion, Terrakion, Virizion e Keldeo"
+    }
+   ]
+  },
+  {
+   "n": 32,
+   "title": "Parte 32: Legendary Clue 1 – Calyrex e a Busca do Corcel",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "legendary-clue-1-calyrex-e-a-busca-do-corcel",
+     "text": "Legendary Clue 1 – Calyrex e a Busca do Corcel"
+    }
+   ]
+  },
+  {
+   "n": 33,
+   "title": "Parte 33: Domando o Corcel – Glastrier, Spectrier e o Cavaleiro Calyrex",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "domando-o-corcel-glastrier-spectrier-e-o-cavaleiro-calyrex",
+     "text": "Domando o Corcel – Glastrier, Spectrier e o Cavaleiro Calyrex"
+    }
+   ]
+  },
+  {
+   "n": 34,
+   "title": "Parte 34: Legendary Clue 2 – os Templos dos Titãs – Regirock, Regice e Registeel",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "legendary-clue-2-os-templos-dos-titas-regirock-regice-e-registeel",
+     "text": "Legendary Clue 2 – os Templos dos Titãs – Regirock, Regice e Registeel"
+    },
+    {
+     "id": "o-ultimo-templo-regieleki-regidrago-e-a-batalha-com-regigigas",
+     "text": "O Último Templo – Regieleki, Regidrago e a Batalha com Regigigas"
+    }
+   ]
+  },
+  {
+   "n": 35,
+   "title": "Parte 35: Legendary Clue 3 – as Aves Galarian – Articuno, Zapdos e Moltres",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "legendary-clue-3-as-aves-galarian-articuno-zapdos-e-moltres",
+     "text": "Legendary Clue 3 – as Aves Galarian – Articuno, Zapdos e Moltres"
+    }
+   ]
+  },
+  {
+   "n": 36,
+   "title": "Parte 36: A Última Missão – Ultra Beasts a Solta!",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-ultima-missao-ultra-beasts-a-solta",
+     "text": "A Última Missão – Ultra Beasts a Solta!"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "title": "Parte 37: Galarian Star Tournament",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "galarian-star-tournament",
+     "text": "Galarian Star Tournament"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "title": "Parte 38: Último Encontro com Oleana",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "ultimo-encontro-com-oleana",
+     "text": "Último Encontro com Oleana"
+    },
+    {
+     "id": "concluindo-a-missao-das-ultra-beasts",
+     "text": "Concluindo a Missão das Ultra Beasts"
+    },
+    {
+     "id": "batalha-final-contra-peony",
+     "text": "Batalha Final Contra Peony"
+    },
+    {
+     "id": "batalha-final-contra-marnie",
+     "text": "Batalha Final Contra Marnie"
+    },
+    {
+     "id": "batalha-final-contra-klara-avery",
+     "text": "Batalha Final Contra Klara/Avery"
+    },
+    {
+     "id": "batalha-final-contra-mustard",
+     "text": "Batalha Final Contra Mustard"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "title": "Parte 39: Batalha Final na Champion Cup",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "batalha-final-na-champion-cup",
+     "text": "Batalha Final na Champion Cup"
+    }
+   ]
+  }
+ ],
+ "pdfPages": 0
+}

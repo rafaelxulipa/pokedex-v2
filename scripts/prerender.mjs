@@ -51,6 +51,15 @@ const blocksHtml = (slug, blocks) =>
           return `<figure>${img(b)}${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>`;
         case 'gallery':
           return `<figure>${b.imgs.map(img).join('')}${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>`;
+        case 'team':
+        case 'teams': {
+          const teams = b.t === 'teams' ? b.teams : [b];
+          return teams
+            .map((team) => `<p><strong>${esc(team.trainer)} usa:</strong> ${team.members.map((m) => `${esc(m.name)} Nv. ${m.lv}`).join(', ')}</p>`)
+            .join('');
+        }
+        case 'table':
+          return `<table>${b.rows.map((row) => `<tr>${row.map((c) => `<td>${esc(c.t)}</td>`).join('')}</tr>`).join('')}</table>`;
         case 'caption':
           return `<p>${esc(b.text)}</p>`;
         default:

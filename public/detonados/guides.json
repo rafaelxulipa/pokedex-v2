@@ -20,5 +20,49 @@
   "cover": "cover.webp",
   "chapters": 20,
   "pdfPages": 73
+ },
+ {
+  "slug": "legends-z-a",
+  "title": "Detonado Pokémon Legends: Z-A",
+  "subtitle": "Lumiose City: missões principais, Z-A Royale, Wild Zones e Mega Evoluções",
+  "console": "Nintendo Switch 1 e 2",
+  "description": "Detonado completo em português de Pokémon Legends: Z-A, com capturas de tela, missões principais, Wild Zones e os times dos treinadores.",
+  "accent": "#0f9d8a",
+  "cover": "cover.webp",
+  "chapters": 28,
+  "pdfPages": 0
+ },
+ {
+  "slug": "lets-go-pikachu-lets-go-eevee",
+  "title": "Detonado Pokémon Let's Go, Pikachu! e Let's Go, Eevee!",
+  "subtitle": "De Pallet Town à Liga Pokémon: capturas com Joy-Con, ginásios, Team Rocket e Elite 4",
+  "console": "Nintendo Switch 1 e 2",
+  "description": "Detonado completo em português de Pokémon Let's Go, Pikachu! e Let's Go, Eevee!, com capturas de tela de cada passo, mapas e os times de todos os líderes e rivais.",
+  "accent": "#d99a00",
+  "cover": "cover.webp",
+  "chapters": 13,
+  "pdfPages": 0
+ },
+ {
+  "slug": "scarlet-violet",
+  "title": "Detonado Pokémon Scarlet & Violet",
+  "subtitle": "Paldea livre: as três histórias, ginásios, Team Star e conteúdo pós-jogo",
+  "console": "Nintendo Switch 1 e 2",
+  "description": "Detonado completo em português de Pokémon Scarlet e Violet, com capturas de tela, os times dos líderes e rivais e as três linhas de história de Paldea.",
+  "accent": "#e0402f",
+  "cover": "cover.webp",
+  "chapters": 33,
+  "pdfPages": 0
+ },
+ {
+  "slug": "sword-shield",
+  "title": "Detonado Pokémon Sword & Shield",
+  "subtitle": "Galar do começo ao fim: Wild Area, ginásios, campeonato e pós-jogo",
+  "console": "Nintendo Switch 1 e 2",
+  "description": "Detonado completo em português de Pokémon Sword e Shield, com capturas de tela, mapas, times dos líderes e rivais e a história de Galar.",
+  "accent": "#2f6fd6",
+  "cover": "cover.webp",
+  "chapters": 39,
+  "pdfPages": 0
  }
 ]

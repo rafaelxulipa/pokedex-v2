@@ -181,7 +181,31 @@ export interface GuideImage {
   h: number;
   fw?: number; // width as a fraction of the text column in the original layout
   card?: 1; // cropped card/table: shown on a white panel
+  natural?: 1; // small picture (portrait, icon): shown at its own size, never stretched
   alt?: string;
+}
+
+export interface GuideTeamMember {
+  id?: number; // national Pokédex number (sprite from the PokéAPI)
+  name: string;
+  lv: number;
+  note?: string;
+}
+
+export interface GuideTeam {
+  t: 'team';
+  trainer: string;
+  label?: string; // e.g. "Se você começou com Grookey"
+  starter?: number; // Pokédex number of that starter
+  portrait?: GuideImage;
+  members: GuideTeamMember[];
+  note?: string;
+}
+
+export interface GuideTableCell {
+  t: string;
+  b?: 1;
+  rs?: number;
 }
 
 export type GuideBlock =
@@ -192,6 +216,9 @@ export type GuideBlock =
   | ({ t: 'img'; caption?: string } & GuideImage)
   | { t: 'gallery'; imgs: GuideImage[]; caption?: string }
   | ({ t: 'card'; alt: string } & GuideImage)
+  | GuideTeam
+  | { t: 'teams'; teams: GuideTeam[] }
+  | { t: 'table'; rows: GuideTableCell[][] }
   | { t: 'caption'; text: string };
 
 export interface GuideChapterSummary {

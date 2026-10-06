@@ -1,0 +1,303 @@
+{
+ "slug": "lets-go-pikachu-lets-go-eevee",
+ "title": "Detonado Pokémon Let's Go, Pikachu! e Let's Go, Eevee!",
+ "subtitle": "De Pallet Town à Liga Pokémon: capturas com Joy-Con, ginásios, Team Rocket e Elite 4",
+ "console": "Nintendo Switch 1 e 2",
+ "description": "Detonado completo em português de Pokémon Let's Go, Pikachu! e Let's Go, Eevee!, com capturas de tela de cada passo, mapas e os times de todos os líderes e rivais.",
+ "credit": "Texto original e organização: Pokémon Mythology · pokemythology.net",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "",
+ "accent": "#d99a00",
+ "cover": "cover.webp",
+ "downloads": [],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Parte 1: Pallet Town",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "pallet-town",
+     "text": "Pallet Town"
+    },
+    {
+     "id": "viridian-city",
+     "text": "Viridian City"
+    },
+    {
+     "id": "viridian-forest",
+     "text": "Viridian Forest"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Parte 2: Pewter City",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "pewter-city",
+     "text": "Pewter City"
+    },
+    {
+     "id": "mt-moon",
+     "text": "MT. Moon"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Parte 3: Cerulean City",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "cerulean-city",
+     "text": "Cerulean City"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Parte 4: Vermilion City",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "vermilion-city",
+     "text": "Vermilion City"
+    },
+    {
+     "id": "digletts-cave",
+     "text": "Diglett’s Cave"
+    },
+    {
+     "id": "rock-tunnel",
+     "text": "Rock Tunnel"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Parte 5: Lavender Town",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "lavender-town",
+     "text": "Lavender Town"
+    },
+    {
+     "id": "celadon-city",
+     "text": "Celadon City"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Parte 6: Team Rocket Hideout",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "team-rocket-hideout",
+     "text": "Team Rocket Hideout"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Parte 7: Pokémon Tower",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "pokemon-tower",
+     "text": "Pokémon Tower"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Parte 8: Saffron City",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "saffron-city",
+     "text": "Saffron City"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Parte 9: Snorlax e a Pokémon Road",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "snorlax-e-a-pokemon-road",
+     "text": "Snorlax e a Pokémon Road"
+    },
+    {
+     "id": "fuchsia-city",
+     "text": "Fuchsia City"
+    },
+    {
+     "id": "go-park-complex",
+     "text": "Go Park Complex"
+    },
+    {
+     "id": "power-plant",
+     "text": "Power Plant"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Parte 10: Seafoam Islands",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "seafoam-islands",
+     "text": "Seafoam Islands"
+    },
+    {
+     "id": "cinnabar-island",
+     "text": "Cinnabar Island"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Parte 11: Mega Evoluções e o Último Ginásio",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "mega-evolucoes-e-o-ultimo-ginasio",
+     "text": "Mega Evoluções e o Último Ginásio"
+    },
+    {
+     "id": "victory-road",
+     "text": "Victory Road"
+    },
+    {
+     "id": "indigo-plateau",
+     "text": "Indigo Plateau"
+    },
+    {
+     "id": "elite-4",
+     "text": "Elite 4"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Parte 12: Voando Mais Alto + Mega Evoluções",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "voando-mais-alto-mega-evolucoes",
+     "text": "Voando Mais Alto + Mega Evoluções"
+    },
+    {
+     "id": "a-revanche-com-mina",
+     "text": "A Revanche com Mina"
+    },
+    {
+     "id": "a-revanche-com-jessie-e-james",
+     "text": "A Revanche com Jessie e James"
+    },
+    {
+     "id": "a-revanche-com-archer",
+     "text": "A Revanche com Archer"
+    },
+    {
+     "id": "cerulean-cave",
+     "text": "Cerulean Cave"
+    },
+    {
+     "id": "coach-trainer-morimoto",
+     "text": "Coach Trainer Morimoto"
+    },
+    {
+     "id": "revanche-com-os-lideres-de-ginasio",
+     "text": "Revanche com os Líderes de Ginásio"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Parte 13: A Batalha com Blue",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-batalha-com-blue",
+     "text": "A Batalha com Blue"
+    },
+    {
+     "id": "a-batalha-com-green",
+     "text": "A Batalha com Green"
+    },
+    {
+     "id": "master-trainers",
+     "text": "Master Trainers"
+    },
+    {
+     "id": "a-batalha-com-red",
+     "text": "A Batalha com Red"
+    },
+    {
+     "id": "revanche-com-a-elite-4",
+     "text": "Revanche com a Elite 4"
+    }
+   ]
+  }
+ ],
+ "pdfPages": 0
+}

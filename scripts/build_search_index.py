@@ -36,6 +36,12 @@ def block_text(block):
         return " ".join(i.get("alt", "") for i in block["imgs"] if i.get("card")) + " " + block.get("caption", "")
     if kind == "img":
         return block.get("caption", "")
+    if kind == "team":
+        return f"{block['trainer']} usa: " + ", ".join(f"{m['name']} Nv. {m['lv']}" for m in block["members"])
+    if kind == "teams":
+        return " ".join(block_text({**team, "t": "team"}) for team in block["teams"])
+    if kind == "table":
+        return " ".join(cell["t"] for row in block["rows"] for cell in row)
     if kind == "caption":
         return block["text"]
     return ""

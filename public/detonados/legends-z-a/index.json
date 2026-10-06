@@ -1,0 +1,1312 @@
+{
+ "slug": "legends-z-a",
+ "title": "Detonado Pokémon Legends: Z-A",
+ "subtitle": "Lumiose City: missões principais, Z-A Royale, Wild Zones e Mega Evoluções",
+ "console": "Nintendo Switch 1 e 2",
+ "description": "Detonado completo em português de Pokémon Legends: Z-A, com capturas de tela, missões principais, Wild Zones e os times dos treinadores.",
+ "credit": "Texto original e organização: Pokémon Mythology · pokemythology.net",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "",
+ "accent": "#0f9d8a",
+ "cover": "cover.webp",
+ "downloads": [],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Parte 1: Gare de Lumiose – Chegando em Lumiose City",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "gare-de-lumiose-chegando-em-lumiose-city",
+     "text": "Gare de Lumiose – Chegando em Lumiose City"
+    },
+    {
+     "id": "main-mission-01-get-your-travel-bag-back",
+     "text": "Main Mission 01 – Get Your Travel Bag Back!"
+    },
+    {
+     "id": "main-mission-02-escape-from-the-battle-zone",
+     "text": "Main Mission 02 – Escape From The Battle Zone!"
+    },
+    {
+     "id": "main-mission-03-a-new-life-in-lumiose-city",
+     "text": "Main Mission 03 – a New Life In Lumiose City"
+    },
+    {
+     "id": "conheca-o-centro-pokemon-e-obtenha-a-pokedex",
+     "text": "Conheça o Centro Pokémon e Obtenha a Pokédex"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Parte 2: Wild Zone 1 – Capturando Seus Primeiros Pokémons",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "wild-zone-1-capturando-seus-primeiros-pokemons",
+     "text": "Wild Zone 1 – Capturando Seus Primeiros Pokémons"
+    },
+    {
+     "id": "pokemon-research-lab-conheca-a-professora-do-jogo",
+     "text": "Pokémon Research Lab – Conheça a Professora do Jogo"
+    },
+    {
+     "id": "quebrando-rochas-e-subindo-predios",
+     "text": "Quebrando Rochas e Subindo Prédios"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Parte 3: Main Mission 04 – Battling In The Z-A Royale",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-04-battling-in-the-z-a-royale",
+     "text": "Main Mission 04 – Battling In The Z-A Royale"
+    },
+    {
+     "id": "partida-de-promocao-rank-z-rank-y",
+     "text": "Partida de Promoção – Rank Z → Rank Y"
+    },
+    {
+     "id": "main-mission-05-the-city-in-the-shadow-of-prism-tower",
+     "text": "Main Mission 05 – The City In The Shadow Of Prism Tower"
+    },
+    {
+     "id": "wild-zone-2-um-lago-com-uma-ponte",
+     "text": "Wild Zone 2 – um Lago com uma Ponte"
+    },
+    {
+     "id": "nouveau-cafe-conheca-vinnie-e-ivor",
+     "text": "Nouveau Café – Conheça Vinnie e Ivor"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Parte 4: Wild Zone 3 – uma Praça com Várias Cercas",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "wild-zone-3-uma-praca-com-varias-cercas",
+     "text": "Wild Zone 3 – uma Praça com Várias Cercas"
+    },
+    {
+     "id": "looker-bureau-a-agencia-de-detetive-da-emma",
+     "text": "Looker Bureau – a Agência de Detetive da Emma"
+    },
+    {
+     "id": "explorando-lumiose-city",
+     "text": "Explorando Lumiose City"
+    },
+    {
+     "id": "wild-zone-4-um-antigo-cemiterio",
+     "text": "Wild Zone 4 – um Antigo Cemitério"
+    },
+    {
+     "id": "wild-zone-5-entre-predios-e-esgotos",
+     "text": "Wild Zone 5 – Entre Prédios e Esgotos"
+    },
+    {
+     "id": "wild-zone-6-saida-para-o-canal",
+     "text": "Wild Zone 6 – Saída para o Canal"
+    },
+    {
+     "id": "racine-construction-troque-parafusos-por-amuletos",
+     "text": "Racine Construction – Troque Parafusos por Amuletos"
+    },
+    {
+     "id": "pokemons-selvagens-fora-das-wild-zones",
+     "text": "Pokémons Selvagens Fora das Wild Zones"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Parte 5: Side Mission 001 – a Big Ol’ Bunnelby",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-001-a-big-ol-bunnelby",
+     "text": "Side Mission 001 – a Big Ol’ Bunnelby"
+    },
+    {
+     "id": "side-mission-002-a-use-from-an-evolution-stone",
+     "text": "Side Mission 002 – a Use From An Evolution Stone!"
+    },
+    {
+     "id": "side-mission-003-sableye-in-the-cemetery",
+     "text": "Side Mission 003 – Sableye In The Cemetery"
+    },
+    {
+     "id": "a-batalha-contra-emma",
+     "text": "A Batalha Contra Emma"
+    },
+    {
+     "id": "main-mission-06-reaching-rank-x",
+     "text": "Main Mission 06 – Reaching Rank X"
+    },
+    {
+     "id": "conseguindo-os-iniciais-de-kalos",
+     "text": "Conseguindo os Iniciais de Kalos"
+    },
+    {
+     "id": "side-mission-004-a-break-time-battle",
+     "text": "Side Mission 004 – a Break Time Battle"
+    },
+    {
+     "id": "side-mission-005-id-like-to-see-an-ekans",
+     "text": "Side Mission 005 – I’d Like To See An Ekans"
+    },
+    {
+     "id": "side-mission-006-long-range-moves-have-style",
+     "text": "Side Mission 006 – Long-Range Moves Have Style"
+    },
+    {
+     "id": "side-mission-007-a-feisty-chespin",
+     "text": "Side Mission 007 – a Feisty Chespin"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Parte 6: Side Mission 008 – Get Well, Fennekin",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-008-get-well-fennekin",
+     "text": "Side Mission 008 – Get Well, Fennekin"
+    },
+    {
+     "id": "side-mission-009-a-challenge-from-froakie",
+     "text": "Side Mission 009 – a Challenge From Froakie"
+    },
+    {
+     "id": "partida-de-promocao-rank-y-rank-x",
+     "text": "Partida de Promoção – Rank Y → Rank X"
+    },
+    {
+     "id": "main-mission-07-reaching-rank-w",
+     "text": "Main Mission 07 – Reaching Rank W"
+    },
+    {
+     "id": "side-mission-010-skiddos-fragrant-leaves",
+     "text": "Side Mission 010 – Skiddo’s Fragrant Leaves"
+    },
+    {
+     "id": "side-mission-011-the-kakuna-master",
+     "text": "Side Mission 011 – The Kakuna Master"
+    },
+    {
+     "id": "side-mission-012-the-many-flowers-of-flabebe",
+     "text": "Side Mission 012 – The Many Flowers Of Flabébé"
+    },
+    {
+     "id": "side-mission-013-stumped-at-the-fountain",
+     "text": "Side Mission 013 – Stumped At The Fountain"
+    },
+    {
+     "id": "side-mission-014-slurpuffs-cafe-visit",
+     "text": "Side Mission 014 – Slurpuff’s Café Visit"
+    },
+    {
+     "id": "side-mission-015-a-sensitive-audino",
+     "text": "Side Mission 015 – a Sensitive Audino"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Parte 7: Side Mission 016 – The Budew Show",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-016-the-budew-show",
+     "text": "Side Mission 016 – The Budew Show"
+    },
+    {
+     "id": "partida-de-promocao-rank-x-rank-w",
+     "text": "Partida de Promoção – Rank X → Rank W"
+    },
+    {
+     "id": "main-mission-08-reaching-rank-v",
+     "text": "Main Mission 08 – Reaching Rank V"
+    },
+    {
+     "id": "conseguindo-os-iniciais-de-kanto",
+     "text": "Conseguindo os Iniciais de Kanto"
+    },
+    {
+     "id": "side-mission-017-a-shiny-mareep",
+     "text": "Side Mission 017 – a Shiny Mareep?"
+    },
+    {
+     "id": "side-mission-018-a-pan-tastic-pot-of-tea",
+     "text": "Side Mission 018 – a Pan-Tastic Pot Of Tea"
+    },
+    {
+     "id": "side-mission-019-poisonous-paralyzing-strategies",
+     "text": "Side Mission 019 – Poisonous, Paralyzing Strategies"
+    },
+    {
+     "id": "side-mission-020-a-berry-clever-plan",
+     "text": "Side Mission 020 – a Berry Clever Plan"
+    },
+    {
+     "id": "side-mission-021-spewpa-in-the-museum",
+     "text": "Side Mission 021 – Spewpa In The Museum"
+    },
+    {
+     "id": "side-mission-022-a-call-from-mable",
+     "text": "Side Mission 022 – a Call From Mable"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Parte 8: Partida de Promoção – Rank W → Rank V",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "partida-de-promocao-rank-w-rank-v",
+     "text": "Partida de Promoção – Rank W → Rank V"
+    },
+    {
+     "id": "main-mission-09-chase-that-mysterious-pokemon",
+     "text": "Main Mission 09 – Chase That Mysterious Pokémon!"
+    },
+    {
+     "id": "rogue-mega-evolution-mega-absol",
+     "text": "Rogue Mega Evolution – Mega Absol"
+    },
+    {
+     "id": "main-mission-10-the-secrets-of-mega-evolution",
+     "text": "Main Mission 10 – The Secrets Of Mega Evolution"
+    },
+    {
+     "id": "wild-zone-7-um-obelisco-em-meio-ao-gramado",
+     "text": "Wild Zone 7 – um Obelisco em Meio ao Gramado"
+    },
+    {
+     "id": "wild-zone-8-um-grande-terreno-com-pokemons-no-solo",
+     "text": "Wild Zone 8 – um Grande Terreno com Pokémons no Solo"
+    },
+    {
+     "id": "wild-zone-9-explorando-andaimes-e-telhados",
+     "text": "Wild Zone 9 – Explorando Andaimes e Telhados"
+    },
+    {
+     "id": "wild-zone-10-passando-pelas-hidrovias",
+     "text": "Wild Zone 10 – Passando pelas Hidrovias"
+    },
+    {
+     "id": "side-mission-023-underneath-the-holovator",
+     "text": "Side Mission 023 – Underneath The Holovator"
+    },
+    {
+     "id": "side-mission-024-an-abra-playmate",
+     "text": "Side Mission 024 – An Abra Playmate"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Parte 9: Side Mission 025 – Trubblesome Patrons",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-025-trubblesome-patrons",
+     "text": "Side Mission 025 – Trubblesome Patrons"
+    },
+    {
+     "id": "side-mission-026-burn-litleo-burn",
+     "text": "Side Mission 026 – Burn, Litleo, Burn"
+    },
+    {
+     "id": "quasartico-inc-a-proposta-de-vinnie",
+     "text": "Quasartico Inc. – a Proposta de Vinnie"
+    },
+    {
+     "id": "partida-de-promocao-rank-v-rank-f",
+     "text": "Partida de Promoção – Rank V → Rank F"
+    },
+    {
+     "id": "trocando-mega-shards-por-mega-stones",
+     "text": "Trocando Mega Shards por Mega Stones"
+    },
+    {
+     "id": "novos-casos-de-rogue-mega-evolutions",
+     "text": "Novos Casos de Rogue Mega Evolutions"
+    },
+    {
+     "id": "side-mission-027-restored-from-a-fossil",
+     "text": "Side Mission 027 – Restored From a Fossil"
+    },
+    {
+     "id": "side-mission-028-who-says-normal-is-weak",
+     "text": "Side Mission 028 – Who Says Normal Is Weak?"
+    },
+    {
+     "id": "side-mission-029-full-course-of-battles-one-star",
+     "text": "Side Mission 029 – Full Course Of Battles: One Star"
+    },
+    {
+     "id": "main-mission-11-a-rogue-mega-slowbro",
+     "text": "Main Mission 11 – a Rogue Mega Slowbro"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Parte 10: Main Mission 12 – a Rogue Mega Camerupt",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-12-a-rogue-mega-camerupt",
+     "text": "Main Mission 12 – a Rogue Mega Camerupt"
+    },
+    {
+     "id": "main-mission-13-a-rogue-mega-victreebel",
+     "text": "Main Mission 13 – a Rogue Mega Victreebel"
+    },
+    {
+     "id": "o-desafio-de-zygarde",
+     "text": "O Desafio de Zygarde"
+    },
+    {
+     "id": "main-mission-14-reaching-rank-e",
+     "text": "Main Mission 14 – Reaching Rank E"
+    },
+    {
+     "id": "side-mission-030-show-me-a-mega-camerupt",
+     "text": "Side Mission 030 – Show Me a Mega Camerupt!"
+    },
+    {
+     "id": "side-mission-031-show-me-a-mega-sableye",
+     "text": "Side Mission 031 – Show Me a Mega Sableye!"
+    },
+    {
+     "id": "side-mission-032-show-me-a-mega-medicham",
+     "text": "Side Mission 032 – Show Me a Mega Medicham!"
+    },
+    {
+     "id": "side-mission-033-who-has-the-bigger-magikarp",
+     "text": "Side Mission 033 – Who Has The Bigger Magikarp?"
+    },
+    {
+     "id": "side-mission-034-moves-that-put-a-wall",
+     "text": "Side Mission 034 – Moves That Put a Wall"
+    },
+    {
+     "id": "side-mission-035-guidance-from-a-yoga-master",
+     "text": "Side Mission 035 – Guidance From a Yoga Master"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Parte 11: Side Mission 036 – Some Friendly Competition",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-036-some-friendly-competition",
+     "text": "Side Mission 036 – Some Friendly Competition"
+    },
+    {
+     "id": "side-mission-037-binacle-by-the-boatload",
+     "text": "Side Mission 037 – Binacle BY The Boatload"
+    },
+    {
+     "id": "canari-quiz-whiz-contest",
+     "text": "Canari Quiz Whiz Contest"
+    },
+    {
+     "id": "round-1-verdadeiro-ou-falso",
+     "text": "Round 1 – Verdadeiro ou Falso"
+    },
+    {
+     "id": "round-2-a-sobremesa-favorita-de-eelektross",
+     "text": "Round 2 – a Sobremesa Favorita de Eelektross"
+    },
+    {
+     "id": "round-3-batalha-pokemon-e-pergunta-final",
+     "text": "Round 3 – Batalha Pokémon e Pergunta Final"
+    },
+    {
+     "id": "side-mission-038-chasing-status",
+     "text": "Side Mission 038 – Chasing Status"
+    },
+    {
+     "id": "side-mission-039-slowpoke-for-slowpoke",
+     "text": "Side Mission 039 – Slowpoke For Slowpoke"
+    },
+    {
+     "id": "side-mission-040-a-holovator-without-power",
+     "text": "Side Mission 040 – a Holovator Without Power"
+    },
+    {
+     "id": "partida-de-promocao-rank-f-rank-e",
+     "text": "Partida de Promoção – Rank F → Rank E"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Parte 12: Main Mission 15 – a Job For Team MZ!",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-15-a-job-for-team-mz",
+     "text": "Main Mission 15 – a Job For Team MZ!"
+    },
+    {
+     "id": "roto-glide-a-aprenda-a-planar-com-o-seu-rotom-phone",
+     "text": "Roto-Glide – a Aprenda a Planar com o Seu Rotom Phone"
+    },
+    {
+     "id": "wild-zone-11-um-rio-em-meio-ao-campo",
+     "text": "Wild Zone 11 – um Rio em Meio ao Campo"
+    },
+    {
+     "id": "wild-zone-12-um-parque-coberto-de-neve",
+     "text": "Wild Zone 12 – um Parque Coberto de Neve"
+    },
+    {
+     "id": "wild-zone-13-insetos-por-entre-as-arvores",
+     "text": "Wild Zone 13 – Insetos por Entre as Árvores"
+    },
+    {
+     "id": "side-mission-041-watch-out-for-traps",
+     "text": "Side Mission 041 – Watch Out For Traps"
+    },
+    {
+     "id": "side-mission-042-a-fan-of-fairy-types",
+     "text": "Side Mission 042 – a Fan Of Fairy Types"
+    },
+    {
+     "id": "side-mission-043-a-big-weedle-problem",
+     "text": "Side Mission 043 – a Big Weedle Problem"
+    },
+    {
+     "id": "main-mission-16-a-rogue-mega-beedrill",
+     "text": "Main Mission 16 – a Rogue Mega Beedrill"
+    },
+    {
+     "id": "main-mission-17-a-rogue-mega-hawlucha",
+     "text": "Main Mission 17 – a Rogue Mega Hawlucha"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Parte 13: Main Mission 18 – a Rogue Mega Banette",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-18-a-rogue-mega-banette",
+     "text": "Main Mission 18 – a Rogue Mega Banette"
+    },
+    {
+     "id": "main-mission-19-reaching-rank-d",
+     "text": "Main Mission 19 – Reaching Rank D"
+    },
+    {
+     "id": "side-mission-044-venillites-fragrant-snow",
+     "text": "Side Mission 044 – Venillite’s Fragrant Snow"
+    },
+    {
+     "id": "side-mission-045-on-maintenance-duty",
+     "text": "Side Mission 045 – On Maintenance Duty"
+    },
+    {
+     "id": "side-mission-046-pidgeot-soaring-high",
+     "text": "Side Mission 046 – Pidgeot Soaring High"
+    },
+    {
+     "id": "side-mission-047-becoming-a-furfrou-trimmer",
+     "text": "Side Mission 047 – Becoming a Furfrou Trimmer"
+    },
+    {
+     "id": "justice-dojo-o-problema-de-ivor",
+     "text": "Justice Dojo – o Problema de Ivor"
+    },
+    {
+     "id": "side-mission-048-all-tied-up",
+     "text": "Side Mission 048 – All Tied Up"
+    },
+    {
+     "id": "side-mission-049-hit-and-heal",
+     "text": "Side Mission 049 – Hit And Heal"
+    },
+    {
+     "id": "side-mission-050-just-a-few-questions-for-you",
+     "text": "Side Mission 050 – Just a Few Questions For You…"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "title": "Parte 14: O Caso da Irmã Desaparecida",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "o-caso-da-irma-desaparecida",
+     "text": "O Caso da Irmã Desaparecida"
+    },
+    {
+     "id": "side-mission-051-floette-flolicking-with-flowers",
+     "text": "Side Mission 051 – Floette Flolicking With Flowers"
+    },
+    {
+     "id": "side-mission-052-numel-frozen-solid",
+     "text": "Side Mission 052 – Numel Frozen Solid"
+    },
+    {
+     "id": "side-mission-053-the-most-electrifying-eelektrik",
+     "text": "Side Mission 053 – The Most Electrifying Eelektrik"
+    },
+    {
+     "id": "explorando-os-esgotos-de-lumiose-city",
+     "text": "Explorando os Esgotos de Lumiose City"
+    },
+    {
+     "id": "a-batalha-contra-gwynn",
+     "text": "A Batalha Contra Gwynn"
+    },
+    {
+     "id": "side-mission-054-get-energized",
+     "text": "Side Mission 054 – Get Energized!"
+    },
+    {
+     "id": "side-mission-055-carvanha-menace-of-the-deep",
+     "text": "Side Mission 055 – Carvanha, Menace Of The Deep!"
+    },
+    {
+     "id": "side-mission-056-well-just-muscle-our-way-through",
+     "text": "Side Mission 056 – We’ll Just Muscle Our Way Through!"
+    },
+    {
+     "id": "partida-de-promocao-rank-e-rank-d",
+     "text": "Partida de Promoção – Rank E → Rank D"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "title": "Parte 15: Main Mission 20 – a Request From The Rust Syndicate",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-20-a-request-from-the-rust-syndicate",
+     "text": "Main Mission 20 – a Request From The Rust Syndicate"
+    },
+    {
+     "id": "wild-zone-14-uma-subestacao-eletrica",
+     "text": "Wild Zone 14 – uma Subestação Elétrica"
+    },
+    {
+     "id": "wild-zone-15-pokemons-diferentes-de-dia-e-de-noite",
+     "text": "Wild Zone 15 – Pokémons Diferentes de Dia e de Noite"
+    },
+    {
+     "id": "side-mission-057-the-camerupt-entrepreneur",
+     "text": "Side Mission 057 – The Camerupt Entrepreneur"
+    },
+    {
+     "id": "side-mission-058-better-to-detect-than-protect",
+     "text": "Side Mission 058 – Better To Detect Than Protect"
+    },
+    {
+     "id": "side-mission-059-a-rematch-with-hawlucha",
+     "text": "Side Mission 059 – a Rematch With Hawlucha!"
+    },
+    {
+     "id": "side-mission-060-full-course-of-battles-two-star",
+     "text": "Side Mission 060 – Full Course Of Battles: Two Star"
+    },
+    {
+     "id": "rust-syndicate-negociando-a-divida-do-hotel-z",
+     "text": "Rust Syndicate – Negociando a Dívida do Hotel Z"
+    },
+    {
+     "id": "combatendo-novas-rogue-mega-evolutions",
+     "text": "Combatendo Novas Rogue Mega Evolutions"
+    },
+    {
+     "id": "side-mission-061-my-favorite-holovator",
+     "text": "Side Mission 061 – MY Favorite Holovator"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "title": "Parte 16: Side Mission 062 – Becoming a Pro Furfrou Trimmer",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-062-becoming-a-pro-furfrou-trimmer",
+     "text": "Side Mission 062 – Becoming a Pro Furfrou Trimmer"
+    },
+    {
+     "id": "side-mission-063-an-extra-large-gogoat",
+     "text": "Side Mission 063 – An Extra-Large Gogoat"
+    },
+    {
+     "id": "side-mission-064-let-it-rain-let-it-pour",
+     "text": "Side Mission 064 – Let It Rain, Let It Pour"
+    },
+    {
+     "id": "side-mission-065-apartment-block-eeriness",
+     "text": "Side Mission 065 – Apartment Block Eeriness"
+    },
+    {
+     "id": "main-mission-21-a-rogue-mega-mawile",
+     "text": "Main Mission 21 – a Rogue Mega Mawile"
+    },
+    {
+     "id": "main-mission-22-a-rogue-mega-barbaracle",
+     "text": "Main Mission 22 – a Rogue Mega Barbaracle"
+    },
+    {
+     "id": "main-mission-23-a-rogue-mega-ampharos",
+     "text": "Main Mission 23 – a Rogue Mega Ampharos"
+    },
+    {
+     "id": "trabalhando-para-o-rust-syndicate",
+     "text": "Trabalhando para o Rust Syndicate"
+    },
+    {
+     "id": "side-mission-066-investigating-with-shuppet",
+     "text": "Side Mission 066 – Investigating With Shuppet"
+    },
+    {
+     "id": "side-mission-067-sylveon-the-soother",
+     "text": "Side Mission 067 – Sylveon The Soother"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "title": "Parte 17: Side Mission 068 – The Best Use Of Leftovers",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-068-the-best-use-of-leftovers",
+     "text": "Side Mission 068 – The Best Use Of Leftovers"
+    },
+    {
+     "id": "side-mission-069-a-sky-battle-for-old-times-sake",
+     "text": "Side Mission 069 – a SKY Battle, For Old Times’ Sake"
+    },
+    {
+     "id": "1-trabalho-o-predio-mal-assombrado",
+     "text": "1º Trabalho – o Prédio Mal Assombrado"
+    },
+    {
+     "id": "2-trabalho-limpando-o-esgoto",
+     "text": "2º Trabalho – Limpando o Esgoto"
+    },
+    {
+     "id": "3-trabalho-problemas-com-a-sbc",
+     "text": "3º Trabalho – Problemas com a SBC"
+    },
+    {
+     "id": "4-trabalho-tumulto-em-lumiose",
+     "text": "4º Trabalho – Tumulto em Lumiose"
+    },
+    {
+     "id": "main-mission-24-reaching-rank-c",
+     "text": "Main Mission 24 – Reaching Rank C"
+    },
+    {
+     "id": "side-mission-070-whos-the-strongest-huh",
+     "text": "Side Mission 070 – Who’s The Strongest, Huh?!"
+    },
+    {
+     "id": "side-mission-071-the-burning-gaze-of-watchog",
+     "text": "Side Mission 071 – The Burning Gaze Of Watchog"
+    },
+    {
+     "id": "side-mission-072-find-my-galarian-stunfisk",
+     "text": "Side Mission 072 – Find MY Galarian Stunfisk!"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "title": "Parte 18: Side Mission 073 – Full Course Of Battles: High Rolling",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-073-full-course-of-battles-high-rolling",
+     "text": "Side Mission 073 – Full Course Of Battles: High Rolling"
+    },
+    {
+     "id": "partida-de-promocao-rank-d-rank-c",
+     "text": "Partida de Promoção – Rank D → Rank C"
+    },
+    {
+     "id": "quitando-a-divida-com-o-rust-syndicate",
+     "text": "Quitando a Dívida com o Rust Syndicate"
+    },
+    {
+     "id": "wild-zone-16-um-parque-com-um-terreno-variado",
+     "text": "Wild Zone 16 – um Parque com um Terreno Variado"
+    },
+    {
+     "id": "wild-zone-17-uma-pista-cheia-de-pokemons",
+     "text": "Wild Zone 17 – uma Pista Cheia de Pokémons"
+    },
+    {
+     "id": "main-mission-25-a-showdown-on-the-battle-court",
+     "text": "Main Mission 25 – a Showdown On The Battle Court"
+    },
+    {
+     "id": "side-mission-074-delibird-gets-in-a-flap",
+     "text": "Side Mission 074 – Delibird Gets In a Flap"
+    },
+    {
+     "id": "side-mission-075-some-unusual-pokemon",
+     "text": "Side Mission 075 – Some Unusual Pokémon"
+    },
+    {
+     "id": "side-mission-076-lets-learn-about-mega-evolution",
+     "text": "Side Mission 076 – Let’s Learn About Mega Evolution!"
+    },
+    {
+     "id": "side-mission-077-catch-mawile-if-you-can",
+     "text": "Side Mission 077 – Catch Mawile If You Can"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "title": "Parte 19: Main Mission 26 – An Invitation From The SBC",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-26-an-invitation-from-the-sbc",
+     "text": "Main Mission 26 – An Invitation From The SBC"
+    },
+    {
+     "id": "side-mission-078-inkays-fragrant-ink",
+     "text": "Side Mission 078 – Inkay’s Fragrant Ink"
+    },
+    {
+     "id": "side-mission-079-a-fateful-swing-of-a-metronome",
+     "text": "Side Mission 079 – a Fateful Swing Of a Metronome"
+    },
+    {
+     "id": "side-mission-080-a-shocking-territorial-dispute",
+     "text": "Side Mission 080 – a Shocking Territorial Dispute"
+    },
+    {
+     "id": "hotel-richissime-e-a-society-battle-association",
+     "text": "Hotel Richissime e a Society Battle Association"
+    },
+    {
+     "id": "reuniao-estrategica-com-seus-amigos-e-jacinthe",
+     "text": "Reunião Estratégica com Seus Amigos… e Jacinthe"
+    },
+    {
+     "id": "side-mission-081-pancham-the-courier",
+     "text": "Side Mission 081 – Pancham The Courier"
+    },
+    {
+     "id": "side-mission-082-clauncher-launching-water-gun",
+     "text": "Side Mission 082 – Clauncher Launching Water Gun"
+    },
+    {
+     "id": "side-mission-083-honedges-cutting-edge",
+     "text": "Side Mission 083 – Honedge’s Cutting Edge"
+    },
+    {
+     "id": "side-mission-084-strike-first-to-make-em-flinch",
+     "text": "Side Mission 084 – Strike First To Make ’em Flinch!"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "title": "Parte 20: Side Mission 085 – Follow Litwick!",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-085-follow-litwick",
+     "text": "Side Mission 085 – Follow Litwick!"
+    },
+    {
+     "id": "main-mission-27-a-rogue-mega-froslass",
+     "text": "Main Mission 27 – a Rogue Mega Froslass"
+    },
+    {
+     "id": "main-mission-28-a-rogue-mega-altaria",
+     "text": "Main Mission 28 – a Rogue Mega Altaria"
+    },
+    {
+     "id": "main-mission-29-a-rogue-mega-venusaur",
+     "text": "Main Mission 29 – a Rogue Mega Venusaur"
+    },
+    {
+     "id": "jacinthe-zone-a-battle-zone-da-jacinthe",
+     "text": "Jacinthe Zone – a Battle Zone da Jacinthe"
+    },
+    {
+     "id": "main-mission-30-reaching-rank-b",
+     "text": "Main Mission 30 – Reaching Rank B"
+    },
+    {
+     "id": "side-mission-086-who-messed-up-the-garden",
+     "text": "Side Mission 086 – Who Messed Up The Garden?"
+    },
+    {
+     "id": "side-mission-087-becoming-a-peerless-furfrou-trimmer",
+     "text": "Side Mission 087 – Becoming a Peerless Furfrou Trimmer"
+    },
+    {
+     "id": "side-mission-088-the-nervous-novice-cabbie",
+     "text": "Side Mission 088 – The Nervous Novice Cabbie"
+    },
+    {
+     "id": "side-mission-089-up-up-and-away-after-emolga",
+     "text": "Side Mission 089 – Up, Up, And Away After Emolga!"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "title": "Parte 21: Side Mission 090 – Froslass’s Unfinished Business",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-090-froslasss-unfinished-business",
+     "text": "Side Mission 090 – Froslass’s Unfinished Business"
+    },
+    {
+     "id": "le-super-tournoi-de-jacinthe",
+     "text": "~le Super-Tournoi de Jacinthe~"
+    },
+    {
+     "id": "partida-de-promocao-rank-c-rank-b",
+     "text": "Partida de Promoção – Rank C → Rank B"
+    },
+    {
+     "id": "main-mission-31-a-summons-from-vinnie",
+     "text": "Main Mission 31 – a Summons From Vinnie"
+    },
+    {
+     "id": "wild-zone-18-um-beco-com-andaimes",
+     "text": "Wild Zone 18 – um Beco com Andaimes"
+    },
+    {
+     "id": "wild-zone-19-andando-pela-vegetacao",
+     "text": "Wild Zone 19 – Andando pela Vegetação"
+    },
+    {
+     "id": "side-mission-091-dragon-you-into-battle",
+     "text": "Side Mission 091 – Dragon You Into Battle"
+    },
+    {
+     "id": "side-mission-092-the-beldum-blockade",
+     "text": "Side Mission 092 – The Beldum Blockade"
+    },
+    {
+     "id": "side-mission-093-finding-a-place-for-heliolisk",
+     "text": "Side Mission 093 – Finding a Place For Heliolisk"
+    },
+    {
+     "id": "side-mission-094-full-course-of-battles-three-stars",
+     "text": "Side Mission 094 – Full Course Of Battles: Three Stars"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "title": "Parte 22: A História por Trás do Plano de Redesenvolvimento Urbano",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-historia-por-tras-do-plano-de-redesenvolvimento-urbano",
+     "text": "A História por Trás do Plano de Redesenvolvimento Urbano"
+    },
+    {
+     "id": "rogue-mega-evolutions-continuam-aparecendo",
+     "text": "Rogue Mega Evolutions Continuam Aparecendo"
+    },
+    {
+     "id": "main-mission-32-a-rogue-mega-dragonite",
+     "text": "Main Mission 32 – a Rogue Mega Dragonite"
+    },
+    {
+     "id": "main-mission-33-a-rogue-mega-tyranitar",
+     "text": "Main Mission 33 – a Rogue Mega Tyranitar"
+    },
+    {
+     "id": "main-mission-34-a-rogue-mega-starmie",
+     "text": "Main Mission 34 – a Rogue Mega Starmie"
+    },
+    {
+     "id": "o-treinador-misterioso-do-z-a-royale",
+     "text": "O Treinador Misterioso do Z-A Royale"
+    },
+    {
+     "id": "side-mission-095-a-haunting-experience",
+     "text": "Side Mission 095 – a Haunting Experience"
+    },
+    {
+     "id": "side-mission-096-let-us-battle-artistically",
+     "text": "Side Mission 096 – Let Us Battle… Artistically"
+    },
+    {
+     "id": "side-mission-097-stop-the-runaway-whirlipede",
+     "text": "Side Mission 097 – Stop The Runaway Whirlipede!"
+    },
+    {
+     "id": "side-mission-098-jumbo-variety-pumpkaboo",
+     "text": "Side Mission 098 – Jumbo Variety Pumpkaboo"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "title": "Parte 23: Main Mission 35 – Reaching Rank A",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-35-reaching-rank-a",
+     "text": "Main Mission 35 – Reaching Rank A"
+    },
+    {
+     "id": "side-mission-099-pleasing-arons-palate",
+     "text": "Side Mission 099 – Pleasing Aron’s Palate"
+    },
+    {
+     "id": "side-mission-100-starmie-on-high",
+     "text": "Side Mission 100 – Starmie On High"
+    },
+    {
+     "id": "side-mission-101-steadfast-as-steel",
+     "text": "Side Mission 101 – Steadfast as Steel"
+    },
+    {
+     "id": "lysandre-cafe-a-base-da-nouveau-team-flare",
+     "text": "Lysandre Café – a Base da Nouveau Team Flare"
+    },
+    {
+     "id": "lysandre-labs-a-verdade-sobre-o-az",
+     "text": "Lysandre Labs – a Verdade sobre o Az"
+    },
+    {
+     "id": "o-destino-da-eternal-flower-floette",
+     "text": "O Destino da Eternal Flower Floette"
+    },
+    {
+     "id": "side-mission-102-a-chilling-challenge",
+     "text": "Side Mission 102 – a Chilling Challenge"
+    },
+    {
+     "id": "side-mission-103-facing-the-furfrou-league",
+     "text": "Side Mission 103 – Facing The Furfrou League"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "title": "Parte 24: Side Mission 104 – Abuzz About Bug Types",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-104-abuzz-about-bug-types",
+     "text": "Side Mission 104 – Abuzz About Bug Types"
+    },
+    {
+     "id": "side-mission-105-trevenant-the-haunted-elder-tree",
+     "text": "Side Mission 105 – Trevenant, The Haunted Elder Tree!"
+    },
+    {
+     "id": "side-mission-106-klefkis-lost-key",
+     "text": "Side Mission 106 – Klefki’s Lost Key"
+    },
+    {
+     "id": "partida-de-promocao-rank-b-rank-a",
+     "text": "Partida de Promoção – Rank B → Rank A"
+    },
+    {
+     "id": "main-mission-36-prism-towers-dark-turn",
+     "text": "Main Mission 36 – Prism Tower’s Dark Turn"
+    },
+    {
+     "id": "centrico-plaza-prism-tower-destruida",
+     "text": "Centrico Plaza – Prism Tower Destruída"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "title": "Parte 25: Main Mission 37 – Operation Protect Lumiose",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-37-operation-protect-lumiose",
+     "text": "Main Mission 37 – Operation Protect Lumiose"
+    },
+    {
+     "id": "batalha-final-hyperrogue-ange-floette",
+     "text": "Batalha Final – Hyperrogue Ange Floette"
+    },
+    {
+     "id": "main-mission-38-the-future-of-lumiose-city",
+     "text": "Main Mission 38 – The Future Of Lumiose City"
+    },
+    {
+     "id": "side-mission-107-the-worlds-greatest-pikachu",
+     "text": "Side Mission 107 – The World’s Greatest Pikachu!"
+    },
+    {
+     "id": "side-mission-108-alola-raichu",
+     "text": "Side Mission 108 – Alola, Raichu!"
+    },
+    {
+     "id": "side-mission-109-wondrous-self-healing-pokemon",
+     "text": "Side Mission 109 – Wondrous Self-Healing Pokémon"
+    },
+    {
+     "id": "side-mission-110-a-tune-that-beckons-doom",
+     "text": "Side Mission 110 – a Tune That Beckons Doom"
+    },
+    {
+     "id": "side-mission-111-my-adorable-adorable-babies",
+     "text": "Side Mission 111 – MY Adorable, Adorable Babies"
+    },
+    {
+     "id": "side-mission-112-exploring-the-scents-of-spritzee",
+     "text": "Side Mission 112 – Exploring The Scents Of Spritzee"
+    },
+    {
+     "id": "side-mission-113-bergmite-sur-un-avalugg",
+     "text": "Side Mission 113 – Bergmite Sur Un Avalugg"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "title": "Parte 26: Side Mission 114 – a Feather From Skarmory",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "side-mission-114-a-feather-from-skarmory",
+     "text": "Side Mission 114 – a Feather From Skarmory"
+    },
+    {
+     "id": "side-mission-115-tyrantrums-furious-jaws",
+     "text": "Side Mission 115 – Tyrantrum’s Furious Jaws"
+    },
+    {
+     "id": "side-mission-116-show-the-power-of-aurorus",
+     "text": "Side Mission 116 – Show The Power Of Aurorus!"
+    },
+    {
+     "id": "o-desejo-dos-treinadores-rank-a",
+     "text": "O Desejo dos Treinadores Rank A"
+    },
+    {
+     "id": "main-mission-39-the-infinite-z-a-royale",
+     "text": "Main Mission 39 – The Infinite Z-A Royale"
+    },
+    {
+     "id": "wild-zone-20-ruinas-da-prism-tower",
+     "text": "Wild Zone 20 – Ruínas da Prism Tower"
+    },
+    {
+     "id": "side-mission-117-josee-training",
+     "text": "Side Mission 117 – Josée Training"
+    },
+    {
+     "id": "side-mission-118-goodbye-gengar",
+     "text": "Side Mission 118 – Goodbye, Gengar"
+    },
+    {
+     "id": "infinite-z-a-royale-partida-de-recompensa-1",
+     "text": "Infinite Z-A Royale – Partida de Recompensa 1"
+    },
+    {
+     "id": "em-busca-dos-lendarios-de-kalos",
+     "text": "Em Busca dos Lendários de Kalos"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "title": "Parte 27: Main Mission 40 – The One That Gives",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "main-mission-40-the-one-that-gives",
+     "text": "Main Mission 40 – The One That Gives"
+    },
+    {
+     "id": "main-mission-41-the-one-that-takes",
+     "text": "Main Mission 41 – The One That Takes"
+    },
+    {
+     "id": "main-mission-42-to-keep-the-world-in-balance",
+     "text": "Main Mission 42 – To Keep The World In Balance"
+    },
+    {
+     "id": "infinite-z-a-royale-partidas-de-recompensa-de-2-a-15",
+     "text": "Infinite Z-A Royale – Partidas de Recompensa de 2 a 15"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "title": "Parte 28: A Pessoa que Urbain/Taunie Estava Procurando Foi Descoberta!",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-pessoa-que-urbain-taunie-estava-procurando-foi-descoberta",
+     "text": "A Pessoa que Urbain/Taunie Estava Procurando Foi Descoberta!"
+    },
+    {
+     "id": "infinite-z-a-royale-partidas-de-recompensa-de-16-a-20",
+     "text": "Infinite Z-A Royale – Partidas de Recompensa de 16 a 20"
+    },
+    {
+     "id": "infinite-z-a-royale-partidas-de-recompensa-de-21-em-diante",
+     "text": "Infinite Z-A Royale – Partidas de Recompensa de 21 em Diante"
+    },
+    {
+     "id": "side-mission-119-le-super-tournoi-de-jacinthe-o",
+     "text": "Side Mission 119 – Le Super-Tournoi de Jacinthe o"
+    },
+    {
+     "id": "side-mission-ex1-shine-bright-like-a-gemstone",
+     "text": "Side Mission Ex1 – Shine Bright Like a Gemstone"
+    },
+    {
+     "id": "side-mission-ex2-project-m",
+     "text": "Side Mission Ex2 – Project M"
+    },
+    {
+     "id": "mega-dimension",
+     "text": "Mega Dimension"
+    }
+   ]
+  }
+ ],
+ "pdfPages": 0
+}

@@ -82,3 +82,25 @@ conferem os arquivos gerados. Rode depois de mexer nas regras de `convert_guide.
 Coloque os PDFs prontos (comprimidos e com marca d'água, ver `scripts/watermark_pdf.py`) em
 `public/detonados/<slug>/pdf/` e rode a conversão com `--keep-pdfs`: os PDFs de lá são mantidos e só
 `bytes` e `pages` são atualizados no `index.json`.
+
+## Detonados do pokemythology.net (importador)
+
+Os detonados de Let's Go, Sword/Shield, Scarlet/Violet e Legends: Z-A vêm de páginas WordPress salvas pelo
+navegador ("Salvar página como"). O importador converte o HTML para o mesmo formato dos detonados em PDF:
+
+```bash
+.venv-guides/bin/pip install beautifulsoup4 lxml          # além de pymupdf e pillow
+.venv-guides/bin/python scripts/import_pokemythology.py scripts/guides/swsh.json [--offline]
+```
+
+- `source` (no JSON do guia) é o HTML salvo; `assets_dir` é a pasta `_files` da página, quando existir.
+  Imagens que não estão nessa pasta são baixadas do site (cache em `scripts/.cache`, ignorado pelo git) e
+  convertidas para WebP (largura máxima 900 px). Se o servidor entregar um arquivo cortado, o script tenta o
+  proxy de imagens do site e, por último, mantém a parte que existe (e avisa no final).
+- Seções (`<em><u>TÍTULO</u></em>`) viram títulos; blocos "Fulano usa: [ícone] Espécie lv.N" viram **cartões de
+  time** (os ícones vêm do PokéAPI pelo número da Pokédex, nada é copiado do serebii.net); caixas e tabelas de texto
+  viram avisos/tabelas; anúncios são ignorados.
+- Os capítulos são montados agrupando seções (até ~16 mil caracteres ou 10 seções; cada imagem conta como
+  algumas linhas). O catálogo `guides.json` e o índice de busca são atualizados no fim.
+- Não há PDF para esses guias: a página mostra "Ler online" e esconde a seção de download.
+- Testes: `.venv-guides/bin/python -m pytest scripts/tests -q`.

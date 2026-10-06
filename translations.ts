@@ -84,7 +84,8 @@ export const translations = {
         searchPlaceholder: "Search the walkthroughs...",
         noResults: "No results.",
         chapterLabel: "Chapter {n}",
-        zoomImage: "Enlarge image"
+        zoomImage: "Enlarge image",
+        readOnline: "Read online"
     },
     hiddenAbility: "Hidden",
     movesTitle: "Level-up Moves",
@@ -286,7 +287,8 @@ export const translations = {
         searchPlaceholder: "Buscar nos detonados...",
         noResults: "Nenhum resultado.",
         chapterLabel: "Capítulo {n}",
-        zoomImage: "Ampliar imagem"
+        zoomImage: "Ampliar imagem",
+        readOnline: "Ler online"
     },
     hiddenAbility: "Oculta",
     movesTitle: "Golpes por Nível",
@@ -488,7 +490,8 @@ export const translations = {
         searchPlaceholder: "Buscar en las guías...",
         noResults: "Sin resultados.",
         chapterLabel: "Capítulo {n}",
-        zoomImage: "Ampliar imagen"
+        zoomImage: "Ampliar imagen",
+        readOnline: "Leer en línea"
     },
     hiddenAbility: "Oculta",
     movesTitle: "Movimientos por Nivel",
@@ -690,7 +693,8 @@ export const translations = {
         searchPlaceholder: "In den Komplettlösungen suchen...",
         noResults: "Keine Ergebnisse.",
         chapterLabel: "Kapitel {n}",
-        zoomImage: "Bild vergrößern"
+        zoomImage: "Bild vergrößern",
+        readOnline: "Online lesen"
     },
     hiddenAbility: "Versteckt",
     movesTitle: "Attacken nach Level",
@@ -892,7 +896,8 @@ export const translations = {
         searchPlaceholder: "搜索攻略...",
         noResults: "没有结果。",
         chapterLabel: "第{n}章",
-        zoomImage: "放大图片"
+        zoomImage: "放大图片",
+        readOnline: "在线阅读"
     },
     hiddenAbility: "隐藏",
     movesTitle: "升级招式",
@@ -1094,7 +1099,8 @@ export const translations = {
         searchPlaceholder: "攻略を検索...",
         noResults: "結果がありません。",
         chapterLabel: "第{n}章",
-        zoomImage: "画像を拡大"
+        zoomImage: "画像を拡大",
+        readOnline: "オンラインで読む"
     },
     hiddenAbility: "隠れ特性",
     movesTitle: "レベルアップわざ",

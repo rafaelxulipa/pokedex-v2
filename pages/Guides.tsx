@@ -64,10 +64,14 @@ const Guides: React.FC = () => {
                 <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-2">{guide.title}</h2>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex-1">{guide.description}</p>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-400">{guide.chapters} {t.guides.chapters.toLowerCase()} · {guide.pdfPages} {t.guides.pages}</span>
-                  <span className="flex items-center gap-1.5 font-bold" style={{ color: guide.accent }}>
-                    <Download size={14} /> {t.guides.freePdf}
-                  </span>
+                  <span className="text-gray-400">{guide.chapters} {t.guides.chapters.toLowerCase()}{guide.pdfPages > 0 ? ` · ${guide.pdfPages} ${t.guides.pages}` : ''}</span>
+                  {guide.pdfPages > 0 ? (
+                    <span className="flex items-center gap-1.5 font-bold" style={{ color: guide.accent }}>
+                      <Download size={14} /> {t.guides.freePdf}
+                    </span>
+                  ) : (
+                    <span className="font-bold" style={{ color: guide.accent }}>{t.guides.readOnline}</span>
+                  )}
                 </div>
               </div>
             </Link>

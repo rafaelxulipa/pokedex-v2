@@ -1,0 +1,1511 @@
+{
+ "slug": "scarlet-violet",
+ "title": "Detonado Pokémon Scarlet & Violet",
+ "subtitle": "Paldea livre: as três histórias, ginásios, Team Star e conteúdo pós-jogo",
+ "console": "Nintendo Switch 1 e 2",
+ "description": "Detonado completo em português de Pokémon Scarlet e Violet, com capturas de tela, os times dos líderes e rivais e as três linhas de história de Paldea.",
+ "credit": "Texto original e organização: Pokémon Mythology · pokemythology.net",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "",
+ "accent": "#e0402f",
+ "cover": "cover.webp",
+ "downloads": [],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Parte 1: Região de Paldea – Seu Primeiro Dia na Escola",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "regiao-de-paldea-seu-primeiro-dia-na-escola",
+     "text": "Região de Paldea – Seu Primeiro Dia na Escola"
+    },
+    {
+     "id": "cabo-poco-o-inicio-de-sua-jornada",
+     "text": "Cabo Poco – o Início de Sua Jornada"
+    },
+    {
+     "id": "private-beach-a-batalha-com-nemona",
+     "text": "Private Beach – a Batalha com Nemona"
+    },
+    {
+     "id": "poco-path-o-caminho-para-o-farol-do-sul-de-paldea",
+     "text": "Poco Path – o Caminho para o Farol do Sul de Paldea"
+    },
+    {
+     "id": "inleth-grotto-o-encontro-com-koraidon-miraidon",
+     "text": "Inleth Grotto – o Encontro com Koraidon/Miraidon"
+    },
+    {
+     "id": "poco-path-lighthouse-o-encontro-com-arven",
+     "text": "Poco Path Lighthouse – o Encontro com Arven"
+    },
+    {
+     "id": "south-province-area-one",
+     "text": "South Province (area One)"
+    },
+    {
+     "id": "los-platos-a-cidade-dos-iniciantes",
+     "text": "Los Platos – a Cidade dos Iniciantes"
+    },
+    {
+     "id": "mass-outbreaks",
+     "text": "Mass Outbreaks"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Parte 2: Mesagoza (south) – o Caminho para a Escola",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "mesagoza-south-o-caminho-para-a-escola",
+     "text": "Mesagoza (south) – o Caminho para a Escola"
+    },
+    {
+     "id": "mesagoza-west-e-mesagoza-east",
+     "text": "Mesagoza (west) e Mesagoza (east)"
+    },
+    {
+     "id": "mesagoza-o-encontro-com-a-team-star",
+     "text": "Mesagoza – o Encontro com a Team Star"
+    },
+    {
+     "id": "conhecendo-a-naranja-uva-academy",
+     "text": "Conhecendo a Naranja/Uva Academy"
+    },
+    {
+     "id": "caca-ao-tesouro-e-as-tres-linhas-de-historia",
+     "text": "Caça ao Tesouro e as Três Linhas de História"
+    },
+    {
+     "id": "conseguindo-a-sua-montaria",
+     "text": "Conseguindo a Sua Montaria"
+    },
+    {
+     "id": "para-onde-eu-devo-ir-agora",
+     "text": "Para Onde Eu Devo Ir Agora?"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Parte 3: Dicas Importantes ao Explorar o Mapa",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "dicas-importantes-ao-explorar-o-mapa",
+     "text": "Dicas Importantes ao Explorar o Mapa"
+    },
+    {
+     "id": "sistema-de-dia-e-noite",
+     "text": "Sistema de Dia e Noite"
+    },
+    {
+     "id": "tera-raid-battles",
+     "text": "Tera Raid Battles"
+    },
+    {
+     "id": "pokemons-selvagens-terastalizados",
+     "text": "Pokémons Selvagens Terastalizados"
+    },
+    {
+     "id": "fazendo-picnics",
+     "text": "Fazendo Picnics"
+    },
+    {
+     "id": "south-province-area-two",
+     "text": "South Province (area Two)"
+    },
+    {
+     "id": "grand-olive-orchard-o-pomar-no-alto-da-montanha",
+     "text": "Grand Olive Orchard – o Pomar no Alto da Montanha"
+    },
+    {
+     "id": "cortondo-bug-type-gym",
+     "text": "Cortondo – Bug-Type GYM"
+    },
+    {
+     "id": "cortondo-olive-roll-challenge",
+     "text": "Cortondo Olive Roll Challenge"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Parte 4: South Province (area Three)",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "south-province-area-three",
+     "text": "South Province (area Three)"
+    },
+    {
+     "id": "klawf-the-stony-cliff-titan-rock",
+     "text": "Klawf, The Stony Cliff Titan (rock)"
+    },
+    {
+     "id": "capturando-o-titan-klawf",
+     "text": "Capturando o Titan Klawf"
+    },
+    {
+     "id": "artazon-grass-type-gym",
+     "text": "Artazon – Grass-Type GYM"
+    },
+    {
+     "id": "artazon-sunflora-hide-seek",
+     "text": "Artazon Sunflora Hide & Seek"
+    },
+    {
+     "id": "south-province-area-five",
+     "text": "South Province (area Five)"
+    },
+    {
+     "id": "secluded-beach-a-praia-isolada",
+     "text": "Secluded Beach – a Praia Isolada"
+    },
+    {
+     "id": "west-province-area-one-central",
+     "text": "West Province (area One) – Central"
+    },
+    {
+     "id": "bombirdier-the-open-sky-titan-flying",
+     "text": "Bombirdier, The Open SKY Titan (flying)"
+    },
+    {
+     "id": "capturando-o-titan-bombardier",
+     "text": "Capturando o Titan Bombardier"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Parte 5: West Province (area One) – North",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "west-province-area-one-north",
+     "text": "West Province (area One) – North"
+    },
+    {
+     "id": "segin-squads-base-team-star-dark-crew",
+     "text": "Segin Squad’s Base – Team Star Dark Crew"
+    },
+    {
+     "id": "south-province-area-four",
+     "text": "South Province (area Four)"
+    },
+    {
+     "id": "south-paldean-sea",
+     "text": "South Paldean Sea"
+    },
+    {
+     "id": "east-province-area-one",
+     "text": "East Province (area One)"
+    },
+    {
+     "id": "a-batalha-com-nemona-3-ginasio",
+     "text": "A Batalha com Nemona – 3º Ginásio"
+    },
+    {
+     "id": "levincia-electric-type-gym",
+     "text": "Levincia – Electric-Type GYM"
+    },
+    {
+     "id": "schedar-squads-base-team-star-fire-crew",
+     "text": "Schedar Squad’s Base – Team Star Fire Crew"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Parte 6: East Province (area Two)",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "east-province-area-two",
+     "text": "East Province (area Two)"
+    },
+    {
+     "id": "levincia-lighthouse-o-farol-do-leste-de-paldea",
+     "text": "Levincia Lighthouse – o Farol do Leste de Paldea"
+    },
+    {
+     "id": "east-province-area-three",
+     "text": "East Province (area Three)"
+    },
+    {
+     "id": "orthworm-the-lurking-steel-titan-steel",
+     "text": "Orthworm, The Lurking Steel Titan (steel)"
+    },
+    {
+     "id": "capturando-o-titan-orthworm",
+     "text": "Capturando o Titan Orthworm"
+    },
+    {
+     "id": "million-volt-skyline-o-local-com-vista-pro-horizonte",
+     "text": "Million Volt Skyline – o Local com Vista Pro Horizonte"
+    },
+    {
+     "id": "zapapico-a-cidade-dos-mineradores",
+     "text": "Zapapico – a Cidade dos Mineradores"
+    },
+    {
+     "id": "cascarrafa-e-o-teste-do-ginasio",
+     "text": "Cascarrafa e o Teste do Ginásio"
+    },
+    {
+     "id": "asado-desert-passando-pelas-dunas-do-deserto",
+     "text": "Asado Desert – Passando pelas Dunas do Deserto"
+    },
+    {
+     "id": "porto-marinada-lighthouse-o-farol-do-oeste-de-paldea",
+     "text": "Porto Marinada Lighthouse – o Farol do Oeste de Paldea"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Parte 7: Porto Marinada – a Cidade dos Leilões",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "porto-marinada-a-cidade-dos-leiloes",
+     "text": "Porto Marinada – a Cidade dos Leilões"
+    },
+    {
+     "id": "cascarrafa-water-type-gym",
+     "text": "Cascarrafa – Water-Type GYM"
+    },
+    {
+     "id": "participe-dos-leiloes-de-porto-marinada",
+     "text": "Participe dos Leilões de Porto Marinada"
+    },
+    {
+     "id": "navi-squads-base-team-star-poison-crew",
+     "text": "Navi Squad’s Base – Team Star Poison Crew"
+    },
+    {
+     "id": "tagtree-thicket-o-matagal-das-arvores-grafitadas",
+     "text": "Tagtree Thicket – o Matagal das Árvores Grafitadas"
+    },
+    {
+     "id": "dalizapa-passage-a-caverna-entre-medali-e-zapapico",
+     "text": "Dalizapa Passage – a Caverna Entre Medali e Zapapico"
+    },
+    {
+     "id": "medali-normal-type-gym",
+     "text": "Medali – Normal-Type GYM"
+    },
+    {
+     "id": "a-batalha-com-nemona-5-ginasio",
+     "text": "A Batalha com Nemona – 5º Ginásio"
+    },
+    {
+     "id": "mudando-o-tipo-tera-de-seu-pokemon",
+     "text": "Mudando o Tipo Tera de Seu Pokémon"
+    },
+    {
+     "id": "west-province-area-three",
+     "text": "West Province (area Three)"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Parte 8: Glaseado’s Grasp – o Punho da Montanha de Gelo",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "glaseados-grasp-o-punho-da-montanha-de-gelo",
+     "text": "Glaseado’s Grasp – o Punho da Montanha de Gelo"
+    },
+    {
+     "id": "montenevera-ghost-type-gym",
+     "text": "Montenevera – Ghost-Type GYM"
+    },
+    {
+     "id": "colonnade-hollow-as-colunas-de-pedra",
+     "text": "Colonnade Hollow – as Colunas de Pedra"
+    },
+    {
+     "id": "west-province-area-two",
+     "text": "West Province (area Two)"
+    },
+    {
+     "id": "great-tusk-iron-treads-the-quaking-earth-titan-ground",
+     "text": "Great Tusk / Iron Treads, The Quaking Earth Titan (ground)"
+    },
+    {
+     "id": "capturando-o-titan-great-tusk-iron-treads",
+     "text": "Capturando o Titan Great Tusk / Iron Treads"
+    },
+    {
+     "id": "alfornada-cavern-escalando-a-caverna",
+     "text": "Alfornada Cavern – Escalando a Caverna"
+    },
+    {
+     "id": "south-province-area-six",
+     "text": "South Province (area Six)"
+    },
+    {
+     "id": "leaking-tower-of-paldea-a-torre-da-cachoeira",
+     "text": "Leaking Tower Of Paldea – a Torre da Cachoeira"
+    },
+    {
+     "id": "a-batalha-com-nemona-7-ginasio",
+     "text": "A Batalha com Nemona – 7º Ginásio"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Parte 9: Alfornada – Psychic-Type GYM",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "alfornada-psychic-type-gym",
+     "text": "Alfornada – Psychic-Type GYM"
+    },
+    {
+     "id": "alfornada-esp",
+     "text": "Alfornada Esp"
+    },
+    {
+     "id": "south-province-area-four",
+     "text": "South Province (area Four)"
+    },
+    {
+     "id": "glaseado-mountain-a-montanha-de-gelo",
+     "text": "Glaseado Mountain – a Montanha de Gelo"
+    },
+    {
+     "id": "paldeas-highest-peak-o-pico-mais-alto-de-paldea",
+     "text": "Paldea’s Highest Peak – o Pico Mais Alto de Paldea"
+    },
+    {
+     "id": "glaseado-mountain-ice-type-gym",
+     "text": "Glaseado Mountain – Ice-Type GYM"
+    },
+    {
+     "id": "glaseado-snow-slope-run",
+     "text": "Glaseado Snow Slope Run"
+    },
+    {
+     "id": "north-province-area-three",
+     "text": "North Province (area Three)"
+    },
+    {
+     "id": "ruchbah-squads-base-team-star-fairy-crew",
+     "text": "Ruchbah Squad’s Base – Team Star Fairy Crew"
+    },
+    {
+     "id": "north-province-area-three-lighthouse-o-farol-do-norte-de-paldea",
+     "text": "North Province (area Three) Lighthouse – o Farol do Norte de Paldea"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Parte 10: Casseroya Falls e Casseroya Lake",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "casseroya-falls-e-casseroya-lake",
+     "text": "Casseroya Falls e Casseroya Lake"
+    },
+    {
+     "id": "socarrat-trail-e-gracia-stones",
+     "text": "Socarrat Trail e Gracia Stones"
+    },
+    {
+     "id": "dondozo-tatsugiri-the-false-dragon-titan-dragon",
+     "text": "Dondozo / Tatsugiri, The False Dragon Titan (dragon)"
+    },
+    {
+     "id": "north-province-area-one",
+     "text": "North Province (area One)"
+    },
+    {
+     "id": "north-province-area-two-e-fury-falls",
+     "text": "North Province (area Two) e Fury Falls"
+    },
+    {
+     "id": "caph-squads-base-team-star-fighting-crew",
+     "text": "Caph Squad’s Base – Team Star Fighting Crew"
+    },
+    {
+     "id": "removendo-as-estacas-de-paldea",
+     "text": "Removendo as Estacas de Paldea"
+    },
+    {
+     "id": "encontrando-as-estacas-verdes",
+     "text": "Encontrando as Estacas Verdes"
+    },
+    {
+     "id": "groundblight-shrine-ting-lu",
+     "text": "Groundblight Shrine: Ting-Lu"
+    },
+    {
+     "id": "encontrando-as-estacas-amarelas",
+     "text": "Encontrando as Estacas Amarelas"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Parte 11: Icerend Shrine: Chien-Pao",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "icerend-shrine-chien-pao",
+     "text": "Icerend Shrine: Chien-Pao"
+    },
+    {
+     "id": "encontrando-as-estacas-roxas",
+     "text": "Encontrando as Estacas Roxas"
+    },
+    {
+     "id": "grasswither-shrine-wo-chien",
+     "text": "Grasswither Shrine: Wo-Chien"
+    },
+    {
+     "id": "encontrando-as-estacas-azuis",
+     "text": "Encontrando as Estacas Azuis"
+    },
+    {
+     "id": "firescourge-shrine-chi-yu",
+     "text": "Firescourge Shrine: Chi-Yu"
+    },
+    {
+     "id": "concluindo-as-tres-linhas-de-historia",
+     "text": "Concluindo as Três Linhas de História"
+    },
+    {
+     "id": "conclusao-path-of-legends",
+     "text": "Conclusão – Path Of Legends"
+    },
+    {
+     "id": "conclusao-starfall-street",
+     "text": "Conclusão – Starfall Street"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Parte 12: Liga Pokémon – Elite 4",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "liga-pokemon-elite-4",
+     "text": "Liga Pokémon – Elite 4"
+    },
+    {
+     "id": "conclusao-victory-road",
+     "text": "Conclusão – Victory Road"
+    },
+    {
+     "id": "great-crater-of-paldea-area-zero",
+     "text": "Great Crater Of Paldea – Area Zero"
+    },
+    {
+     "id": "zero-gate-the-way-home",
+     "text": "Zero Gate – The Way Home"
+    },
+    {
+     "id": "estacao-de-pesquisa-1",
+     "text": "Estação de Pesquisa 1"
+    },
+    {
+     "id": "estacao-de-pesquisa-2",
+     "text": "Estação de Pesquisa 2"
+    },
+    {
+     "id": "estacao-de-pesquisa-3",
+     "text": "Estação de Pesquisa 3"
+    },
+    {
+     "id": "estacao-de-pesquisa-4",
+     "text": "Estação de Pesquisa 4"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Parte 13: Profundezas da Area Zero",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "profundezas-da-area-zero",
+     "text": "Profundezas da Area Zero"
+    },
+    {
+     "id": "zero-lab",
+     "text": "Zero Lab"
+    },
+    {
+     "id": "maquina-do-tempo",
+     "text": "Máquina do Tempo"
+    },
+    {
+     "id": "o-guardiao-do-paraiso",
+     "text": "O Guardião do Paraíso"
+    },
+    {
+     "id": "hall-of-fame-e-pos-game",
+     "text": "Hall Of Fame e Pós-Game"
+    },
+    {
+     "id": "capturando-koraidon-miraidon",
+     "text": "Capturando Koraidon/Miraidon"
+    },
+    {
+     "id": "conhecendo-a-escola-naranja-academy-uva-academy",
+     "text": "Conhecendo a Escola: Naranja Academy / Uva Academy"
+    },
+    {
+     "id": "fazendo-as-aulas-da-escola",
+     "text": "Fazendo as Aulas da Escola"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "title": "Parte 14: Gabarito das Provas de Biologia (biology)",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "gabarito-das-provas-de-biologia-biology",
+     "text": "Gabarito das Provas de Biologia (biology)"
+    },
+    {
+     "id": "gabarito-das-provas-de-matematica-math",
+     "text": "Gabarito das Provas de Matemática (math)"
+    },
+    {
+     "id": "gabarito-das-provas-de-historia-history",
+     "text": "Gabarito das Provas de História (history)"
+    },
+    {
+     "id": "gabarito-das-provas-de-idomas-languages",
+     "text": "Gabarito das Provas de Idomas (languages)"
+    },
+    {
+     "id": "gabarito-das-provas-de-estudos-de-batalha-battle-studies",
+     "text": "Gabarito das Provas de Estudos de Batalha (battle Studies)"
+    },
+    {
+     "id": "gabarito-das-provas-de-arte-art",
+     "text": "Gabarito das Provas de Arte (art)"
+    },
+    {
+     "id": "gabarito-das-provas-de-economia-domestica-home-ec",
+     "text": "Gabarito das Provas de Economia Doméstica (home Ec)"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-os-professores-da-escola",
+     "text": "Fortalecendo a Amizade com os Professores da Escola"
+    },
+    {
+     "id": "completando-a-pokedex-para-jacq",
+     "text": "Completando a Pokédex para Jacq"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-tyme",
+     "text": "Fortalecendo a Amizade com Tyme"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "title": "Parte 15: Fortalecendo a Amizade com Raifort",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "fortalecendo-a-amizade-com-raifort",
+     "text": "Fortalecendo a Amizade com Raifort"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-salvatore",
+     "text": "Fortalecendo a Amizade com Salvatore"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-dendra",
+     "text": "Fortalecendo a Amizade com Dendra"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-hassel",
+     "text": "Fortalecendo a Amizade com Hassel"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-saguaro",
+     "text": "Fortalecendo a Amizade com Saguaro"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-miriam",
+     "text": "Fortalecendo a Amizade com Miriam"
+    },
+    {
+     "id": "fortalecendo-a-amizade-com-clavell",
+     "text": "Fortalecendo a Amizade com Clavell"
+    },
+    {
+     "id": "a-revanche-contra-a-team-star",
+     "text": "A Revanche Contra a Team Star"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "title": "Parte 16: A Revanche Contra os Líderes de Ginásio",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "a-revanche-contra-os-lideres-de-ginasio",
+     "text": "A Revanche Contra os Líderes de Ginásio"
+    },
+    {
+     "id": "academy-ace-tournament",
+     "text": "Academy Ace Tournament"
+    },
+    {
+     "id": "visitando-os-dormitorios-dos-seus-amigos",
+     "text": "Visitando os Dormitórios dos Seus Amigos"
+    },
+    {
+     "id": "dormitorio-de-nemona",
+     "text": "Dormitório de Nemona"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "title": "Parte 17: Dormitório de Arven",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "dormitorio-de-arven",
+     "text": "Dormitório de Arven"
+    },
+    {
+     "id": "dormitorio-de-penny",
+     "text": "Dormitório de Penny"
+    },
+    {
+     "id": "the-hidden-treasure-of-area-zero",
+     "text": "The Hidden Treasure Of Area Zero"
+    },
+    {
+     "id": "the-teal-mask-a-1-parte-da-dlc",
+     "text": "The Teal Mask – a 1ª Parte da DLC"
+    },
+    {
+     "id": "kitakami-a-terra-dos-campos-pitorescos-e-dos-arrozais",
+     "text": "Kitakami – a Terra dos Campos Pitorescos e dos Arrozais"
+    },
+    {
+     "id": "kitakami-road-a-estrada-para-o-vilarejo",
+     "text": "Kitakami Road – a Estrada para o Vilarejo"
+    },
+    {
+     "id": "sistema-de-dia-e-noite-em-kitakami",
+     "text": "Sistema de Dia e Noite em Kitakami"
+    },
+    {
+     "id": "mossui-town-visita-ao-centro-comunitario",
+     "text": "Mossui Town – Visita ao Centro Comunitário"
+    },
+    {
+     "id": "tirando-fotos-nas-placas-de-kitakami",
+     "text": "Tirando Fotos nas Placas de Kitakami"
+    },
+    {
+     "id": "apple-hills-atravessando-as-colinas",
+     "text": "Apple Hills – Atravessando as Colinas"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "title": "Parte 18: Loyalty Plaza – a Primeira Placa",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "loyalty-plaza-a-primeira-placa",
+     "text": "Loyalty Plaza – a Primeira Placa"
+    },
+    {
+     "id": "revelers-road-conseguindo-o-inicial-de-sinnoh",
+     "text": "Reveler’s Road – Conseguindo o Inicial de Sinnoh"
+    },
+    {
+     "id": "kitakami-hall-a-segunda-placa",
+     "text": "Kitakami Hall – a Segunda Placa"
+    },
+    {
+     "id": "onis-maw-procurando-a-caverna-do-ogro",
+     "text": "Oni’s Maw – Procurando a Caverna do Ogro"
+    },
+    {
+     "id": "dreaded-den-a-batalha-com-kieran",
+     "text": "Dreaded Den – a Batalha com Kieran"
+    },
+    {
+     "id": "a-casa-de-kieran-e-carmine-conseguindo-as-roupas-do-festival",
+     "text": "A Casa de Kieran e Carmine – Conseguindo as Roupas do Festival"
+    },
+    {
+     "id": "festival-de-mascaras-de-kitakami-e-o-joguinho-do-ogro",
+     "text": "Festival de Máscaras de Kitakami e o Joguinho do Ogro"
+    },
+    {
+     "id": "a-verdadeira-historia-de-ogerpon",
+     "text": "A Verdadeira História de Ogerpon"
+    },
+    {
+     "id": "as-6-maravilhas-de-kitakami",
+     "text": "As 6 Maravilhas de Kitakami"
+    },
+    {
+     "id": "mossfell-confluence-a-confluencia-dos-rios-de-kitakami",
+     "text": "Mossfell Confluence – a Confluência dos Rios de Kitakami"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "title": "Parte 19: Fellhorn Gorge e Fallen Horn – as Ilhas Rochosas",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "fellhorn-gorge-e-fallen-horn-as-ilhas-rochosas",
+     "text": "Fellhorn Gorge e Fallen Horn – as Ilhas Rochosas"
+    },
+    {
+     "id": "oni-mountain-e-infernal-pass-o-caminho-com-o-terreno-rochoso",
+     "text": "Oni Mountain e Infernal Pass – o Caminho com o Terreno Rochoso"
+    },
+    {
+     "id": "oni-mountain-e-crystal-pool-o-lago-do-cristal",
+     "text": "Oni Mountain e Crystal Pool – o Lago do Cristal"
+    },
+    {
+     "id": "wistful-fields-e-wisteria-pond-as-aguas-da-vida-eterna",
+     "text": "Wistful Fields e Wisteria Pond – as Águas da Vida Eterna"
+    },
+    {
+     "id": "kitakami-wilds-e-gracious-stones-o-circulo-de-pedra",
+     "text": "Kitakami Wilds e Gracious Stones – o Círculo de Pedra"
+    },
+    {
+     "id": "paradise-barrens-a-terceira-placa",
+     "text": "Paradise Barrens – a Terceira Placa"
+    },
+    {
+     "id": "crystal-pool-em-busca-do-crystal-cluster",
+     "text": "Crystal Pool – em Busca do Crystal Cluster"
+    },
+    {
+     "id": "loyalty-plaza-o-despertar-dos-tres-leais",
+     "text": "Loyalty Plaza – o Despertar dos Três Leais"
+    },
+    {
+     "id": "kitakami-hall-as-mascaras-dos-tres-leais",
+     "text": "Kitakami Hall – as Máscaras dos Três Leais"
+    },
+    {
+     "id": "dreaded-den-proteja-ogerpon",
+     "text": "Dreaded Den – Proteja Ogerpon"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "title": "Parte 20: Mossui Town – Descobrindo a Localização dos Três Leais",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "mossui-town-descobrindo-a-localizacao-dos-tres-leais",
+     "text": "Mossui Town – Descobrindo a Localização dos Três Leais"
+    },
+    {
+     "id": "paradise-barrens-the-titanic-okidogi",
+     "text": "Paradise Barrens – The Titanic Okidogi"
+    },
+    {
+     "id": "wisteria-pound-the-titanic-munkidori",
+     "text": "Wisteria Pound – The Titanic Munkidori"
+    },
+    {
+     "id": "fellhorn-gorge-the-titanic-fezandipiti",
+     "text": "Fellhorn Gorge – The Titanic Fezandipiti"
+    },
+    {
+     "id": "dreaded-den-a-batalha-da-ogerpon",
+     "text": "Dreaded Den – a Batalha da Ogerpon"
+    },
+    {
+     "id": "loyalty-plaza-a-batalha-com-carmine",
+     "text": "Loyalty Plaza – a Batalha com Carmine"
+    },
+    {
+     "id": "em-busca-dos-tres-leais",
+     "text": "Em Busca dos Três Leais"
+    },
+    {
+     "id": "conseguindo-bastante-dinheiro-com-billy-onare",
+     "text": "Conseguindo Bastante Dinheiro com Billy & O’nare"
+    },
+    {
+     "id": "billy-onare-1-encontro-apple-hills-kitakami",
+     "text": "Billy & O’nare – 1º Encontro – Apple Hills (kitakami)"
+    },
+    {
+     "id": "billy-onare-2-encontro-north-province-area-two-paldea",
+     "text": "Billy & O’nare – 2º Encontro – North Province Area Two (paldea)"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "title": "Parte 21: Billy & O’nare – 3º Encontro – South Province Area Five (paldea)",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "billy-onare-3-encontro-south-province-area-five-paldea",
+     "text": "Billy & O’nare – 3º Encontro – South Province Area Five (paldea)"
+    },
+    {
+     "id": "billy-onare-4-encontro-apple-hills-kitakami",
+     "text": "Billy & O’nare – 4º Encontro – Apple Hills (kitakami)"
+    },
+    {
+     "id": "billy-onare-5-encontro-casseroya-lake-paldea",
+     "text": "Billy & O’nare – 5º Encontro – Casseroya Lake (paldea)"
+    },
+    {
+     "id": "billy-onare-6-encontro-glaseado-mountain-paldea",
+     "text": "Billy & O’nare – 6º Encontro – Glaseado Mountain (paldea)"
+    },
+    {
+     "id": "billy-onare-7-encontro-great-crater-of-paldea-paldea",
+     "text": "Billy & O’nare – 7º Encontro – Great Crater Of Paldea (paldea)"
+    },
+    {
+     "id": "contribua-para-a-campanha-de-restauracao-do-loyalty-plaza",
+     "text": "Contribua para a Campanha de Restauração do Loyalty Plaza"
+    },
+    {
+     "id": "desafiando-o-kitakami-ogre-clan",
+     "text": "Desafiando o Kitakami Ogre Clan"
+    },
+    {
+     "id": "apple-hills-raikiri-a-especialista-no-tipo-eletrico",
+     "text": "Apple Hills – Raikiri, a Especialista no Tipo Elétrico"
+    },
+    {
+     "id": "mossfell-confluence-masamune-o-especilista-no-tipo-fada",
+     "text": "Mossfell Confluence – Masamune, o Especilista no Tipo Fada"
+    },
+    {
+     "id": "fellhorn-gorge-hasebe-a-especialista-no-clima-de-chuva",
+     "text": "Fellhorn Gorge – Hasebe, a Especialista no Clima de Chuva"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "title": "Parte 22: Paradise Barrens – Kanemitsu, a Especialista no Clima Ensolarado",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "paradise-barrens-kanemitsu-a-especialista-no-clima-ensolarado",
+     "text": "Paradise Barrens – Kanemitsu, a Especialista no Clima Ensolarado"
+    },
+    {
+     "id": "infernal-pass-kunitsuna-o-especialista-no-tipo-pedra-e-gelo",
+     "text": "Infernal Pass – Kunitsuna, o Especialista no Tipo Pedra e Gelo"
+    },
+    {
+     "id": "oni-mountain-munechika-o-especialista-no-tipo-normal",
+     "text": "Oni Mountain – Munechika, o Especialista no Tipo Normal"
+    },
+    {
+     "id": "crystal-pool-kotetsu-a-especialista-no-tipo-lutador",
+     "text": "Crystal Pool – Kotetsu, a Especialista no Tipo Lutador"
+    },
+    {
+     "id": "kitakami-hall-muramasa-o-especialista-no-tipo-fantasma-e-noturno",
+     "text": "Kitakami Hall – Muramasa, o Especialista no Tipo Fantasma e Noturno"
+    },
+    {
+     "id": "perrin-e-a-fera-da-lua-de-sangue",
+     "text": "Perrin e a Fera da Lua de Sangue"
+    },
+    {
+     "id": "timeless-woods-o-ursaluna-da-lua-de-sangue",
+     "text": "Timeless Woods – o Ursaluna da Lua de Sangue"
+    },
+    {
+     "id": "hisuian-growlithe-um-presente-de-perrin",
+     "text": "Hisuian Growlithe – um Presente de Perrin"
+    },
+    {
+     "id": "complete-a-pokedex-de-kitakami-para-jacq",
+     "text": "Complete a Pokédex de Kitakami para Jacq"
+    },
+    {
+     "id": "the-indigo-disk-a-2-parte-da-dlc",
+     "text": "The Indigo Disk – a 2ª Parte da DLC"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "title": "Parte 23: Blueberry Academy – a Escola da Região de Unova",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "blueberry-academy-a-escola-da-regiao-de-unova",
+     "text": "Blueberry Academy – a Escola da Região de Unova"
+    },
+    {
+     "id": "terarium-o-parque-natural-que-fica-debaixo-dagua",
+     "text": "Terarium – o Parque Natural que Fica Debaixo D’água"
+    },
+    {
+     "id": "sistema-de-dia-e-noite-no-terarium",
+     "text": "Sistema de Dia e Noite no Terarium"
+    },
+    {
+     "id": "uma-aula-no-coastal-biome",
+     "text": "Uma Aula no Coastal Biome"
+    },
+    {
+     "id": "central-plaza-reencontro-com-carmine",
+     "text": "Central Plaza – Reencontro com Carmine"
+    },
+    {
+     "id": "league-club-conhecendo-o-clube-da-bb-league",
+     "text": "League Club – Conhecendo o Clube da BB League"
+    },
+    {
+     "id": "seu-dormitorio-na-blueberry-academy",
+     "text": "Seu Dormitório na Blueberry Academy"
+    },
+    {
+     "id": "um-encontro-com-drayton",
+     "text": "Um Encontro com Drayton"
+    },
+    {
+     "id": "se-inscrevendo-na-bb-league",
+     "text": "Se Inscrevendo na BB League"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "title": "Parte 24: Plazas, Rest Areas e Outdoor Classrooms",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "plazas-rest-areas-e-outdoor-classrooms",
+     "text": "Plazas, Rest Areas e Outdoor Classrooms"
+    },
+    {
+     "id": "bb-quests-conseguindo-bp",
+     "text": "BB Quests – Conseguindo BP"
+    },
+    {
+     "id": "atenda-os-pedidos-do-quadro-de-apoio",
+     "text": "Atenda os Pedidos do Quadro de Apoio"
+    },
+    {
+     "id": "fabricando-itens-na-item-printer",
+     "text": "Fabricando Itens na Item Printer"
+    },
+    {
+     "id": "conseguindo-os-iniciais-de-kanto-ate-galar",
+     "text": "Conseguindo os Iniciais de Kanto até Galar"
+    },
+    {
+     "id": "elite-4-da-bb-league",
+     "text": "Elite 4 da BB League"
+    },
+    {
+     "id": "savanna-plaza-a-prova-do-crispin-sanduiche-picante",
+     "text": "Savanna Plaza – a Prova do Crispin – Sanduíche Picante"
+    },
+    {
+     "id": "canyon-plaza-a-prova-da-amarys-hora-de-voar",
+     "text": "Canyon Plaza – a Prova da Amarys – Hora de Voar"
+    },
+    {
+     "id": "conseguindo-mais-bp-repetindo-a-prova-da-amarys",
+     "text": "Conseguindo Mais BP Repetindo a Prova da Amarys"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "title": "Parte 25: Coastal Plaza – a Prova da Lacey – Quiz Pokémon",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "coastal-plaza-a-prova-da-lacey-quiz-pokemon",
+     "text": "Coastal Plaza – a Prova da Lacey – Quiz Pokémon"
+    },
+    {
+     "id": "polar-plaza-a-prova-do-drayton-batalhas-so-com-pokemons-do-terarium",
+     "text": "Polar Plaza – a Prova do Drayton – Batalhas Só com Pokémons do Terarium"
+    },
+    {
+     "id": "kieran-o-campeao-da-bb-league",
+     "text": "Kieran – o Campeão da BB League"
+    },
+    {
+     "id": "o-pedido-de-briar",
+     "text": "O Pedido de Briar"
+    },
+    {
+     "id": "nova-expedicao-de-volta-a-area-zero",
+     "text": "Nova Expedição – de Volta a Area Zero"
+    },
+    {
+     "id": "area-zero-underdepths",
+     "text": "Area Zero Underdepths"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "title": "Parte 26: Terapagos – o Tesouro Escondido da Area Zero",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "terapagos-o-tesouro-escondido-da-area-zero",
+     "text": "Terapagos – o Tesouro Escondido da Area Zero"
+    },
+    {
+     "id": "pokemons-com-o-tipo-tera-stellar-no-terarium",
+     "text": "Pokémons com o Tipo Tera Stellar no Terarium"
+    },
+    {
+     "id": "voando-livremente-com-koraidon-miraidon",
+     "text": "Voando Livremente com Koraidon/Miraidon"
+    },
+    {
+     "id": "special-coaches-convidando-os-amigos-de-paldea",
+     "text": "Special Coaches – Convidando os Amigos de Paldea"
+    },
+    {
+     "id": "special-coaches-batalhando-com-os-lideres-de-ginasio",
+     "text": "Special Coaches – Batalhando com os Líderes de Ginásio"
+    },
+    {
+     "id": "special-coaches-troca-com-os-lideres-de-ginasio",
+     "text": "Special Coaches – Troca com os Líderes de Ginásio"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "title": "Parte 27: Special Coaches – Batalhando com a Elite 4 da BB League",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "special-coaches-batalhando-com-a-elite-4-da-bb-league",
+     "text": "Special Coaches – Batalhando com a Elite 4 da BB League"
+    },
+    {
+     "id": "special-coaches-troca-com-a-elite-4-da-bb-league",
+     "text": "Special Coaches – Troca com a Elite 4 da BB League"
+    },
+    {
+     "id": "special-coaches-batalhando-com-clavell-e-jacq",
+     "text": "Special Coaches – Batalhando com Clavell e Jacq"
+    },
+    {
+     "id": "special-coaches-troca-com-clavell-e-jacq",
+     "text": "Special Coaches – Troca com Clavell e Jacq"
+    },
+    {
+     "id": "special-coaches-batalhando-com-os-professores-de-paldea",
+     "text": "Special Coaches – Batalhando com os Professores de Paldea"
+    },
+    {
+     "id": "special-coaches-troca-com-os-professores-de-paldea",
+     "text": "Special Coaches – Troca com os Professores de Paldea"
+    },
+    {
+     "id": "special-coaches-batalhando-com-a-elite-4-de-paldea",
+     "text": "Special Coaches – Batalhando com a Elite 4 de Paldea"
+    },
+    {
+     "id": "special-coaches-troca-com-a-elite-4-de-paldea",
+     "text": "Special Coaches – Troca com a Elite 4 de Paldea"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "title": "Parte 28: Special Coaches – Batalhando com a Campeã de Paldea",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "special-coaches-batalhando-com-a-campea-de-paldea",
+     "text": "Special Coaches – Batalhando com a Campeã de Paldea"
+    },
+    {
+     "id": "special-coaches-troca-com-a-campea-de-paldea",
+     "text": "Special Coaches – Troca com a Campeã de Paldea"
+    },
+    {
+     "id": "special-coaches-batalhando-com-cyrano",
+     "text": "Special Coaches – Batalhando com Cyrano"
+    },
+    {
+     "id": "special-coaches-troca-com-cyrano",
+     "text": "Special Coaches – Troca com Cyrano"
+    },
+    {
+     "id": "procurando-pelos-lendarios-em-paldea",
+     "text": "Procurando pelos Lendários em Paldea"
+    },
+    {
+     "id": "articuno-glaseado-mountain",
+     "text": "Articuno – Glaseado Mountain"
+    },
+    {
+     "id": "zapdos-poco-path",
+     "text": "Zapdos – Poco Path"
+    },
+    {
+     "id": "moltres-asado-desert",
+     "text": "Moltres – Asado Desert"
+    },
+    {
+     "id": "kubfu-north-province-area-two",
+     "text": "Kubfu – North Province Area Two"
+    },
+    {
+     "id": "raikou-west-province-area-one",
+     "text": "Raikou – West Province Area One"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "title": "Parte 29: Entei – East Province Area Three",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "entei-east-province-area-three",
+     "text": "Entei – East Province Area Three"
+    },
+    {
+     "id": "suicune-casseroya-lake",
+     "text": "Suicune – Casseroya Lake"
+    },
+    {
+     "id": "cobalion-north-province-area-two",
+     "text": "Cobalion – North Province Area Two"
+    },
+    {
+     "id": "terrakion-west-province-area-one",
+     "text": "Terrakion – West Province Area One"
+    },
+    {
+     "id": "virizion-tagtree-thicket",
+     "text": "Virizion – Tagtree Thicket"
+    },
+    {
+     "id": "ho-oh-south-province-area-four",
+     "text": "Ho-Oh – South Province Area Four"
+    },
+    {
+     "id": "lugia-north-province-area-one",
+     "text": "Lugia – North Province Area One"
+    },
+    {
+     "id": "latios-north-province-area-two",
+     "text": "Latios – North Province Area Two"
+    },
+    {
+     "id": "latias-south-province-area-four",
+     "text": "Latias – South Province Area Four"
+    },
+    {
+     "id": "groudon-alfornada-cavern",
+     "text": "Groudon – Alfornada Cavern"
+    }
+   ]
+  },
+  {
+   "n": 30,
+   "title": "Parte 30: Kyogre – North Paldean Sea",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "kyogre-north-paldean-sea",
+     "text": "Kyogre – North Paldean Sea"
+    },
+    {
+     "id": "reshiram-east-province-area-one",
+     "text": "Reshiram – East Province Area One"
+    },
+    {
+     "id": "zekrom-south-province-area-five",
+     "text": "Zekrom – South Province Area Five"
+    },
+    {
+     "id": "solgaleo-pokemon-league",
+     "text": "Solgaleo – Pokémon League"
+    },
+    {
+     "id": "lunala-casseroya-lake",
+     "text": "Lunala – Casseroya Lake"
+    },
+    {
+     "id": "glastrier-glaseado-mountain",
+     "text": "Glastrier – Glaseado Mountain"
+    },
+    {
+     "id": "spectrier-dalizapa-passage",
+     "text": "Spectrier – Dalizapa Passage"
+    },
+    {
+     "id": "rayquaza-great-crater-of-paldea",
+     "text": "Rayquaza – Great Crater Of Paldea"
+    },
+    {
+     "id": "kyurem-dalizapa-passage",
+     "text": "Kyurem – Dalizapa Passage"
+    },
+    {
+     "id": "necrozma-socarrat-trail",
+     "text": "Necrozma – Socarrat Trail"
+    }
+   ]
+  },
+  {
+   "n": 31,
+   "title": "Parte 31: Meloetta – Terarium – Coastal Biome",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "meloetta-terarium-coastal-biome",
+     "text": "Meloetta – Terarium – Coastal Biome"
+    },
+    {
+     "id": "terapagos-e-o-livro-da-briar",
+     "text": "Terapagos e o Livro da Briar"
+    },
+    {
+     "id": "synchro-machine-ande-pelo-cenario-no-corpo-de-seu-pokemon",
+     "text": "Synchro Machine – Ande pelo Cenário no Corpo de Seu Pokémon"
+    },
+    {
+     "id": "torne-se-o-tutor-dos-chefes-da-team-star",
+     "text": "Torne-Se o Tutor dos Chefes da Team Star"
+    },
+    {
+     "id": "perrin-e-as-fotos-dos-pokemons-estranhos",
+     "text": "Perrin e as Fotos dos Pokémons Estranhos"
+    },
+    {
+     "id": "conseguindo-o-mark-charm-com-cyrano",
+     "text": "Conseguindo o Mark Charm com Cyrano"
+    },
+    {
+     "id": "a-caverna-secreta-de-cristal-da-area-zero",
+     "text": "A Caverna Secreta de Cristal da Area Zero"
+    },
+    {
+     "id": "epilogo-the-hidden-treasure-of-area-zero-mochi-mayhem",
+     "text": "Epílogo – The Hidden Treasure Of Area Zero – Mochi Mayhem"
+    }
+   ]
+  },
+  {
+   "n": 32,
+   "title": "Parte 32: Epílogo – Reunindo os Amigos de Paldea e Kitakami",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "epilogo-reunindo-os-amigos-de-paldea-e-kitakami",
+     "text": "Epílogo – Reunindo os Amigos de Paldea e Kitakami"
+    },
+    {
+     "id": "epilogo-a-maldicao-do-mochi-mochi",
+     "text": "Epílogo – a Maldição do Mochi Mochi"
+    },
+    {
+     "id": "epilogo-o-pokemon-do-mochi-mochi",
+     "text": "Epílogo – o Pokémon do Mochi Mochi"
+    },
+    {
+     "id": "epilogo-pecharunt-o-pokemon-mitico",
+     "text": "Epílogo – Pecharunt, o Pokémon Mítico"
+    },
+    {
+     "id": "special-coaches-batalhando-com-os-amigos-de-kitakami",
+     "text": "Special Coaches – Batalhando com os Amigos de Kitakami"
+    },
+    {
+     "id": "special-coaches-troca-com-os-amigos-de-kitakami",
+     "text": "Special Coaches – Troca com os Amigos de Kitakami"
+    }
+   ]
+  },
+  {
+   "n": 33,
+   "title": "Parte 33: Special Coaches – Batalhando com os Amigos de Paldea",
+   "part": "",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "special-coaches-batalhando-com-os-amigos-de-paldea",
+     "text": "Special Coaches – Batalhando com os Amigos de Paldea"
+    },
+    {
+     "id": "special-coaches-troca-com-os-amigos-de-paldea",
+     "text": "Special Coaches – Troca com os Amigos de Paldea"
+    }
+   ]
+  }
+ ],
+ "pdfPages": 0
+}

@@ -27,3 +27,6 @@ dist-ssr
 __pycache__/
 .pytest_cache/
 .venv-guides/
+
+# importer cache (downloaded originals)
+scripts/.cache/
