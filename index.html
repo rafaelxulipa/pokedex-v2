@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rotom Pokedex</title>
+    <style>
+      /* Static copy of the page used by search engines: visually hidden until React replaces it */
+      #root > main[data-prerender] { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+      html.dark, html.dark body { background: #121212; }
+    </style>
     <script>
       // Apply the saved theme before first paint to avoid a flash / blank dark screen
       try {
