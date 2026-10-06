@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Lightbulb, TriangleAlert, Gift, Sparkles, StickyNote, X } from 'lucide-react';
 import { GuideBlock, GuideImage, GuideRun } from '../types';
 import { guideAsset } from '../services/guides';
+import AdSense from './AdSense';
+import { useGlobal } from '../context/GlobalContext';
 
 const Runs: React.FC<{ runs: GuideRun[] }> = ({ runs }) => (
   <>
@@ -26,9 +28,11 @@ interface GuideBlocksProps {
   slug: string;
   blocks: GuideBlock[];
   accent: string;
+  adBefore?: number; // index of the block that an ad is placed before
 }
 
-const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent }) => {
+const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefore }) => {
+  const { t } = useGlobal();
   const [zoom, setZoom] = useState<{ src: string; alt: string } | null>(null);
 
   useEffect(() => {
@@ -72,6 +76,7 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent }) => {
   return (
     <div className="guide-content">
       {blocks.map((block, index) => {
+        const element = (() => {
         switch (block.t) {
           case 'h2':
             return (
@@ -143,6 +148,18 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent }) => {
           default:
             return null;
         }
+        })();
+        return (
+          <React.Fragment key={index}>
+            {index === adBefore && (
+              <div className="my-10">
+                <span className="block mb-2 text-center text-[10px] uppercase tracking-widest text-gray-400">{t.advertisement}</span>
+                <AdSense format="horizontal" className="min-h-[100px]" slot="7629704157" />
+              </div>
+            )}
+            {element}
+          </React.Fragment>
+        );
       })}
 
       {zoom && (

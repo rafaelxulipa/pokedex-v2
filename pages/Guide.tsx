@@ -10,8 +10,17 @@ import { useGlobal } from '../context/GlobalContext';
 import { readStorage, writeStorage } from '../utils/storage';
 import Seo from '../components/Seo';
 import GuideSearch from '../components/GuideSearch';
+import AdSense from '../components/AdSense';
 
 const PROGRESS_KEY = 'guideProgress';
+
+// A mid-content ad goes before the first section that starts after ~40% of a long chapter
+const adBefore = (blocks: GuideBlock[]): number | undefined => {
+  if (blocks.length < 14) return undefined;
+  const start = Math.floor(blocks.length * 0.4);
+  const index = blocks.findIndex((b, i) => i >= start && b.t === 'h2');
+  return index > 0 ? index : undefined;
+};
 
 type Progress = Record<string, number>;
 
@@ -290,10 +299,17 @@ const Guide: React.FC = () => {
           {blocks === null ? (
             <div className="flex justify-center py-20"><Loader /></div>
           ) : (
-            <GuideBlocks slug={slug} blocks={blocks} accent={accent} />
+            <GuideBlocks key={`${slug}-${chapter.n}`} slug={slug} blocks={blocks} accent={accent} adBefore={adBefore(blocks)} />
           )}
 
-          <nav className="mt-14 grid grid-cols-2 gap-3">
+          {blocks && blocks.length >= 6 && (
+            <div className="mt-10" key={`end-ad-${slug}-${chapter.n}`}>
+              <span className="block mb-2 text-center text-[10px] uppercase tracking-widest text-gray-400">{t.advertisement}</span>
+              <AdSense format="horizontal" className="min-h-[100px]" slot="7629704157" />
+            </div>
+          )}
+
+          <nav className="mt-10 grid grid-cols-2 gap-3">
             {prev ? (
               <Link to={`/detonados/${slug}/${prev.n}`} className="group flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-800 hover:border-blue-400 transition-colors">
                 <ChevronLeft className="text-gray-400 group-hover:text-blue-500 shrink-0" />
