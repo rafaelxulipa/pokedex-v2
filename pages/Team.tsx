@@ -12,7 +12,7 @@ import Loader from '../components/Loader';
 const MAX_RESULTS = 12;
 
 const Team: React.FC = () => {
-  const { t, team, toggleTeamMember, clearTeam } = useGlobal();
+  const { t, localName, team, toggleTeamMember, clearTeam } = useGlobal();
   const [members, setMembers] = useState<PokemonDetail[]>([]);
   const [typeDetails, setTypeDetails] = useState<Record<string, TypeDetail>>({});
   const [allNames, setAllNames] = useState<PokemonListEntry[]>([]);
@@ -105,7 +105,7 @@ const Team: React.FC = () => {
               </button>
               <Link to={`/pokemon/${member.id}`} className="flex flex-col items-center">
                 <img src={member.sprites.other['official-artwork'].front_default || member.sprites.front_default} alt={member.name} className="w-20 h-20 object-contain" />
-                <span className="text-sm font-bold capitalize text-gray-700 dark:text-gray-200 truncate max-w-full">{formatName(member.name)}</span>
+                <span className="text-sm font-bold text-gray-700 dark:text-gray-200 truncate max-w-full">{localName(member)}</span>
               </Link>
               <div className="flex flex-wrap justify-center mt-1">
                 {member.types.map((ty) => <TypeBadge key={ty.slot} type={ty.type.name} size="sm" />)}

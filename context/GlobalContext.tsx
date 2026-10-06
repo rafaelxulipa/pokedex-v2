@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { translations, Language } from '../translations';
+import { fetchSpeciesNames } from '../services/pokeApi';
+import { idFromUrl, formatName } from '../utils/pokemon';
 import { readStorage, writeStorage, removeStorage, isNumberArray } from '../utils/storage';
 
 export const MAX_COMPARISON = 4;
@@ -24,6 +26,8 @@ interface GlobalContextType {
   shinyPokemon: number[];
   toggleShinyPokemon: (id: number) => void;
   t: typeof translations['en'];
+  // Name of a Pokemon in the selected language (alternate forms keep their English name)
+  localName: (pokemon: { id: number; name: string; species: { url: string } }) => string;
 }
 
 const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
@@ -141,6 +145,25 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const t = translations[language];
 
+  // Translated species names for the selected language (pt has none, so it stays in English)
+  const [speciesNames, setSpeciesNames] = useState<Record<number, string>>({});
+  useEffect(() => {
+    let cancelled = false;
+    setSpeciesNames({});
+    fetchSpeciesNames(language).then((names) => {
+      if (!cancelled) setSpeciesNames(names);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [language]);
+
+  const localName = (pokemon: { id: number; name: string; species: { url: string } }) => {
+    const speciesId = idFromUrl(pokemon.species.url);
+    const translated = pokemon.id === speciesId ? speciesNames[speciesId] : undefined;
+    return translated || formatName(pokemon.name);
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -160,6 +183,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         shinyPokemon,
         toggleShinyPokemon,
         t,
+        localName,
       }}
     >
       {children}

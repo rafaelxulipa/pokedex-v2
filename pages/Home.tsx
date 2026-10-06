@@ -193,7 +193,7 @@ const Home: React.FC = () => {
     <div className="container mx-auto px-4 py-8 min-h-screen pb-24">
       
       {/* Header & Controls - Floating Glassmorphism */}
-      <div className="sticky top-20 z-30 mb-10 mx-auto max-w-6xl">
+      <div className="md:sticky md:top-20 z-30 mb-10 mx-auto max-w-6xl">
         <div className="flex flex-col xl:flex-row gap-4 justify-between items-center bg-white/80 dark:bg-dark-card/80 backdrop-blur-xl p-4 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700 ring-1 ring-black/5">
           
           {/* Search */}
@@ -337,7 +337,7 @@ const Home: React.FC = () => {
            <div className="flex-1">
              <p className="text-sm text-gray-600 dark:text-gray-300 font-semibold">
                <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-md mr-2">{comparisonList.length}/{MAX_COMPARISON}</span>
-               {t.comparePlaceholder}
+               <span className="hidden sm:inline">{t.comparePlaceholder}</span>
              </p>
            </div>
            <div className="flex gap-3">

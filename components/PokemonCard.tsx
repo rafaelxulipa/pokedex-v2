@@ -11,7 +11,7 @@ interface PokemonCardProps {
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
-  const { favorites, toggleFavorite, comparisonList, toggleComparison, isShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
+  const { localName, favorites, toggleFavorite, comparisonList, toggleComparison, isShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
   
   const isFavorite = favorites.includes(pokemon.id);
   const isComparing = comparisonList.includes(pokemon.id);
@@ -109,8 +109,8 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
           </div>
 
           <div className="mt-2 text-center">
-            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100 capitalize mb-3 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-              {pokemon.name.replace('-', ' ')}
+            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-3 truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              {localName(pokemon)}
             </h2>
             <div className="flex justify-center flex-wrap gap-1.5">
               {pokemon.types.map((t) => (

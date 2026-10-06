@@ -27,7 +27,7 @@ type Records = Partial<Record<Level, LevelRecord>>;
 const LEVELS: Record<Level, { pairs: number; cols: string }> = {
   easy: { pairs: 6, cols: 'grid-cols-4' },
   medium: { pairs: 10, cols: 'grid-cols-5' },
-  hard: { pairs: 15, cols: 'grid-cols-6' },
+  hard: { pairs: 15, cols: 'grid-cols-5 md:grid-cols-6' },
 };
 
 const LEVEL_TIMES: Record<Level, number> = {
@@ -375,7 +375,7 @@ const MemoryGame: React.FC = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{t.memoryGame.title}</h1>
-        <div className="flex items-center gap-4 md:gap-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-xs border border-gray-100 dark:border-gray-800">
+        <div className="flex items-center gap-3 md:gap-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-xs border border-gray-100 dark:border-gray-800">
           <div className="text-center">
             <div className="text-xs font-bold text-gray-400 uppercase flex items-center justify-center gap-1"><Star size={12} /> {t.memoryGame.stage}</div>
             <div className="text-2xl font-black text-gray-700 dark:text-gray-300">{stage}</div>
@@ -393,7 +393,7 @@ const MemoryGame: React.FC = () => {
           <div className="w-px h-10 bg-gray-200 dark:bg-gray-700"></div>
           <div className="text-center">
             <div className="text-xs font-bold text-gray-400 uppercase">{t.memoryGame.matched}</div>
-            <div className="text-2xl font-black text-green-500">{matchedPairs} / {totalPairs}</div>
+            <div className="text-2xl font-black text-green-500 whitespace-nowrap">{matchedPairs} / {totalPairs}</div>
           </div>
           <div className="w-px h-10 bg-gray-200 dark:bg-gray-700"></div>
           <button

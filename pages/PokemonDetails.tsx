@@ -33,7 +33,7 @@ const PokemonDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const numericId = parseInt(id || '1');
   const navigate = useNavigate();
-  const { t, language, favorites, toggleFavorite, comparisonList, toggleComparison, setComparison, team, toggleTeamMember, isShinyMode: globalShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
+  const { t, localName, language, favorites, toggleFavorite, comparisonList, toggleComparison, setComparison, team, toggleTeamMember, isShinyMode: globalShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
 
   const [pokemon, setPokemon] = useState<PokemonDetail | null>(null);
   const [species, setSpecies] = useState<PokemonSpecies | null>(null);
@@ -315,7 +315,7 @@ const PokemonDetails: React.FC = () => {
         
         <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-extrabold capitalize text-gray-800 dark:text-white mb-2 flex items-center justify-center gap-2">
-                {pokemon.name.replace('-', ' ')} 
+                {localName(pokemon)} 
                 {isShiny && <Sparkles className="text-yellow-400 animate-pulse" size={32} fill="currentColor" />}
                 <span className="text-gray-400 dark:text-gray-600 text-3xl">#{pokemon.id.toString().padStart(3, '0')}</span>
             </h1>

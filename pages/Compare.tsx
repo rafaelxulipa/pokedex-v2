@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import AdSense from '../components/AdSense';
 
 const Compare: React.FC = () => {
-  const { comparisonList, t, toggleComparison } = useGlobal();
+  const { comparisonList, t, toggleComparison, localName } = useGlobal();
   const navigate = useNavigate();
 
   const [pokemons, setPokemons] = useState<PokemonDetail[]>([]);
@@ -90,7 +90,7 @@ const Compare: React.FC = () => {
                                 alt={p.name}
                                 className="w-28 h-28 md:w-40 md:h-40 object-contain mb-4 filter drop-shadow-lg"
                             />
-                            <h2 className="text-lg md:text-xl font-bold capitalize mb-2 text-center">{p.name.replace('-', ' ')}</h2>
+                            <h2 className="text-lg md:text-xl font-bold mb-2 text-center">{localName(p)}</h2>
                             <div className="flex flex-wrap justify-center gap-1">
                                 {p.types.map(ty => <TypeBadge key={ty.slot} type={ty.type.name} size="sm" />)}
                             </div>
@@ -108,10 +108,10 @@ const Compare: React.FC = () => {
 
                 {/* Detailed Table */}
                 <div className="bg-white dark:bg-dark-card rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800 overflow-x-auto">
-                  <div className="min-w-[480px]">
+                  <div className="min-w-[420px]">
                     <div className="grid bg-gray-50 dark:bg-gray-800/50 text-xs md:text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 py-4 border-b border-gray-100 dark:border-gray-800" style={columns}>
                         <div className="text-center">{t.attribute}</div>
-                        {pokemons.map(p => <div key={p.id} className="text-center capitalize truncate px-1">{p.name.replace('-', ' ')}</div>)}
+                        {pokemons.map(p => <div key={p.id} className="text-center truncate px-1">{localName(p)}</div>)}
                     </div>
 
                     <div className="divide-y divide-gray-100 dark:divide-gray-800">
