@@ -10,6 +10,7 @@ Pokédex feita com React, TypeScript e Vite, usando a [PokéAPI](https://pokeapi
 - Montador de time (6 Pokémon) com análise de cobertura de tipos e link para compartilhar
 - Jogo da memória (níveis, geração, modo shiny, recordes)
 - Quiz "Quem é esse Pokémon?" com desafio do dia (mesmas perguntas para todos)
+- Detonados completos (FireRed/LeafGreen e Brilliant Diamond/Shining Pearl) para ler online, com imagens, e PDF gratuito para download. Veja `scripts/README.md` para converter novos detonados
 - 6 idiomas (pt, en, es, de, zh, ja) e tema claro/escuro
 
 ## Desenvolvimento

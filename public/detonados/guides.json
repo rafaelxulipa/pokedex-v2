@@ -1,0 +1,24 @@
+[
+ {
+  "slug": "brilliant-diamond-shining-pearl",
+  "title": "Detonado Pokémon Brilliant Diamond & Shining Pearl",
+  "subtitle": "Sinnoh do começo ao fim: ginásios, Team Galactic, Liga, pós-game e Battle Tower",
+  "console": "Nintendo Switch",
+  "description": "Guia completo em português de Pokémon Brilliant Diamond e Shining Pearl, com imagens de cada passo, mapas, times dos treinadores, lendários e Battle Tower.",
+  "accent": "#2b5bb5",
+  "cover": "cover.webp",
+  "chapters": 23,
+  "pdfPages": 197
+ },
+ {
+  "slug": "fire-red-leaf-green",
+  "title": "Detonado Pokémon FireRed & LeafGreen",
+  "subtitle": "De Pallet Town à Birth Island: ginásios, Elite 4, Sevii Islands e todos os lendários",
+  "console": "Game Boy Advance / Nintendo Switch 1 e 2",
+  "description": "Guia completo em português de Pokémon FireRed e LeafGreen (Game Boy Advance e Nintendo Switch 1 e 2), do quarto em Pallet Town até os lendários mais escondidos, com mapas, imagens e os times de todos os líderes.",
+  "accent": "#c8102e",
+  "cover": "cover.webp",
+  "chapters": 20,
+  "pdfPages": 73
+ }
+]

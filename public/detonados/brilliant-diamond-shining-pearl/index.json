@@ -1,0 +1,828 @@
+{
+ "slug": "brilliant-diamond-shining-pearl",
+ "title": "Detonado Pokémon Brilliant Diamond & Shining Pearl",
+ "subtitle": "Sinnoh do começo ao fim: ginásios, Team Galactic, Liga, pós-game e Battle Tower",
+ "console": "Nintendo Switch",
+ "description": "Guia completo em português de Pokémon Brilliant Diamond e Shining Pearl, com imagens de cada passo, mapas, times dos treinadores, lendários e Battle Tower.",
+ "accent": "#2b5bb5",
+ "credit": "Texto original e organização: Otávio Rafael · otaviorafael.com.br",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon, Brilliant Diamond, Shining Pearl e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "Distribuição livre, desde que sem alterações e com os créditos mantidos.",
+ "cover": "cover.webp",
+ "downloads": [
+  {
+   "label": "PDF em A4",
+   "hint": "Ideal para imprimir ou ler no computador",
+   "file": "pdf/Detonado-Pokemon-BrilliantDiamond-ShiningPearl-A4.pdf",
+   "pages": 197,
+   "bytes": 10500836
+  },
+  {
+   "label": "PDF compacto",
+   "hint": "Formato menor, ótimo para celular e tablet",
+   "file": "pdf/Detonado-Pokemon-BrilliantDiamond-ShiningPearl.pdf",
+   "pages": 239,
+   "bytes": 7652819
+  }
+ ],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Antes de começar",
+   "pages": [
+    4,
+    5
+   ],
+   "sections": [],
+   "part": ""
+  },
+  {
+   "n": 2,
+   "title": "O começo da jornada",
+   "pages": [
+    6,
+    10
+   ],
+   "sections": [
+    {
+     "id": "twinleaf-town",
+     "text": "Twinleaf Town",
+     "level": 2
+    },
+    {
+     "id": "verity-lake",
+     "text": "Verity Lake",
+     "level": 2
+    },
+    {
+     "id": "sandgem-town",
+     "text": "Sandgem Town",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 3,
+   "title": "Jubilife City e Oreburgh",
+   "pages": [
+    11,
+    18
+   ],
+   "sections": [
+    {
+     "id": "jubilife-city",
+     "text": "Jubilife City",
+     "level": 2
+    },
+    {
+     "id": "ravaged-path",
+     "text": "Ravaged Path",
+     "level": 2
+    },
+    {
+     "id": "oreburgh-gate",
+     "text": "Oreburgh Gate",
+     "level": 2
+    },
+    {
+     "id": "oreburgh-mine",
+     "text": "Oreburgh Mine",
+     "level": 2
+    },
+    {
+     "id": "oreburgh-city",
+     "text": "Oreburgh City",
+     "level": 2
+    },
+    {
+     "id": "a-primeira-aparicao-da-team-galactic",
+     "text": "A Primeira Aparição da Team Galactic",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 4,
+   "title": "Floaroma e a Eterna Forest",
+   "pages": [
+    19,
+    23
+   ],
+   "sections": [
+    {
+     "id": "floaroma-town",
+     "text": "Floaroma Town",
+     "level": 2
+    },
+    {
+     "id": "valley-windworks",
+     "text": "Valley Windworks",
+     "level": 2
+    },
+    {
+     "id": "floaroma-meadow",
+     "text": "Floaroma Meadow",
+     "level": 2
+    },
+    {
+     "id": "eterna-forest",
+     "text": "Eterna Forest",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 5,
+   "title": "O Grand Underground",
+   "pages": [
+    24,
+    27
+   ],
+   "sections": [
+    {
+     "id": "grand-underground",
+     "text": "Grand Underground",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 6,
+   "title": "Eterna City e a Cycling Road",
+   "pages": [
+    28,
+    33
+   ],
+   "sections": [
+    {
+     "id": "eterna-city",
+     "text": "Eterna City",
+     "level": 2
+    },
+    {
+     "id": "team-galactic-eterna-building",
+     "text": "Team Galactic Eterna Building",
+     "level": 2
+    },
+    {
+     "id": "cycling-road",
+     "text": "Cycling Road",
+     "level": 2
+    },
+    {
+     "id": "wayward-cave",
+     "text": "Wayward Cave",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 7,
+   "title": "Hearthome City e arredores",
+   "pages": [
+    34,
+    42
+   ],
+   "sections": [
+    {
+     "id": "old-chateau",
+     "text": "Old Chateau",
+     "level": 2
+    },
+    {
+     "id": "mt-coronet",
+     "text": "Mt. Coronet",
+     "level": 2
+    },
+    {
+     "id": "hearthome-city",
+     "text": "Hearthome City",
+     "level": 2
+    },
+    {
+     "id": "amity-square",
+     "text": "Amity Square",
+     "level": 2
+    },
+    {
+     "id": "hallowed-tower",
+     "text": "Hallowed Tower",
+     "level": 2
+    },
+    {
+     "id": "lost-tower",
+     "text": "Lost Tower",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 8,
+   "title": "Solaceon e Veilstone",
+   "pages": [
+    43,
+    50
+   ],
+   "sections": [
+    {
+     "id": "solaceon-town",
+     "text": "Solaceon Town",
+     "level": 2
+    },
+    {
+     "id": "solaceon-ruins",
+     "text": "Solaceon Ruins",
+     "level": 2
+    },
+    {
+     "id": "cafe-cabin",
+     "text": "Café Cabin",
+     "level": 2
+    },
+    {
+     "id": "veilstone-city",
+     "text": "Veilstone City",
+     "level": 2
+    },
+    {
+     "id": "galactic-warehouse",
+     "text": "Galactic Warehouse",
+     "level": 2
+    },
+    {
+     "id": "pokemon-mansion",
+     "text": "Pokémon Mansion",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 9,
+   "title": "Pastoria e Celestic Town",
+   "pages": [
+    51,
+    59
+   ],
+   "sections": [
+    {
+     "id": "pastoria-city",
+     "text": "Pastoria City",
+     "level": 2
+    },
+    {
+     "id": "pastoria-great-marsh",
+     "text": "Pastoria Great Marsh",
+     "level": 2
+    },
+    {
+     "id": "hotel-grand-lake",
+     "text": "Hotel Grand Lake",
+     "level": 2
+    },
+    {
+     "id": "ruin-maniac-cave",
+     "text": "Ruin Maniac Cave",
+     "level": 2
+    },
+    {
+     "id": "celestic-town",
+     "text": "Celestic Town",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 10,
+   "title": "Quinto ginásio e rotas marítimas",
+   "pages": [
+    60,
+    65
+   ],
+   "sections": [
+    {
+     "id": "hearthome-city",
+     "text": "Hearthome City",
+     "level": 2
+    },
+    {
+     "id": "rotas-maritmas",
+     "text": "Rotas Marítmas",
+     "level": 2
+    },
+    {
+     "id": "fuego-ironworks",
+     "text": "Fuego Ironworks",
+     "level": 2
+    },
+    {
+     "id": "canalave-city",
+     "text": "Canalave City",
+     "level": 2
+    },
+    {
+     "id": "iron-island",
+     "text": "Iron Island",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 11,
+   "title": "Canalave, Snowpoint e Rock Climb",
+   "pages": [
+    66,
+    71
+   ],
+   "sections": [
+    {
+     "id": "canalave-city",
+     "text": "Canalave City",
+     "level": 2
+    },
+    {
+     "id": "wayward-cave",
+     "text": "Wayward Cave",
+     "level": 2
+    },
+    {
+     "id": "mt-coronet",
+     "text": "Mt. Coronet",
+     "level": 2
+    },
+    {
+     "id": "snowpoint-city",
+     "text": "Snowpoint City",
+     "level": 2
+    },
+    {
+     "id": "rock-climb",
+     "text": "Rock Climb",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 12,
+   "title": "Team Galactic: lagos e Spear Pillar",
+   "pages": [
+    72,
+    88
+   ],
+   "sections": [
+    {
+     "id": "canalave-library",
+     "text": "Canalave Library",
+     "level": 2
+    },
+    {
+     "id": "lake-valor",
+     "text": "Lake Valor",
+     "level": 2
+    },
+    {
+     "id": "lake-verity",
+     "text": "Lake Verity",
+     "level": 2
+    },
+    {
+     "id": "lake-acuity",
+     "text": "Lake Acuity",
+     "level": 2
+    },
+    {
+     "id": "galactic-warehouse",
+     "text": "Galactic Warehouse",
+     "level": 2
+    },
+    {
+     "id": "galactic-veilstone-building",
+     "text": "Galactic Veilstone Building",
+     "level": 2
+    },
+    {
+     "id": "mt-coronet",
+     "text": "Mt. Coronet",
+     "level": 2
+    },
+    {
+     "id": "spear-pillar",
+     "text": "Spear Pillar",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 13,
+   "title": "O trio lendário dos lagos",
+   "pages": [
+    89,
+    91
+   ],
+   "sections": [
+    {
+     "id": "os-lagos-de-sinnoh",
+     "text": "Os Lagos de Sinnoh",
+     "level": 2
+    },
+    {
+     "id": "acuity-cavern",
+     "text": "Acuity Cavern",
+     "level": 2
+    },
+    {
+     "id": "valor-cavern",
+     "text": "Valor Cavern",
+     "level": 2
+    },
+    {
+     "id": "verity-cavern",
+     "text": "Verity Cavern",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 14,
+   "title": "Sunyshore e a Victory Road",
+   "pages": [
+    92,
+    98
+   ],
+   "sections": [
+    {
+     "id": "vista-lighthouse",
+     "text": "Vista Lighthouse",
+     "level": 2
+    },
+    {
+     "id": "sunyshore-city",
+     "text": "Sunyshore City",
+     "level": 2
+    },
+    {
+     "id": "waterfall",
+     "text": "Waterfall",
+     "level": 2
+    },
+    {
+     "id": "victory-road",
+     "text": "Victory Road",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 15,
+   "title": "A Liga Pokémon",
+   "pages": [
+    99,
+    102
+   ],
+   "sections": [
+    {
+     "id": "pokemon-league",
+     "text": "Pokémon League",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 16,
+   "title": "Pós-game: National Dex e lendários",
+   "pages": [
+    103,
+    112
+   ],
+   "sections": [
+    {
+     "id": "pos-game",
+     "text": "Pós Game",
+     "level": 2
+    },
+    {
+     "id": "poke-radar",
+     "text": "Poké Radar",
+     "level": 2
+    },
+    {
+     "id": "manadas-em-sinnoh",
+     "text": "Manadas em Sinnoh",
+     "level": 2
+    },
+    {
+     "id": "pokemons-especiais",
+     "text": "Pokémons Especiais",
+     "level": 2
+    },
+    {
+     "id": "rotom",
+     "text": "Rotom",
+     "level": 2
+    },
+    {
+     "id": "fullmoon-island",
+     "text": "Fullmoon Island",
+     "level": 2
+    },
+    {
+     "id": "spring-path-sendoff-spring-e-turnback-cave",
+     "text": "Spring Path, Sendoff Spring e Turnback Cave",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 17,
+   "title": "Ramanas Park",
+   "pages": [
+    113,
+    121
+   ],
+   "sections": [
+    {
+     "id": "ramanas-park",
+     "text": "Ramanas Park",
+     "level": 2
+    },
+    {
+     "id": "discovery-room",
+     "text": "Discovery Room",
+     "level": 2
+    },
+    {
+     "id": "kanto-room",
+     "text": "Kanto Room",
+     "level": 2
+    },
+    {
+     "id": "johto-room",
+     "text": "Johto Room",
+     "level": 2
+    },
+    {
+     "id": "soul-room",
+     "text": "Soul Room",
+     "level": 2
+    },
+    {
+     "id": "distortion-room",
+     "text": "Distortion Room",
+     "level": 2
+    },
+    {
+     "id": "rainbow-room",
+     "text": "Rainbow Room",
+     "level": 2
+    },
+    {
+     "id": "squall-room",
+     "text": "Squall Room",
+     "level": 2
+    },
+    {
+     "id": "oceanic-room",
+     "text": "Oceanic Room",
+     "level": 2
+    },
+    {
+     "id": "tectonic-room",
+     "text": "Tectonic Room",
+     "level": 2
+    },
+    {
+     "id": "stratospheric-room",
+     "text": "Stratospheric Room",
+     "level": 2
+    },
+    {
+     "id": "genome-room",
+     "text": "Genome Room",
+     "level": 2
+    },
+    {
+     "id": "snowpoint-temple",
+     "text": "Snowpoint Temple",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 18,
+   "title": "Revanches",
+   "pages": [
+    122,
+    139
+   ],
+   "sections": [
+    {
+     "id": "victory-road",
+     "text": "Victory Road",
+     "level": 2
+    },
+    {
+     "id": "a-batalha-contra-morimoto",
+     "text": "A Batalha Contra Morimoto",
+     "level": 2
+    },
+    {
+     "id": "a-revanche-contra-os-lideres-de-ginasio",
+     "text": "A Revanche Contra os Líderes de Ginásio",
+     "level": 2
+    },
+    {
+     "id": "a-revanche-contra-a-elite-four",
+     "text": "A Revanche Contra a Elite Four",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 19,
+   "title": "Battle Zone",
+   "pages": [
+    140,
+    150
+   ],
+   "sections": [
+    {
+     "id": "battle-zone",
+     "text": "Battle Zone",
+     "level": 2
+    },
+    {
+     "id": "fight-area",
+     "text": "Fight Area",
+     "level": 2
+    },
+    {
+     "id": "survival-area",
+     "text": "Survival Area",
+     "level": 2
+    },
+    {
+     "id": "stark-mountain",
+     "text": "Stark Mountain",
+     "level": 2
+    },
+    {
+     "id": "stark-mountain-2",
+     "text": "Stark Mountain",
+     "level": 2
+    },
+    {
+     "id": "atravessando-o-deserto-de-sinnoh",
+     "text": "Atravessando o Deserto de Sinnoh",
+     "level": 2
+    },
+    {
+     "id": "resort-area",
+     "text": "Resort Area",
+     "level": 2
+    },
+    {
+     "id": "battle-park",
+     "text": "Battle Park",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 20,
+   "title": "Battle Tower",
+   "pages": [
+    151,
+    173
+   ],
+   "sections": [
+    {
+     "id": "battle-tower",
+     "text": "Battle Tower",
+     "level": 2
+    },
+    {
+     "id": "battle-tower-2",
+     "text": "Battle Tower",
+     "level": 2
+    },
+    {
+     "id": "battle-tower-3",
+     "text": "Battle Tower",
+     "level": 2
+    },
+    {
+     "id": "battle-tower-4",
+     "text": "Battle Tower",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 21,
+   "title": "Batalhas finais",
+   "pages": [
+    174,
+    189
+   ],
+   "sections": [
+    {
+     "id": "a-batalha-contra-barry",
+     "text": "A Batalha Contra Barry",
+     "level": 2
+    },
+    {
+     "id": "a-batalha-contra-lucas-dawn",
+     "text": "A Batalha Contra Lucas/Dawn",
+     "level": 2
+    },
+    {
+     "id": "elite-four",
+     "text": "Elite Four",
+     "level": 2
+    },
+    {
+     "id": "lucas-dawn",
+     "text": "Lucas/Dawn",
+     "level": 2
+    },
+    {
+     "id": "barry",
+     "text": "Barry",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 22,
+   "title": "Eventos e míticos",
+   "pages": [
+    190,
+    196
+   ],
+   "sections": [
+    {
+     "id": "phione-manaphy",
+     "text": "Phione & Manaphy",
+     "level": 2
+    },
+    {
+     "id": "newmoon-island",
+     "text": "Newmoon Island",
+     "level": 2
+    },
+    {
+     "id": "seabreak-path-e-flower-paradise",
+     "text": "Seabreak Path e Flower Paradise",
+     "level": 2
+    },
+    {
+     "id": "hall-of-origin",
+     "text": "Hall Of Origin",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 23,
+   "title": "Referência rápida",
+   "pages": [
+    197,
+    197
+   ],
+   "sections": [
+    {
+     "id": "os-oito-ginasios",
+     "text": "Os oito ginásios",
+     "level": 2
+    },
+    {
+     "id": "tecnicas-fora-de-batalha",
+     "text": "Técnicas fora de batalha",
+     "level": 2
+    }
+   ],
+   "part": ""
+  }
+ ],
+ "pdfPages": 197
+}

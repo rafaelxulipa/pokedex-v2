@@ -8,8 +8,10 @@ import Compare from './pages/Compare';
 import MemoryGame from './pages/MemoryGame';
 import Quiz from './pages/Quiz';
 import Team from './pages/Team';
+import Guides from './pages/Guides';
+import Guide from './pages/Guide';
 import RotomCursor from './components/RotomCursor';
-import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users } from 'lucide-react';
+import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen } from 'lucide-react';
 import { Language } from './translations';
 
 // Language Options with Flags
@@ -50,14 +52,15 @@ const Header: React.FC = () => {
              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-900 z-10"></div>
              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white border-[3px] border-gray-900 rounded-full z-20"></div>
            </div>
-           <span className="text-xl md:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+           <span className="hidden min-[420px]:inline text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
             <span className="text-red-500">Rotom</span> Pokedex
            </span>
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {/* Feature links */}
           {[
+            { to: '/detonados', title: t.guides.title, icon: <BookOpen size={20} /> },
             { to: '/team', title: t.team.title, icon: <Users size={20} /> },
             { to: '/quiz', title: t.quiz.title, icon: <HelpCircle size={20} /> },
             { to: '/memory-game', title: t.memoryGame.title, icon: <BrainCircuit size={20} /> },
@@ -66,7 +69,7 @@ const Header: React.FC = () => {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `p-2.5 rounded-xl transition-all hover:scale-110 shadow-xs border ${
+                `p-2 sm:p-2.5 rounded-xl transition-all hover:scale-110 shadow-xs border ${
                   isActive
                     ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700'
                     : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
@@ -83,7 +86,7 @@ const Header: React.FC = () => {
           <div className="relative" ref={dropdownRef}>
             <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all border border-gray-200 dark:border-gray-700"
+                className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all border border-gray-200 dark:border-gray-700"
             >
                 <span className="text-lg leading-none">{currentLang.flag}</span>
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 hidden sm:inline">{currentLang.name}</span>
@@ -114,7 +117,7 @@ const Header: React.FC = () => {
 
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all hover:scale-110 shadow-xs border border-gray-200 dark:border-gray-700"
+            className="p-2 sm:p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all hover:scale-110 shadow-xs border border-gray-200 dark:border-gray-700"
             aria-label="Toggle Dark Mode"
           >
             {theme === 'light' ? <Moon size={20} fill="currentColor" className="text-gray-400" /> : <Sun size={20} fill="currentColor" />}
@@ -152,6 +155,9 @@ const App: React.FC = () => {
                 <Route path="/memory-game" element={<MemoryGame />} />
                 <Route path="/quiz" element={<Quiz />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/detonados" element={<Guides />} />
+                <Route path="/detonados/:slug" element={<Guide />} />
+                <Route path="/detonados/:slug/:n" element={<Guide />} />
               </Routes>
             </main>
             <Footer />

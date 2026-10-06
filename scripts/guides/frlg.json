@@ -1,0 +1,36 @@
+{
+  "slug": "fire-red-leaf-green",
+  "title": "Detonado Pokémon FireRed & LeafGreen",
+  "subtitle": "De Pallet Town à Birth Island: ginásios, Elite 4, Sevii Islands e todos os lendários",
+  "console": "Game Boy Advance / Nintendo Switch 1 e 2",
+  "description": "Guia completo em português de Pokémon FireRed e LeafGreen (Game Boy Advance e Nintendo Switch 1 e 2), do quarto em Pallet Town até os lendários mais escondidos, com mapas, imagens e os times de todos os líderes.",
+  "accent": "#c8102e",
+  "credit": "Texto original e organização: Otávio Rafael · otaviorafael.com.br",
+  "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon, FireRed, LeafGreen e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+  "license": "Distribuição livre, desde que sem alterações e com os créditos mantidos.",
+  "skip_chapters": [
+    "Sumário"
+  ],
+  "fonts": {
+    "h2": [
+      "Poppins-Bold",
+      14.4
+    ],
+    "h3": [
+      "Poppins-Bold",
+      11.0
+    ]
+  },
+  "pdfs": [
+    {
+      "file": "Detonado-Pokemon-FireRed-LeafGreen-A4.pdf",
+      "label": "PDF em A4",
+      "hint": "Ideal para imprimir ou ler no computador"
+    },
+    {
+      "file": "Detonado-Pokemon-FireRed-LeafGreen.pdf",
+      "label": "PDF compacto",
+      "hint": "Formato menor, ótimo para celular e tablet"
+    }
+  ]
+}

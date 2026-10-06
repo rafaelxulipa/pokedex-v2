@@ -1,0 +1,496 @@
+{
+ "slug": "fire-red-leaf-green",
+ "title": "Detonado Pokémon FireRed & LeafGreen",
+ "subtitle": "De Pallet Town à Birth Island: ginásios, Elite 4, Sevii Islands e todos os lendários",
+ "console": "Game Boy Advance / Nintendo Switch 1 e 2",
+ "description": "Guia completo em português de Pokémon FireRed e LeafGreen (Game Boy Advance e Nintendo Switch 1 e 2), do quarto em Pallet Town até os lendários mais escondidos, com mapas, imagens e os times de todos os líderes.",
+ "accent": "#c8102e",
+ "credit": "Texto original e organização: Otávio Rafael · otaviorafael.com.br",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon, FireRed, LeafGreen e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "Distribuição livre, desde que sem alterações e com os créditos mantidos.",
+ "cover": "cover.webp",
+ "downloads": [
+  {
+   "label": "PDF em A4",
+   "hint": "Ideal para imprimir ou ler no computador",
+   "file": "pdf/Detonado-Pokemon-FireRed-LeafGreen-A4.pdf",
+   "pages": 73,
+   "bytes": 3024989
+  },
+  {
+   "label": "PDF compacto",
+   "hint": "Formato menor, ótimo para celular e tablet",
+   "file": "pdf/Detonado-Pokemon-FireRed-LeafGreen.pdf",
+   "pages": 88,
+   "bytes": 2746857
+  }
+ ],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Antes de começar",
+   "pages": [
+    4,
+    5
+   ],
+   "sections": [],
+   "part": ""
+  },
+  {
+   "n": 2,
+   "title": "Pallet Town e o começo da jornada",
+   "pages": [
+    6,
+    8
+   ],
+   "sections": [
+    {
+     "id": "pallet-town",
+     "text": "Pallet Town",
+     "level": 2
+    },
+    {
+     "id": "route-1-e-viridian-city",
+     "text": "Route 1 e Viridian City",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 3,
+   "title": "Viridian Forest e Pewter City",
+   "pages": [
+    9,
+    11
+   ],
+   "sections": [
+    {
+     "id": "viridian-forest",
+     "text": "Viridian Forest",
+     "level": 2
+    },
+    {
+     "id": "pewter-city",
+     "text": "Pewter City",
+     "level": 2
+    },
+    {
+     "id": "route-3",
+     "text": "Route 3",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 4,
+   "title": "Mt. Moon e Cerulean City",
+   "pages": [
+    12,
+    15
+   ],
+   "sections": [
+    {
+     "id": "mt-moon",
+     "text": "Mt. Moon",
+     "level": 2
+    },
+    {
+     "id": "cerulean-city",
+     "text": "Cerulean City",
+     "level": 2
+    },
+    {
+     "id": "route-24-e-25-a-casa-do-bill",
+     "text": "Route 24 e 25: a casa do Bill",
+     "level": 2
+    },
+    {
+     "id": "route-5",
+     "text": "Route 5",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 5,
+   "title": "Vermilion City",
+   "pages": [
+    16,
+    17
+   ],
+   "sections": [
+    {
+     "id": "vermilion-city",
+     "text": "Vermilion City",
+     "level": 2
+    },
+    {
+     "id": "route-11",
+     "text": "Route 11",
+     "level": 2
+    },
+    {
+     "id": "diglett-s-cave-e-route-2",
+     "text": "Diglett's Cave e Route 2",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 6,
+   "title": "Rock Tunnel e Lavender Town",
+   "pages": [
+    18,
+    20
+   ],
+   "sections": [
+    {
+     "id": "rumo-ao-rock-tunnel",
+     "text": "Rumo ao Rock Tunnel",
+     "level": 2
+    },
+    {
+     "id": "rock-tunnel",
+     "text": "Rock Tunnel",
+     "level": 2
+    },
+    {
+     "id": "lavender-town",
+     "text": "Lavender Town",
+     "level": 2
+    },
+    {
+     "id": "route-8-e-route-7",
+     "text": "Route 8 e Route 7",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 7,
+   "title": "Celadon City",
+   "pages": [
+    21,
+    26
+   ],
+   "sections": [
+    {
+     "id": "celadon-city",
+     "text": "Celadon City",
+     "level": 2
+    },
+    {
+     "id": "o-esconderijo-da-equipe-rocket",
+     "text": "O esconderijo da Equipe Rocket",
+     "level": 2
+    },
+    {
+     "id": "hm02-fly",
+     "text": "HM02 – Fly",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 8,
+   "title": "De volta a Lavender: a Torre Pokémon",
+   "pages": [
+    27,
+    27
+   ],
+   "sections": [],
+   "part": ""
+  },
+  {
+   "n": 9,
+   "title": "Saffron City",
+   "pages": [
+    28,
+    30
+   ],
+   "sections": [
+    {
+     "id": "fighting-dojo",
+     "text": "Fighting Dojo",
+     "level": 2
+    },
+    {
+     "id": "silph-co",
+     "text": "Silph Co.",
+     "level": 2
+    },
+    {
+     "id": "ginasio-de-saffron",
+     "text": "Ginásio de Saffron",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 10,
+   "title": "Rumo a Fuchsia City",
+   "pages": [
+    31,
+    34
+   ],
+   "sections": [
+    {
+     "id": "dois-caminhos-ate-fuchsia",
+     "text": "Dois caminhos até Fuchsia",
+     "level": 2
+    },
+    {
+     "id": "fuchsia-city",
+     "text": "Fuchsia City",
+     "level": 2
+    },
+    {
+     "id": "safari-zone",
+     "text": "Safari Zone",
+     "level": 2
+    },
+    {
+     "id": "o-warden-e-o-hm04-strength",
+     "text": "O Warden e o HM04 – Strength",
+     "level": 2
+    },
+    {
+     "id": "ginasio-de-fuchsia",
+     "text": "Ginásio de Fuchsia",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 11,
+   "title": "Surf e Cinnabar Island",
+   "pages": [
+    35,
+    40
+   ],
+   "sections": [
+    {
+     "id": "agora-voce-tem-surf",
+     "text": "Agora você tem Surf!",
+     "level": 2
+    },
+    {
+     "id": "cinnabar-island",
+     "text": "Cinnabar Island",
+     "level": 2
+    },
+    {
+     "id": "pokemon-mansion",
+     "text": "Pokémon Mansion",
+     "level": 2
+    },
+    {
+     "id": "ginasio-de-cinnabar",
+     "text": "Ginásio de Cinnabar",
+     "level": 2
+    },
+    {
+     "id": "o-convite-do-bill",
+     "text": "O convite do Bill",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 12,
+   "title": "Sevii Islands: a primeira visita",
+   "pages": [
+    41,
+    45
+   ],
+   "sections": [
+    {
+     "id": "one-island-knot-island",
+     "text": "One Island – Knot Island",
+     "level": 2
+    },
+    {
+     "id": "two-island-boon-island",
+     "text": "Two Island – Boon Island",
+     "level": 2
+    },
+    {
+     "id": "three-island-kin-island",
+     "text": "Three Island – Kin Island",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 13,
+   "title": "O último ginásio e a Victory Road",
+   "pages": [
+    46,
+    48
+   ],
+   "sections": [
+    {
+     "id": "o-ultimo-ginasio",
+     "text": "O último ginásio",
+     "level": 2
+    },
+    {
+     "id": "victory-road",
+     "text": "Victory Road",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 14,
+   "title": "Planalto Índigo: a Elite 4",
+   "pages": [
+    49,
+    51
+   ],
+   "sections": [],
+   "part": ""
+  },
+  {
+   "n": 15,
+   "title": "Pós-jogo: National Dex e o Ruby",
+   "pages": [
+    52,
+    53
+   ],
+   "sections": [],
+   "part": ""
+  },
+  {
+   "n": 16,
+   "title": "As ilhas 4, 7, 6 e 5",
+   "pages": [
+    54,
+    60
+   ],
+   "sections": [
+    {
+     "id": "four-island-floe-island",
+     "text": "Four Island – Floe Island",
+     "level": 2
+    },
+    {
+     "id": "seven-island-quest-island",
+     "text": "Seven Island – Quest Island",
+     "level": 2
+    },
+    {
+     "id": "six-island-fortune-island",
+     "text": "Six Island – Fortune Island",
+     "level": 2
+    },
+    {
+     "id": "five-island-chrono-island",
+     "text": "Five Island – Chrono Island",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 17,
+   "title": "Lendários e áreas opcionais",
+   "pages": [
+    61,
+    67
+   ],
+   "sections": [
+    {
+     "id": "seafoam-islands-articuno",
+     "text": "Seafoam Islands – Articuno",
+     "level": 2
+    },
+    {
+     "id": "power-plant-zapdos",
+     "text": "Power Plant – Zapdos",
+     "level": 2
+    },
+    {
+     "id": "os-caes-lendarios",
+     "text": "Os cães lendários",
+     "level": 2
+    },
+    {
+     "id": "cerulean-cave-mewtwo",
+     "text": "Cerulean Cave – Mewtwo",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 18,
+   "title": "A revanche contra a Elite 4",
+   "pages": [
+    68,
+    69
+   ],
+   "sections": [],
+   "part": ""
+  },
+  {
+   "n": 19,
+   "title": "Ilhas de evento",
+   "pages": [
+    70,
+    71
+   ],
+   "sections": [
+    {
+     "id": "navel-rock-lugia-e-ho-oh",
+     "text": "Navel Rock – Lugia e Ho-Oh",
+     "level": 2
+    },
+    {
+     "id": "birth-island-deoxys",
+     "text": "Birth Island – Deoxys",
+     "level": 2
+    }
+   ],
+   "part": ""
+  },
+  {
+   "n": 20,
+   "title": "Referência rápida",
+   "pages": [
+    72,
+    73
+   ],
+   "sections": [
+    {
+     "id": "as-oito-insignias",
+     "text": "As oito insígnias",
+     "level": 2
+    },
+    {
+     "id": "os-hms",
+     "text": "Os HMs",
+     "level": 2
+    },
+    {
+     "id": "lendarios",
+     "text": "Lendários",
+     "level": 2
+    }
+   ],
+   "part": ""
+  }
+ ],
+ "pdfPages": 73
+}
