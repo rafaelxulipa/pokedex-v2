@@ -294,7 +294,7 @@ const Home: React.FC = () => {
              <button
               onClick={toggleShinyMode}
               className={`flex items-center justify-center px-4 py-3 rounded-2xl border transition-all duration-300 shadow-xs group ${isShinyMode ? 'bg-linear-to-r from-yellow-400 to-orange-400 border-transparent text-white shadow-yellow-500/30' : 'bg-white/50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
-              title="Shiny Mode"
+              title={t.shinyMode}
             >
               <Sparkles className={`h-5 w-5 ${isShinyMode ? 'fill-current animate-pulse' : 'group-hover:text-yellow-500'}`} />
             </button>

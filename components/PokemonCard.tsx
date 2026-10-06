@@ -11,7 +11,7 @@ interface PokemonCardProps {
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
-  const { localName, favorites, toggleFavorite, comparisonList, toggleComparison, isShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
+  const { t, localName, favorites, toggleFavorite, comparisonList, toggleComparison, isShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
   
   const isFavorite = favorites.includes(pokemon.id);
   const isComparing = comparisonList.includes(pokemon.id);
@@ -72,21 +72,21 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
                <button 
                 onClick={handleShinyClick}
                 className={`p-2 rounded-full transition-all duration-200 ${displayShiny ? 'bg-yellow-100 text-yellow-500 dark:bg-yellow-900/30 dark:text-yellow-400' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-yellow-500 dark:hover:text-yellow-400'}`}
-                title="Toggle Shiny"
+                title={t.toggleShiny}
               >
                 <Sparkles size={16} fill={displayShiny ? "currentColor" : "none"} />
               </button>
                <button 
                 onClick={handleCompareClick}
                 className={`p-2 rounded-full transition-all duration-200 ${isComparing ? 'bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-200' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-blue-500 dark:hover:text-blue-400'}`}
-                title="Compare"
+                title={t.compare}
               >
                 <Scale size={16} fill={isComparing ? "currentColor" : "none"} />
               </button>
               <button 
                 onClick={handleFavoriteClick}
                 className={`p-2 rounded-full transition-all duration-200 ${isFavorite ? 'bg-red-50 text-red-500 dark:bg-red-900/30 dark:text-red-400 shadow-xs' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-red-500 dark:hover:text-red-400'}`}
-                title="Favorite"
+                title={t.favorite}
               >
                 <Heart size={16} fill={isFavorite ? "currentColor" : "none"} />
               </button>

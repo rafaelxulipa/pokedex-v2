@@ -106,7 +106,7 @@ const GuideSearch: React.FC<GuideSearchProps> = ({ slug, className = '' }) => {
                   >
                     <span className="flex flex-wrap items-center gap-x-2 text-[11px] font-bold uppercase tracking-wide" style={{ color: hit.guide.accent }}>
                       {!slug && <span>{hit.guide.title.replace('Detonado Pokémon ', '')}</span>}
-                      <span className="text-gray-400">{t.guides.chapter} {hit.entry.c}</span>
+                      <span className="text-gray-400">{t.guides.chapterLabel.replace('{n}', String(hit.entry.c))}</span>
                     </span>
                     <span className="block text-sm font-bold text-gray-800 dark:text-gray-100">
                       {hit.entry.st || hit.entry.ct}

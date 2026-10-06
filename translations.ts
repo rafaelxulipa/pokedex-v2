@@ -55,6 +55,13 @@ export const translations = {
     advertisement: "Advertisement",
     none: "None",
     compareEvolutions: "Compare evolution line",
+    favorite: "Favorite",
+    toggleShiny: "Toggle shiny",
+    shinyMode: "Shiny mode",
+    toggleTheme: "Toggle dark mode",
+    close: "Close",
+    scrollLeft: "Scroll left",
+    scrollRight: "Scroll right",
     guides: {
         title: "Walkthroughs",
         subtitle: "Complete step-by-step Pokémon walkthroughs with maps and images. Read online or download the PDF for free.",
@@ -75,7 +82,9 @@ export const translations = {
         previous: "Previous",
         next: "Next",
         searchPlaceholder: "Search the walkthroughs...",
-        noResults: "No results."
+        noResults: "No results.",
+        chapterLabel: "Chapter {n}",
+        zoomImage: "Enlarge image"
     },
     hiddenAbility: "Hidden",
     movesTitle: "Level-up Moves",
@@ -248,6 +257,13 @@ export const translations = {
     advertisement: "Publicidade",
     none: "Nenhuma",
     compareEvolutions: "Comparar linha evolutiva",
+    favorite: "Favoritar",
+    toggleShiny: "Alternar shiny",
+    shinyMode: "Modo shiny",
+    toggleTheme: "Alternar tema escuro",
+    close: "Fechar",
+    scrollLeft: "Rolar para a esquerda",
+    scrollRight: "Rolar para a direita",
     guides: {
         title: "Detonados",
         subtitle: "Detonados completos de Pokémon, passo a passo, com mapas e imagens. Leia online ou baixe o PDF gratuitamente.",
@@ -268,7 +284,9 @@ export const translations = {
         previous: "Anterior",
         next: "Próximo",
         searchPlaceholder: "Buscar nos detonados...",
-        noResults: "Nenhum resultado."
+        noResults: "Nenhum resultado.",
+        chapterLabel: "Capítulo {n}",
+        zoomImage: "Ampliar imagem"
     },
     hiddenAbility: "Oculta",
     movesTitle: "Golpes por Nível",
@@ -441,6 +459,13 @@ export const translations = {
     advertisement: "Publicidad",
     none: "Ninguna",
     compareEvolutions: "Comparar línea evolutiva",
+    favorite: "Favorito",
+    toggleShiny: "Alternar shiny",
+    shinyMode: "Modo shiny",
+    toggleTheme: "Alternar modo oscuro",
+    close: "Cerrar",
+    scrollLeft: "Desplazar a la izquierda",
+    scrollRight: "Desplazar a la derecha",
     guides: {
         title: "Guías",
         subtitle: "Guías completas de Pokémon, paso a paso, con mapas e imágenes. Léelas en línea o descarga el PDF gratis.",
@@ -461,7 +486,9 @@ export const translations = {
         previous: "Anterior",
         next: "Siguiente",
         searchPlaceholder: "Buscar en las guías...",
-        noResults: "Sin resultados."
+        noResults: "Sin resultados.",
+        chapterLabel: "Capítulo {n}",
+        zoomImage: "Ampliar imagen"
     },
     hiddenAbility: "Oculta",
     movesTitle: "Movimientos por Nivel",
@@ -634,6 +661,13 @@ export const translations = {
     advertisement: "Werbung",
     none: "Keine",
     compareEvolutions: "Entwicklungsreihe vergleichen",
+    favorite: "Favorit",
+    toggleShiny: "Schillernd umschalten",
+    shinyMode: "Schillernd-Modus",
+    toggleTheme: "Dunkelmodus umschalten",
+    close: "Schließen",
+    scrollLeft: "Nach links scrollen",
+    scrollRight: "Nach rechts scrollen",
     guides: {
         title: "Komplettlösungen",
         subtitle: "Vollständige Pokémon-Komplettlösungen Schritt für Schritt mit Karten und Bildern. Online lesen oder das PDF kostenlos herunterladen.",
@@ -654,7 +688,9 @@ export const translations = {
         previous: "Zurück",
         next: "Weiter",
         searchPlaceholder: "In den Komplettlösungen suchen...",
-        noResults: "Keine Ergebnisse."
+        noResults: "Keine Ergebnisse.",
+        chapterLabel: "Kapitel {n}",
+        zoomImage: "Bild vergrößern"
     },
     hiddenAbility: "Versteckt",
     movesTitle: "Attacken nach Level",
@@ -827,6 +863,13 @@ export const translations = {
     advertisement: "广告",
     none: "无",
     compareEvolutions: "对比进化链",
+    favorite: "收藏",
+    toggleShiny: "切换闪光",
+    shinyMode: "闪光模式",
+    toggleTheme: "切换深色模式",
+    close: "关闭",
+    scrollLeft: "向左滚动",
+    scrollRight: "向右滚动",
     guides: {
         title: "攻略",
         subtitle: "带地图和图片的完整宝可梦图文攻略。可在线阅读，也可免费下载 PDF。",
@@ -847,7 +890,9 @@ export const translations = {
         previous: "上一章",
         next: "下一章",
         searchPlaceholder: "搜索攻略...",
-        noResults: "没有结果。"
+        noResults: "没有结果。",
+        chapterLabel: "第{n}章",
+        zoomImage: "放大图片"
     },
     hiddenAbility: "隐藏",
     movesTitle: "升级招式",
@@ -1020,6 +1065,13 @@ export const translations = {
     advertisement: "広告",
     none: "なし",
     compareEvolutions: "進化系統を比較",
+    favorite: "お気に入り",
+    toggleShiny: "色違いを切り替え",
+    shinyMode: "色違いモード",
+    toggleTheme: "ダークモード切り替え",
+    close: "閉じる",
+    scrollLeft: "左にスクロール",
+    scrollRight: "右にスクロール",
     guides: {
         title: "攻略ガイド",
         subtitle: "マップと画像つきのポケモン完全攻略。オンラインで読むか、PDFを無料でダウンロードできます。",
@@ -1040,7 +1092,9 @@ export const translations = {
         previous: "前へ",
         next: "次へ",
         searchPlaceholder: "攻略を検索...",
-        noResults: "結果がありません。"
+        noResults: "結果がありません。",
+        chapterLabel: "第{n}章",
+        zoomImage: "画像を拡大"
     },
     hiddenAbility: "隠れ特性",
     movesTitle: "レベルアップわざ",

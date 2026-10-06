@@ -60,7 +60,7 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
         type="button"
         onClick={() => setZoom({ src: guideAsset(slug, img.src), alt })}
         className={`block w-full cursor-zoom-in text-left ${card ? 'bg-white p-1.5 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-xs' : ''}`}
-        aria-label={alt || 'Ampliar imagem'}
+        aria-label={alt || t.guides.zoomImage}
       >
         {image}
       </button>
@@ -169,7 +169,7 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
           role="dialog"
           aria-modal="true"
         >
-          <button className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Fechar">
+          <button className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20" aria-label={t.close}>
             <X size={24} />
           </button>
           <img src={zoom.src} alt={zoom.alt} className="max-w-full max-h-full object-contain rounded-lg" />

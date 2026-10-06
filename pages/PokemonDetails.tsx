@@ -261,7 +261,7 @@ const PokemonDetails: React.FC = () => {
             <button 
                 onClick={() => toggleFavorite(pokemon.id)}
                 className={`p-2 rounded-full backdrop-blur-xs transition ${isFavorite ? 'bg-white text-red-500' : 'bg-white/20 text-white hover:bg-white/40'}`}
-                title="Favorite"
+                title={t.favorite}
               >
                 <Heart size={20} fill={isFavorite ? "currentColor" : "none"} />
             </button>
@@ -274,7 +274,7 @@ const PokemonDetails: React.FC = () => {
            <button 
                 onClick={() => toggleShinyPokemon(pokemon.id)}
                 className={`absolute top-0 right-0 p-2 rounded-full shadow-md z-30 transition-all transform hover:scale-110 ${isLocalShiny ? 'bg-yellow-400 text-white' : 'bg-white dark:bg-dark-card text-gray-400 hover:text-yellow-400'}`}
-                title="Toggle Shiny"
+                title={t.toggleShiny}
            >
                <Sparkles size={20} fill={isLocalShiny ? "currentColor" : "none"} />
            </button>
@@ -489,7 +489,7 @@ const PokemonDetails: React.FC = () => {
                     <button 
                         onClick={() => handleFormsScroll('left')}
                         className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-xs rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
-                        aria-label="Scroll left"
+                        aria-label={t.scrollLeft}
                     >
                         <ChevronLeft size={24} />
                     </button>
@@ -553,7 +553,7 @@ const PokemonDetails: React.FC = () => {
                      <button 
                         onClick={() => handleFormsScroll('right')}
                         className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-xs rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
-                        aria-label="Scroll right"
+                        aria-label={t.scrollRight}
                     >
                         <ChevronRight size={24} />
                     </button>

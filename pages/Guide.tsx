@@ -291,7 +291,7 @@ const Guide: React.FC = () => {
 
           <header className="mb-8 pb-6 border-b-2" style={{ borderColor: accent }}>
             <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: accent }}>
-              {t.guides.chapter} {chapter.n}{chapter.part ? ` · ${chapter.part}` : ''}
+              {t.guides.chapterLabel.replace('{n}', String(chapter.n))}{chapter.part ? ` · ${chapter.part}` : ''}
             </p>
             <h1 className="mt-1 text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">{chapter.title}</h1>
           </header>
@@ -339,7 +339,7 @@ const Guide: React.FC = () => {
           <div className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-dark-card p-4 overflow-y-auto animate-fade-in">
             <div className="flex items-center justify-between mb-4">
               <span className="font-extrabold text-gray-900 dark:text-white">{t.guides.chapters}</span>
-              <button onClick={() => setMenuOpen(false)} aria-label="Fechar" className="p-2 text-gray-500"><X size={20} /></button>
+              <button onClick={() => setMenuOpen(false)} aria-label={t.close} className="p-2 text-gray-500"><X size={20} /></button>
             </div>
             {chapterList(() => setMenuOpen(false))}
           </div>
