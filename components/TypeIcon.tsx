@@ -105,7 +105,7 @@ const TypeIcon: React.FC<TypeIconProps> = ({ type, className = 'w-4 h-4' }) => {
     ),
   };
 
-  const selectedIcon = icons[type.toLowerCase()];
+  const selectedIcon = icons[type.toLowerCase()] as React.ReactElement<{ className?: string }> | undefined;
   
   if (!selectedIcon) return null;
 
