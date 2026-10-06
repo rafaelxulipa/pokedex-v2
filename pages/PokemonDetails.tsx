@@ -9,6 +9,8 @@ import TypeBadge from '../components/TypeBadge';
 import StatChart from '../components/StatChart';
 import Loader from '../components/Loader';
 import AdSense from '../components/AdSense';
+import AbilitiesSection from '../components/AbilitiesSection';
+import MovesSection from '../components/MovesSection';
 import { LinearEvolutionChain, ChainNode } from '../components/EvolutionChain';
 import { useGlobal, MAX_TEAM } from '../context/GlobalContext';
 import { defensiveMultipliers } from '../utils/typeChart';
@@ -432,6 +434,12 @@ const PokemonDetails: React.FC = () => {
                     <AdSense format="auto" className="min-h-[250px]" slot="8207137273" />
                 </div>
             </div>
+        </div>
+
+        {/* Abilities and moves */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 items-start">
+            <AbilitiesSection abilities={pokemon.abilities} />
+            <MovesSection moves={pokemon.moves} />
         </div>
 
         {/* Linear Evolution Flow */}

@@ -42,3 +42,6 @@ export const GENERATIONS = [
   { key: 'gen8', start: 810, end: 905 },
   { key: 'gen9', start: 906, end: 1025 },
 ];
+
+export const MAX_COMPARISON = 4;
+export const MAX_TEAM = 6;

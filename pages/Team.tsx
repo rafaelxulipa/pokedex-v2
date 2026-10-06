@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Users, Plus, X, Search, Trash2, ShieldAlert } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { Users, Plus, X, Search, Trash2, ShieldAlert, Link2, Check } from 'lucide-react';
 import { useGlobal, MAX_TEAM } from '../context/GlobalContext';
 import { fetchAllPokemonNames, fetchMultiplePokemon, fetchTypeByName, pokemonUrl } from '../services/pokeApi';
 import { PokemonDetail, PokemonListEntry, TypeDetail } from '../types';
@@ -8,16 +8,49 @@ import { ALL_TYPES, defensiveMultipliers } from '../utils/typeChart';
 import { idFromUrl, SPRITE_BASE, formatName } from '../utils/pokemon';
 import TypeBadge from '../components/TypeBadge';
 import Loader from '../components/Loader';
+import { parseTeam, serializeTeam } from '../utils/team';
 
 const MAX_RESULTS = 12;
 
 const Team: React.FC = () => {
-  const { t, localName, team, toggleTeamMember, clearTeam } = useGlobal();
+  const { t, localName, team, toggleTeamMember, clearTeam, setTeamMembers } = useGlobal();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [pendingImport, setPendingImport] = useState<number[] | null>(null);
+  const [copied, setCopied] = useState(false);
   const [members, setMembers] = useState<PokemonDetail[]>([]);
   const [typeDetails, setTypeDetails] = useState<Record<string, TypeDetail>>({});
   const [allNames, setAllNames] = useState<PokemonListEntry[]>([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+
+  // A shared link (#/team?ids=6,25,94) imports a team. If the user already has one, ask first.
+  useEffect(() => {
+    const shared = searchParams.get('ids');
+    if (shared === null) return;
+    const ids = parseTeam(shared);
+    setSearchParams({}, { replace: true });
+    if (ids.length === 0) return;
+    if (team.length === 0) setTeamMembers(ids);
+    else setPendingImport(ids);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const copyLink = async () => {
+    const url = `${window.location.origin}${window.location.pathname}#/team?ids=${serializeTeam(team)}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // Clipboard API unavailable (insecure context): fall back to a temporary textarea
+      const area = document.createElement('textarea');
+      area.value = url;
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      document.body.removeChild(area);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Search list and type chart are loaded once
   useEffect(() => {
@@ -90,6 +123,26 @@ const Team: React.FC = () => {
         <p className="text-gray-500 dark:text-gray-400">{t.team.subtitle}</p>
       </div>
 
+      {pendingImport && (
+        <div className="mb-6 p-4 rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 text-sm text-blue-800 dark:text-blue-200">
+          <p className="mb-3 font-medium">{t.team.importPrompt.replace('{n}', String(pendingImport.length))}</p>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => { setTeamMembers(pendingImport); setPendingImport(null); }}
+              className="px-4 py-2 font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors"
+            >
+              {t.team.importReplace}
+            </button>
+            <button
+              onClick={() => setPendingImport(null)}
+              className="px-4 py-2 font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              {t.team.importKeep}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Slots */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mb-8">
         {slots.map((member, i) =>
@@ -132,6 +185,12 @@ const Team: React.FC = () => {
               className="block w-full pl-11 pr-4 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"
             />
           </div>
+          {team.length > 0 && (
+            <button onClick={copyLink} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 rounded-2xl hover:bg-green-100 dark:hover:bg-green-900/40 transition-colors">
+              {copied ? <Check size={16} /> : <Link2 size={16} />}
+              <span className="hidden sm:inline">{copied ? t.team.linkCopied : t.team.share}</span>
+            </button>
+          )}
           {team.length > 0 && (
             <button onClick={clearTeam} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-red-500 bg-red-50 dark:bg-red-900/20 rounded-2xl hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors">
               <Trash2 size={16} /> <span className="hidden sm:inline">{t.team.clear}</span>

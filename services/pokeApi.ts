@@ -1,5 +1,5 @@
 import { POKEAPI_URL } from '../constants';
-import { PokemonDetail, PokemonListEntry, PokemonSpecies, EvolutionChainResponse, TypeDetail } from '../types';
+import { AbilityDetail, MoveDetail, PokemonDetail, PokemonListEntry, PokemonSpecies, EvolutionChainResponse, TypeDetail } from '../types';
 
 // In-memory cache of in-flight/finished requests, keyed by url. Failed requests are evicted
 // so they can be retried later.
@@ -40,6 +40,10 @@ export const fetchPokemonSpecies = (idOrUrl: number | string) =>
   cachedFetch<PokemonSpecies>(typeof idOrUrl === 'number' ? `${POKEAPI_URL}/pokemon-species/${idOrUrl}` : idOrUrl);
 
 export const fetchEvolutionChain = (url: string) => cachedFetch<EvolutionChainResponse>(url);
+
+export const fetchAbility = (url: string) => cachedFetch<AbilityDetail>(url);
+
+export const fetchMove = (url: string) => cachedFetch<MoveDetail>(url);
 
 export const fetchTypeDetails = (url: string) => cachedFetch<TypeDetail>(url);
 

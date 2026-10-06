@@ -55,6 +55,19 @@ export const translations = {
     advertisement: "Advertisement",
     none: "None",
     compareEvolutions: "Compare evolution line",
+    hiddenAbility: "Hidden",
+    movesTitle: "Level-up Moves",
+    showAll: "Show all",
+    showLess: "Show less",
+    power: "Power",
+    accuracy: "Accuracy",
+    pp: "PP",
+    noEffect: "No description available.",
+    damageClass: {
+        physical: "Physical",
+        special: "Special",
+        status: "Status"
+    },
     resistances: "Resistances",
     immunities: "Immunities",
     noDescription: "No description available.",
@@ -88,7 +101,10 @@ export const translations = {
         finalMessage: "You got {n} out of {total} right.",
         playAgain: "Play Again",
         back: "Menu",
-        rounds: "10 rounds"
+        rounds: "10 rounds",
+        daily: "Daily Challenge",
+        dailyHint: "Same Pokémon for everyone, once a day",
+        dailyDone: "Today: {n}/{total}. Come back tomorrow!"
     },
     team: {
         title: "Team Builder",
@@ -108,7 +124,12 @@ export const translations = {
         full: "Team is full (max 6)",
         avg: "Avg. base stats",
         members: "Members",
-        remove: "Remove"
+        remove: "Remove",
+        share: "Copy link",
+        linkCopied: "Link copied!",
+        importPrompt: "A shared team with {n} Pokémon was found. Replace your current team?",
+        importReplace: "Replace my team",
+        importKeep: "Keep my team"
     },
     generations: {
         gen1: "Gen 1 - Kanto",
@@ -205,6 +226,19 @@ export const translations = {
     advertisement: "Publicidade",
     none: "Nenhuma",
     compareEvolutions: "Comparar linha evolutiva",
+    hiddenAbility: "Oculta",
+    movesTitle: "Golpes por Nível",
+    showAll: "Ver todos",
+    showLess: "Ver menos",
+    power: "Poder",
+    accuracy: "Precisão",
+    pp: "PP",
+    noEffect: "Nenhuma descrição disponível.",
+    damageClass: {
+        physical: "Físico",
+        special: "Especial",
+        status: "Status"
+    },
     resistances: "Resistências",
     immunities: "Imunidades",
     noDescription: "Nenhuma descrição disponível.",
@@ -238,7 +272,10 @@ export const translations = {
         finalMessage: "Você acertou {n} de {total}.",
         playAgain: "Jogar Novamente",
         back: "Menu",
-        rounds: "10 rodadas"
+        rounds: "10 rodadas",
+        daily: "Desafio do Dia",
+        dailyHint: "Os mesmos Pokémon para todos, uma vez por dia",
+        dailyDone: "Hoje: {n}/{total}. Volte amanhã!"
     },
     team: {
         title: "Montar Time",
@@ -258,7 +295,12 @@ export const translations = {
         full: "Time cheio (máx 6)",
         avg: "Média dos status base",
         members: "Membros",
-        remove: "Remover"
+        remove: "Remover",
+        share: "Copiar link",
+        linkCopied: "Link copiado!",
+        importPrompt: "Foi encontrado um time compartilhado com {n} Pokémon. Substituir o seu time atual?",
+        importReplace: "Substituir meu time",
+        importKeep: "Manter meu time"
     },
     generations: {
         gen1: "Gen 1 - Kanto",
@@ -355,6 +397,19 @@ export const translations = {
     advertisement: "Publicidad",
     none: "Ninguna",
     compareEvolutions: "Comparar línea evolutiva",
+    hiddenAbility: "Oculta",
+    movesTitle: "Movimientos por Nivel",
+    showAll: "Ver todos",
+    showLess: "Ver menos",
+    power: "Potencia",
+    accuracy: "Precisión",
+    pp: "PP",
+    noEffect: "No hay descripción disponible.",
+    damageClass: {
+        physical: "Físico",
+        special: "Especial",
+        status: "Estado"
+    },
     resistances: "Resistencias",
     immunities: "Inmunidades",
     noDescription: "No hay descripción disponible.",
@@ -388,7 +443,10 @@ export const translations = {
         finalMessage: "Acertaste {n} de {total}.",
         playAgain: "Jugar de Nuevo",
         back: "Menú",
-        rounds: "10 rondas"
+        rounds: "10 rondas",
+        daily: "Desafío Diario",
+        dailyHint: "Los mismos Pokémon para todos, una vez al día",
+        dailyDone: "Hoy: {n}/{total}. ¡Vuelve mañana!"
     },
     team: {
         title: "Creador de Equipos",
@@ -408,7 +466,12 @@ export const translations = {
         full: "Equipo completo (máx 6)",
         avg: "Media de estadísticas base",
         members: "Miembros",
-        remove: "Quitar"
+        remove: "Quitar",
+        share: "Copiar enlace",
+        linkCopied: "¡Enlace copiado!",
+        importPrompt: "Se encontró un equipo compartido con {n} Pokémon. ¿Reemplazar tu equipo actual?",
+        importReplace: "Reemplazar mi equipo",
+        importKeep: "Mantener mi equipo"
     },
     generations: {
         gen1: "Gen 1 - Kanto",
@@ -505,6 +568,19 @@ export const translations = {
     advertisement: "Werbung",
     none: "Keine",
     compareEvolutions: "Entwicklungsreihe vergleichen",
+    hiddenAbility: "Versteckt",
+    movesTitle: "Attacken nach Level",
+    showAll: "Alle anzeigen",
+    showLess: "Weniger anzeigen",
+    power: "Stärke",
+    accuracy: "Genauigkeit",
+    pp: "AP",
+    noEffect: "Keine Beschreibung verfügbar.",
+    damageClass: {
+        physical: "Physisch",
+        special: "Spezial",
+        status: "Status"
+    },
     resistances: "Resistenzen",
     immunities: "Immunitäten",
     noDescription: "Keine Beschreibung verfügbar.",
@@ -538,7 +614,10 @@ export const translations = {
         finalMessage: "Du hattest {n} von {total} richtig.",
         playAgain: "Nochmal spielen",
         back: "Menü",
-        rounds: "10 Runden"
+        rounds: "10 Runden",
+        daily: "Tägliche Herausforderung",
+        dailyHint: "Dieselben Pokémon für alle, einmal am Tag",
+        dailyDone: "Heute: {n}/{total}. Komm morgen wieder!"
     },
     team: {
         title: "Team-Builder",
@@ -558,7 +637,12 @@ export const translations = {
         full: "Team ist voll (max 6)",
         avg: "Durchschn. Basiswerte",
         members: "Mitglieder",
-        remove: "Entfernen"
+        remove: "Entfernen",
+        share: "Link kopieren",
+        linkCopied: "Link kopiert!",
+        importPrompt: "Ein geteiltes Team mit {n} Pokémon wurde gefunden. Dein aktuelles Team ersetzen?",
+        importReplace: "Mein Team ersetzen",
+        importKeep: "Mein Team behalten"
     },
     generations: {
         gen1: "Gen 1 - Kanto",
@@ -655,6 +739,19 @@ export const translations = {
     advertisement: "广告",
     none: "无",
     compareEvolutions: "对比进化链",
+    hiddenAbility: "隐藏",
+    movesTitle: "升级招式",
+    showAll: "显示全部",
+    showLess: "收起",
+    power: "威力",
+    accuracy: "命中",
+    pp: "PP",
+    noEffect: "暂无描述。",
+    damageClass: {
+        physical: "物理",
+        special: "特殊",
+        status: "变化"
+    },
     resistances: "抗性",
     immunities: "免疫",
     noDescription: "暂无描述。",
@@ -688,7 +785,10 @@ export const translations = {
         finalMessage: "你答对了 {n} / {total} 题。",
         playAgain: "再玩一次",
         back: "菜单",
-        rounds: "10 轮"
+        rounds: "10 轮",
+        daily: "每日挑战",
+        dailyHint: "每天一次，所有人题目相同",
+        dailyDone: "今日：{n}/{total}。明天再来！"
     },
     team: {
         title: "队伍构建",
@@ -708,7 +808,12 @@ export const translations = {
         full: "队伍已满 (最多6只)",
         avg: "平均种族值",
         members: "成员",
-        remove: "移除"
+        remove: "移除",
+        share: "复制链接",
+        linkCopied: "链接已复制！",
+        importPrompt: "发现一个包含 {n} 只宝可梦的分享队伍。是否替换当前队伍？",
+        importReplace: "替换我的队伍",
+        importKeep: "保留我的队伍"
     },
     generations: {
         gen1: "第一世代 - 关都",
@@ -805,6 +910,19 @@ export const translations = {
     advertisement: "広告",
     none: "なし",
     compareEvolutions: "進化系統を比較",
+    hiddenAbility: "隠れ特性",
+    movesTitle: "レベルアップわざ",
+    showAll: "すべて表示",
+    showLess: "閉じる",
+    power: "威力",
+    accuracy: "命中",
+    pp: "PP",
+    noEffect: "説明がありません。",
+    damageClass: {
+        physical: "物理",
+        special: "特殊",
+        status: "変化"
+    },
     resistances: "耐性",
     immunities: "無効",
     noDescription: "説明がありません。",
@@ -838,7 +956,10 @@ export const translations = {
         finalMessage: "{total}問中{n}問正解しました。",
         playAgain: "もう一度",
         back: "メニュー",
-        rounds: "10ラウンド"
+        rounds: "10ラウンド",
+        daily: "デイリーチャレンジ",
+        dailyHint: "1日1回、みんな同じ問題",
+        dailyDone: "今日: {n}/{total}。また明日！"
     },
     team: {
         title: "チーム作成",
@@ -858,7 +979,12 @@ export const translations = {
         full: "チームがいっぱいです (最大6匹)",
         avg: "平均種族値",
         members: "メンバー",
-        remove: "外す"
+        remove: "外す",
+        share: "リンクをコピー",
+        linkCopied: "コピーしました！",
+        importPrompt: "{n}匹の共有チームが見つかりました。現在のチームを置き換えますか？",
+        importReplace: "置き換える",
+        importKeep: "そのままにする"
     },
     generations: {
         gen1: "第1世代 - カントー",

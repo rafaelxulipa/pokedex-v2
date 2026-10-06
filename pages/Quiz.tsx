@@ -3,16 +3,19 @@ import { HelpCircle, Flame, Trophy, ArrowRight, RefreshCw } from 'lucide-react';
 import { useGlobal } from '../context/GlobalContext';
 import { GENERATIONS } from '../constants';
 import { fetchAllPokemonNames } from '../services/pokeApi';
-import { artworkUrl, formatName, idFromUrl, MAX_POKEMON_ID, randomInt, shuffleArray } from '../utils/pokemon';
+import { artworkUrl, formatName, idFromUrl, MAX_POKEMON_ID } from '../utils/pokemon';
+import { buildQuestions, QuizQuestion } from '../utils/quiz';
+import { createRandom, hashString, todayKey } from '../utils/daily';
 import { readStorage, writeStorage } from '../utils/storage';
 import Loader from '../components/Loader';
 
 const TOTAL_ROUNDS = 10;
 const BEST_STREAK_KEY = 'quizBestStreak';
+const DAILY_KEY = 'quizDaily';
 
-interface Question {
-  id: number;
-  options: { id: number; name: string }[];
+interface DailyResult {
+  date: string;
+  score: number;
 }
 
 type Phase = 'menu' | 'playing' | 'finished';
@@ -23,7 +26,13 @@ const Quiz: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [generation, setGeneration] = useState('all');
   const [phase, setPhase] = useState<Phase>('menu');
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuizQuestion[]>([]);
+  const [isDaily, setIsDaily] = useState(false);
+  const [dailyResult, setDailyResult] = useState<DailyResult | null>(() =>
+    readStorage<DailyResult | null>(DAILY_KEY, null, (v) => !!v && typeof (v as DailyResult).date === 'string')
+  );
+  const today = todayKey();
+  const dailyDone = dailyResult?.date === today;
   const [round, setRound] = useState(0);
   const [answer, setAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -51,31 +60,26 @@ const Quiz: React.FC = () => {
     };
   }, []);
 
-  const start = () => {
-    const range = GENERATIONS.find((g) => g.key === generation);
-    const min = range ? range.start : 1;
-    const max = range ? range.end : MAX_POKEMON_ID;
-
-    const picked = new Set<number>();
-    while (picked.size < TOTAL_ROUNDS) picked.add(randomInt(min, max));
-
-    const qs: Question[] = Array.from(picked).map((id) => {
-      const wrong = new Set<number>();
-      while (wrong.size < 3) {
-        const other = randomInt(min, max);
-        if (other !== id) wrong.add(other);
-      }
-      const options = shuffleArray([id, ...wrong]).map((oid) => ({ id: oid, name: names[oid] || String(oid) }));
-      return { id, options };
-    });
-
+  const begin = (qs: QuizQuestion[], daily: boolean) => {
     setQuestions(qs);
+    setIsDaily(daily);
     setRound(0);
     setScore(0);
     setStreak(0);
     setAnswer(null);
     setImageReady(false);
     setPhase('playing');
+  };
+
+  const start = () => {
+    const range = GENERATIONS.find((g) => g.key === generation);
+    begin(buildQuestions(range ? range.start : 1, range ? range.end : MAX_POKEMON_ID, TOTAL_ROUNDS), false);
+  };
+
+  // Same questions for everyone on a given day (seeded by the date)
+  const startDaily = () => {
+    const random = createRandom(hashString(`daily-${today}`));
+    begin(buildQuestions(1, MAX_POKEMON_ID, TOTAL_ROUNDS, random), true);
   };
 
   const choose = (optionId: number) => {
@@ -98,6 +102,11 @@ const Quiz: React.FC = () => {
 
   const next = () => {
     if (round + 1 >= TOTAL_ROUNDS) {
+      if (isDaily) {
+        const result = { date: today, score };
+        setDailyResult(result);
+        writeStorage(DAILY_KEY, result);
+      }
       setPhase('finished');
       return;
     }
@@ -130,6 +139,18 @@ const Quiz: React.FC = () => {
             className="w-full px-8 py-4 text-xl font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             {t.quiz.start} <span className="block text-xs font-medium text-purple-100">{t.quiz.rounds}</span>
+          </button>
+          <button
+            onClick={startDaily}
+            disabled={dailyDone}
+            className="w-full px-8 py-4 text-xl font-bold text-white bg-linear-to-r from-amber-500 to-orange-500 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed"
+          >
+            {t.quiz.daily}
+            <span className="block text-xs font-medium text-amber-100">
+              {dailyDone
+                ? t.quiz.dailyDone.replace('{n}', String(dailyResult?.score ?? 0)).replace('{total}', String(TOTAL_ROUNDS))
+                : t.quiz.dailyHint}
+            </span>
           </button>
           <p className="text-sm text-gray-400">{t.quiz.best}: {bestStreak}</p>
         </div>
@@ -194,7 +215,8 @@ const Quiz: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-        {question.options.map((option) => {
+        {question.optionIds.map((optionId) => {
+          const option = { id: optionId, name: names[optionId] || String(optionId) };
           let style = 'bg-white dark:bg-dark-card border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 hover:border-purple-500';
           if (revealed) {
             if (option.id === question.id) style = 'bg-green-50 dark:bg-green-900/30 border-green-500 text-green-700 dark:text-green-300';

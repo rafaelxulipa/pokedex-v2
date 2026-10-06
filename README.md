@@ -5,11 +5,11 @@ Pokédex feita com React, TypeScript e Vite, usando a [PokéAPI](https://pokeapi
 ## Recursos
 
 - Lista com busca (nome ou número), filtro por geração e por até 2 tipos, favoritos e modo shiny
-- Detalhes: status, fraquezas, resistências, imunidades, evoluções, formas alternativas
+- Detalhes: status, fraquezas, resistências, imunidades, habilidades e golpes com descrição, evoluções, formas alternativas
 - Comparação de 2 a 4 Pokémon
-- Montador de time (6 Pokémon) com análise de cobertura de tipos
+- Montador de time (6 Pokémon) com análise de cobertura de tipos e link para compartilhar
 - Jogo da memória (níveis, geração, modo shiny, recordes)
-- Quiz "Quem é esse Pokémon?"
+- Quiz "Quem é esse Pokémon?" com desafio do dia (mesmas perguntas para todos)
 - 6 idiomas (pt, en, es, de, zh, ja) e tema claro/escuro
 
 ## Desenvolvimento
@@ -18,4 +18,5 @@ Pokédex feita com React, TypeScript e Vite, usando a [PokéAPI](https://pokeapi
 npm install
 npm run dev     # http://localhost:3000
 npm run build
+npm test        # testes unitários (vitest)
 ```

@@ -4,8 +4,8 @@ import { fetchSpeciesNames } from '../services/pokeApi';
 import { idFromUrl, formatName } from '../utils/pokemon';
 import { readStorage, writeStorage, removeStorage, isNumberArray } from '../utils/storage';
 
-export const MAX_COMPARISON = 4;
-export const MAX_TEAM = 6;
+import { MAX_COMPARISON, MAX_TEAM } from '../constants';
+export { MAX_COMPARISON, MAX_TEAM };
 
 const LANGUAGE_CODES = ['en', 'pt', 'es', 'de', 'zh', 'ja'];
 
@@ -21,6 +21,7 @@ interface GlobalContextType {
   team: number[];
   toggleTeamMember: (id: number) => void;
   clearTeam: () => void;
+  setTeamMembers: (ids: number[]) => void;
   isShinyMode: boolean;
   toggleShinyMode: () => void;
   shinyPokemon: number[];
@@ -116,6 +117,12 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     });
   };
 
+  const setTeamMembers = (ids: number[]) => {
+    const list = ids.slice(0, MAX_TEAM);
+    setTeam(list);
+    writeStorage('team', list);
+  };
+
   const clearTeam = () => {
     setTeam([]);
     removeStorage('team');
@@ -178,6 +185,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         team,
         toggleTeamMember,
         clearTeam,
+        setTeamMembers,
         isShinyMode,
         toggleShinyMode,
         shinyPokemon,

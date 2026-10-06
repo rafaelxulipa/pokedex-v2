@@ -37,6 +37,7 @@ export interface PokemonDetail {
   types: PokemonType[];
   stats: PokemonStat[];
   abilities: PokemonAbility[];
+  moves: PokemonMove[];
   species: {
     name: string;
     url: string;
@@ -129,4 +130,40 @@ export interface DamageRelations {
 export interface TypeDetail {
   damage_relations: DamageRelations;
   name: string;
+}
+export interface PokemonMove {
+  move: { name: string; url: string };
+  version_group_details: {
+    level_learned_at: number;
+    move_learn_method: { name: string };
+    version_group: { name: string; url: string };
+  }[];
+}
+
+interface LocalizedName {
+  name: string;
+  language: { name: string };
+}
+
+interface EffectEntry {
+  short_effect: string;
+  language: { name: string };
+}
+
+export interface AbilityDetail {
+  name: string;
+  names: LocalizedName[];
+  effect_entries: EffectEntry[];
+}
+
+export interface MoveDetail {
+  name: string;
+  names: LocalizedName[];
+  type: { name: string };
+  damage_class: { name: string } | null;
+  power: number | null;
+  accuracy: number | null;
+  pp: number | null;
+  effect_chance: number | null;
+  effect_entries: EffectEntry[];
 }
