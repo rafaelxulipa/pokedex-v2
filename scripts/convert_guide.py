@@ -10,7 +10,10 @@ Text, headings and call-outs become structured blocks. Photos/maps become images
 Trainer cards and tables (rich layouts) are cropped as images, with the text kept as `alt`.
 
 Usage (needs `pymupdf` and `Pillow`):
-    python scripts/convert_guide.py <pdf_dir> <config.json>
+    python scripts/convert_guide.py <pdf_dir> <config.json> [--keep-pdfs]
+
+--keep-pdfs keeps the PDFs already in public/detonados/<slug>/pdf (for example compressed and
+watermarked ones) instead of overwriting them with the originals from <pdf_dir>.
 
 The config lists the PDF files (the first one is converted, all of them are offered for download).
 """
@@ -27,6 +30,10 @@ import pymupdf
 from PIL import Image
 
 PUBLIC = Path(__file__).resolve().parent.parent / "public" / "detonados"
+
+# Font families of the PDF (set from the config "fonts.body" / "fonts.ui")
+BODY_FONT = "Lora"      # running text
+UI_FONT = "Poppins"     # headings, labels, tables and cards
 
 LABELS = {
     "DICA": "tip",
@@ -146,9 +153,9 @@ class Page:
 def is_cardish(line):
     """Small UI-style text used inside cards/tables (not body prose, headings or callouts)."""
     font, size = line["font"], line["size"]
-    if font.startswith("Poppins"):
+    if font.startswith(UI_FONT):
         return size < 14
-    if font.startswith("Lora") and size <= 9.6:
+    if font.startswith(BODY_FONT) and size <= 9.6:
         return True
     return False
 
@@ -203,20 +210,26 @@ def runs_from_spans(spans_list):
 
 
 class Converter:
-    def __init__(self, pdf_dir, slug, config):
+    def __init__(self, pdf_dir, slug, config, public=PUBLIC, keep_pdfs=False):
+        global BODY_FONT, UI_FONT
+        fonts = config.get("fonts", {})
+        BODY_FONT = fonts.get("body", "Lora")
+        UI_FONT = fonts.get("ui", "Poppins")
+        self.public = Path(public)
+        self.keep_pdfs = keep_pdfs
         self.pdf_dir = pdf_dir
         self.doc = pymupdf.open(Path(pdf_dir) / config["pdfs"][0]["file"])
         self.slug = slug
         self.config = config
         self.toc = self.doc.get_toc()
-        self.out = PUBLIC / slug
+        self.out = self.public / slug
         (self.out / "img").mkdir(parents=True, exist_ok=True)
         (self.out / "chapters").mkdir(parents=True, exist_ok=True)
         self.saved = {}
         self.unknown = {}
         h = config.get("fonts", {})
-        self.h2_sig = tuple(h.get("h2", ["Poppins-Bold", 14.4]))
-        self.h3_sig = tuple(h.get("h3", ["Poppins-Bold", 11.0]))
+        self.h2_sig = tuple(h.get("h2", [UI_FONT + "-Bold", 14.4]))
+        self.h3_sig = tuple(h.get("h3", [UI_FONT + "-Bold", 11.0]))
 
     # -- images ----------------------------------------------------------------
     def save_region(self, page, rect, native_width=None, max_width=1400, min_scale=1.0):
@@ -246,7 +259,7 @@ class Converter:
             toc_titles = {norm(t[1]) for t in page.toc if t[0] > 1}
             page.lines = [
                 l for l in page.lines
-                if not (l["bbox"].y0 < 150 and l["font"].startswith("Poppins") and norm(l["text"]) not in toc_titles)
+                if not (l["bbox"].y0 < 150 and l["font"].startswith(UI_FONT) and norm(l["text"]) not in toc_titles)
             ]
         containers = page.containers()
         items = []  # (y, x, kind, payload)
@@ -259,7 +272,7 @@ class Converter:
         for region in containers:
             region = pymupdf.Rect(region)
             header_lines = [l for l in page.lines if inside(region, l["bbox"])]
-            has_white_title = any(l["font"].startswith("Poppins") and l["color"] == "ffffff" for l in header_lines)
+            has_white_title = any(l["font"].startswith(UI_FONT) and l["color"] == "ffffff" for l in header_lines)
             has_label = any(label_kind(l["text"]) for l in header_lines)
             if has_white_title and not has_label and region.width >= 400:
                 below = [l for l in page.lines if l["bbox"].y0 >= region.y1 - 2 and is_cardish(l)]
@@ -291,9 +304,9 @@ class Converter:
                 l["color"] == "ffffff" for l in region_lines
             ):
                 continue  # section heading with a coloured marker: let the text flow handle it
-            first_label = next((label_kind(l["text"]) for l in region_lines if l["font"].startswith("Poppins-Bold")), None)
+            first_label = next((label_kind(l["text"]) for l in region_lines if l["font"].startswith(UI_FONT + "-Bold")), None)
             looks_like_card = bool(images_in) or any(
-                re.match(r"^Nv\.", l["text"].strip()) or l["font"] == "Poppins-Medium" and l["color"] == "ffffff"
+                re.match(r"^Nv\.", l["text"].strip()) or l["font"] == UI_FONT + "-Medium" and l["color"] == "ffffff"
                 for l in region_lines
             ) or len({round(l["bbox"].x0 / 40) for l in region_lines}) > 3 and not first_label
             if first_label and not looks_like_card:
@@ -422,24 +435,24 @@ class Converter:
             text = l["text"].strip()
             sig = (l["font"], l["size"])
             level = toc_titles.get(norm(text))
-            is_h2 = sig == self.h2_sig or (level == 2 and l["font"].startswith("Poppins-Bold"))
-            is_h3 = sig == self.h3_sig or (level == 3 and l["font"].startswith("Poppins-Bold"))
+            is_h2 = sig == self.h2_sig or (level == 2 and l["font"].startswith(UI_FONT + "-Bold"))
+            is_h3 = sig == self.h3_sig or (level == 3 and l["font"].startswith(UI_FONT + "-Bold"))
             if is_h2 and level != 3:
                 flush_body()
                 items.append((l["bbox"].y0, l["bbox"].x0, "block", {"t": "h2", "text": text}))
             elif is_h3 or (level == 3):
                 flush_body()
                 items.append((l["bbox"].y0, l["bbox"].x0, "block", {"t": "h3", "text": text}))
-            elif l["font"].startswith("Lora") and l["size"] >= 10.0 and l["color"] != "6b6e78":
+            elif l["font"].startswith(BODY_FONT) and l["size"] >= 10.0 and l["color"] != "6b6e78":
                 if last_body is not None and l["bbox"].y0 - last_body["bbox"].y1 > 6.5:
                     flush_body()
                 body_buffer.append(l)
                 last_body = l
-            elif (l["font"].startswith("Poppins") and l["color"] == "6b6e78" and 8.4 <= l["size"] <= 9.2
+            elif (l["font"].startswith(UI_FONT) and l["color"] == "6b6e78" and 8.4 <= l["size"] <= 9.2
                   and items and isinstance(items[-1][3], dict) and items[-1][3].get("t") == "h2" and "sub" not in items[-1][3]
                   and l["bbox"].y0 - items[-1][0] < 40):
                 items[-1][3]["sub"] = text
-            elif l["font"].startswith("Poppins") and l["color"] in ("6b6e78", "7a7d86") and l["size"] <= 8.4:
+            elif l["font"].startswith(UI_FONT) and l["color"] in ("6b6e78", "7a7d86") and l["size"] <= 8.4:
                 flush_body()
                 items.append((l["bbox"].y0, l["bbox"].x0, "caption", text))
             else:
@@ -465,7 +478,7 @@ class Converter:
 
     @staticmethod
     def is_caption(line):
-        return line["font"].startswith("Poppins") and line["color"] in ("6b6e78", "7a7d86") and line["size"] in (7.8, 8.0) and len(line["text"]) > 12
+        return line["font"].startswith(UI_FONT) and line["color"] in ("6b6e78", "7a7d86") and line["size"] in (7.8, 8.0) and len(line["text"]) > 12
 
     # -- whole document -------------------------------------------------------------
     def run(self):
@@ -480,7 +493,7 @@ class Converter:
         # part divider pages ("PARTE I" + title)
         part_pages = {}
         for pno in range(pdf_pages):
-            lines = [l for l in Page(self.doc, pno, self.toc).lines if l["font"].startswith("Poppins")]
+            lines = [l for l in Page(self.doc, pno, self.toc).lines if l["font"].startswith(UI_FONT)]
             texts = [l["text"].strip() for l in lines]
             if texts and re.fullmatch(r"PARTE [IVX]+", texts[0]) and len(texts) <= 4:
                 part_pages[pno + 1] = f"{texts[0].title().replace('Parte', 'Parte')} · {' '.join(texts[1:])}".strip(" ·")
@@ -531,7 +544,7 @@ class Converter:
         self.update_catalog(index)
         from build_search_index import build as build_search_index
 
-        build_search_index(self.slug)
+        build_search_index(self.slug, self.public)
         print("images saved:", len(self.saved))
         if self.unknown:
             print("UNHANDLED TEXT STYLES:")
@@ -539,7 +552,7 @@ class Converter:
                 print("  ", key, len(samples), samples[:3])
 
     def update_catalog(self, index):
-        catalog_path = PUBLIC / "guides.json"
+        catalog_path = self.public / "guides.json"
         catalog = json.loads(catalog_path.read_text(encoding="utf-8")) if catalog_path.exists() else []
         entry = {k: index[k] for k in ("slug", "title", "subtitle", "console", "description", "accent", "cover")}
         entry["chapters"] = len(index["chapters"])
@@ -561,7 +574,11 @@ class Converter:
         downloads = []
         for entry in self.config["pdfs"]:
             source = Path(self.pdf_dir) / entry["file"]
-            shutil.copyfile(source, pdf_out / entry["file"])
+            if self.keep_pdfs:
+                # use the file already in public/ (e.g. compressed and watermarked) instead of the original
+                source = pdf_out / entry["file"]
+            else:
+                shutil.copyfile(source, pdf_out / entry["file"])
             with pymupdf.open(source) as doc:
                 pages = len(doc)
             downloads.append({
@@ -596,6 +613,7 @@ class Converter:
 
 
 if __name__ == "__main__":
-    pdf_dir, config_path = sys.argv[1:3]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    pdf_dir, config_path = args[:2]
     config = json.load(open(config_path, encoding="utf-8"))
-    Converter(pdf_dir, config["slug"], config).run()
+    Converter(pdf_dir, config["slug"], config, keep_pdfs="--keep-pdfs" in sys.argv).run()

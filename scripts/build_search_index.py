@@ -41,8 +41,8 @@ def block_text(block):
     return ""
 
 
-def build(slug):
-    guide_dir = PUBLIC / slug
+def build(slug, public=PUBLIC):
+    guide_dir = Path(public) / slug
     index = json.loads((guide_dir / "index.json").read_text(encoding="utf-8"))
     entries = []
     for chapter in index["chapters"]:

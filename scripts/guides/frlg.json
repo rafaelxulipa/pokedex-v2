@@ -12,6 +12,8 @@
     "Sumário"
   ],
   "fonts": {
+    "body": "Lora",
+    "ui": "Poppins",
     "h2": [
       "Poppins-Bold",
       14.4

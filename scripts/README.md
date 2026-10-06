@@ -67,3 +67,18 @@ Os guias atuais:
   deixaram de ser usadas: para uma conversão limpa, apague `public/detonados/<slug>` antes.
 - Os arquivos gerados somam dezenas de MB (os PDFs sozinhos passam de 55 MB). Se o
   repositório ficar pesado, hospede os PDFs fora do git e ajuste `downloads` no `index.json`.
+
+## Testes do conversor
+
+```bash
+.venv-guides/bin/python -m pytest scripts/tests -q
+```
+
+Os testes geram um PDF pequeno (títulos, parágrafo com hífen, aviso, imagem com legenda), convertem e
+conferem os arquivos gerados. Rode depois de mexer nas regras de `convert_guide.py`.
+
+## Manter os PDFs com marca d'água ao reconverter
+
+Coloque os PDFs prontos (comprimidos e com marca d'água, ver `scripts/watermark_pdf.py`) em
+`public/detonados/<slug>/pdf/` e rode a conversão com `--keep-pdfs`: os PDFs de lá são mantidos e só
+`bytes` e `pages` são atualizados no `index.json`.
