@@ -33,7 +33,7 @@ const PokemonDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const numericId = parseInt(id || '1');
   const navigate = useNavigate();
-  const { t, language, favorites, toggleFavorite, comparisonList, toggleComparison, team, toggleTeamMember, isShinyMode: globalShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
+  const { t, language, favorites, toggleFavorite, comparisonList, toggleComparison, setComparison, team, toggleTeamMember, isShinyMode: globalShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
 
   const [pokemon, setPokemon] = useState<PokemonDetail | null>(null);
   const [species, setSpecies] = useState<PokemonSpecies | null>(null);
@@ -206,6 +206,17 @@ const PokemonDetails: React.FC = () => {
   const prevId = baseId > 1 ? baseId - 1 : null;
   const nextId = baseId < MAX_POKEMON_ID ? baseId + 1 : null;
   const isInTeam = team.includes(pokemon.id);
+
+  // Species ids along the selected evolution path (root -> ... ), used by "compare evolution line"
+  const evolutionLineIds: number[] = [];
+  if (evolutionTree) {
+    let node: ChainNode | undefined = evolutionTree;
+    while (node) {
+      evolutionLineIds.push(node.id);
+      const nextId: number | undefined = node.children.length === 1 ? node.children[0].id : selectedBranches[node.id];
+      node = node.children.find((c) => c.id === nextId);
+    }
+  }
 
   const currentSprite = isShiny 
     ? (pokemon.sprites.other['official-artwork'].front_shiny || pokemon.sprites.front_shiny) 
@@ -426,7 +437,17 @@ const PokemonDetails: React.FC = () => {
         {/* Linear Evolution Flow */}
         {evolutionTree && (
             <div className="mb-12">
-                <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-white text-center">{t.evolutions}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white text-center">{t.evolutions}</h3>
+                {evolutionLineIds.length > 1 && (
+                    <div className="flex justify-center mb-8">
+                        <button
+                            onClick={() => { setComparison(evolutionLineIds); navigate('/compare'); }}
+                            className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-blue-600 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/30 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+                        >
+                            <Scale size={16} /> {t.compareEvolutions}
+                        </button>
+                    </div>
+                )}
                 <div className="bg-gray-50 dark:bg-dark-card/50 p-8 rounded-3xl shadow-inner border border-gray-100 dark:border-gray-800 overflow-hidden">
                      <div className="flex flex-col items-center justify-center w-full">
                         <LinearEvolutionChain

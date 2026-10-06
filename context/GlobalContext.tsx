@@ -15,6 +15,7 @@ interface GlobalContextType {
   comparisonList: number[];
   toggleComparison: (id: number) => void;
   clearComparison: () => void;
+  setComparison: (ids: number[]) => void;
   team: number[];
   toggleTeamMember: (id: number) => void;
   clearTeam: () => void;
@@ -82,6 +83,12 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     });
   };
 
+  const setComparison = (ids: number[]) => {
+    const list = ids.slice(0, MAX_COMPARISON);
+    setComparisonList(list);
+    writeStorage('comparisonList', list);
+  };
+
   const clearComparison = () => {
     setComparisonList([]);
     removeStorage('comparisonList');
@@ -144,6 +151,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         comparisonList,
         toggleComparison,
         clearComparison,
+        setComparison,
         team,
         toggleTeamMember,
         clearTeam,

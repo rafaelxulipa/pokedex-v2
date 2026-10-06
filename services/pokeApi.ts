@@ -57,3 +57,42 @@ export const fetchMultiplePokemon = async (urls: string[]): Promise<PokemonDetai
 };
 
 export const pokemonUrl = (idOrName: number | string) => `${POKEAPI_URL}/pokemon/${idOrName}`;
+
+// Translated species names via the PokeAPI GraphQL endpoint (one request per language).
+// PokeAPI has no Portuguese names, so 'pt' is not mapped and falls back to the English names.
+const SPECIES_NAME_LANGUAGES: Record<string, string> = { es: 'es', de: 'de', zh: 'zh-Hans', ja: 'ja' };
+const speciesNamesCache = new Map<string, Promise<Record<number, string>>>();
+
+export const fetchSpeciesNames = (language: string): Promise<Record<number, string>> => {
+  const apiLanguage = SPECIES_NAME_LANGUAGES[language];
+  if (!apiLanguage) return Promise.resolve({});
+
+  const existing = speciesNamesCache.get(apiLanguage);
+  if (existing) return existing;
+
+  const request = (async () => {
+    try {
+      const response = await fetch('https://beta.pokeapi.co/graphql/v1beta', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: `{ pokemon_v2_pokemonspeciesname(where: {pokemon_v2_language: {name: {_eq: "${apiLanguage}"}}}) { name pokemon_species_id } }`,
+        }),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const json = await response.json();
+      const map: Record<number, string> = {};
+      (json.data?.pokemon_v2_pokemonspeciesname ?? []).forEach((row: { name: string; pokemon_species_id: number }) => {
+        map[row.pokemon_species_id] = row.name;
+      });
+      return map;
+    } catch (error) {
+      speciesNamesCache.delete(apiLanguage);
+      console.error('Error fetching translated names:', error);
+      return {};
+    }
+  })();
+
+  speciesNamesCache.set(apiLanguage, request);
+  return request;
+};

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Search, Filter, AlertCircle, Heart, ArrowRight, Sparkles, Map, X } from 'lucide-react';
-import { fetchAllPokemonNames, fetchMultiplePokemon, fetchPokemonOfType } from '../services/pokeApi';
+import { fetchAllPokemonNames, fetchMultiplePokemon, fetchPokemonOfType, fetchSpeciesNames } from '../services/pokeApi';
 import { PokemonListEntry, PokemonDetail } from '../types';
 import PokemonCard from '../components/PokemonCard';
 import Loader from '../components/Loader';
@@ -15,7 +15,7 @@ import TypeIcon from '../components/TypeIcon';
 const PAGE_SIZE = 24;
 
 const Home: React.FC = () => {
-  const { t, favorites, comparisonList, clearComparison, isShinyMode, toggleShinyMode } = useGlobal();
+  const { t, language, favorites, comparisonList, clearComparison, isShinyMode, toggleShinyMode } = useGlobal();
   const navigate = useNavigate();
 
   // Master list
@@ -33,6 +33,7 @@ const Home: React.FC = () => {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [typeMenuOpen, setTypeMenuOpen] = useState(false);
   const [pageLoading, setPageLoading] = useState(false);
+  const [translatedNames, setTranslatedNames] = useState<Record<number, string>>({});
   const typeMenuRef = useRef<HTMLDivElement>(null);
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
@@ -48,6 +49,17 @@ const Home: React.FC = () => {
     };
     init();
   }, []);
+
+  // Names in the selected language, so Pokémon can also be found by their translated name
+  useEffect(() => {
+    let cancelled = false;
+    fetchSpeciesNames(language).then((names) => {
+      if (!cancelled) setTranslatedNames(names);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [language]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value.toLowerCase());
@@ -113,11 +125,14 @@ const Home: React.FC = () => {
 
       // 3. Search by name or number
       if (searchTerm) {
-        const term = searchTerm.replace(/^#/, '');
+        const term = searchTerm.trim().replace(/^#/, '');
         const isNumeric = /^\d+$/.test(term);
-        results = results.filter((p) =>
-          isNumeric ? idFromUrl(p.url) === parseInt(term, 10) || p.name.includes(term) : p.name.includes(term)
-        );
+        results = results.filter((p) => {
+          const id = idFromUrl(p.url);
+          if (isNumeric && id === parseInt(term, 10)) return true;
+          if (p.name.includes(term)) return true;
+          return (translatedNames[id] ?? '').toLowerCase().includes(term);
+        });
       }
 
       // 4. Favorites
@@ -134,7 +149,7 @@ const Home: React.FC = () => {
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [searchTerm, selectedTypes, selectedRegion, showFavoritesOnly, allPokemonList, favorites]);
+  }, [searchTerm, selectedTypes, selectedRegion, showFavoritesOnly, allPokemonList, favorites, translatedNames]);
 
   const totalPages = Math.ceil(filteredList.length / PAGE_SIZE);
 
