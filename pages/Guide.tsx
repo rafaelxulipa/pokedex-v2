@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, BookOpen, ChevronLeft, ChevronRight, Gamepad2, List, X } from 'lucide-react';
 import { fetchGuideChapter, fetchGuideIndex, guideAsset } from '../services/guides';
 import { GuideBlock, GuideIndex } from '../types';
@@ -9,6 +9,7 @@ import Loader from '../components/Loader';
 import { useGlobal } from '../context/GlobalContext';
 import { readStorage, writeStorage } from '../utils/storage';
 import Seo from '../components/Seo';
+import GuideSearch from '../components/GuideSearch';
 
 const PROGRESS_KEY = 'guideProgress';
 
@@ -18,6 +19,7 @@ const Guide: React.FC = () => {
   const { slug = '', n } = useParams<{ slug: string; n?: string }>();
   const { t } = useGlobal();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [guide, setGuide] = useState<GuideIndex | null>(null);
   const [failed, setFailed] = useState(false);
@@ -55,7 +57,7 @@ const Guide: React.FC = () => {
     }
     let cancelled = false;
     setBlocks(null);
-    window.scrollTo(0, 0);
+    if (!window.location.hash) window.scrollTo(0, 0);
     fetchGuideChapter(slug, chapter.n).then((data) => {
       if (!cancelled) setBlocks(data?.blocks ?? []);
     });
@@ -73,6 +75,14 @@ const Guide: React.FC = () => {
     const text = first && first.t === 'p' ? first.runs.map((r) => r.t).join('') : '';
     return text.length > 155 ? `${text.slice(0, 152).trimEnd()}...` : text;
   }, [blocks]);
+
+  // Open a section straight from a link or a search result (/detonados/<slug>/<n>#<section>)
+  useEffect(() => {
+    if (!blocks || !location.hash) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    const timer = setTimeout(() => document.getElementById(id)?.scrollIntoView({ block: 'start' }), 80);
+    return () => clearTimeout(timer);
+  }, [blocks, location.hash]);
 
   // Reading progress bar
   useEffect(() => {
@@ -191,6 +201,8 @@ const Guide: React.FC = () => {
           </div>
         </div>
 
+        <GuideSearch slug={slug} className="mb-10 max-w-xl" />
+
         <section className="mb-12">
           <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-1">{t.guides.downloadTitle}</h2>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{t.guides.downloadHint}</p>
@@ -265,6 +277,8 @@ const Guide: React.FC = () => {
               <List size={16} /> {t.guides.chapters}
             </button>
           </div>
+
+          <GuideSearch slug={slug} className="mb-6" />
 
           <header className="mb-8 pb-6 border-b-2" style={{ borderColor: accent }}>
             <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: accent }}>

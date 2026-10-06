@@ -1,4 +1,5 @@
 import { GuideBlock, GuideIndex, GuideSummary } from '../types';
+import { SearchEntry } from '../utils/guideSearch';
 
 const BASE = '/detonados';
 
@@ -30,6 +31,8 @@ export const fetchGuideIndex = (slug: string) => load<GuideIndex>(`${BASE}/${slu
 
 export const fetchGuideChapter = (slug: string, n: number) =>
   load<{ title: string; blocks: GuideBlock[] }>(`${BASE}/${slug}/chapters/${n}.json`);
+
+export const fetchGuideSearch = (slug: string) => load<SearchEntry[]>(`${BASE}/${slug}/search.json`);
 
 export const formatBytes = (bytes: number): string =>
   bytes >= 1024 * 1024 ? `${(bytes / (1024 * 1024)).toFixed(1).replace('.', ',')} MB` : `${Math.round(bytes / 1024)} KB`;

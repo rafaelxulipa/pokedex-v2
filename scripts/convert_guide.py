@@ -529,6 +529,9 @@ class Converter:
         index["pdfPages"] = pdf_pages
         (self.out / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
         self.update_catalog(index)
+        from build_search_index import build as build_search_index
+
+        build_search_index(self.slug)
         print("images saved:", len(self.saved))
         if self.unknown:
             print("UNHANDLED TEXT STYLES:")

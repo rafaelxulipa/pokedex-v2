@@ -8,6 +8,7 @@ public/detonados/<slug>/index.json         metadados, capítulos e downloads
 public/detonados/<slug>/chapters/<n>.json  conteúdo de cada capítulo
 public/detonados/<slug>/img/*.webp         mapas, capturas de tela e cartões
 public/detonados/<slug>/cover.webp         capa
+public/detonados/<slug>/search.json        índice de busca (uma entrada por seção)
 public/detonados/<slug>/pdf/*.pdf          PDFs para download gratuito
 public/detonados/guides.json               catálogo (atualizado automaticamente)
 ```
@@ -35,6 +36,14 @@ Os guias atuais:
 .venv-guides/bin/python scripts/convert_guide.py "/home/otavio/Documentos/Pokemon detonados" scripts/guides/frlg.json
 .venv-guides/bin/python scripts/convert_guide.py "/home/otavio/Documentos/Pokemon detonados" scripts/guides/bdsp.json
 ```
+
+## Só reconstruir o índice de busca
+
+```bash
+.venv-guides/bin/python scripts/build_search_index.py --all
+```
+
+(roda automaticamente no fim da conversão e não precisa dos PDFs)
 
 ## Adicionar um novo detonado
 

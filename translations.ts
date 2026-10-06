@@ -73,7 +73,9 @@ export const translations = {
         overview: "Overview",
         chapter: "Chapter",
         previous: "Previous",
-        next: "Next"
+        next: "Next",
+        searchPlaceholder: "Search the walkthroughs...",
+        noResults: "No results."
     },
     hiddenAbility: "Hidden",
     movesTitle: "Level-up Moves",
@@ -264,7 +266,9 @@ export const translations = {
         overview: "Visão geral",
         chapter: "Capítulo",
         previous: "Anterior",
-        next: "Próximo"
+        next: "Próximo",
+        searchPlaceholder: "Buscar nos detonados...",
+        noResults: "Nenhum resultado."
     },
     hiddenAbility: "Oculta",
     movesTitle: "Golpes por Nível",
@@ -455,7 +459,9 @@ export const translations = {
         overview: "Resumen",
         chapter: "Capítulo",
         previous: "Anterior",
-        next: "Siguiente"
+        next: "Siguiente",
+        searchPlaceholder: "Buscar en las guías...",
+        noResults: "Sin resultados."
     },
     hiddenAbility: "Oculta",
     movesTitle: "Movimientos por Nivel",
@@ -646,7 +652,9 @@ export const translations = {
         overview: "Übersicht",
         chapter: "Kapitel",
         previous: "Zurück",
-        next: "Weiter"
+        next: "Weiter",
+        searchPlaceholder: "In den Komplettlösungen suchen...",
+        noResults: "Keine Ergebnisse."
     },
     hiddenAbility: "Versteckt",
     movesTitle: "Attacken nach Level",
@@ -837,7 +845,9 @@ export const translations = {
         overview: "概览",
         chapter: "第",
         previous: "上一章",
-        next: "下一章"
+        next: "下一章",
+        searchPlaceholder: "搜索攻略...",
+        noResults: "没有结果。"
     },
     hiddenAbility: "隐藏",
     movesTitle: "升级招式",
@@ -1028,7 +1038,9 @@ export const translations = {
         overview: "概要",
         chapter: "章",
         previous: "前へ",
-        next: "次へ"
+        next: "次へ",
+        searchPlaceholder: "攻略を検索...",
+        noResults: "結果がありません。"
     },
     hiddenAbility: "隠れ特性",
     movesTitle: "レベルアップわざ",

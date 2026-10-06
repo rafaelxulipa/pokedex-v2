@@ -6,6 +6,7 @@ import { GuideSummary } from '../types';
 import Loader from '../components/Loader';
 import { useGlobal } from '../context/GlobalContext';
 import Seo from '../components/Seo';
+import GuideSearch from '../components/GuideSearch';
 
 const Guides: React.FC = () => {
   const { t } = useGlobal();
@@ -33,6 +34,7 @@ const Guides: React.FC = () => {
         <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-2">{t.guides.title}</h1>
         <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">{t.guides.subtitle}</p>
         {t.guides.ptOnly && <p className="mt-3 text-sm text-gray-400">{t.guides.ptOnly}</p>}
+        <GuideSearch className="mt-6 max-w-xl mx-auto text-left" />
       </div>
 
       {guides === null ? (
