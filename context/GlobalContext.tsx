@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { translations, Language } from '../translations';
-import { fetchSpeciesNames } from '../services/pokeApi';
+import { fetchGenerations, fetchSpeciesNames } from '../services/pokeApi';
+import { GENERATIONS } from '../constants';
+import { GenerationInfo } from '../utils/generations';
 import { idFromUrl, formatName } from '../utils/pokemon';
 import { readStorage, writeStorage, removeStorage, isNumberArray } from '../utils/storage';
 
@@ -28,6 +30,9 @@ interface GlobalContextType {
   toggleShinyPokemon: (id: number) => void;
   t: typeof translations['en'];
   // Name of a Pokemon in the selected language (alternate forms keep their English name)
+  generations: GenerationInfo[];
+  maxPokemonId: number;
+  generationLabel: (generation: GenerationInfo) => string;
   localName: (pokemon: { id: number; name: string; species: { url: string } }) => string;
 }
 
@@ -165,6 +170,24 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     };
   }, [language]);
 
+  // Generations loaded from the API (new generations appear automatically)
+  const [generations, setGenerations] = useState<GenerationInfo[]>(GENERATIONS);
+  useEffect(() => {
+    let cancelled = false;
+    fetchGenerations().then((loaded) => {
+      if (!cancelled && loaded) setGenerations(loaded);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  const maxPokemonId = generations.reduce((max, g) => Math.max(max, g.end), 0);
+
+  // Translated label when we have one, otherwise "Gen N - Region" straight from the API
+  const generationLabel = (generation: GenerationInfo) =>
+    (t.generations as Record<string, string>)[generation.key] ??
+    `Gen ${generation.key.replace('gen', '')}${generation.region ? ` - ${generation.region}` : ''}`;
+
   const localName = (pokemon: { id: number; name: string; species: { url: string } }) => {
     const speciesId = idFromUrl(pokemon.species.url);
     const translated = pokemon.id === speciesId ? speciesNames[speciesId] : undefined;
@@ -191,6 +214,9 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         shinyPokemon,
         toggleShinyPokemon,
         t,
+        generations,
+        maxPokemonId,
+        generationLabel,
         localName,
       }}
     >

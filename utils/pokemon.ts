@@ -1,8 +1,6 @@
 export const SPRITE_BASE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
 export const ARTWORK_BASE = `${SPRITE_BASE}/other/official-artwork`;
 
-export const MAX_POKEMON_ID = 1025;
-
 // Extracts the numeric id from a PokeAPI resource url (".../pokemon/25/")
 export const idFromUrl = (url: string): number => {
   const parts = url.split('/').filter(Boolean);

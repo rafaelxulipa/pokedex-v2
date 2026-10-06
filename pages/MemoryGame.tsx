@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useGlobal } from '../context/GlobalContext';
 import { BrainCircuit, CheckCircle, RefreshCw, Trophy, Clock, Play, AlertTriangle, Star, Sparkles } from 'lucide-react';
 import Loader from '../components/Loader';
-import { GENERATIONS } from '../constants';
-import { artworkUrl, loadImage, MAX_POKEMON_ID, randomInt, shuffleArray } from '../utils/pokemon';
+import { artworkUrl, loadImage, randomInt, shuffleArray } from '../utils/pokemon';
 import { readStorage, writeStorage } from '../utils/storage';
 
 type GameState = 'setup' | 'playing' | 'won' | 'lost';
@@ -47,7 +46,7 @@ const formatTime = (seconds: number) => {
 };
 
 const MemoryGame: React.FC = () => {
-  const { t } = useGlobal();
+  const { t, generations, generationLabel, maxPokemonId } = useGlobal();
   const [gameState, setGameState] = useState<GameState>('setup');
   const [level, setLevel] = useState<Level | null>(null);
   const [cards, setCards] = useState<Card[]>([]);
@@ -148,9 +147,9 @@ const MemoryGame: React.FC = () => {
     timeRef.current = LEVEL_TIMES[selectedLevel];
     setTime(LEVEL_TIMES[selectedLevel]);
 
-    const range = GENERATIONS.find((g) => g.key === generation);
+    const range = generations.find((g) => g.key === generation);
     const min = range ? range.start : 1;
-    const max = range ? range.end : MAX_POKEMON_ID;
+    const max = range ? range.end : maxPokemonId;
 
     const { pairs } = LEVELS[selectedLevel];
     const uniqueIds = new Set<number>();
@@ -185,7 +184,7 @@ const MemoryGame: React.FC = () => {
     changeState('playing');
     setLoading(false);
     startTimer(selectedLevel, gameId);
-  }, [clearTimers, generation, shinyOnly, startTimer]);
+  }, [clearTimers, generation, generations, maxPokemonId, shinyOnly, startTimer]);
 
   const handleCardClick = (index: number) => {
     if (gameStateRef.current !== 'playing' || !level) return;
@@ -270,8 +269,8 @@ const MemoryGame: React.FC = () => {
               className="flex-1 px-4 py-2.5 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             >
               <option value="all">{t.allRegions}</option>
-              {GENERATIONS.map((gen) => (
-                <option key={gen.key} value={gen.key}>{t.generations[gen.key as keyof typeof t.generations]}</option>
+              {generations.map((gen) => (
+                <option key={gen.key} value={gen.key}>{generationLabel(gen)}</option>
               ))}
             </select>
           </label>

@@ -14,7 +14,7 @@ import MovesSection from '../components/MovesSection';
 import { LinearEvolutionChain, ChainNode } from '../components/EvolutionChain';
 import { useGlobal, MAX_TEAM } from '../context/GlobalContext';
 import { defensiveMultipliers } from '../utils/typeChart';
-import { idFromUrl, SPRITE_BASE, MAX_POKEMON_ID } from '../utils/pokemon';
+import { idFromUrl, SPRITE_BASE } from '../utils/pokemon';
 
 // Custom Gender Icons
 const MaleIcon = () => (
@@ -35,7 +35,7 @@ const PokemonDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const numericId = parseInt(id || '1');
   const navigate = useNavigate();
-  const { t, localName, language, favorites, toggleFavorite, comparisonList, toggleComparison, setComparison, team, toggleTeamMember, isShinyMode: globalShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
+  const { t, localName, maxPokemonId, language, favorites, toggleFavorite, comparisonList, toggleComparison, setComparison, team, toggleTeamMember, isShinyMode: globalShinyMode, shinyPokemon, toggleShinyPokemon } = useGlobal();
 
   const [pokemon, setPokemon] = useState<PokemonDetail | null>(null);
   const [species, setSpecies] = useState<PokemonSpecies | null>(null);
@@ -206,7 +206,7 @@ const PokemonDetails: React.FC = () => {
   const baseId = idFromUrl(pokemon.species.url) || numericId;
   const currentSpeciesId = baseId;
   const prevId = baseId > 1 ? baseId - 1 : null;
-  const nextId = baseId < MAX_POKEMON_ID ? baseId + 1 : null;
+  const nextId = baseId < maxPokemonId ? baseId + 1 : null;
   const isInTeam = team.includes(pokemon.id);
 
   // Species ids along the selected evolution path (root -> ... ), used by "compare evolution line"

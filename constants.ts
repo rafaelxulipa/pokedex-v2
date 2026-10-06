@@ -31,7 +31,8 @@ export const STAT_LABELS: Record<string, string> = {
   'speed': 'Speed',
 };
 
-export const GENERATIONS = [
+// Fallback used until (or if) the generations are loaded from the API
+export const GENERATIONS: { key: string; start: number; end: number; region?: string }[] = [
   { key: 'gen1', start: 1, end: 151 },
   { key: 'gen2', start: 152, end: 251 },
   { key: 'gen3', start: 252, end: 386 },

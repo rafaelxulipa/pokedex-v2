@@ -1,4 +1,5 @@
 import { POKEAPI_URL } from '../constants';
+import { GenerationInfo, GenerationResource, rangesFromGenerations } from '../utils/generations';
 import { AbilityDetail, MoveDetail, PokemonDetail, PokemonListEntry, PokemonSpecies, EvolutionChainResponse, TypeDetail } from '../types';
 
 // In-memory cache of in-flight/finished requests, keyed by url. Failed requests are evicted
@@ -99,4 +100,16 @@ export const fetchSpeciesNames = (language: string): Promise<Record<number, stri
 
   speciesNamesCache.set(apiLanguage, request);
   return request;
+};
+
+// Generations (and therefore the highest species id) come from the API, so a new generation shows up
+// without code changes. Returns null on failure so the caller can keep its built-in fallback.
+export const fetchGenerations = async (): Promise<GenerationInfo[] | null> => {
+  const list = await cachedFetch<{ results: { url: string }[] }>(`${POKEAPI_URL}/generation`);
+  if (!list || list.results.length === 0) return null;
+  const details = await Promise.all(list.results.map((g) => cachedFetch<GenerationResource>(g.url)));
+  const resources = details.filter((d): d is GenerationResource => d !== null);
+  if (resources.length !== list.results.length) return null;
+  const ranges = rangesFromGenerations(resources);
+  return ranges.length > 0 ? ranges : null;
 };

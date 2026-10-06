@@ -6,7 +6,7 @@ import { PokemonListEntry, PokemonDetail } from '../types';
 import PokemonCard from '../components/PokemonCard';
 import Loader from '../components/Loader';
 import Pagination from '../components/Pagination';
-import { TYPE_COLORS, GENERATIONS } from '../constants';
+import { TYPE_COLORS } from '../constants';
 import { useGlobal, MAX_COMPARISON } from '../context/GlobalContext';
 import { useNavigate } from 'react-router-dom';
 import { idFromUrl } from '../utils/pokemon';
@@ -15,7 +15,7 @@ import TypeIcon from '../components/TypeIcon';
 const PAGE_SIZE = 24;
 
 const Home: React.FC = () => {
-  const { t, language, favorites, comparisonList, clearComparison, isShinyMode, toggleShinyMode } = useGlobal();
+  const { t, language, generations, generationLabel, favorites, comparisonList, clearComparison, isShinyMode, toggleShinyMode } = useGlobal();
   const navigate = useNavigate();
 
   // Master list
@@ -114,7 +114,7 @@ const Home: React.FC = () => {
 
       // 2. Region/Generation filter
       if (selectedRegion !== 'all') {
-        const genData = GENERATIONS.find((g) => g.key === selectedRegion);
+        const genData = generations.find((g) => g.key === selectedRegion);
         if (genData) {
           results = results.filter((p) => {
             const id = idFromUrl(p.url);
@@ -149,7 +149,7 @@ const Home: React.FC = () => {
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [searchTerm, selectedTypes, selectedRegion, showFavoritesOnly, allPokemonList, favorites, translatedNames]);
+  }, [searchTerm, selectedTypes, selectedRegion, showFavoritesOnly, allPokemonList, favorites, translatedNames, generations]);
 
   const totalPages = Math.ceil(filteredList.length / PAGE_SIZE);
 
@@ -223,8 +223,8 @@ const Home: React.FC = () => {
                 className="block w-full pl-10 pr-10 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 appearance-none cursor-pointer transition-all shadow-inner"
               >
                 <option value="all">{t.allRegions}</option>
-                {GENERATIONS.map(gen => (
-                  <option key={gen.key} value={gen.key}>{t.generations[gen.key as keyof typeof t.generations]}</option>
+                {generations.map(gen => (
+                  <option key={gen.key} value={gen.key}>{generationLabel(gen)}</option>
                 ))}
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">

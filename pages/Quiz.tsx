@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { HelpCircle, Flame, Trophy, ArrowRight, RefreshCw } from 'lucide-react';
 import { useGlobal } from '../context/GlobalContext';
-import { GENERATIONS } from '../constants';
 import { fetchAllPokemonNames } from '../services/pokeApi';
-import { artworkUrl, formatName, idFromUrl, MAX_POKEMON_ID } from '../utils/pokemon';
+import { artworkUrl, formatName, idFromUrl } from '../utils/pokemon';
 import { buildQuestions, QuizQuestion } from '../utils/quiz';
 import { createRandom, hashString, todayKey } from '../utils/daily';
 import { readStorage, writeStorage } from '../utils/storage';
@@ -21,7 +20,7 @@ interface DailyResult {
 type Phase = 'menu' | 'playing' | 'finished';
 
 const Quiz: React.FC = () => {
-  const { t } = useGlobal();
+  const { t, generations, generationLabel, maxPokemonId } = useGlobal();
   const [names, setNames] = useState<Record<number, string>>({});
   const [loading, setLoading] = useState(true);
   const [generation, setGeneration] = useState('all');
@@ -50,7 +49,7 @@ const Quiz: React.FC = () => {
       const map: Record<number, string> = {};
       list.forEach((p) => {
         const id = idFromUrl(p.url);
-        if (id <= MAX_POKEMON_ID) map[id] = p.name;
+        if (id < 10000) map[id] = p.name; // ids from 10000 are alternate forms
       });
       setNames(map);
       setLoading(false);
@@ -72,14 +71,14 @@ const Quiz: React.FC = () => {
   };
 
   const start = () => {
-    const range = GENERATIONS.find((g) => g.key === generation);
-    begin(buildQuestions(range ? range.start : 1, range ? range.end : MAX_POKEMON_ID, TOTAL_ROUNDS), false);
+    const range = generations.find((g) => g.key === generation);
+    begin(buildQuestions(range ? range.start : 1, range ? range.end : maxPokemonId, TOTAL_ROUNDS), false);
   };
 
   // Same questions for everyone on a given day (seeded by the date)
   const startDaily = () => {
     const random = createRandom(hashString(`daily-${today}`));
-    begin(buildQuestions(1, MAX_POKEMON_ID, TOTAL_ROUNDS, random), true);
+    begin(buildQuestions(1, maxPokemonId, TOTAL_ROUNDS, random), true);
   };
 
   const choose = (optionId: number) => {
@@ -130,8 +129,8 @@ const Quiz: React.FC = () => {
             className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
           >
             <option value="all">{t.allRegions}</option>
-            {GENERATIONS.map((gen) => (
-              <option key={gen.key} value={gen.key}>{t.generations[gen.key as keyof typeof t.generations]}</option>
+            {generations.map((gen) => (
+              <option key={gen.key} value={gen.key}>{generationLabel(gen)}</option>
             ))}
           </select>
           <button
