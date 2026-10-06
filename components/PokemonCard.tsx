@@ -50,7 +50,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
 
   return (
     <Link to={`/pokemon/${pokemon.id}`} className="block group h-full">
-      <div className={`relative bg-white dark:bg-dark-card rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden h-full border ${isComparing ? 'border-blue-500 ring-2 ring-blue-500' : 'border-gray-100 dark:border-gray-800'}`}>
+      <div className={`relative bg-white dark:bg-dark-card rounded-3xl shadow-xs hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden h-full border ${isComparing ? 'border-blue-500 ring-2 ring-blue-500' : 'border-gray-100 dark:border-gray-800'}`}>
         
         {/* Modern Glassy Background Effect */}
         <div className={`absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-[0.08] dark:opacity-[0.15] ${bgColor} blur-3xl group-hover:opacity-20 transition-opacity duration-500`}></div>
@@ -85,7 +85,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
               </button>
               <button 
                 onClick={handleFavoriteClick}
-                className={`p-2 rounded-full transition-all duration-200 ${isFavorite ? 'bg-red-50 text-red-500 dark:bg-red-900/30 dark:text-red-400 shadow-sm' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-red-500 dark:hover:text-red-400'}`}
+                className={`p-2 rounded-full transition-all duration-200 ${isFavorite ? 'bg-red-50 text-red-500 dark:bg-red-900/30 dark:text-red-400 shadow-xs' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-300 dark:text-gray-600 hover:text-red-500 dark:hover:text-red-400'}`}
                 title="Favorite"
               >
                 <Heart size={16} fill={isFavorite ? "currentColor" : "none"} />
@@ -93,7 +93,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
             </div>
           </div>
 
-          <div className="flex-grow flex justify-center items-center py-6 relative">
+          <div className="grow flex justify-center items-center py-6 relative">
              <img
               src={spriteUrl}
               alt={pokemon.name}

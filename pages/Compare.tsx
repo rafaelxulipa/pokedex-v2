@@ -51,7 +51,7 @@ const Compare: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-white pb-20 transition-colors duration-300">
       {/* Header */}
-      <div className="bg-white dark:bg-dark-card shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40">
+      <div className="bg-white dark:bg-dark-card shadow-xs border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
            <button onClick={() => navigate('/')} className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-500">
               <ArrowLeft size={20} />
@@ -72,7 +72,7 @@ const Compare: React.FC = () => {
                 {/* Visual Header */}
                 <div className={`grid gap-3 md:gap-6 ${pokemons.length === 4 ? 'grid-cols-2 md:grid-cols-4' : pokemons.length === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2'}`}>
                     {pokemons.map((p, idx) => (
-                        <div key={p.id} className="flex flex-col items-center bg-white dark:bg-dark-card p-4 md:p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 relative">
+                        <div key={p.id} className="flex flex-col items-center bg-white dark:bg-dark-card p-4 md:p-6 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800 relative">
                             <div className={`absolute top-4 left-4 w-3 h-3 rounded-full ${SERIES_COLORS[idx % SERIES_COLORS.length].bar}`}></div>
                             <button
                                 onClick={() => toggleComparison(p.id)}
@@ -95,7 +95,7 @@ const Compare: React.FC = () => {
                 </div>
 
                 {/* Stats Chart Comparison */}
-                <div className="bg-white dark:bg-dark-card p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <div className="bg-white dark:bg-dark-card p-6 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800">
                     <h3 className="text-xl font-bold mb-6 text-center">{t.baseStats}</h3>
                     <div className="w-full max-w-2xl mx-auto">
                         <MultiStatChart series={pokemons.map(p => ({ name: p.name, stats: p.stats }))} />
@@ -103,7 +103,7 @@ const Compare: React.FC = () => {
                 </div>
 
                 {/* Detailed Table */}
-                <div className="bg-white dark:bg-dark-card rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-x-auto">
+                <div className="bg-white dark:bg-dark-card rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800 overflow-x-auto">
                   <div className="min-w-[480px]">
                     <div className="grid bg-gray-50 dark:bg-gray-800/50 text-xs md:text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 py-4 border-b border-gray-100 dark:border-gray-800" style={columns}>
                         <div className="text-center">{t.attribute}</div>

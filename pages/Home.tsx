@@ -204,7 +204,7 @@ const Home: React.FC = () => {
             <input
               type="text"
               placeholder={t.searchPlaceholder}
-              className="block w-full pl-11 pr-4 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-inner"
+              className="block w-full pl-11 pr-4 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all shadow-inner"
               value={searchTerm}
               onChange={handleSearchChange}
             />
@@ -277,7 +277,7 @@ const Home: React.FC = () => {
             {/* Favorites Toggle */}
             <button
               onClick={toggleFavoritesFilter}
-              className={`flex items-center justify-center px-5 py-3 rounded-2xl border transition-all duration-300 shadow-sm ${showFavoritesOnly ? 'bg-gradient-to-r from-red-500 to-pink-500 border-transparent text-white shadow-red-500/30' : 'bg-white/50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
+              className={`flex items-center justify-center px-5 py-3 rounded-2xl border transition-all duration-300 shadow-xs ${showFavoritesOnly ? 'bg-linear-to-r from-red-500 to-pink-500 border-transparent text-white shadow-red-500/30' : 'bg-white/50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
               title={t.favoritesOnly}
             >
               <Heart className={`h-5 w-5 ${showFavoritesOnly ? 'fill-current' : ''}`} />
@@ -287,7 +287,7 @@ const Home: React.FC = () => {
              {/* Shiny Toggle */}
              <button
               onClick={toggleShinyMode}
-              className={`flex items-center justify-center px-4 py-3 rounded-2xl border transition-all duration-300 shadow-sm group ${isShinyMode ? 'bg-gradient-to-r from-yellow-400 to-orange-400 border-transparent text-white shadow-yellow-500/30' : 'bg-white/50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
+              className={`flex items-center justify-center px-4 py-3 rounded-2xl border transition-all duration-300 shadow-xs group ${isShinyMode ? 'bg-linear-to-r from-yellow-400 to-orange-400 border-transparent text-white shadow-yellow-500/30' : 'bg-white/50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
               title="Shiny Mode"
             >
               <Sparkles className={`h-5 w-5 ${isShinyMode ? 'fill-current animate-pulse' : 'group-hover:text-yellow-500'}`} />
@@ -349,7 +349,7 @@ const Home: React.FC = () => {
              </button>
              <button 
                onClick={() => navigate('/compare')}
-               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl shadow-lg shadow-blue-500/30 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+               className="flex items-center gap-2 px-5 py-2.5 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl shadow-lg shadow-blue-500/30 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
                disabled={comparisonList.length < 2}
              >
                {t.viewComparison}

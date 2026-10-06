@@ -14,7 +14,7 @@ const TypeBadge: React.FC<TypeBadgeProps> = ({ type, size = 'md' }) => {
 
   return (
     <span
-      className={`${colorClass} ${sizeClass} text-white font-bold rounded-full capitalize shadow-sm inline-flex items-center justify-center gap-1.5 mr-1 mb-1`}
+      className={`${colorClass} ${sizeClass} text-white font-bold rounded-full capitalize shadow-xs inline-flex items-center justify-center gap-1.5 mr-1 mb-1`}
     >
       <TypeIcon type={type} className={iconSizeClass} />
       <span>{type}</span>

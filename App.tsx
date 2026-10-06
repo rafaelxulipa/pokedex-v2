@@ -46,7 +46,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
            <div className="relative w-9 h-9 transition-transform group-hover:rotate-12 duration-300">
-             <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-600 rounded-full shadow-lg"></div>
+             <div className="absolute inset-0 bg-linear-to-br from-red-500 to-red-600 rounded-full shadow-lg"></div>
              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-900 z-10"></div>
              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white border-[3px] border-gray-900 rounded-full z-20"></div>
            </div>
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border ${
+                `p-2.5 rounded-xl transition-all hover:scale-110 shadow-xs border ${
                   isActive
                     ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700'
                     : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
 
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all hover:scale-110 shadow-sm border border-gray-200 dark:border-gray-700"
+            className="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all hover:scale-110 shadow-xs border border-gray-200 dark:border-gray-700"
             aria-label="Toggle Dark Mode"
           >
             {theme === 'light' ? <Moon size={20} fill="currentColor" className="text-gray-400" /> : <Sun size={20} fill="currentColor" />}
@@ -144,7 +144,7 @@ const App: React.FC = () => {
           <div className="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#0f0f0f] transition-colors duration-300 font-sans selection:bg-red-500 selection:text-white cursor-none-if-needed">
             <RotomCursor />
             <Header />
-            <main className="flex-grow">
+            <main className="grow">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/pokemon/:id" element={<PokemonDetails />} />

@@ -50,7 +50,7 @@ export const MultiStatChart: React.FC<MultiStatChartProps> = ({ series }) => {
       <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-xs font-bold">
         {series.map((item, i) => (
           <div key={item.name} className={`flex items-center gap-1.5 capitalize ${SERIES_COLORS[i % SERIES_COLORS.length].text}`}>
-            <div className={`w-3 h-3 rounded-sm ${SERIES_COLORS[i % SERIES_COLORS.length].bar}`}></div>
+            <div className={`w-3 h-3 rounded-xs ${SERIES_COLORS[i % SERIES_COLORS.length].bar}`}></div>
             {item.name.replace('-', ' ')}
           </div>
         ))}
@@ -87,7 +87,7 @@ const StatChart: React.FC<StatChartProps> = ({ stats, primaryType = 'normal' }) 
                 className={`h-full ${typeColor} transition-all duration-1000 ease-out rounded-full relative`}
                 style={{ width: `${percentage}%` }}
               >
-                  <div className="absolute top-0 right-0 bottom-0 w-full bg-gradient-to-l from-white/20 to-transparent"></div>
+                  <div className="absolute top-0 right-0 bottom-0 w-full bg-linear-to-l from-white/20 to-transparent"></div>
               </div>
             </div>
           </div>
