@@ -236,7 +236,7 @@ const PokemonDetails: React.FC = () => {
         <div className="container mx-auto px-4 pt-6 flex justify-between items-start relative z-10">
           <button 
             onClick={() => navigate('/')}
-            className="p-2 rounded-full bg-white/20 hover:bg-white/40 text-white backdrop-blur-sm transition"
+            className="p-2 rounded-full bg-white/20 hover:bg-white/40 text-white backdrop-blur-xs transition"
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
@@ -244,14 +244,14 @@ const PokemonDetails: React.FC = () => {
           <div className="flex gap-3">
              <button 
                 onClick={() => toggleComparison(pokemon.id)}
-                className={`p-2 rounded-full backdrop-blur-sm transition ${isComparing ? 'bg-white text-blue-500' : 'bg-white/20 text-white hover:bg-white/40'}`}
+                className={`p-2 rounded-full backdrop-blur-xs transition ${isComparing ? 'bg-white text-blue-500' : 'bg-white/20 text-white hover:bg-white/40'}`}
                 title={t.compare}
               >
                 <Scale size={20} fill={isComparing ? "currentColor" : "none"} />
             </button>
             <button 
                 onClick={() => toggleFavorite(pokemon.id)}
-                className={`p-2 rounded-full backdrop-blur-sm transition ${isFavorite ? 'bg-white text-red-500' : 'bg-white/20 text-white hover:bg-white/40'}`}
+                className={`p-2 rounded-full backdrop-blur-xs transition ${isFavorite ? 'bg-white text-red-500' : 'bg-white/20 text-white hover:bg-white/40'}`}
                 title="Favorite"
               >
                 <Heart size={20} fill={isFavorite ? "currentColor" : "none"} />
@@ -331,7 +331,7 @@ const PokemonDetails: React.FC = () => {
             {/* Left Column: About, Gender, Weaknesses */}
             <div className="flex flex-col gap-6">
                 {/* About Box */}
-                <div className="bg-gray-50 dark:bg-dark-card p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <div className="bg-gray-50 dark:bg-dark-card p-6 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800">
                     <h3 className={`text-xl font-bold mb-4 ${pokemon.types[0].type.name === 'dark' ? 'text-gray-700 dark:text-gray-300' : 'text-' + mainType.replace('bg-', '') + '-600'}`}>
                         {t.about}
                     </h3>
@@ -342,19 +342,19 @@ const PokemonDetails: React.FC = () => {
 
                     {/* Dimensions & Ability */}
                     <div className="grid grid-cols-3 gap-3 mb-2">
-                        <div className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+                        <div className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-xs">
                             <div className="flex items-center gap-1.5 text-gray-400 text-xs mb-1">
                                 <Weight size={14} /> {t.weight}
                             </div>
                             <span className="text-gray-800 dark:text-gray-200 font-semibold text-sm">{pokemon.weight / 10} kg</span>
                         </div>
-                        <div className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+                        <div className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-xs">
                             <div className="flex items-center gap-1.5 text-gray-400 text-xs mb-1">
                                 <Ruler size={14} /> {t.height}
                             </div>
                             <span className="text-gray-800 dark:text-gray-200 font-semibold text-sm">{pokemon.height / 10} m</span>
                         </div>
-                        <div className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+                        <div className="flex flex-col items-center p-3 bg-white dark:bg-gray-800 rounded-xl shadow-xs">
                             <div className="flex items-center gap-1.5 text-gray-400 text-xs mb-1">
                                 <Sparkles size={14} /> {t.ability}
                             </div>
@@ -369,7 +369,7 @@ const PokemonDetails: React.FC = () => {
                 <div className="grid grid-cols-1 gap-6">
                      {/* Gender */}
                     {genderData && (
-                        <div className="bg-white dark:bg-dark-card p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+                        <div className="bg-white dark:bg-dark-card p-5 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800">
                             <h4 className="text-sm font-bold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider">{t.gender}</h4>
                             <div className="flex items-center gap-6">
                                 {genderData.label ? (
@@ -403,7 +403,7 @@ const PokemonDetails: React.FC = () => {
                     { label: t.resistances, list: resistances },
                     { label: t.immunities, list: immunities },
                 ].map(({ label, list }) => (
-                    <div key={label} className="bg-white dark:bg-dark-card p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+                    <div key={label} className="bg-white dark:bg-dark-card p-5 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800">
                          <h4 className="text-sm font-bold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider">{label}</h4>
                          <div className="flex flex-wrap gap-2">
                             {list.length > 0 ? (
@@ -420,7 +420,7 @@ const PokemonDetails: React.FC = () => {
             </div>
 
             {/* Right Column: Base Stats Chart */}
-            <div className="bg-gray-50 dark:bg-dark-card p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 h-full flex flex-col">
+            <div className="bg-gray-50 dark:bg-dark-card p-6 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800 h-full flex flex-col">
                 <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white">{t.baseStats}</h3>
                 <div className="w-full flex items-center justify-center mb-6">
                     <StatChart stats={pokemon.stats} primaryType={mainType} />
@@ -470,10 +470,10 @@ const PokemonDetails: React.FC = () => {
                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center">{t.alternateForms}</h3>
                 </div>
                 
-                <div className="bg-white dark:bg-dark-card py-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden relative group">
+                <div className="bg-white dark:bg-dark-card py-6 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800 overflow-hidden relative group">
                     <button 
                         onClick={() => handleFormsScroll('left')}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-xs rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
                         aria-label="Scroll left"
                     >
                         <ChevronLeft size={24} />
@@ -494,7 +494,7 @@ const PokemonDetails: React.FC = () => {
                                     key={vId}
                                     onClick={() => navigate(`/pokemon/${vId}`)}
                                     className={`
-                                        flex-shrink-0 flex flex-col items-center w-36 p-3 rounded-2xl transition-all duration-300 border relative overflow-hidden
+                                        shrink-0 flex flex-col items-center w-36 p-3 rounded-2xl transition-all duration-300 border relative overflow-hidden
                                         ${isCurrent 
                                             ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 scale-105 shadow-md' 
                                             : isDynamaxForm 
@@ -506,7 +506,7 @@ const PokemonDetails: React.FC = () => {
                                     {/* Gigantamax/Eternamax Badge */}
                                     {isDynamaxForm && (
                                         <div className="absolute top-0 right-0 p-1.5 z-10">
-                                             <div className="bg-pink-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full shadow-sm flex items-center gap-0.5">
+                                             <div className="bg-pink-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full shadow-xs flex items-center gap-0.5">
                                                 <CloudLightning size={10} fill="currentColor" />
                                                 {isGmax ? 'G-MAX' : 'DYNA'}
                                              </div>
@@ -528,7 +528,7 @@ const PokemonDetails: React.FC = () => {
                                         {formatVarietyName(variety.pokemon.name, species.name)}
                                     </span>
                                     {variety.is_default && (
-                                        <span className="mt-1 text-[9px] uppercase tracking-wider bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-gray-500">{t.default}</span>
+                                        <span className="mt-1 text-[9px] uppercase tracking-wider bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded-sm text-gray-500">{t.default}</span>
                                     )}
                                 </button>
                              );
@@ -537,7 +537,7 @@ const PokemonDetails: React.FC = () => {
 
                      <button 
                         onClick={() => handleFormsScroll('right')}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/50 dark:bg-black/50 backdrop-blur-xs rounded-full m-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:flex items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110"
                         aria-label="Scroll right"
                     >
                         <ChevronRight size={24} />

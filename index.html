@@ -5,73 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rotom Pokedex</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Apply the saved theme before first paint to avoid a flash / blank dark screen
+      try {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Google AdSense Script -->
     <!-- Substitua o atributo src ou adicione seu client ID aqui quando for para produção -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0079702856690089" crossorigin="anonymous"></script>
 
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              dark: {
-                bg: '#121212',
-                card: '#1E1E1E',
-                text: '#E0E0E0'
-              }
-            },
-            keyframes: {
-              'flow-h': {
-                '0%': { backgroundPosition: '100% 0' },
-                '100%': { backgroundPosition: '-100% 0' },
-              },
-              'flow-v': {
-                '0%': { backgroundPosition: '0 100%' },
-                '100%': { backgroundPosition: '0 -100%' },
-              },
-              'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-              'fade-in-up': { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-              'fade-in-right': { '0%': { opacity: '0', transform: 'translateX(-12px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
-              'float': { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
-            },
-            animation: {
-              'flow-h': 'flow-h 1.5s linear infinite',
-              'flow-v': 'flow-v 1.5s linear infinite',
-              'fade-in': 'fade-in 0.4s ease-out',
-              'fade-in-up': 'fade-in-up 0.4s ease-out',
-              'fade-in-right': 'fade-in-right 0.4s ease-out',
-              'float': 'float 3s ease-in-out infinite',
-              'spin-slow': 'spin 3s linear infinite',
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      /* Hide scrollbar for cleaner UI in specific areas */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      /* Custom styles for memory game card flip */
-      .perspective-1000 { perspective: 1000px; }
-      .transform-style-3d { transform-style: preserve-3d; }
-      .backface-hidden { backface-visibility: hidden; }
-      .rotate-y-180 { transform: rotateY(180deg); }
-    </style>
 </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
     <div id="root"></div>

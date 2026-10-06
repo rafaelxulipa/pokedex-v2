@@ -278,7 +278,7 @@ const MemoryGame: React.FC = () => {
           <button
             onClick={() => setShinyOnly((v) => !v)}
             aria-pressed={shinyOnly}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border font-semibold transition-all ${shinyOnly ? 'bg-gradient-to-r from-yellow-400 to-orange-400 border-transparent text-white shadow-lg shadow-yellow-500/30' : 'bg-white dark:bg-dark-card border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border font-semibold transition-all ${shinyOnly ? 'bg-linear-to-r from-yellow-400 to-orange-400 border-transparent text-white shadow-lg shadow-yellow-500/30' : 'bg-white dark:bg-dark-card border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
           >
             <Sparkles size={18} fill={shinyOnly ? 'currentColor' : 'none'} /> {t.memoryGame.shiny}
           </button>
@@ -291,7 +291,7 @@ const MemoryGame: React.FC = () => {
               <button
                 key={lvl}
                 onClick={() => setupGame(lvl)}
-                className="w-full px-8 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
+                className="w-full px-8 py-5 text-xl font-bold text-white bg-linear-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
               >
                 {t.memoryGame[lvl]}
                 <span className="block mt-1 text-xs font-medium text-blue-100">
@@ -333,7 +333,7 @@ const MemoryGame: React.FC = () => {
             <div className="flex flex-col gap-3 mt-4">
               <button
                 onClick={() => setupGame(level!, true)}
-                className="w-full px-6 py-4 text-lg font-bold text-white bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl shadow-lg hover:scale-105 transform transition-all flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 text-lg font-bold text-white bg-linear-to-r from-green-500 to-emerald-600 rounded-xl shadow-lg hover:scale-105 transform transition-all flex items-center justify-center gap-2"
               >
                 <Play size={20} /> {t.memoryGame.nextStage}
               </button>
@@ -358,7 +358,7 @@ const MemoryGame: React.FC = () => {
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => setupGame(level!, false)}
-                className="w-full px-6 py-4 text-lg font-bold text-white bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transform transition-all flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 text-lg font-bold text-white bg-linear-to-r from-blue-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transform transition-all flex items-center justify-center gap-2"
               >
                 <RefreshCw size={20} /> {t.memoryGame.tryAgain}
               </button>
@@ -375,7 +375,7 @@ const MemoryGame: React.FC = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h1 className="text-3xl font-bold text-gray-800 dark:text-white">{t.memoryGame.title}</h1>
-        <div className="flex items-center gap-4 md:gap-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+        <div className="flex items-center gap-4 md:gap-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-xs border border-gray-100 dark:border-gray-800">
           <div className="text-center">
             <div className="text-xs font-bold text-gray-400 uppercase flex items-center justify-center gap-1"><Star size={12} /> {t.memoryGame.stage}</div>
             <div className="text-2xl font-black text-gray-700 dark:text-gray-300">{stage}</div>
@@ -414,7 +414,7 @@ const MemoryGame: React.FC = () => {
               {/* Card Back */}
               <div className="absolute w-full h-full backface-hidden flex items-center justify-center bg-white dark:bg-dark-card rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 cursor-pointer hover:border-blue-500 dark:hover:border-blue-500 transition-all">
                 <div className="relative w-1/2 h-1/2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-600 rounded-full"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-red-500 to-red-600 rounded-full"></div>
                   <div className="absolute top-1/2 left-0 right-0 h-1/6 bg-gray-900 z-10"></div>
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/3 h-1/3 bg-white border-4 border-gray-900 rounded-full z-20"></div>
                 </div>

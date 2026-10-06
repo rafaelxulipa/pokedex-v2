@@ -94,7 +94,7 @@ const Team: React.FC = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mb-8">
         {slots.map((member, i) =>
           member ? (
-            <div key={member.id} className="relative flex flex-col items-center p-3 bg-white dark:bg-dark-card rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <div key={member.id} className="relative flex flex-col items-center p-3 bg-white dark:bg-dark-card rounded-2xl shadow-xs border border-gray-100 dark:border-gray-800">
               <button
                 onClick={() => toggleTeamMember(member.id)}
                 className="absolute top-2 right-2 text-gray-400 hover:text-red-500"
@@ -120,7 +120,7 @@ const Team: React.FC = () => {
       </div>
 
       {/* Search */}
-      <div className="mb-8 bg-white dark:bg-dark-card p-4 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+      <div className="mb-8 bg-white dark:bg-dark-card p-4 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800">
         <div className="flex gap-3 items-center">
           <div className="relative flex-1">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -129,7 +129,7 @@ const Team: React.FC = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder={t.team.search}
-              className="block w-full pl-11 pr-4 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"
+              className="block w-full pl-11 pr-4 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"
             />
           </div>
           {team.length > 0 && (
@@ -161,7 +161,7 @@ const Team: React.FC = () => {
       </div>
 
       {/* Analysis */}
-      <div className="bg-white dark:bg-dark-card p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+      <div className="bg-white dark:bg-dark-card p-6 rounded-3xl shadow-xs border border-gray-100 dark:border-gray-800">
         <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-1">{t.team.coverage}</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{t.team.hint}</p>
 

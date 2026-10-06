@@ -127,7 +127,7 @@ const Quiz: React.FC = () => {
           </select>
           <button
             onClick={start}
-            className="w-full px-8 py-4 text-xl font-bold text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            className="w-full px-8 py-4 text-xl font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             {t.quiz.start} <span className="block text-xs font-medium text-purple-100">{t.quiz.rounds}</span>
           </button>
@@ -147,7 +147,7 @@ const Quiz: React.FC = () => {
         </p>
         <p className="text-sm text-gray-400 mb-8">{t.quiz.best}: {bestStreak}</p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
-          <button onClick={start} className="flex items-center justify-center gap-2 px-6 py-3 font-bold text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transition-all">
+          <button onClick={start} className="flex items-center justify-center gap-2 px-6 py-3 font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transition-all">
             <RefreshCw size={18} /> {t.quiz.playAgain}
           </button>
           <button onClick={() => setPhase('menu')} className="px-6 py-3 font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
@@ -164,7 +164,7 @@ const Quiz: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-2xl">
-      <div className="flex justify-between items-center mb-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+      <div className="flex justify-between items-center mb-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-xs border border-gray-100 dark:border-gray-800">
         <div className="text-center flex-1">
           <div className="text-xs font-bold text-gray-400 uppercase">{t.quiz.round}</div>
           <div className="text-xl font-black text-gray-700 dark:text-gray-300">{round + 1}/{TOTAL_ROUNDS}</div>
@@ -181,7 +181,7 @@ const Quiz: React.FC = () => {
 
       <h2 className="text-2xl font-extrabold text-center text-gray-800 dark:text-white mb-4">{t.quiz.title}</h2>
 
-      <div className="relative flex items-center justify-center h-64 md:h-72 mb-6 bg-white dark:bg-dark-card rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+      <div className="relative flex items-center justify-center h-64 md:h-72 mb-6 bg-white dark:bg-dark-card rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xs">
         {!imageReady && <div className="absolute"><Loader /></div>}
         <img
           key={question.id}
@@ -220,7 +220,7 @@ const Quiz: React.FC = () => {
             {isCorrect ? t.quiz.correct : t.quiz.wrong}
           </p>
           <p className="text-gray-500 dark:text-gray-400 mb-4 capitalize">{t.quiz.itWas} {formatName(names[question.id] || '')}</p>
-          <button onClick={next} className="inline-flex items-center gap-2 px-6 py-3 font-bold text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transition-all">
+          <button onClick={next} className="inline-flex items-center gap-2 px-6 py-3 font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transition-all">
             {round + 1 >= TOTAL_ROUNDS ? t.quiz.finish : t.quiz.next} <ArrowRight size={18} />
           </button>
         </div>

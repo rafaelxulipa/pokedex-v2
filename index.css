@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* Dark mode is toggled by the `dark` class on <html> (see ThemeContext) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+
+  --color-dark-bg: #121212;
+  --color-dark-card: #1E1E1E;
+  --color-dark-text: #E0E0E0;
+
+  --animate-flow-h: flow-h 1.5s linear infinite;
+  --animate-flow-v: flow-v 1.5s linear infinite;
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-fade-in-up: fade-in-up 0.4s ease-out;
+  --animate-fade-in-right: fade-in-right 0.4s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-spin-slow: spin 3s linear infinite;
+
+  @keyframes flow-h {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+  }
+  @keyframes flow-v {
+    0% { background-position: 0 100%; }
+    100% { background-position: 0 -100%; }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in-right {
+    0% { opacity: 0; transform: translateX(-12px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+/* Tailwind v4 changed some defaults; keep the v3 look the app was designed with */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hide scrollbar for cleaner UI in specific areas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Memory game card flip */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }

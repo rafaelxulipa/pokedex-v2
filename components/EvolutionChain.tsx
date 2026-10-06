@@ -102,7 +102,7 @@ const EvolutionNodeCard: React.FC<{ node: ChainNode; isShiny: boolean; currentSp
               />
                {/* ID Pill */}
                <span className={`
-                  absolute -bottom-1 text-[9px] px-2 py-0.5 rounded-full font-mono shadow-sm transition-colors
+                  absolute -bottom-1 text-[9px] px-2 py-0.5 rounded-full font-mono shadow-xs transition-colors
                   ${isCurrentPagePokemon ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-300'}
               `}>
                   #{node.id.toString().padStart(3, '0')}
@@ -124,7 +124,7 @@ const BranchSelector: React.FC<{
   const { t } = useGlobal();
   return (
       <div className="flex flex-col items-center my-6 w-full animate-fade-in">
-          <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-1 bg-white dark:bg-gray-800 px-3 py-1 rounded-full border border-gray-100 dark:border-gray-700 shadow-sm">
+          <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-1 bg-white dark:bg-gray-800 px-3 py-1 rounded-full border border-gray-100 dark:border-gray-700 shadow-xs">
               <MousePointerClick size={12} className="text-blue-500 animate-bounce" /> {t.selectEvolutionPath}
           </span>
           <div className="flex flex-wrap justify-center gap-3 bg-white dark:bg-gray-800/40 p-3 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700">
@@ -178,8 +178,8 @@ export const LinearEvolutionChain: React.FC<LinearChainProps> = ({ node, selecte
   const handleBranchSelect = (childId: number) => onSelectBranch(node.id, childId);
 
   // Animated Line Classes
-  const activeLineClassH = "bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 bg-[length:200%_100%] animate-flow-h h-1 shadow-[0_0_10px_rgba(59,130,246,0.6)]";
-  const activeLineClassV = "bg-gradient-to-b from-blue-300 via-blue-500 to-blue-300 bg-[length:100%_200%] animate-flow-v w-1 shadow-[0_0_10px_rgba(59,130,246,0.6)]";
+  const activeLineClassH = "bg-linear-to-r from-blue-300 via-blue-500 to-blue-300 bg-[length:200%_100%] animate-flow-h h-1 shadow-[0_0_10px_rgba(59,130,246,0.6)]";
+  const activeLineClassV = "bg-linear-to-b from-blue-300 via-blue-500 to-blue-300 bg-[length:100%_200%] animate-flow-v w-1 shadow-[0_0_10px_rgba(59,130,246,0.6)]";
 
   return (
       <div className="flex flex-col md:flex-row items-center">
@@ -217,7 +217,7 @@ export const LinearEvolutionChain: React.FC<LinearChainProps> = ({ node, selecte
                       <div className={`h-full ${activeLineClassV} absolute top-0 left-1/2 transform -translate-x-1/2 z-0 rounded-full`}></div>
 
                        {/* The Trigger Badge sitting on top */}
-                       <div className="relative z-10 bg-white/50 dark:bg-black/50 backdrop-blur-sm p-1 rounded-xl">
+                       <div className="relative z-10 bg-white/50 dark:bg-black/50 backdrop-blur-xs p-1 rounded-xl">
                            <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-md animate-pulse"></div>
                            {selectedChild ? (
                               <EvolutionTriggerBadge details={selectedChild.evolutionDetails} />
