@@ -21,3 +21,13 @@ npm run dev     # http://localhost:3000
 npm run build
 npm test        # testes unitários (vitest)
 ```
+
+## SEO
+
+- O app usa URLs limpas (`/detonados/fire-red-leaf-green/2`). Links antigos com `#/` são redirecionados.
+- Cada página define título, descrição, canonical e tags de redes sociais (`components/Seo.tsx`).
+- `npm run build` roda o Vite e depois `scripts/prerender.mjs`, que gera HTML estático com o texto dos
+  detonados (capítulo a capítulo), `sitemap.xml` e usa `public/robots.txt`. O React assume a página quando carrega.
+- Após o primeiro deploy, confira se `/detonados/<guia>/<n>` abre direto e se
+  `https://pokedex.otaviorafael.com.br/sitemap.xml` responde. Depois, envie o sitemap no Google Search Console.
+

@@ -46,3 +46,6 @@ export const GENERATIONS: { key: string; start: number; end: number; region?: st
 
 export const MAX_COMPARISON = 4;
 export const MAX_TEAM = 6;
+
+export const SITE_URL = 'https://pokedex.otaviorafael.com.br';
+export const SITE_NAME = 'Rotom Pokedex';

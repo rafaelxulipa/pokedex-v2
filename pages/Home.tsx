@@ -11,6 +11,7 @@ import { useGlobal, MAX_COMPARISON } from '../context/GlobalContext';
 import { useNavigate } from 'react-router-dom';
 import { idFromUrl } from '../utils/pokemon';
 import TypeIcon from '../components/TypeIcon';
+import Seo from '../components/Seo';
 
 const PAGE_SIZE = 24;
 
@@ -191,6 +192,11 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen pb-24">
+      <Seo
+        title="Pokédex completa"
+        description="Pokédex com todos os Pokémon: busca por nome ou número, filtros por tipo e geração, status, evoluções, fraquezas, comparação, time, quiz e detonados em português."
+        path="/"
+      />
       
       {/* Header & Controls - Floating Glassmorphism */}
       <div className="md:sticky md:top-20 z-30 mb-10 mx-auto max-w-6xl">

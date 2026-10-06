@@ -10,6 +10,7 @@ import StatChart from '../components/StatChart';
 import Loader from '../components/Loader';
 import AdSense from '../components/AdSense';
 import AbilitiesSection from '../components/AbilitiesSection';
+import Seo from '../components/Seo';
 import MovesSection from '../components/MovesSection';
 import { LinearEvolutionChain, ChainNode } from '../components/EvolutionChain';
 import { useGlobal, MAX_TEAM } from '../context/GlobalContext';
@@ -226,6 +227,12 @@ const PokemonDetails: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300 pb-20">
+      <Seo
+        title={`${localName(pokemon)} #${pokemon.id.toString().padStart(3, '0')}`}
+        description={`${localName(pokemon)}: tipo ${pokemon.types.map((ty) => ty.type.name).join(' e ')}, status base, fraquezas, habilidades, golpes e evoluções.`}
+        path={`/pokemon/${pokemon.id}`}
+        image={pokemon.sprites.other['official-artwork'].front_default}
+      />
       
       {/* Top Section */}
       <div className={`relative h-64 md:h-80 w-full ${bgColorClass} rounded-b-[3rem] shadow-lg overflow-visible transition-colors duration-500`}>

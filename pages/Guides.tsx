@@ -5,13 +5,13 @@ import { fetchGuideCatalog, guideAsset } from '../services/guides';
 import { GuideSummary } from '../types';
 import Loader from '../components/Loader';
 import { useGlobal } from '../context/GlobalContext';
+import Seo from '../components/Seo';
 
 const Guides: React.FC = () => {
   const { t } = useGlobal();
   const [guides, setGuides] = useState<GuideSummary[] | null>(null);
 
   useEffect(() => {
-    document.title = `${t.guides.title} | Rotom Pokedex`;
     let cancelled = false;
     fetchGuideCatalog().then((list) => {
       if (!cancelled) setGuides(list ?? []);
@@ -19,10 +19,15 @@ const Guides: React.FC = () => {
     return () => {
       cancelled = true;
     };
-  }, [t.guides.title]);
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-5xl">
+      <Seo
+        title="Detonados de Pokémon"
+        description="Detonados completos de Pokémon em português, passo a passo, com mapas e imagens. Leia online ou baixe o PDF gratuitamente."
+        path="/detonados"
+      />
       <div className="text-center mb-10">
         <BookOpen className="mx-auto h-16 w-16 mb-4 text-red-500" />
         <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-2">{t.guides.title}</h1>

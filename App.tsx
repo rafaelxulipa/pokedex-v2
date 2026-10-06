@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, NavLink, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { GlobalProvider, useGlobal } from './context/GlobalContext';
 import Home from './pages/Home';
@@ -10,6 +10,7 @@ import Quiz from './pages/Quiz';
 import Team from './pages/Team';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
+import Seo from './components/Seo';
 import RotomCursor from './components/RotomCursor';
 import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen } from 'lucide-react';
 import { Language } from './translations';
@@ -128,6 +129,15 @@ const Header: React.FC = () => {
   );
 };
 
+// Old links used the hash router (/#/team). Send them to the clean URL.
+const LegacyHashRedirect: React.FC = () => {
+  const location = useLocation();
+  if (location.pathname === '/' && location.hash.startsWith('#/')) {
+    return <Navigate to={location.hash.slice(1)} replace />;
+  }
+  return null;
+};
+
 const Footer: React.FC = () => {
     const { t } = useGlobal();
     return (
@@ -145,16 +155,17 @@ const App: React.FC = () => {
       <GlobalProvider>
         <Router>
           <div className="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#0f0f0f] transition-colors duration-300 font-sans selection:bg-red-500 selection:text-white cursor-none-if-needed">
+            <LegacyHashRedirect />
             <RotomCursor />
             <Header />
             <main className="grow">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/pokemon/:id" element={<PokemonDetails />} />
-                <Route path="/compare" element={<Compare />} />
-                <Route path="/memory-game" element={<MemoryGame />} />
-                <Route path="/quiz" element={<Quiz />} />
-                <Route path="/team" element={<Team />} />
+                <Route path="/compare" element={<><Seo title="Comparar Pokémon" description="Compare o status, os tipos e as habilidades de 2 a 4 Pokémon lado a lado." path="/compare" /><Compare /></>} />
+                <Route path="/memory-game" element={<><Seo title="Jogo da Memória Pokémon" description="Jogo da memória com Pokémon: três níveis, escolha de geração, modo shiny e recordes." path="/memory-game" /><MemoryGame /></>} />
+                <Route path="/quiz" element={<><Seo title="Quiz: Quem é esse Pokémon?" description="Adivinhe o Pokémon pela silhueta. Modo livre por geração e desafio do dia com as mesmas perguntas para todos." path="/quiz" /><Quiz /></>} />
+                <Route path="/team" element={<><Seo title="Montador de Time Pokémon" description="Monte um time de até 6 Pokémon e veja as fraquezas e a cobertura de tipos. Compartilhe o time por link." path="/team" /><Team /></>} />
                 <Route path="/detonados" element={<Guides />} />
                 <Route path="/detonados/:slug" element={<Guide />} />
                 <Route path="/detonados/:slug/:n" element={<Guide />} />

@@ -23,7 +23,7 @@ const Team: React.FC = () => {
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
 
-  // A shared link (#/team?ids=6,25,94) imports a team. If the user already has one, ask first.
+  // A shared link (/team?ids=6,25,94) imports a team. If the user already has one, ask first.
   useEffect(() => {
     const shared = searchParams.get('ids');
     if (shared === null) return;
@@ -36,7 +36,7 @@ const Team: React.FC = () => {
   }, []);
 
   const copyLink = async () => {
-    const url = `${window.location.origin}${window.location.pathname}#/team?ids=${serializeTeam(team)}`;
+    const url = `${window.location.origin}/team?ids=${serializeTeam(team)}`;
     try {
       await navigator.clipboard.writeText(url);
     } catch {

@@ -8,6 +8,7 @@ import GuideDownloads from '../components/GuideDownloads';
 import Loader from '../components/Loader';
 import { useGlobal } from '../context/GlobalContext';
 import { readStorage, writeStorage } from '../utils/storage';
+import Seo from '../components/Seo';
 
 const PROGRESS_KEY = 'guideProgress';
 
@@ -66,11 +67,12 @@ const Guide: React.FC = () => {
     };
   }, [guide, chapter, slug]);
 
-  useEffect(() => {
-    if (guide) {
-      document.title = `${chapter ? `${chapter.title} - ` : ''}${guide.title} | Rotom Pokedex`;
-    }
-  }, [guide, chapter]);
+  // Meta description of a chapter: its first paragraph
+  const chapterDescription = useMemo(() => {
+    const first = blocks?.find((b) => b.t === 'p');
+    const text = first && first.t === 'p' ? first.runs.map((r) => r.t).join('') : '';
+    return text.length > 155 ? `${text.slice(0, 152).trimEnd()}...` : text;
+  }, [blocks]);
 
   // Reading progress bar
   useEffect(() => {
@@ -150,6 +152,12 @@ const Guide: React.FC = () => {
     const resume = progress[slug];
     return (
       <div className="container mx-auto px-4 py-10 max-w-5xl">
+        <Seo
+          title={guide.title}
+          description={guide.description}
+          path={`/detonados/${slug}`}
+          image={`/detonados/${slug}/${guide.cover}`}
+        />
         <Link to="/detonados" className="inline-flex items-center gap-2 mb-6 text-sm text-gray-500 hover:text-blue-500">
           <ArrowLeft size={16} /> {t.guides.backToList}
         </Link>
@@ -226,6 +234,13 @@ const Guide: React.FC = () => {
 
   return (
     <div>
+      <Seo
+        title={`${chapter.title} - ${guide.title}`}
+        description={chapterDescription || guide.description}
+        path={`/detonados/${slug}/${chapter.n}`}
+        image={`/detonados/${slug}/${guide.cover}`}
+        type="article"
+      />
       <div className="fixed top-16 left-0 right-0 z-40 h-1 bg-transparent pointer-events-none">
         <div className="h-full transition-[width] duration-100" style={{ width: `${scrollPct}%`, backgroundColor: accent }} />
       </div>

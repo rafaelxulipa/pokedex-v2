@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pokedex.otaviorafael.com.br/sitemap.xml

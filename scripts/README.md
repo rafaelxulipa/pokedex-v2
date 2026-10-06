@@ -50,7 +50,7 @@ Os guias atuais:
 3. Rode o comando acima. O script imprime os estilos de texto que não soube tratar
    (`UNHANDLED TEXT STYLES`). Confira essas páginas no navegador e, se preciso, ajuste as
    regras em `convert_guide.py` (`is_cardish`, `containers`, `page_blocks`).
-4. Abra `http://localhost:3000/#/detonados` e revise os capítulos lado a lado com o PDF.
+4. Abra `http://localhost:3000/detonados` e revise os capítulos lado a lado com o PDF.
 
 ## Observações
 
