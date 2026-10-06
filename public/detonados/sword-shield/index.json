@@ -6,10 +6,25 @@
  "description": "Detonado completo em português de Pokémon Sword e Shield, com capturas de tela, mapas, times dos líderes e rivais e a história de Galar.",
  "credit": "Texto original e organização: Pokémon Mythology · pokemythology.net",
  "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
- "license": "",
+ "license": "Distribuição livre, desde que sem alterações e com os créditos mantidos.",
  "accent": "#2f6fd6",
  "cover": "cover.webp",
- "downloads": [],
+ "downloads": [
+  {
+   "label": "PDF em A4",
+   "hint": "Ideal para imprimir ou ler no computador",
+   "file": "pdf/Detonado-Pokemon-Sword-Shield-A4.pdf",
+   "pages": 232,
+   "bytes": 14961376
+  },
+  {
+   "label": "PDF compacto",
+   "hint": "Formato menor, ótimo para celular e tablet",
+   "file": "pdf/Detonado-Pokemon-Sword-Shield.pdf",
+   "pages": 266,
+   "bytes": 9453455
+  }
+ ],
  "chapters": [
   {
    "n": 1,
@@ -681,5 +696,5 @@
    ]
   }
  ],
- "pdfPages": 0
+ "pdfPages": 232
 }

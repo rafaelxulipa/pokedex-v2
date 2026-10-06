@@ -83,6 +83,20 @@ Coloque os PDFs prontos (comprimidos e com marca d'água, ver `scripts/watermark
 `public/detonados/<slug>/pdf/` e rode a conversão com `--keep-pdfs`: os PDFs de lá são mantidos e só
 `bytes` e `pages` são atualizados no `index.json`.
 
+## Gerar os PDFs de um guia importado
+
+```bash
+.venv-guides/bin/python scripts/build_pdfs.py scripts/guides/swsh.json
+```
+
+Monta o PDF no padrão visual dos outros guias (capa com badges, créditos, sumário, abertura de capítulo, avisos,
+cartões de time, cabeçalho e rodapé) em dois formatos, A4 e compacto, aplica a marca d'água
+(`watermark_pdf.py`), copia para `public/detonados/<slug>/pdf/` e registra os downloads no `index.json` e no
+`guides.json`. Use `--no-watermark` para gerar sem marca. O gerador está em `scripts/make_pdf.py` (WeasyPrint;
+fontes Poppins e Lora, licença OFL, em `scripts/fonts/`). Os ícones de Pokémon são baixados do PokéAPI uma vez
+(cache em `scripts/.cache/sprites`) e as imagens são reduzidas ao tamanho impresso, então os PDFs ficam leves.
+Reimportar um guia mantém os PDFs já registrados.
+
 ## Detonados do pokemythology.net (importador)
 
 Os detonados de Let's Go, Sword/Shield, Scarlet/Violet e Legends: Z-A vêm de páginas WordPress salvas pelo
@@ -102,5 +116,6 @@ navegador ("Salvar página como"). O importador converte o HTML para o mesmo for
   viram avisos/tabelas; anúncios são ignorados.
 - Os capítulos são montados agrupando seções (até ~16 mil caracteres ou 10 seções; cada imagem conta como
   algumas linhas). O catálogo `guides.json` e o índice de busca são atualizados no fim.
-- Não há PDF para esses guias: a página mostra "Ler online" e esconde a seção de download.
+- Os PDFs desses guias são gerados a partir do conteúdo importado (veja a seção anterior). Sem PDF, a página mostra
+  "Ler online" e esconde a seção de download.
 - Testes: `.venv-guides/bin/python -m pytest scripts/tests -q`.

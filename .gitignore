@@ -30,3 +30,6 @@ __pycache__/
 
 # importer cache (downloaded originals)
 scripts/.cache/
+
+# generated PDFs and temporary build files
+build/

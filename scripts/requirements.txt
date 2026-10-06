@@ -1,3 +1,6 @@
 pymupdf
 pillow
 pytest
+weasyprint
+beautifulsoup4
+lxml

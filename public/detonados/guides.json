@@ -30,7 +30,7 @@
   "accent": "#0f9d8a",
   "cover": "cover.webp",
   "chapters": 28,
-  "pdfPages": 0
+  "pdfPages": 131
  },
  {
   "slug": "lets-go-pikachu-lets-go-eevee",
@@ -41,7 +41,7 @@
   "accent": "#d99a00",
   "cover": "cover.webp",
   "chapters": 13,
-  "pdfPages": 0
+  "pdfPages": 77
  },
  {
   "slug": "scarlet-violet",
@@ -52,7 +52,7 @@
   "accent": "#e0402f",
   "cover": "cover.webp",
   "chapters": 33,
-  "pdfPages": 0
+  "pdfPages": 179
  },
  {
   "slug": "sword-shield",
@@ -63,6 +63,6 @@
   "accent": "#2f6fd6",
   "cover": "cover.webp",
   "chapters": 39,
-  "pdfPages": 0
+  "pdfPages": 232
  }
 ]

@@ -549,6 +549,12 @@ class Importer:
         index["downloads"] = cfg.get("downloads", [])
         index["chapters"] = index_chapters
         index["pdfPages"] = 0
+        previous = self.out / "index.json"
+        if previous.exists() and not index["downloads"]:
+            # keep the PDFs registered by build_pdfs.py
+            old_index = json.loads(previous.read_text(encoding="utf-8"))
+            index["downloads"] = old_index.get("downloads", [])
+            index["pdfPages"] = old_index.get("pdfPages", 0)
         (self.out / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
         self.update_catalog(index)
         sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -567,7 +573,7 @@ class Importer:
         catalog = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
         entry = {k: index[k] for k in ("slug", "title", "subtitle", "console", "description", "accent", "cover")}
         entry["chapters"] = len(index["chapters"])
-        entry["pdfPages"] = 0
+        entry["pdfPages"] = index["pdfPages"]
         catalog = [e for e in catalog if e["slug"] != entry["slug"]] + [entry]
         catalog.sort(key=lambda e: e["slug"])
         path.write_text(json.dumps(catalog, ensure_ascii=False, indent=1), encoding="utf-8")

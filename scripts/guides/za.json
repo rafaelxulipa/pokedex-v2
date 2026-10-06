@@ -10,7 +10,12 @@
   "assets_dir": "/home/otavio/Downloads/poks/legends-z-a/Detonado Legends_ Z-A – Pokémon Mythology_files",
   "credit": "Texto original e organização: Pokémon Mythology · pokemythology.net",
   "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
-  "license": "",
+  "license": "Distribuição livre, desde que sem alterações e com os créditos mantidos.",
   "skip_chapters": [],
-  "downloads": []
+  "downloads": [],
+  "cover_sprites": [
+    152,
+    498,
+    158
+  ]
 }
