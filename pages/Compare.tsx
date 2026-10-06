@@ -17,6 +17,10 @@ const Compare: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const load = async () => {
         setLoading(true);
         if (comparisonList.length > 0) {
