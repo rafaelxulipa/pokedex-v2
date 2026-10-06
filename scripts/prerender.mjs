@@ -94,7 +94,8 @@ function page({ title, description, path, image = '/pokeball.png', type = 'websi
   html = html.replace('</head>', `    ${meta}\n  </head>`);
   // The text is for search engines and screen readers; sighted users get the React app, so the static copy is
   // kept out of sight (see the [data-prerender] rule in index.html) to avoid a flash of unstyled content.
-  html = html.replace('<div id="root"></div>', `<div id="root">${body.replace('<main>', '<main data-prerender>')}</div>`);
+  // (the loading indicator from index.html stays; the static copy goes right after it)
+  html = html.replace('<!--boot:end-->', `<!--boot:end-->${body.replace('<main>', '<main data-prerender>')}`);
   return html;
 }
 

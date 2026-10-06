@@ -197,6 +197,7 @@ const Team: React.FC = () => {
             </button>
           )}
         </div>
+        {search.trim() && allNames.length === 0 && <Loader size="md" />}
         {teamFull && search && <p className="mt-3 text-sm text-yellow-600 dark:text-yellow-400">{t.team.full}</p>}
         {results.length > 0 && (
           <div className="mt-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">

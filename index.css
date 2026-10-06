@@ -78,3 +78,40 @@ body {
 .transform-style-3d { transform-style: preserve-3d; }
 .backface-hidden { backface-visibility: hidden; }
 .rotate-y-180 { transform: rotateY(180deg); }
+
+/* Loading indicator (also used, in plain CSS, by the boot screen in index.html) */
+.pokeball-loader {
+  position: relative;
+  box-sizing: border-box;
+  border: 3px solid #1e1f24;
+  border-radius: 50%;
+  background: linear-gradient(#ef4444 0 45%, #1e1f24 45% 55%, #fff 55%);
+  animation: pokeball-spin 1s linear infinite;
+}
+.pokeball-loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 29%;
+  height: 29%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border: 3px solid #1e1f24;
+  border-radius: 50%;
+  background: #fff;
+}
+.dark .pokeball-loader {
+  border-color: #e5e7eb;
+  background: linear-gradient(#ef4444 0 45%, #e5e7eb 45% 55%, #1e1f24 55%);
+}
+.dark .pokeball-loader::after {
+  border-color: #e5e7eb;
+  background: #1e1f24;
+}
+@keyframes pokeball-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pokeball-loader { animation-duration: 3s; }
+}

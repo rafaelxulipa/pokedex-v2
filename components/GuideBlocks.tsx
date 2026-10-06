@@ -90,7 +90,7 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
         height={img.h}
         loading="lazy"
         decoding="async"
-        className={`w-full h-auto ${card ? 'rounded-xl' : 'rounded-xl shadow-sm'}`}
+        className={`w-full h-auto ${card ? 'rounded-xl' : 'rounded-xl shadow-sm bg-gray-200 dark:bg-gray-800'}`}
       />
     );
     return (

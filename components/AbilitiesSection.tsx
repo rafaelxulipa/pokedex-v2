@@ -4,6 +4,7 @@ import { fetchAbility } from '../services/pokeApi';
 import { AbilityDetail, PokemonAbility } from '../types';
 import { useGlobal } from '../context/GlobalContext';
 import { cleanEffect, localizedName } from '../utils/pokemon';
+import Loader from './Loader';
 
 const AbilitiesSection: React.FC<{ abilities: PokemonAbility[] }> = ({ abilities }) => {
   const { t, language } = useGlobal();
@@ -42,7 +43,7 @@ const AbilitiesSection: React.FC<{ abilities: PokemonAbility[] }> = ({ abilities
                 )}
               </div>
               <p className="text-gray-500 dark:text-gray-400 mt-0.5">
-                {effect ? cleanEffect(effect.short_effect, null) : detail ? t.noEffect : '...'}
+                {effect ? cleanEffect(effect.short_effect, null) : detail ? t.noEffect : <Loader size="sm" />}
               </p>
             </li>
           );

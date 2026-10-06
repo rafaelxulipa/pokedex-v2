@@ -5,6 +5,7 @@ import { MoveDetail, PokemonMove } from '../types';
 import { useGlobal } from '../context/GlobalContext';
 import { cleanEffect, idFromUrl, localizedName } from '../utils/pokemon';
 import TypeBadge from './TypeBadge';
+import Loader from './Loader';
 
 const INITIAL_VISIBLE = 10;
 
@@ -79,7 +80,7 @@ const MovesSection: React.FC<{ moves: PokemonMove[] }> = ({ moves }) => {
               {isOpen && (
                 <div className="pb-3 pl-13 text-sm text-gray-500 dark:text-gray-400 animate-fade-in">
                   {detail === undefined ? (
-                    '...'
+                    <Loader size="sm" />
                   ) : detail === null ? (
                     t.noEffect
                   ) : (

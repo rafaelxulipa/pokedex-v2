@@ -5,6 +5,7 @@ import { fetchGuideCatalog, fetchGuideSearch } from '../services/guides';
 import { GuideSummary } from '../types';
 import { SearchEntry, searchEntries } from '../utils/guideSearch';
 import { useGlobal } from '../context/GlobalContext';
+import Loader from './Loader';
 
 interface GuideSearchProps {
   slug?: string; // limit the search to one guide; without it every guide is searched
@@ -93,7 +94,7 @@ const GuideSearch: React.FC<GuideSearchProps> = ({ slug, className = '' }) => {
       {showPanel && (
         <div className="absolute z-50 left-0 right-0 mt-2 max-h-[70vh] overflow-y-auto rounded-2xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-dark-card shadow-2xl">
           {!entries ? (
-            <p className="p-4 text-sm text-gray-400">...</p>
+            <div className="p-2"><Loader size="md" /></div>
           ) : hits.length === 0 ? (
             <p className="p-4 text-sm text-gray-400">{t.guides.noResults}</p>
           ) : (

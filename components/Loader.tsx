@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Loader: React.FC = () => {
+interface LoaderProps {
+  size?: 'sm' | 'md' | 'lg'; // sm: inline (text lines), md: small blocks, lg: whole page (default)
+  label?: string;
+}
+
+const SIZES = { sm: 22, md: 40, lg: 56 };
+
+// Spinning Poké Ball, the same indicator that index.html shows while the app is loading
+const Loader: React.FC<LoaderProps> = ({ size = 'lg', label = 'Carregando' }) => {
+  const px = SIZES[size];
   return (
-    <div className="flex justify-center items-center p-10">
-      <div className="relative w-20 h-20 animate-spin">
-        <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-gray-200 dark:border-gray-700 opacity-25"></div>
-        <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-transparent border-t-red-500 border-r-red-500"></div>
-      </div>
+    <div className={`flex justify-center items-center ${size === 'lg' ? 'p-10' : size === 'md' ? 'p-4' : 'inline-flex align-middle'}`} role="status" aria-label={label}>
+      <div className="pokeball-loader" style={{ width: px, height: px }} />
     </div>
   );
 };
