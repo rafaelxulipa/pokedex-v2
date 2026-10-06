@@ -26,7 +26,7 @@ const AdSense: React.FC<AdSenseProps> = ({
     try {
       // Push the ad to the queue
       // This verifies if adsbygoogle exists to avoid crashes with AdBlockers
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'development') {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       }
     } catch (err) {

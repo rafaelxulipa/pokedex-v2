@@ -5,71 +5,62 @@ import { TYPE_COLORS } from '../constants';
 
 interface StatChartProps {
   stats: PokemonStat[];
-  compareStats?: PokemonStat[];
-  name1?: string;
-  name2?: string;
   primaryType?: string;
 }
 
-const StatChart: React.FC<StatChartProps> = ({ stats, compareStats, name1, name2, primaryType = 'normal' }) => {
+export const SERIES_COLORS = [
+  { bar: 'bg-blue-500', text: 'text-blue-600 dark:text-blue-400' },
+  { bar: 'bg-red-500', text: 'text-red-600 dark:text-red-400' },
+  { bar: 'bg-green-500', text: 'text-green-600 dark:text-green-400' },
+  { bar: 'bg-amber-500', text: 'text-amber-600 dark:text-amber-400' },
+];
+
+interface MultiStatChartProps {
+  series: { name: string; stats: PokemonStat[] }[];
+}
+
+// Grouped bars for comparing 2 to 4 Pokemon
+export const MultiStatChart: React.FC<MultiStatChartProps> = ({ series }) => {
   const { t } = useGlobal();
+  if (series.length === 0) return null;
 
-  // If we are comparing, we use a simpler layout to show two bars
-  if (compareStats) {
-      return (
-        <div className="w-full space-y-4">
-            {stats.map((stat, index) => {
-                const statName = stat.stat.name;
-                const label = t.stats[statName as keyof typeof t.stats] || statName;
-                const val1 = stat.base_stat;
-                const val2 = compareStats[index].base_stat;
-                // Base calculation on max 255 (typical max stat)
-                const pct1 = Math.min((val1 / 255) * 100, 100);
-                const pct2 = Math.min((val2 / 255) * 100, 100);
-
-                return (
-                    <div key={statName} className="flex flex-col gap-1">
-                        <div className="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">
-                            <span>{label}</span>
-                        </div>
-                        
-                        {/* P1 Bar */}
-                        <div className="flex items-center gap-2">
-                             <div className="w-12 text-xs font-bold text-blue-600 dark:text-blue-400 text-right">{val1}</div>
-                             <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                                <div 
-                                    className="h-full bg-blue-500 rounded-full transition-all duration-700" 
-                                    style={{ width: `${pct1}%` }}
-                                ></div>
-                             </div>
-                        </div>
-
-                        {/* P2 Bar */}
-                         <div className="flex items-center gap-2">
-                             <div className="w-12 text-xs font-bold text-red-600 dark:text-red-400 text-right">{val2}</div>
-                             <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                                <div 
-                                    className="h-full bg-red-500 rounded-full transition-all duration-700" 
-                                    style={{ width: `${pct2}%` }}
-                                ></div>
-                             </div>
-                        </div>
-                    </div>
-                );
+  return (
+    <div className="w-full space-y-4">
+      {series[0].stats.map((stat, index) => {
+        const statName = stat.stat.name;
+        const label = t.stats[statName as keyof typeof t.stats] || statName;
+        return (
+          <div key={statName} className="flex flex-col gap-1">
+            <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">{label}</div>
+            {series.map((item, i) => {
+              const value = item.stats[index]?.base_stat ?? 0;
+              const color = SERIES_COLORS[i % SERIES_COLORS.length];
+              return (
+                <div key={item.name} className="flex items-center gap-2">
+                  <div className={`w-12 text-xs font-bold text-right ${color.text}`}>{value}</div>
+                  <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                    <div className={`h-full ${color.bar} rounded-full transition-all duration-700`} style={{ width: `${Math.min((value / 255) * 100, 100)}%` }}></div>
+                  </div>
+                </div>
+              );
             })}
-             <div className="flex justify-center gap-6 mt-4 text-xs font-bold">
-                <div className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400">
-                    <div className="w-3 h-3 bg-blue-500 rounded-sm"></div>
-                    {name1}
-                </div>
-                <div className="flex items-center gap-1.5 text-red-600 dark:text-red-400">
-                    <div className="w-3 h-3 bg-red-500 rounded-sm"></div>
-                    {name2}
-                </div>
-            </div>
-        </div>
-      );
-  }
+          </div>
+        );
+      })}
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 text-xs font-bold">
+        {series.map((item, i) => (
+          <div key={item.name} className={`flex items-center gap-1.5 capitalize ${SERIES_COLORS[i % SERIES_COLORS.length].text}`}>
+            <div className={`w-3 h-3 rounded-sm ${SERIES_COLORS[i % SERIES_COLORS.length].bar}`}></div>
+            {item.name.replace('-', ' ')}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const StatChart: React.FC<StatChartProps> = ({ stats, primaryType = 'normal' }) => {
+  const { t } = useGlobal();
 
   // Single Pokemon Display
   const typeColor = TYPE_COLORS[primaryType] || 'bg-blue-500';

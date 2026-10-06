@@ -1,14 +1,16 @@
 
-import React, { useEffect, useState } from 'react';
-import { Search, Filter, AlertCircle, Heart, ArrowRight, Sparkles, Map } from 'lucide-react';
-import { fetchAllPokemonNames, fetchMultiplePokemon } from '../services/pokeApi';
+import React, { useEffect, useRef, useState } from 'react';
+import { Search, Filter, AlertCircle, Heart, ArrowRight, Sparkles, Map, X } from 'lucide-react';
+import { fetchAllPokemonNames, fetchMultiplePokemon, fetchPokemonOfType } from '../services/pokeApi';
 import { PokemonListEntry, PokemonDetail } from '../types';
 import PokemonCard from '../components/PokemonCard';
 import Loader from '../components/Loader';
 import Pagination from '../components/Pagination';
 import { TYPE_COLORS, GENERATIONS } from '../constants';
-import { useGlobal } from '../context/GlobalContext';
+import { useGlobal, MAX_COMPARISON } from '../context/GlobalContext';
 import { useNavigate } from 'react-router-dom';
+import { idFromUrl } from '../utils/pokemon';
+import TypeIcon from '../components/TypeIcon';
 
 const PAGE_SIZE = 24;
 
@@ -28,7 +30,10 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedType, setSelectedType] = useState<string>('all');
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [typeMenuOpen, setTypeMenuOpen] = useState(false);
+  const [pageLoading, setPageLoading] = useState(false);
+  const typeMenuRef = useRef<HTMLDivElement>(null);
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   
@@ -49,15 +54,17 @@ const Home: React.FC = () => {
     setPage(1);
   };
 
-  const handleTypeChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const type = e.target.value;
-    setSelectedType(type);
+  // Up to 2 types; picking a third one replaces the oldest selection
+  const toggleType = (type: string) => {
+    setSelectedTypes((prev) => {
+      if (prev.includes(type)) return prev.filter((x) => x !== type);
+      return prev.length >= 2 ? [prev[1], type] : [...prev, type];
+    });
     setPage(1);
   };
 
-  const handleRegionChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const region = e.target.value;
-    setSelectedRegion(region);
+  const handleRegionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedRegion(e.target.value);
     setPage(1);
   };
 
@@ -66,92 +73,106 @@ const Home: React.FC = () => {
     setPage(1);
   };
 
-  // Filter Logic: Runs when inputs change
   useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (typeMenuRef.current && !typeMenuRef.current.contains(event.target as Node)) {
+        setTypeMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Filter Logic: runs when inputs change. `cancelled` guarantees that a slow, outdated request
+  // can never overwrite the result of a newer one.
+  useEffect(() => {
+    if (allPokemonList.length === 0) return;
+    let cancelled = false;
+
     const applyFilters = async () => {
-        if(allPokemonList.length === 0) return;
+      let results = allPokemonList;
 
-        let results = allPokemonList;
+      // 1. Type filter: Pokemon must have ALL selected types (type lists are cached)
+      if (selectedTypes.length > 0) {
+        const lists = await Promise.all(selectedTypes.map((type) => fetchPokemonOfType(type)));
+        if (cancelled) return;
+        const names = lists.map((list) => new Set(list.map((p) => p.name)));
+        results = lists[0].filter((p) => names.every((set) => set.has(p.name)));
+      }
 
-        // 1. Type Filter (Do this locally if we have the list, or fetch if needed)
-        // Note: For simplicity and performance with existing "allPokemonList" (which is names only),
-        // doing a proper type filter usually requires fetching type data first.
-        
-        if (selectedType !== 'all') {
-             try {
-                 const res = await fetch(`https://pokeapi.co/api/v2/type/${selectedType}`);
-                 const data = await res.json();
-                 results = data.pokemon.map((p: any) => p.pokemon);
-             } catch (e) {
-                 results = [];
-             }
+      // 2. Region/Generation filter
+      if (selectedRegion !== 'all') {
+        const genData = GENERATIONS.find((g) => g.key === selectedRegion);
+        if (genData) {
+          results = results.filter((p) => {
+            const id = idFromUrl(p.url);
+            return id >= genData.start && id <= genData.end;
+          });
         }
+      }
 
-        // 2. Region/Generation Filter
-        if (selectedRegion !== 'all') {
-            const genData = GENERATIONS.find(g => g.key === selectedRegion);
-            if (genData) {
-                results = results.filter(p => {
-                    const parts = p.url.split('/');
-                    const id = parseInt(parts[parts.length - 2]);
-                    return id >= genData.start && id <= genData.end;
-                });
-            }
-        }
+      // 3. Search by name or number
+      if (searchTerm) {
+        const term = searchTerm.replace(/^#/, '');
+        const isNumeric = /^\d+$/.test(term);
+        results = results.filter((p) =>
+          isNumeric ? idFromUrl(p.url) === parseInt(term, 10) || p.name.includes(term) : p.name.includes(term)
+        );
+      }
 
-        // 3. Name Search
-        if (searchTerm) {
-            results = results.filter(p => p.name.includes(searchTerm));
-        }
+      // 4. Favorites
+      if (showFavoritesOnly) {
+        results = results.filter((p) => favorites.includes(idFromUrl(p.url)));
+      }
 
-        // 4. Favorites
-        if (showFavoritesOnly) {
-            results = results.filter(p => {
-                const parts = p.url.split('/');
-                const id = parseInt(parts[parts.length - 2]);
-                return favorites.includes(id);
-            });
-        }
-
-        setFilteredList(results);
+      if (!cancelled) setFilteredList(results);
     };
 
     // Debounce slightly to prevent rapid firing
-    const timer = setTimeout(() => applyFilters(), 300);
-    return () => clearTimeout(timer);
-  }, [searchTerm, selectedType, selectedRegion, showFavoritesOnly, allPokemonList, favorites]);
+    const timer = setTimeout(applyFilters, 300);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [searchTerm, selectedTypes, selectedRegion, showFavoritesOnly, allPokemonList, favorites]);
 
-  // Pagination Logic: Runs when Page or FilteredList changes
+  const totalPages = Math.ceil(filteredList.length / PAGE_SIZE);
+
+  // Keep the current page valid when the list shrinks (e.g. un-favoriting on the last page)
   useEffect(() => {
-     const paginate = async () => {
-        if (filteredList.length === 0 && !loading) {
-            setDisplayPokemon([]);
-            return;
-        }
+    if (totalPages > 0 && page > totalPages) setPage(totalPages);
+  }, [totalPages, page]);
 
-        const startIndex = (page - 1) * PAGE_SIZE;
-        const endIndex = startIndex + PAGE_SIZE;
-        const pageSliceUrls = filteredList.slice(startIndex, endIndex).map(p => p.url);
+  // Pagination Logic: runs when Page or FilteredList changes
+  useEffect(() => {
+    if (loading) return;
+    let cancelled = false;
 
-        if (pageSliceUrls.length > 0) {
-            const details = await fetchMultiplePokemon(pageSliceUrls);
-            setDisplayPokemon(details);
-        } else {
-            setDisplayPokemon([]);
-        }
-     };
+    const startIndex = (page - 1) * PAGE_SIZE;
+    const pageSliceUrls = filteredList.slice(startIndex, startIndex + PAGE_SIZE).map((p) => p.url);
 
-     if (!loading) {
-         paginate();
-     }
+    if (pageSliceUrls.length === 0) {
+      setDisplayPokemon([]);
+      setPageLoading(false);
+      return;
+    }
+
+    setPageLoading(true);
+    fetchMultiplePokemon(pageSliceUrls).then((details) => {
+      if (cancelled) return;
+      setDisplayPokemon(details);
+      setPageLoading(false);
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [page, filteredList, loading]);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const totalPages = Math.ceil(filteredList.length / PAGE_SIZE);
 
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen pb-24">
@@ -196,24 +217,46 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Type Filter */}
-            <div className="relative w-full md:w-48 group">
-               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Filter className="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
-              </div>
-              <select
-                value={selectedType}
-                onChange={handleTypeChange}
-                className="block w-full pl-10 pr-10 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 appearance-none cursor-pointer capitalize transition-all shadow-inner"
+            {/* Type Filter (up to 2 types) */}
+            <div className="relative w-full md:w-48" ref={typeMenuRef}>
+              <button
+                type="button"
+                onClick={() => setTypeMenuOpen((open) => !open)}
+                className="flex items-center w-full pl-3 pr-3 py-3 border border-gray-200 dark:border-gray-600 rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cursor-pointer capitalize transition-all shadow-inner text-left"
+                aria-expanded={typeMenuOpen}
               >
-                <option value="all">{t.allTypes}</option>
-                {Object.keys(TYPE_COLORS).map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
-              <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-              </div>
+                <Filter className="h-5 w-5 mr-2 text-gray-400 shrink-0" />
+                <span className="flex-1 truncate">{selectedTypes.length > 0 ? selectedTypes.join(' + ') : t.allTypes}</span>
+                {selectedTypes.length > 0 ? (
+                  <X
+                    className="h-4 w-4 text-gray-400 hover:text-red-500 shrink-0"
+                    onClick={(e) => { e.stopPropagation(); setSelectedTypes([]); setPage(1); }}
+                  />
+                ) : (
+                  <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                )}
+              </button>
+              {typeMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-64 p-3 bg-white dark:bg-dark-card rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 z-50 animate-fade-in">
+                  <p className="text-[11px] text-gray-400 uppercase tracking-widest mb-2">{t.maxTypes}</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {Object.keys(TYPE_COLORS).map((type) => {
+                      const active = selectedTypes.includes(type);
+                      return (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => toggleType(type)}
+                          className={`${TYPE_COLORS[type]} flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-full text-white text-xs font-bold capitalize transition-all ${active ? 'ring-2 ring-offset-2 ring-blue-500 dark:ring-offset-gray-900 scale-105' : 'opacity-70 hover:opacity-100'}`}
+                        >
+                          <TypeIcon type={type} className="w-3 h-3" />
+                          {type}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Favorites Toggle */}
@@ -239,7 +282,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Content */}
-      {loading && filteredList.length > 0 && displayPokemon.length === 0 ? (
+      {loading || (pageLoading && displayPokemon.length === 0) ? (
         <Loader />
       ) : displayPokemon.length === 0 ? (
         <div className="text-center py-24 text-gray-500 dark:text-gray-400 bg-white/50 dark:bg-dark-card/50 rounded-3xl mx-auto max-w-lg border border-dashed border-gray-300 dark:border-gray-700">
@@ -248,7 +291,7 @@ const Home: React.FC = () => {
             <button 
                 onClick={() => {
                   setSearchTerm(''); 
-                  setSelectedType('all'); 
+                  setSelectedTypes([]); 
                   setSelectedRegion('all');
                   setShowFavoritesOnly(false);
                 }} 
@@ -259,7 +302,7 @@ const Home: React.FC = () => {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 transition-opacity ${pageLoading ? 'opacity-50' : ''}`}>
             {displayPokemon.map((pokemon) => (
               <PokemonCard key={pokemon.id} pokemon={pokemon} />
             ))}
@@ -278,7 +321,7 @@ const Home: React.FC = () => {
         <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 dark:bg-dark-card/90 backdrop-blur-xl border border-gray-200 dark:border-gray-700 shadow-2xl rounded-2xl p-4 flex items-center gap-6 z-50 w-11/12 max-w-lg animate-fade-in-up ring-1 ring-black/5">
            <div className="flex-1">
              <p className="text-sm text-gray-600 dark:text-gray-300 font-semibold">
-               <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-md mr-2">{comparisonList.length}/2</span>
+               <span className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-md mr-2">{comparisonList.length}/{MAX_COMPARISON}</span>
                {t.comparePlaceholder}
              </p>
            </div>

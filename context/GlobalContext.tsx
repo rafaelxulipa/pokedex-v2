@@ -1,5 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { translations, Language } from '../translations';
+import { readStorage, writeStorage, removeStorage, isNumberArray } from '../utils/storage';
+
+export const MAX_COMPARISON = 4;
+export const MAX_TEAM = 6;
+
+const LANGUAGE_CODES = ['en', 'pt', 'es', 'de', 'zh', 'ja'];
 
 interface GlobalContextType {
   language: Language;
@@ -9,6 +15,9 @@ interface GlobalContextType {
   comparisonList: number[];
   toggleComparison: (id: number) => void;
   clearComparison: () => void;
+  team: number[];
+  toggleTeamMember: (id: number) => void;
+  clearTeam: () => void;
   isShinyMode: boolean;
   toggleShinyMode: () => void;
   shinyPokemon: number[];
@@ -21,38 +30,40 @@ const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
 export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Language State - DEFAULT TO 'pt'
   const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem('language');
-    // Check if saved is a valid language key
-    if (saved && ['en', 'pt', 'es', 'de', 'zh', 'ja'].includes(saved)) {
-      return saved as Language;
+    // Stored as a plain string (not JSON) by previous versions, so it is read raw
+    try {
+      const saved = localStorage.getItem('language');
+      if (saved && LANGUAGE_CODES.includes(saved)) return saved as Language;
+    } catch {
+      // storage blocked
     }
-    return 'pt'; // Default to Portuguese
+    return 'pt';
   });
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch {
+      // storage blocked
+    }
   };
 
   // Favorites State
-  const [favorites, setFavorites] = useState<number[]>(() => {
-    const saved = localStorage.getItem('favorites');
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [favorites, setFavorites] = useState<number[]>(() => readStorage<number[]>('favorites', [], isNumberArray));
 
   const toggleFavorite = (id: number) => {
     setFavorites((prev) => {
       const newFavs = prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id];
-      localStorage.setItem('favorites', JSON.stringify(newFavs));
+      writeStorage('favorites', newFavs);
       return newFavs;
     });
   };
 
   // Comparison State
-  const [comparisonList, setComparisonList] = useState<number[]>(() => {
-    const saved = localStorage.getItem('comparisonList');
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [comparisonList, setComparisonList] = useState<number[]>(() =>
+    readStorage<number[]>('comparisonList', [], isNumberArray).slice(-MAX_COMPARISON)
+  );
 
   const toggleComparison = (id: number) => {
     setComparisonList((prev) => {
@@ -60,46 +71,63 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       if (prev.includes(id)) {
         newList = prev.filter((cid) => cid !== id);
       } else {
-        if (prev.length >= 2) {
-          newList = [prev[1], id]; 
+        if (prev.length >= MAX_COMPARISON) {
+          newList = [...prev.slice(1), id];
         } else {
           newList = [...prev, id];
         }
       }
-      localStorage.setItem('comparisonList', JSON.stringify(newList));
+      writeStorage('comparisonList', newList);
       return newList;
     });
   };
 
   const clearComparison = () => {
     setComparisonList([]);
-    localStorage.removeItem('comparisonList');
+    removeStorage('comparisonList');
+  };
+
+  // Team State (max 6 members)
+  const [team, setTeam] = useState<number[]>(() => readStorage<number[]>('team', [], isNumberArray).slice(0, MAX_TEAM));
+
+  const toggleTeamMember = (id: number) => {
+    setTeam((prev) => {
+      let newTeam: number[];
+      if (prev.includes(id)) {
+        newTeam = prev.filter((tid) => tid !== id);
+      } else if (prev.length >= MAX_TEAM) {
+        return prev;
+      } else {
+        newTeam = [...prev, id];
+      }
+      writeStorage('team', newTeam);
+      return newTeam;
+    });
+  };
+
+  const clearTeam = () => {
+    setTeam([]);
+    removeStorage('team');
   };
 
   // Shiny Mode State (Global)
-  const [isShinyMode, setIsShinyMode] = useState<boolean>(() => {
-    const saved = localStorage.getItem('isShinyMode');
-    return saved === 'true';
-  });
+  const [isShinyMode, setIsShinyMode] = useState<boolean>(() => readStorage<boolean>('isShinyMode', false, (v) => typeof v === 'boolean'));
 
   const toggleShinyMode = () => {
     setIsShinyMode(prev => {
         const newValue = !prev;
-        localStorage.setItem('isShinyMode', String(newValue));
+        writeStorage('isShinyMode', newValue);
         return newValue;
     });
   };
 
   // Individual Shiny Pokemon State
-  const [shinyPokemon, setShinyPokemon] = useState<number[]>(() => {
-    const saved = localStorage.getItem('shinyPokemon');
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [shinyPokemon, setShinyPokemon] = useState<number[]>(() => readStorage<number[]>('shinyPokemon', [], isNumberArray));
 
   const toggleShinyPokemon = (id: number) => {
     setShinyPokemon((prev) => {
         const newList = prev.includes(id) ? prev.filter(p => p !== id) : [...prev, id];
-        localStorage.setItem('shinyPokemon', JSON.stringify(newList));
+        writeStorage('shinyPokemon', newList);
         return newList;
     });
   };
@@ -116,6 +144,9 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         comparisonList,
         toggleComparison,
         clearComparison,
+        team,
+        toggleTeamMember,
+        clearTeam,
         isShinyMode,
         toggleShinyMode,
         shinyPokemon,

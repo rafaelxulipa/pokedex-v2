@@ -35,11 +35,20 @@
               'flow-v': {
                 '0%': { backgroundPosition: '0 100%' },
                 '100%': { backgroundPosition: '0 -100%' },
-              }
+              },
+              'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              'fade-in-up': { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              'fade-in-right': { '0%': { opacity: '0', transform: 'translateX(-12px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+              'float': { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
             },
             animation: {
               'flow-h': 'flow-h 1.5s linear infinite',
               'flow-v': 'flow-v 1.5s linear infinite',
+              'fade-in': 'fade-in 0.4s ease-out',
+              'fade-in-up': 'fade-in-up 0.4s ease-out',
+              'fade-in-right': 'fade-in-right 0.4s ease-out',
+              'float': 'float 3s ease-in-out infinite',
+              'spin-slow': 'spin 3s linear infinite',
             }
           }
         }
@@ -63,19 +72,6 @@
       .backface-hidden { backface-visibility: hidden; }
       .rotate-y-180 { transform: rotateY(180deg); }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "recharts": "https://esm.sh/recharts@^3.7.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
     <div id="root"></div>

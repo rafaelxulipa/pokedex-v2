@@ -1,64 +1,59 @@
 import { POKEAPI_URL } from '../constants';
 import { PokemonDetail, PokemonListEntry, PokemonSpecies, EvolutionChainResponse, TypeDetail } from '../types';
 
+// In-memory cache of in-flight/finished requests, keyed by url. Failed requests are evicted
+// so they can be retried later.
+const cache = new Map<string, Promise<unknown>>();
+
+const cachedFetch = <T,>(url: string): Promise<T | null> => {
+  const existing = cache.get(url);
+  if (existing) return existing as Promise<T | null>;
+
+  const request = (async () => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        cache.delete(url);
+        return null;
+      }
+      return (await response.json()) as T;
+    } catch (error) {
+      cache.delete(url);
+      console.error('Error fetching', url, error);
+      return null;
+    }
+  })();
+
+  cache.set(url, request);
+  return request;
+};
+
 export const fetchAllPokemonNames = async (): Promise<PokemonListEntry[]> => {
-  // Fetching a large list of names to enable efficient client-side search without spamming the API
-  try {
-    const response = await fetch(`${POKEAPI_URL}/pokemon?limit=1302&offset=0`);
-    const data = await response.json();
-    return data.results;
-  } catch (error) {
-    console.error('Error fetching name list:', error);
-    return [];
-  }
+  // Large list of names to enable efficient client-side search without spamming the API
+  const data = await cachedFetch<{ results: PokemonListEntry[] }>(`${POKEAPI_URL}/pokemon?limit=1302&offset=0`);
+  return data?.results ?? [];
 };
 
-export const fetchPokemonDetails = async (url: string): Promise<PokemonDetail | null> => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching details:', error);
-    return null;
-  }
-};
+export const fetchPokemonDetails = (url: string) => cachedFetch<PokemonDetail>(url);
 
-export const fetchPokemonSpecies = async (id: number): Promise<PokemonSpecies | null> => {
-  try {
-    const response = await fetch(`${POKEAPI_URL}/pokemon-species/${id}`);
-    if (!response.ok) return null;
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching species:', error);
-    return null;
-  }
-};
+export const fetchPokemonSpecies = (idOrUrl: number | string) =>
+  cachedFetch<PokemonSpecies>(typeof idOrUrl === 'number' ? `${POKEAPI_URL}/pokemon-species/${idOrUrl}` : idOrUrl);
 
-export const fetchEvolutionChain = async (url: string): Promise<EvolutionChainResponse | null> => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching evolution chain:', error);
-    return null;
-  }
-};
+export const fetchEvolutionChain = (url: string) => cachedFetch<EvolutionChainResponse>(url);
 
-export const fetchTypeDetails = async (url: string): Promise<TypeDetail | null> => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) return null;
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching type details:', error);
-    return null;
-  }
+export const fetchTypeDetails = (url: string) => cachedFetch<TypeDetail>(url);
+
+export const fetchTypeByName = (name: string) => fetchTypeDetails(`${POKEAPI_URL}/type/${name}`);
+
+// Pokemon list that belongs to a type (cached per type)
+export const fetchPokemonOfType = async (type: string): Promise<PokemonListEntry[]> => {
+  const data = await cachedFetch<{ pokemon: { pokemon: PokemonListEntry }[] }>(`${POKEAPI_URL}/type/${type}`);
+  return data ? data.pokemon.map((p) => p.pokemon) : [];
 };
 
 export const fetchMultiplePokemon = async (urls: string[]): Promise<PokemonDetail[]> => {
-  const promises = urls.map((url) => fetchPokemonDetails(url));
-  const results = await Promise.all(promises);
+  const results = await Promise.all(urls.map((url) => fetchPokemonDetails(url)));
   return results.filter((p): p is PokemonDetail => p !== null);
 };
+
+export const pokemonUrl = (idOrName: number | string) => `${POKEAPI_URL}/pokemon/${idOrName}`;

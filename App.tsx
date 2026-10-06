@@ -6,8 +6,10 @@ import Home from './pages/Home';
 import PokemonDetails from './pages/PokemonDetails';
 import Compare from './pages/Compare';
 import MemoryGame from './pages/MemoryGame';
+import Quiz from './pages/Quiz';
+import Team from './pages/Team';
 import RotomCursor from './components/RotomCursor';
-import { Moon, Sun, ChevronDown, Check, BrainCircuit } from 'lucide-react';
+import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users } from 'lucide-react';
 import { Language } from './translations';
 
 // Language Options with Flags
@@ -54,20 +56,28 @@ const Header: React.FC = () => {
         </Link>
 
         <div className="flex items-center gap-3">
-          {/* Memory Game Link */}
-           <NavLink 
-                to="/memory-game"
-                className={({ isActive }) => 
-                  `p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border ${
-                    isActive 
-                      ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700' 
-                      : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
-                  }`
-                }
-                title={t.memoryGame.title}
+          {/* Feature links */}
+          {[
+            { to: '/team', title: t.team.title, icon: <Users size={20} /> },
+            { to: '/quiz', title: t.quiz.title, icon: <HelpCircle size={20} /> },
+            { to: '/memory-game', title: t.memoryGame.title, icon: <BrainCircuit size={20} /> },
+          ].map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `p-2.5 rounded-xl transition-all hover:scale-110 shadow-sm border ${
+                  isActive
+                    ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700'
+                    : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
+                }`
+              }
+              title={link.title}
+              aria-label={link.title}
             >
-              <BrainCircuit size={20} />
+              {link.icon}
             </NavLink>
+          ))}
 
           {/* Custom Language Dropdown */}
           <div className="relative" ref={dropdownRef}>
@@ -140,6 +150,8 @@ const App: React.FC = () => {
                 <Route path="/pokemon/:id" element={<PokemonDetails />} />
                 <Route path="/compare" element={<Compare />} />
                 <Route path="/memory-game" element={<MemoryGame />} />
+                <Route path="/quiz" element={<Quiz />} />
+                <Route path="/team" element={<Team />} />
               </Routes>
             </main>
             <Footer />
