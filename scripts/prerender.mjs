@@ -113,7 +113,7 @@ function write(path, html) {
   writeFileSync(join(dir, 'index.html'), html, 'utf-8');
 }
 
-const urls = ['/', '/detonados', '/team', '/iv-calculator', '/pokopia', '/pokopia/habitats', '/pokopia/pokemon', '/pokopia/mapa', '/pokopia/colegas', '/quiz', '/memory-game'];
+const urls = ['/', '/detonados', '/team', '/iv-calculator', '/pokopia', '/pokopia/habitats', '/pokopia/pokemon', '/pokopia/mapa', '/pokopia/colegas', '/pokopia/moradia', '/pokopia/especialidades', '/quiz', '/memory-game'];
 const catalogPath = join(root, 'public', 'detonados', 'guides.json');
 const catalog = existsSync(catalogPath) ? JSON.parse(readFileSync(catalogPath, 'utf-8')) : [];
 
@@ -179,6 +179,8 @@ const simple = {
   'pokopia/habitats': { title: 'Habitats do Pokopia', description: 'Todos os habitats de Pokémon Pokopia com os itens necessários e os Pokémon que cada um atrai.', h1: 'Habitats do Pokopia' },
   'pokopia/mapa': { title: 'Mapa do Pokopia', description: 'Mapa interativo de Pokémon Pokopia com receitas, bancadas, Centros Pokémon, diários e itens colecionáveis de cada área.', h1: 'Mapa do Pokopia' },
   'pokopia/colegas': { title: 'Calculadora de colegas de casa do Pokopia', description: 'Veja quais Pokémon combinam mais com o seu e monte casas em Pokémon Pokopia pelas preferências em comum.', h1: 'Calculadora de colegas de casa do Pokopia' },
+  'pokopia/moradia': { title: 'Calculadora de moradia do Pokopia', description: 'Agrupe os seus Pokémon em casas de Pokémon Pokopia para maximizar as preferências em comum.', h1: 'Calculadora de moradia do Pokopia' },
+  'pokopia/especialidades': { title: 'Guia de especialidades do Pokopia', description: 'Encontre os Pokémon ajudantes de Pokémon Pokopia por especialidade e por região.', h1: 'Guia de especialidades do Pokopia' },
   'pokopia/pokemon': { title: 'Pokémon do Pokopia', description: 'Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece.', h1: 'Pokémon do Pokopia' },
   quiz: { title: 'Quiz: Quem é esse Pokémon?', description: 'Adivinhe o Pokémon pela silhueta. Modo livre por geração e desafio do dia com as mesmas perguntas para todos.', h1: 'Quiz: Quem é esse Pokémon?' },
   'memory-game': { title: 'Jogo da Memória Pokémon', description: 'Jogo da memória com Pokémon: três níveis, escolha de geração, modo shiny e recordes.', h1: 'Jogo da Memória Pokémon' },

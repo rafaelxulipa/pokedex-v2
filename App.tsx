@@ -14,6 +14,8 @@ import PokopiaHabitats from './pages/PokopiaHabitats';
 import PokopiaPokemon from './pages/PokopiaPokemon';
 import PokopiaMap from './pages/PokopiaMap';
 import PokopiaRoommates from './pages/PokopiaRoommates';
+import PokopiaHousing from './pages/PokopiaHousing';
+import PokopiaSpecialties from './pages/PokopiaSpecialties';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
 import Seo from './components/Seo';
@@ -229,6 +231,8 @@ const App: React.FC = () => {
                 <Route path="/pokopia" element={<><Seo title="Pokémon Pokopia: ferramentas e guias" description="Habitats, lista de Pokémon e detonado em português de Pokémon Pokopia." path="/pokopia" /><PokopiaHub /></>} />
                 <Route path="/pokopia/habitats" element={<><Seo title="Habitats do Pokopia" description="Todos os habitats de Pokémon Pokopia com os itens necessários e os Pokémon que cada um atrai." path="/pokopia/habitats" /><PokopiaHabitats /></>} />
                 <Route path="/pokopia/pokemon" element={<><Seo title="Pokémon do Pokopia" description="Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece." path="/pokopia/pokemon" /><PokopiaPokemon /></>} />
+                <Route path="/pokopia/moradia" element={<><Seo title="Calculadora de moradia do Pokopia" description="Agrupe os seus Pokémon em casas de Pokémon Pokopia para maximizar as preferências em comum." path="/pokopia/moradia" /><PokopiaHousing /></>} />
+                <Route path="/pokopia/especialidades" element={<><Seo title="Guia de especialidades do Pokopia" description="Encontre os Pokémon ajudantes de Pokémon Pokopia por especialidade e por região." path="/pokopia/especialidades" /><PokopiaSpecialties /></>} />
                 <Route path="/pokopia/colegas" element={<><Seo title="Calculadora de colegas de casa do Pokopia" description="Veja quais Pokémon combinam mais com o seu e monte casas em Pokémon Pokopia pelas preferências em comum." path="/pokopia/colegas" /><PokopiaRoommates /></>} />
                 <Route path="/pokopia/mapa" element={<><Seo title="Mapa do Pokopia" description="Mapa interativo de Pokémon Pokopia com receitas, bancadas, Centros Pokémon, diários e itens colecionáveis de cada área." path="/pokopia/mapa" /><PokopiaMap /></>} />
                 <Route path="/detonados" element={<Guides />} />
