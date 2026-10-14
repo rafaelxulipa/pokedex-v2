@@ -8,11 +8,12 @@ import Compare from './pages/Compare';
 import MemoryGame from './pages/MemoryGame';
 import Quiz from './pages/Quiz';
 import Team from './pages/Team';
+import IvCalculator from './pages/IvCalculator';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
 import Seo from './components/Seo';
 import RotomCursor from './components/RotomCursor';
-import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen } from 'lucide-react';
+import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen, Calculator } from 'lucide-react';
 import { Language } from './translations';
 
 // Language Options with Flags
@@ -63,6 +64,7 @@ const Header: React.FC = () => {
           {[
             { to: '/detonados', title: t.guides.title, icon: <BookOpen size={20} /> },
             { to: '/team', title: t.team.title, icon: <Users size={20} /> },
+            { to: '/iv-calculator', title: t.ivCalc.nav, icon: <Calculator size={20} /> },
             { to: '/quiz', title: t.quiz.title, icon: <HelpCircle size={20} /> },
             { to: '/memory-game', title: t.memoryGame.title, icon: <BrainCircuit size={20} /> },
           ].map((link) => (
@@ -166,6 +168,7 @@ const App: React.FC = () => {
                 <Route path="/memory-game" element={<><Seo title="Jogo da Memória Pokémon" description="Jogo da memória com Pokémon: três níveis, escolha de geração, modo shiny e recordes." path="/memory-game" /><MemoryGame /></>} />
                 <Route path="/quiz" element={<><Seo title="Quiz: Quem é esse Pokémon?" description="Adivinhe o Pokémon pela silhueta. Modo livre por geração e desafio do dia com as mesmas perguntas para todos." path="/quiz" /><Quiz /></>} />
                 <Route path="/team" element={<><Seo title="Montador de Time Pokémon" description="Monte um time de até 6 Pokémon e veja as fraquezas e a cobertura de tipos. Compartilhe o time por link." path="/team" /><Team /></>} />
+                <Route path="/iv-calculator" element={<><Seo title="Calculadora de IV Pokémon" description="Descubra os IVs do seu Pokémon a partir dos status, nível, natureza e EVs. Aceita vários níveis para reduzir a faixa." path="/iv-calculator" /><IvCalculator /></>} />
                 <Route path="/detonados" element={<Guides />} />
                 <Route path="/detonados/:slug" element={<Guide />} />
                 <Route path="/detonados/:slug/:n" element={<Guide />} />
