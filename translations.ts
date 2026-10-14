@@ -135,6 +135,7 @@ export const translations = {
         "neutral": "neutral",
         "perfect": "Perfect",
         "shedinja": "Shedinja always has 1 HP, so its HP IV cannot be found.",
+        "total": "Total IVs",
         "result": "Result",
         "natures": {
             "hardy": "Hardy",
@@ -387,6 +388,7 @@ export const translations = {
         "neutral": "neutra",
         "perfect": "Perfeito",
         "shedinja": "Shedinja sempre tem 1 de HP, então o IV de HP não pode ser descoberto.",
+        "total": "Total de IVs",
         "result": "Resultado",
         "natures": {
             "hardy": "Forte",
@@ -639,6 +641,7 @@ export const translations = {
         "neutral": "neutra",
         "perfect": "Perfecto",
         "shedinja": "Shedinja siempre tiene 1 PS, así que su IV de PS no se puede calcular.",
+        "total": "IV total",
         "result": "Resultado",
         "natures": {
             "hardy": "Fuerte",
@@ -891,6 +894,7 @@ export const translations = {
         "neutral": "neutral",
         "perfect": "Perfekt",
         "shedinja": "Shedinja hat immer 1 KP, daher lässt sich der KP-IV nicht bestimmen.",
+        "total": "IV-Summe",
         "result": "Ergebnis",
         "natures": {
             "hardy": "Robust",
@@ -1143,6 +1147,7 @@ export const translations = {
         "neutral": "中性",
         "perfect": "完美",
         "shedinja": "脱壳忍者的HP永远是1，无法计算HP个体值。",
+        "total": "个体值总和",
         "result": "结果",
         "natures": {
             "hardy": "勤奋",
@@ -1395,6 +1400,7 @@ export const translations = {
         "neutral": "無補正",
         "perfect": "完璧",
         "shedinja": "ヌケニンのHPは常に1なので、HPの個体値は調べられません。",
+        "total": "個体値の合計",
         "result": "結果",
         "natures": {
             "hardy": "がんばりや",
