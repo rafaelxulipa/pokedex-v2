@@ -28,6 +28,12 @@ def block_text(block):
         return runs_text(block["runs"])
     if kind == "h3":
         return block["text"]
+    if kind == "mons":
+        return " ".join(m["name"] for m in block["items"])
+    if kind == "figs":
+        return block.get("caption", "")
+    if kind == "list":
+        return " ".join(runs_text(i) for i in block["items"])
     if kind == "callout":
         return " ".join(runs_text(p) for p in block["paras"])
     if kind == "card":

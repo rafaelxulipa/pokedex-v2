@@ -44,6 +44,14 @@ const blocksHtml = (slug, blocks) =>
           return `<h3 id="${esc(b.id)}">${esc(b.text)}</h3>`;
         case 'p':
           return `<p>${runsHtml(b.runs)}</p>`;
+        case 'mons':
+          return `<ul>${b.items.map((m) => `<li><a href="/pokemon/${m.id}">${esc(m.name)}</a></li>`).join('')}</ul>`;
+        case 'figs':
+          return `<figure>${b.items.map((i) => `<img src="${esc(i.src)}" alt="${esc(i.alt)}" width="${i.w}" height="${i.h}" loading="lazy">`).join('')}${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>`;
+        case 'list': {
+          const tag = b.ordered ? 'ol' : 'ul';
+          return `<${tag}>${b.items.map((r) => `<li>${runsHtml(r)}</li>`).join('')}</${tag}>`;
+        }
         case 'callout':
           return `<aside><strong>${CALLOUT_LABELS[b.kind] ?? 'Nota'}</strong>${b.paras.map((p) => `<p>${runsHtml(p)}</p>`).join('')}</aside>`;
         case 'img':
@@ -105,7 +113,7 @@ function write(path, html) {
   writeFileSync(join(dir, 'index.html'), html, 'utf-8');
 }
 
-const urls = ['/', '/detonados', '/team', '/iv-calculator', '/quiz', '/memory-game'];
+const urls = ['/', '/detonados', '/team', '/iv-calculator', '/pokopia', '/pokopia/habitats', '/pokopia/pokemon', '/quiz', '/memory-game'];
 const catalogPath = join(root, 'public', 'detonados', 'guides.json');
 const catalog = existsSync(catalogPath) ? JSON.parse(readFileSync(catalogPath, 'utf-8')) : [];
 
@@ -167,6 +175,9 @@ const simple = {
   '': { title: '', description: 'Pokédex com todos os Pokémon: busca por nome ou número, filtros por tipo e geração, status, evoluções, fraquezas, comparação, time, quiz e detonados em português.', h1: 'Rotom Pokedex' },
   team: { title: 'Montador de Time Pokémon', description: 'Monte um time de até 6 Pokémon e veja as fraquezas e a cobertura de tipos. Compartilhe o time por link.', h1: 'Montador de Time Pokémon' },
   'iv-calculator': { title: 'Calculadora de IV Pokémon', description: 'Descubra os IVs do seu Pokémon a partir dos status, nível, natureza e EVs. Aceita vários níveis para reduzir a faixa.', h1: 'Calculadora de IV Pokémon' },
+  pokopia: { title: 'Pokémon Pokopia: ferramentas e guias', description: 'Habitats, lista de Pokémon e detonado em português de Pokémon Pokopia.', h1: 'Pokémon Pokopia' },
+  'pokopia/habitats': { title: 'Habitats do Pokopia', description: 'Todos os habitats de Pokémon Pokopia com os itens necessários e os Pokémon que cada um atrai.', h1: 'Habitats do Pokopia' },
+  'pokopia/pokemon': { title: 'Pokémon do Pokopia', description: 'Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece.', h1: 'Pokémon do Pokopia' },
   quiz: { title: 'Quiz: Quem é esse Pokémon?', description: 'Adivinhe o Pokémon pela silhueta. Modo livre por geração e desafio do dia com as mesmas perguntas para todos.', h1: 'Quiz: Quem é esse Pokémon?' },
   'memory-game': { title: 'Jogo da Memória Pokémon', description: 'Jogo da memória com Pokémon: três níveis, escolha de geração, modo shiny e recordes.', h1: 'Jogo da Memória Pokémon' },
 };

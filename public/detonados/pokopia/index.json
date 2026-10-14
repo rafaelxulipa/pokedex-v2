@@ -1,0 +1,216 @@
+{
+ "slug": "pokopia",
+ "title": "Detonado Pokémon Pokopia",
+ "subtitle": "Do primeiro habitat ao Mewtwo: as cinco cidades, o desafio de recrutamento e o pós-game",
+ "console": "Nintendo Switch 2",
+ "description": "Detonado em português de Pokémon Pokopia: como funcionam habitats e pedidos, o passo a passo de cada cidade, o desafio de recrutamento e o que fazer depois do final.",
+ "credit": "Texto escrito para a Rotom Pokedex com base em guias da comunidade (Pokopia Guide e Pokopia Wiki). Ilustrações dos habitats: poketools.com.",
+ "disclaimer": "Guia de fã, gratuito e sem fins comerciais. Pokémon e todos os personagens, imagens e nomes relacionados são marcas e propriedade da Nintendo, Game Freak, Creatures Inc. e The Pokémon Company. Este material não é oficial nem afiliado a essas empresas.",
+ "license": "Informações reunidas de fontes da comunidade; alguns valores podem variar conforme a versão do jogo.",
+ "accent": "#16a34a",
+ "cover": "cover.webp",
+ "downloads": [],
+ "chapters": [
+  {
+   "n": 1,
+   "title": "Conceitos básicos: como o jogo funciona",
+   "part": "Introdução",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "o-que-e-pokemon-pokopia",
+     "text": "O que é Pokémon Pokopia"
+    },
+    {
+     "id": "os-sistemas-que-voce-vai-usar-o-tempo-todo",
+     "text": "Os sistemas que você vai usar o tempo todo"
+    },
+    {
+     "id": "dicas-gerais",
+     "text": "Dicas gerais"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Withered Wastelands: o começo da reconstrução",
+   "part": "História",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "acordando-a-cidade",
+     "text": "Acordando a cidade"
+    },
+    {
+     "id": "primeiros-pedidos-e-a-casa",
+     "text": "Primeiros pedidos e a casa"
+    },
+    {
+     "id": "sua-casa-e-o-ditto-s-flag",
+     "text": "Sua casa e o Ditto's Flag"
+    },
+    {
+     "id": "hitmonchan-rock-smash-e-onix",
+     "text": "Hitmonchan, Rock Smash e Onix"
+    },
+    {
+     "id": "magikarp-slowpoke-e-a-chuva",
+     "text": "Magikarp, Slowpoke e a chuva"
+    },
+    {
+     "id": "kyogre",
+     "text": "Kyogre"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Rocky Ridges: culinária e festa na praça",
+   "part": "História",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "entrando-na-cidade",
+     "text": "Entrando na cidade"
+    },
+    {
+     "id": "strength-e-o-pokemon-center",
+     "text": "Strength e o Pokémon Center"
+    },
+    {
+     "id": "cozinha-salada-e-pao",
+     "text": "Cozinha: salada e pão"
+    },
+    {
+     "id": "chef-greedent-e-magmar",
+     "text": "Chef Greedent e Magmar"
+    },
+    {
+     "id": "graveler-e-rollout",
+     "text": "Graveler e Rollout"
+    },
+    {
+     "id": "let-s-throw-a-party",
+     "text": "Let's Throw a Party!"
+    },
+    {
+     "id": "mood-100-curry-e-volcanion",
+     "text": "Mood 100, curry e Volcanion"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Bleak Beach: luz para a cidade",
+   "part": "História",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "chegada-e-a-casa-do-meowth",
+     "text": "Chegada e a casa do Meowth"
+    },
+    {
+     "id": "piplup-torchic-e-trubbish",
+     "text": "Piplup, Torchic e Trubbish"
+    },
+    {
+     "id": "pawmi-mareep-e-lapras",
+     "text": "Pawmi, Mareep e Lapras"
+    },
+    {
+     "id": "snorlax-usu-chu-e-a-rede-eletrica",
+     "text": "Snorlax, Usu-chu e a rede elétrica"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Sparkling Skylands: o prédio gigante",
+   "part": "História",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "chegada",
+     "text": "Chegada"
+    },
+    {
+     "id": "froakie-dragonite-e-o-glide",
+     "text": "Froakie, Dragonite e o Glide"
+    },
+    {
+     "id": "tinkaton-e-o-concreto",
+     "text": "Tinkaton e o concreto"
+    },
+    {
+     "id": "let-s-build-a-giant-building",
+     "text": "Let's Build a Giant Building"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Team Initiation Challenge",
+   "part": "História",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "como-funciona",
+     "text": "Como funciona"
+    },
+    {
+     "id": "as-8-partes",
+     "text": "As 8 partes"
+    },
+    {
+     "id": "o-final",
+     "text": "O final"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Pós-game: Mew, coleções e mais",
+   "part": "Depois do final",
+   "pages": [
+    0,
+    0
+   ],
+   "sections": [
+    {
+     "id": "o-que-abre-depois-dos-creditos",
+     "text": "O que abre depois dos créditos"
+    },
+    {
+     "id": "colecoes",
+     "text": "Coleções"
+    },
+    {
+     "id": "mew-e-o-mysterious-mural",
+     "text": "Mew e o Mysterious Mural"
+    },
+    {
+     "id": "mais-para-fazer",
+     "text": "Mais para fazer"
+    }
+   ]
+  }
+ ]
+}

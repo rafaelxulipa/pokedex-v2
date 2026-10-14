@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Lightbulb, TriangleAlert, Gift, Sparkles, StickyNote, X } from 'lucide-react';
 import { GuideBlock, GuideImage, GuideRun, GuideTeam } from '../types';
-import { SPRITE_BASE } from '../utils/pokemon';
+import { Link } from 'react-router-dom';
+import { artworkUrl, SPRITE_BASE } from '../utils/pokemon';
 import { guideAsset } from '../services/guides';
 import AdSense from './AdSense';
 import { useGlobal } from '../context/GlobalContext';
@@ -139,6 +140,60 @@ const GuideBlocks: React.FC<GuideBlocksProps> = ({ slug, blocks, accent, adBefor
                 <Runs runs={block.runs} />
               </p>
             );
+          case 'mons':
+            return (
+              <div key={index} className="my-8 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-dark-card shadow-xs p-4">
+                {block.title && <p className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-400">{block.title}</p>}
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+                  {block.items.map((m) => (
+                    <Link
+                      key={m.id}
+                      to={`/pokemon/${m.id}`}
+                      className="group flex flex-col items-center p-2 rounded-2xl bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <img src={artworkUrl(m.id)} alt={m.name} loading="lazy" width={96} height={96} className="h-20 w-20 sm:h-24 sm:w-24 object-contain drop-shadow-sm transition-transform group-hover:scale-110" />
+                      <span className="mt-1 text-xs font-bold text-gray-700 dark:text-gray-200 text-center leading-tight">{m.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          case 'figs':
+            return (
+              <figure key={index} className="my-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {block.items.map((img) => (
+                    <button
+                      key={img.src}
+                      type="button"
+                      onClick={() => setZoom({ src: img.src, alt: img.alt })}
+                      className="group block cursor-zoom-in text-left"
+                      aria-label={img.alt}
+                    >
+                      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" className="w-full h-auto rounded-2xl shadow-sm bg-gray-200 dark:bg-gray-800 transition-transform group-hover:scale-[1.02]" />
+                      {img.label && <span className="block mt-1.5 text-xs font-semibold text-gray-600 dark:text-gray-300 text-center">{img.label}</span>}
+                    </button>
+                  ))}
+                </div>
+                {block.caption && (
+                  <figcaption className="mt-2 text-center text-gray-500 dark:text-gray-400">
+                    {block.caption && <span className="block text-sm">{block.caption}</span>}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          case 'list': {
+            const List = block.ordered ? 'ol' : 'ul';
+            return (
+              <List key={index} className={`mb-4 ml-6 space-y-2 text-[17px] leading-8 text-gray-700 dark:text-gray-300 ${block.ordered ? 'list-decimal' : 'list-disc'} marker:text-gray-400`}>
+                {block.items.map((runs, i) => (
+                  <li key={i} className="pl-1">
+                    <Runs runs={runs} />
+                  </li>
+                ))}
+              </List>
+            );
+          }
           case 'callout': {
             const style = CALLOUTS[block.kind] ?? CALLOUTS.note;
             const Icon = style.icon;

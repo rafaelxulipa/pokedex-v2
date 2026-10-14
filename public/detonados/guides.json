@@ -64,5 +64,16 @@
   "cover": "cover.webp",
   "chapters": 39,
   "pdfPages": 232
+ },
+ {
+  "slug": "pokopia",
+  "title": "Detonado Pokémon Pokopia",
+  "subtitle": "Do primeiro habitat ao Mewtwo: as cinco cidades, o desafio de recrutamento e o pós-game",
+  "console": "Nintendo Switch 2",
+  "description": "Detonado em português de Pokémon Pokopia: como funcionam habitats e pedidos, o passo a passo de cada cidade, o desafio de recrutamento e o que fazer depois do final.",
+  "accent": "#16a34a",
+  "cover": "cover.webp",
+  "chapters": 7,
+  "pdfPages": 0
  }
 ]

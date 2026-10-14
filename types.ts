@@ -212,6 +212,9 @@ export type GuideBlock =
   | { t: 'h2'; id: string; text: string; sub?: string }
   | { t: 'h3'; id: string; text: string }
   | { t: 'p'; runs: GuideRun[] }
+  | { t: 'list'; ordered?: boolean; items: GuideRun[][] }
+  | { t: 'mons'; title?: string; items: { id: number; name: string }[] }
+  | { t: 'figs'; items: { src: string; alt: string; w: number; h: number; label?: string }[]; caption?: string }
   | { t: 'callout'; kind: 'tip' | 'warning' | 'reward' | 'trivia' | 'note'; paras: GuideRun[][] }
   | ({ t: 'img'; caption?: string } & GuideImage)
   | { t: 'gallery'; imgs: GuideImage[]; caption?: string }
