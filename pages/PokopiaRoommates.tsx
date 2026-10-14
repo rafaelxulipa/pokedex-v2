@@ -322,6 +322,9 @@ const PokopiaRoommates: React.FC = () => {
                       <span className="px-1.5 rounded text-[10px] font-extrabold uppercase text-gray-900" style={{ backgroundColor: HABITAT_COLORS[r.mon.h] }}>{HABITAT_PT[r.mon.h]}</span>
                       <span className="truncate">{[...r.mon.sp.map(spec), regionLabel(r.mon.r)].join(' · ')}</span>
                     </div>
+                    <div className="sm:hidden mt-0.5 text-xs font-extrabold text-orange-500">
+                      {r.percent}% <span className="font-semibold text-gray-400">· {r.shared.length} de 6 em comum</span>
+                    </div>
                   </div>
                   <div className="hidden sm:flex flex-wrap gap-1">
                     {r.mon.p.map((p) => (
