@@ -14,13 +14,13 @@ interface Tool {
 const TOOLS: Tool[] = [
   { to: '/pokopia/habitats', title: 'Habitats', description: 'Os 252 habitats com os itens para montar e os Pokémon que cada um atrai, incluindo Bubbly Basin e eventos.', tag: 'Ferramenta', mon: 132, accent: 'text-green-600 dark:text-green-400' },
   { to: '/pokopia/pokemon', title: 'Lista de Pokémon', description: 'Todos os Pokémon encontrados nos habitats e onde atraí-los.', tag: 'Ferramenta', mon: 25, accent: 'text-green-600 dark:text-green-400' },
+  { to: '/pokopia/mapa', title: 'Mapa interativo', description: '438 pontos em 7 áreas: receitas, bancadas, Centros Pokémon, diários e itens colecionáveis.', tag: 'Ferramenta', mon: 52, accent: 'text-green-600 dark:text-green-400' },
   { to: '/detonados/pokopia', title: 'Detonado', description: 'Passo a passo em português: cinco cidades, desafio de recrutamento e pós-game.', tag: 'Guia', mon: 1, accent: 'text-orange-500' },
   { title: 'Calculadora de moradia', description: 'Agrupa Pokémon com gostos em comum para a mesma casa.', tag: 'Em breve', mon: 7, accent: 'text-gray-400' },
   { title: 'Colegas de casa', description: 'Os colegas mais compatíveis para cada Pokémon.', tag: 'Em breve', mon: 4, accent: 'text-gray-400' },
   { title: 'Onde encontrar', description: 'Local e horário para atrair cada Pokémon.', tag: 'Em breve', mon: 465, accent: 'text-gray-400' },
   { title: 'Receitas de culinária', description: 'Ingredientes, sabor e o movimento que cada prato fortalece.', tag: 'Em breve', mon: 820, accent: 'text-gray-400' },
   { title: 'Receitas de craft', description: 'Materiais e onde conseguir cada receita.', tag: 'Em breve', mon: 534, accent: 'text-gray-400' },
-  { title: 'Mapa interativo', description: 'Receitas, bancadas e itens de cada área.', tag: 'Em breve', mon: 52, accent: 'text-gray-400' },
 ];
 
 const Card: React.FC<{ tool: Tool }> = ({ tool }) => {

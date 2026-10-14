@@ -12,6 +12,7 @@ import IvCalculator from './pages/IvCalculator';
 import PokopiaHub from './pages/PokopiaHub';
 import PokopiaHabitats from './pages/PokopiaHabitats';
 import PokopiaPokemon from './pages/PokopiaPokemon';
+import PokopiaMap from './pages/PokopiaMap';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
 import Seo from './components/Seo';
@@ -222,6 +223,7 @@ const App: React.FC = () => {
                 <Route path="/pokopia" element={<><Seo title="Pokémon Pokopia: ferramentas e guias" description="Habitats, lista de Pokémon e detonado em português de Pokémon Pokopia." path="/pokopia" /><PokopiaHub /></>} />
                 <Route path="/pokopia/habitats" element={<><Seo title="Habitats do Pokopia" description="Todos os habitats de Pokémon Pokopia com os itens necessários e os Pokémon que cada um atrai." path="/pokopia/habitats" /><PokopiaHabitats /></>} />
                 <Route path="/pokopia/pokemon" element={<><Seo title="Pokémon do Pokopia" description="Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece." path="/pokopia/pokemon" /><PokopiaPokemon /></>} />
+                <Route path="/pokopia/mapa" element={<><Seo title="Mapa do Pokopia" description="Mapa interativo de Pokémon Pokopia com receitas, bancadas, Centros Pokémon, diários e itens colecionáveis de cada área." path="/pokopia/mapa" /><PokopiaMap /></>} />
                 <Route path="/detonados" element={<Guides />} />
                 <Route path="/detonados/:slug" element={<Guide />} />
                 <Route path="/detonados/:slug/:n" element={<Guide />} />
