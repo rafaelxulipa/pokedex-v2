@@ -15,6 +15,9 @@ import PokopiaPokemon from './pages/PokopiaPokemon';
 import PokopiaMap from './pages/PokopiaMap';
 import PokopiaRoommates from './pages/PokopiaRoommates';
 import PokopiaHousing from './pages/PokopiaHousing';
+import PokopiaCrafting from './pages/PokopiaCrafting';
+import PokopiaRecipes from './pages/PokopiaRecipes';
+import PokopiaSpawns from './pages/PokopiaSpawns';
 import PokopiaSpecialties from './pages/PokopiaSpecialties';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
@@ -231,6 +234,9 @@ const App: React.FC = () => {
                 <Route path="/pokopia" element={<><Seo title="Pokémon Pokopia: ferramentas e guias" description="Habitats, lista de Pokémon e detonado em português de Pokémon Pokopia." path="/pokopia" /><PokopiaHub /></>} />
                 <Route path="/pokopia/habitats" element={<><Seo title="Habitats do Pokopia" description="Todos os habitats de Pokémon Pokopia com os itens necessários e os Pokémon que cada um atrai." path="/pokopia/habitats" /><PokopiaHabitats /></>} />
                 <Route path="/pokopia/pokemon" element={<><Seo title="Pokémon do Pokopia" description="Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece." path="/pokopia/pokemon" /><PokopiaPokemon /></>} />
+                <Route path="/pokopia/onde-encontrar" element={<><Seo title="Onde encontrar cada Pokémon no Pokopia" description="Veja em quais habitats cada Pokémon de Pokémon Pokopia aparece, com raridade, horário, clima e região." path="/pokopia/onde-encontrar" /><PokopiaSpawns /></>} />
+                <Route path="/pokopia/craft" element={<><Seo title="Receitas de craft do Pokopia" description="Todos os itens que a bancada faz em Pokémon Pokopia, com materiais e onde conseguir cada receita." path="/pokopia/craft" /><PokopiaCrafting /></>} />
+                <Route path="/pokopia/receitas" element={<><Seo title="Receitas de culinária do Pokopia" description="As 34 receitas de culinária de Pokémon Pokopia, com ingredientes, ajudantes e o movimento que cada prato fortalece." path="/pokopia/receitas" /><PokopiaRecipes /></>} />
                 <Route path="/pokopia/moradia" element={<><Seo title="Calculadora de moradia do Pokopia" description="Agrupe os seus Pokémon em casas de Pokémon Pokopia para maximizar as preferências em comum." path="/pokopia/moradia" /><PokopiaHousing /></>} />
                 <Route path="/pokopia/especialidades" element={<><Seo title="Guia de especialidades do Pokopia" description="Encontre os Pokémon ajudantes de Pokémon Pokopia por especialidade e por região." path="/pokopia/especialidades" /><PokopiaSpecialties /></>} />
                 <Route path="/pokopia/colegas" element={<><Seo title="Calculadora de colegas de casa do Pokopia" description="Veja quais Pokémon combinam mais com o seu e monte casas em Pokémon Pokopia pelas preferências em comum." path="/pokopia/colegas" /><PokopiaRoommates /></>} />
