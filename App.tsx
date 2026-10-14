@@ -9,11 +9,14 @@ import MemoryGame from './pages/MemoryGame';
 import Quiz from './pages/Quiz';
 import Team from './pages/Team';
 import IvCalculator from './pages/IvCalculator';
+import PokopiaHub from './pages/PokopiaHub';
+import PokopiaHabitats from './pages/PokopiaHabitats';
+import PokopiaPokemon from './pages/PokopiaPokemon';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
 import Seo from './components/Seo';
 import RotomCursor from './components/RotomCursor';
-import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen, Calculator } from 'lucide-react';
+import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen, Calculator, Menu, X, Sprout } from 'lucide-react';
 import { Language } from './translations';
 
 // Language Options with Flags
@@ -30,6 +33,10 @@ const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useGlobal();
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
+  const toolsRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  useEffect(() => setIsToolsOpen(false), [location.pathname]);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -37,6 +44,9 @@ const Header: React.FC = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsLangMenuOpen(false);
+      }
+      if (toolsRef.current && !toolsRef.current.contains(event.target as Node)) {
+        setIsToolsOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -60,30 +70,70 @@ const Header: React.FC = () => {
         </Link>
 
         <div className="flex items-center gap-1.5 sm:gap-3">
-          {/* Feature links */}
-          {[
-            { to: '/detonados', title: t.guides.title, icon: <BookOpen size={20} /> },
-            { to: '/team', title: t.team.title, icon: <Users size={20} /> },
-            { to: '/iv-calculator', title: t.ivCalc.nav, icon: <Calculator size={20} /> },
-            { to: '/quiz', title: t.quiz.title, icon: <HelpCircle size={20} /> },
-            { to: '/memory-game', title: t.memoryGame.title, icon: <BrainCircuit size={20} /> },
-          ].map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `p-2 sm:p-2.5 rounded-xl transition-all hover:scale-110 shadow-xs border ${
-                  isActive
-                    ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700'
-                    : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
-                }`
-              }
-              title={link.title}
-              aria-label={link.title}
-            >
-              {link.icon}
-            </NavLink>
-          ))}
+          {/* Feature links: icons from md up, a menu on small screens */}
+          {(() => {
+            const links = [
+              { to: '/detonados', title: t.guides.title, icon: <BookOpen size={20} /> },
+              { to: '/team', title: t.team.title, icon: <Users size={20} /> },
+              { to: '/iv-calculator', title: t.ivCalc.nav, icon: <Calculator size={20} /> },
+              { to: '/pokopia', title: 'Pokopia', icon: <Sprout size={20} /> },
+              { to: '/quiz', title: t.quiz.title, icon: <HelpCircle size={20} /> },
+              { to: '/memory-game', title: t.memoryGame.title, icon: <BrainCircuit size={20} /> },
+            ];
+            return (
+              <>
+                <div className="hidden md:flex items-center gap-3">
+                  {links.map((link) => (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      className={({ isActive }) =>
+                        `p-2.5 rounded-xl transition-all hover:scale-110 shadow-xs border ${
+                          isActive
+                            ? 'bg-blue-500 text-white border-blue-600 dark:bg-blue-600 dark:border-blue-700'
+                            : 'bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
+                        }`
+                      }
+                      title={link.title}
+                      aria-label={link.title}
+                    >
+                      {link.icon}
+                    </NavLink>
+                  ))}
+                </div>
+                <div className="relative md:hidden" ref={toolsRef}>
+                  <button
+                    onClick={() => setIsToolsOpen((open) => !open)}
+                    className="p-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 text-gray-500 dark:text-blue-400 border border-gray-200 dark:border-gray-700"
+                    aria-label="Menu"
+                    aria-expanded={isToolsOpen}
+                  >
+                    {isToolsOpen ? <X size={20} /> : <Menu size={20} />}
+                  </button>
+                  {isToolsOpen && (
+                    <div className="absolute top-full right-0 mt-2 w-56 bg-white dark:bg-dark-card rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden py-1 animate-fade-in z-50">
+                      {links.map((link) => (
+                        <NavLink
+                          key={link.to}
+                          to={link.to}
+                          className={({ isActive }) =>
+                            `flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors ${
+                              isActive
+                                ? 'text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20'
+                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                            }`
+                          }
+                        >
+                          {link.icon}
+                          <span>{link.title}</span>
+                        </NavLink>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </>
+            );
+          })()}
 
           {/* Custom Language Dropdown */}
           <div className="relative" ref={dropdownRef}>
@@ -169,6 +219,9 @@ const App: React.FC = () => {
                 <Route path="/quiz" element={<><Seo title="Quiz: Quem é esse Pokémon?" description="Adivinhe o Pokémon pela silhueta. Modo livre por geração e desafio do dia com as mesmas perguntas para todos." path="/quiz" /><Quiz /></>} />
                 <Route path="/team" element={<><Seo title="Montador de Time Pokémon" description="Monte um time de até 6 Pokémon e veja as fraquezas e a cobertura de tipos. Compartilhe o time por link." path="/team" /><Team /></>} />
                 <Route path="/iv-calculator" element={<><Seo title="Calculadora de IV Pokémon" description="Descubra os IVs do seu Pokémon a partir dos status, nível, natureza e EVs. Aceita vários níveis para reduzir a faixa." path="/iv-calculator" /><IvCalculator /></>} />
+                <Route path="/pokopia" element={<><Seo title="Pokémon Pokopia: ferramentas e guias" description="Habitats, lista de Pokémon e detonado em português de Pokémon Pokopia." path="/pokopia" /><PokopiaHub /></>} />
+                <Route path="/pokopia/habitats" element={<><Seo title="Habitats do Pokopia" description="Todos os habitats de Pokémon Pokopia com os itens necessários e os Pokémon que cada um atrai." path="/pokopia/habitats" /><PokopiaHabitats /></>} />
+                <Route path="/pokopia/pokemon" element={<><Seo title="Pokémon do Pokopia" description="Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece." path="/pokopia/pokemon" /><PokopiaPokemon /></>} />
                 <Route path="/detonados" element={<Guides />} />
                 <Route path="/detonados/:slug" element={<Guide />} />
                 <Route path="/detonados/:slug/:n" element={<Guide />} />
