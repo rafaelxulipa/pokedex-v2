@@ -199,7 +199,7 @@ const Home: React.FC = () => {
       />
       
       {/* Header & Controls - Floating Glassmorphism */}
-      <div className="md:sticky md:top-20 z-30 mb-10 mx-auto max-w-6xl">
+      <div className="relative md:sticky md:top-20 z-30 mb-10 mx-auto max-w-6xl">
         <div className="flex flex-col xl:flex-row gap-4 justify-between items-center bg-white/80 dark:bg-dark-card/80 backdrop-blur-xl p-4 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700 ring-1 ring-black/5">
           
           {/* Search */}
