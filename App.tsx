@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { GlobalProvider, useGlobal } from './context/GlobalContext';
+import { Youtube } from 'lucide-react';
+import { YOUTUBE_URL } from './components/YoutubePromo';
 import Home from './pages/Home';
 import PokemonDetails from './pages/PokemonDetails';
 import Compare from './pages/Compare';
@@ -209,6 +211,14 @@ const Footer: React.FC = () => {
             <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">
                 © {new Date().getFullYear()} Rotom Pokedex. <span className="text-red-500">♥</span> {t.footer}
             </p>
+            <a
+                href={YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-red-600 dark:text-red-400 hover:underline"
+            >
+                <Youtube size={18} /> Lives de Pokémon FireRed no YouTube
+            </a>
         </footer>
     );
 }

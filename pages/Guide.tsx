@@ -11,6 +11,7 @@ import { readStorage, writeStorage } from '../utils/storage';
 import Seo from '../components/Seo';
 import GuideSearch from '../components/GuideSearch';
 import AdSense from '../components/AdSense';
+import YoutubePromo from '../components/YoutubePromo';
 
 const PROGRESS_KEY = 'guideProgress';
 
@@ -212,6 +213,8 @@ const Guide: React.FC = () => {
 
         <GuideSearch slug={slug} className="mb-10 max-w-xl" />
 
+        {slug === 'fire-red-leaf-green' && <YoutubePromo variant="guide" className="mb-10" />}
+
         {guide.downloads.length > 0 && (
         <section className="mb-12">
           <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-1">{t.guides.downloadTitle}</h2>
@@ -303,6 +306,8 @@ const Guide: React.FC = () => {
           ) : (
             <GuideBlocks key={`${slug}-${chapter.n}`} slug={slug} blocks={blocks} accent={accent} adBefore={adBefore(blocks)} />
           )}
+
+          {slug === 'fire-red-leaf-green' && <YoutubePromo variant="guide" className="mt-10" />}
 
           {blocks && blocks.length >= 6 && (
             <div className="mt-10" key={`end-ad-${slug}-${chapter.n}`}>

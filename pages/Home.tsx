@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import YoutubePromo from '../components/YoutubePromo';
 import { Search, Filter, AlertCircle, Heart, ArrowRight, Sparkles, Map, X } from 'lucide-react';
 import { fetchAllPokemonNames, fetchMultiplePokemon, fetchPokemonOfType, fetchSpeciesNames } from '../services/pokeApi';
 import { PokemonListEntry, PokemonDetail } from '../types';
@@ -301,6 +302,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <YoutubePromo variant="home" className="mb-8 mx-auto max-w-6xl" />
 
       {/* Content */}
       {loading || (pageLoading && displayPokemon.length === 0) ? (
