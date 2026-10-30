@@ -186,7 +186,8 @@ export const translations = {
         rounds: "10 rounds",
         daily: "Daily Challenge",
         dailyHint: "Same Pokémon for everyone, once a day",
-        dailyDone: "Today: {n}/{total}. Come back tomorrow!"
+        dailyDone: "Today: {n}/{total}. Come back tomorrow!",
+        typeTooFew: "Too few Pokémon of this type in this region."
     },
     team: {
         title: "Team Builder",
@@ -439,7 +440,8 @@ export const translations = {
         rounds: "10 rodadas",
         daily: "Desafio do Dia",
         dailyHint: "Os mesmos Pokémon para todos, uma vez por dia",
-        dailyDone: "Hoje: {n}/{total}. Volte amanhã!"
+        dailyDone: "Hoje: {n}/{total}. Volte amanhã!",
+        typeTooFew: "Poucos Pokémon deste tipo nesta região."
     },
     team: {
         title: "Montar Time",
@@ -692,7 +694,8 @@ export const translations = {
         rounds: "10 rondas",
         daily: "Desafío Diario",
         dailyHint: "Los mismos Pokémon para todos, una vez al día",
-        dailyDone: "Hoy: {n}/{total}. ¡Vuelve mañana!"
+        dailyDone: "Hoy: {n}/{total}. ¡Vuelve mañana!",
+        typeTooFew: "Muy pocos Pokémon de este tipo en esta región."
     },
     team: {
         title: "Creador de Equipos",
@@ -945,7 +948,8 @@ export const translations = {
         rounds: "10 Runden",
         daily: "Tägliche Herausforderung",
         dailyHint: "Dieselben Pokémon für alle, einmal am Tag",
-        dailyDone: "Heute: {n}/{total}. Komm morgen wieder!"
+        dailyDone: "Heute: {n}/{total}. Komm morgen wieder!",
+        typeTooFew: "Zu wenige Pokémon dieses Typs in dieser Region."
     },
     team: {
         title: "Team-Builder",
@@ -1198,7 +1202,8 @@ export const translations = {
         rounds: "10 轮",
         daily: "每日挑战",
         dailyHint: "每天一次，所有人题目相同",
-        dailyDone: "今日：{n}/{total}。明天再来！"
+        dailyDone: "今日：{n}/{total}。明天再来！",
+        typeTooFew: "该地区此属性的宝可梦太少。"
     },
     team: {
         title: "队伍构建",
@@ -1451,7 +1456,8 @@ export const translations = {
         rounds: "10ラウンド",
         daily: "デイリーチャレンジ",
         dailyHint: "1日1回、みんな同じ問題",
-        dailyDone: "今日: {n}/{total}。また明日！"
+        dailyDone: "今日: {n}/{total}。また明日！",
+        typeTooFew: "この地方にはこのタイプのポケモンが少なすぎます。"
     },
     team: {
         title: "チーム作成",

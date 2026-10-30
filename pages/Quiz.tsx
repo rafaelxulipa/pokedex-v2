@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { HelpCircle, Flame, Trophy, ArrowRight, RefreshCw } from 'lucide-react';
 import { useGlobal } from '../context/GlobalContext';
-import { fetchAllPokemonNames } from '../services/pokeApi';
+import { fetchAllPokemonNames, fetchPokemonOfType } from '../services/pokeApi';
 import { artworkUrl, formatName, idFromUrl } from '../utils/pokemon';
-import { buildQuestions, QuizQuestion } from '../utils/quiz';
+import { buildQuestions, buildQuestionsFromPool, QuizQuestion } from '../utils/quiz';
 import { createRandom, hashString, todayKey } from '../utils/daily';
 import { readStorage, writeStorage } from '../utils/storage';
 import Loader from '../components/Loader';
+import TypeIcon from '../components/TypeIcon';
+import { TYPE_COLORS, TYPE_MASCOTS } from '../constants';
 
 const TOTAL_ROUNDS = 10;
+const MIN_POOL = 4;
 const BEST_STREAK_KEY = 'quizBestStreak';
 const DAILY_KEY = 'quizDaily';
 
@@ -24,6 +27,8 @@ const Quiz: React.FC = () => {
   const [names, setNames] = useState<Record<number, string>>({});
   const [loading, setLoading] = useState(true);
   const [generation, setGeneration] = useState('all');
+  const [selectedType, setSelectedType] = useState('all');
+  const [typePool, setTypePool] = useState<number[]>([]);
   const [phase, setPhase] = useState<Phase>('menu');
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [isDaily, setIsDaily] = useState(false);
@@ -59,6 +64,29 @@ const Quiz: React.FC = () => {
     };
   }, []);
 
+  // Pokemon ids of the chosen type (type lists are cached by the service)
+  useEffect(() => {
+    if (selectedType === 'all') {
+      setTypePool([]);
+      return;
+    }
+    let cancelled = false;
+    fetchPokemonOfType(selectedType).then((list) => {
+      if (cancelled) return;
+      setTypePool(list.map((p) => idFromUrl(p.url)).filter((id) => id < 10000));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedType]);
+
+  const range = generations.find((g) => g.key === generation);
+  const rangeStart = range ? range.start : 1;
+  const rangeEnd = range ? range.end : maxPokemonId;
+  const filteredPool = typePool.filter((id) => id >= rangeStart && id <= rangeEnd);
+  const typeTooFew = selectedType !== 'all' && filteredPool.length < MIN_POOL;
+  const totalRounds = questions.length || TOTAL_ROUNDS;
+
   const begin = (qs: QuizQuestion[], daily: boolean) => {
     setQuestions(qs);
     setIsDaily(daily);
@@ -71,8 +99,11 @@ const Quiz: React.FC = () => {
   };
 
   const start = () => {
-    const range = generations.find((g) => g.key === generation);
-    begin(buildQuestions(range ? range.start : 1, range ? range.end : maxPokemonId, TOTAL_ROUNDS), false);
+    if (typeTooFew) return;
+    const qs = selectedType === 'all'
+      ? buildQuestions(rangeStart, rangeEnd, TOTAL_ROUNDS)
+      : buildQuestionsFromPool(filteredPool, TOTAL_ROUNDS);
+    begin(qs, false);
   };
 
   // Same questions for everyone on a given day (seeded by the date)
@@ -100,7 +131,7 @@ const Quiz: React.FC = () => {
   };
 
   const next = () => {
-    if (round + 1 >= TOTAL_ROUNDS) {
+    if (round + 1 >= totalRounds) {
       if (isDaily) {
         const result = { date: today, score };
         setDailyResult(result);
@@ -120,7 +151,16 @@ const Quiz: React.FC = () => {
     return (
       <div className="container mx-auto px-4 py-12 text-center animate-fade-in">
         <HelpCircle className="mx-auto h-20 w-20 mb-6 text-purple-500" />
-        <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">{t.quiz.title}</h1>
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white">{t.quiz.title}</h1>
+          {selectedType !== 'all' && (
+          <img
+            src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
+            alt=""
+            className="inline-block h-14 w-14 object-contain animate-bounce"
+          />
+        )}
+        </div>
         <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">{t.quiz.subtitle}</p>
         <div className="flex flex-col items-center gap-4 max-w-sm mx-auto">
           <select
@@ -133,9 +173,31 @@ const Quiz: React.FC = () => {
               <option key={gen.key} value={gen.key}>{generationLabel(gen)}</option>
             ))}
           </select>
+          <div className="flex flex-wrap justify-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => setSelectedType('all')}
+              className={`px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white transition-all ${selectedType === 'all' ? 'ring-2 ring-offset-2 ring-purple-500 dark:ring-offset-gray-900' : 'opacity-60 hover:opacity-100'}`}
+            >
+              {t.allTypes}
+            </button>
+            {Object.keys(TYPE_COLORS).map((type) => (
+              <button
+                key={type}
+                type="button"
+                onClick={() => setSelectedType(type)}
+                className={`${TYPE_COLORS[type]} flex items-center gap-1 px-3 py-1 rounded-full text-white text-xs font-bold capitalize transition-all ${selectedType === type ? 'ring-2 ring-offset-2 ring-purple-500 dark:ring-offset-gray-900 scale-105' : 'opacity-60 hover:opacity-100'}`}
+              >
+                <TypeIcon type={type} className="w-3 h-3" />
+                {type}
+              </button>
+            ))}
+          </div>
+          {typeTooFew && <p className="text-sm text-red-500">{t.quiz.typeTooFew}</p>}
           <button
             onClick={start}
-            className="w-full px-8 py-4 text-xl font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+            disabled={typeTooFew}
+            className="w-full px-8 py-4 text-xl font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-not-allowed"
           >
             {t.quiz.start} <span className="block text-xs font-medium text-purple-100">{t.quiz.rounds}</span>
           </button>
@@ -163,7 +225,7 @@ const Quiz: React.FC = () => {
         <Trophy className="mx-auto h-24 w-24 text-yellow-400 mb-4 animate-bounce" />
         <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-3">{t.quiz.finalTitle}</h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-          {t.quiz.finalMessage.replace('{n}', String(score)).replace('{total}', String(TOTAL_ROUNDS))}
+          {t.quiz.finalMessage.replace('{n}', String(score)).replace('{total}', String(totalRounds))}
         </p>
         <p className="text-sm text-gray-400 mb-8">{t.quiz.best}: {bestStreak}</p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
@@ -187,7 +249,7 @@ const Quiz: React.FC = () => {
       <div className="flex justify-between items-center mb-6 bg-white dark:bg-dark-card p-3 rounded-2xl shadow-xs border border-gray-100 dark:border-gray-800">
         <div className="text-center flex-1">
           <div className="text-xs font-bold text-gray-400 uppercase">{t.quiz.round}</div>
-          <div className="text-xl font-black text-gray-700 dark:text-gray-300">{round + 1}/{TOTAL_ROUNDS}</div>
+          <div className="text-xl font-black text-gray-700 dark:text-gray-300">{round + 1}/{totalRounds}</div>
         </div>
         <div className="text-center flex-1">
           <div className="text-xs font-bold text-gray-400 uppercase">{t.quiz.score}</div>
@@ -199,7 +261,16 @@ const Quiz: React.FC = () => {
         </div>
       </div>
 
-      <h2 className="text-2xl font-extrabold text-center text-gray-800 dark:text-white mb-4">{t.quiz.title}</h2>
+      <div className="flex items-center justify-center gap-3 mb-4">
+        <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white">{t.quiz.title}</h2>
+        {!isDaily && selectedType !== 'all' && (
+          <img
+            src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
+            alt=""
+            className="inline-block h-12 w-12 object-contain animate-bounce"
+          />
+        )}
+      </div>
 
       <div className="relative flex items-center justify-center h-64 md:h-72 mb-6 bg-white dark:bg-dark-card rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xs">
         {!imageReady && <div className="absolute"><Loader /></div>}
@@ -242,7 +313,7 @@ const Quiz: React.FC = () => {
           </p>
           <p className="text-gray-500 dark:text-gray-400 mb-4 capitalize">{t.quiz.itWas} {formatName(names[question.id] || '')}</p>
           <button onClick={next} className="inline-flex items-center gap-2 px-6 py-3 font-bold text-white bg-linear-to-r from-purple-500 to-indigo-600 rounded-xl shadow-lg hover:scale-105 transition-all">
-            {round + 1 >= TOTAL_ROUNDS ? t.quiz.finish : t.quiz.next} <ArrowRight size={18} />
+            {round + 1 >= totalRounds ? t.quiz.finish : t.quiz.next} <ArrowRight size={18} />
           </button>
         </div>
       )}

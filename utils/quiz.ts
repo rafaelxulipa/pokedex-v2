@@ -20,3 +20,10 @@ export const buildQuestions = (min: number, max: number, count = 10, random: () 
     return { id, optionIds: shuffleArray([id, ...wrong], random) };
   });
 };
+
+// Same as buildQuestions, but answers and wrong options come from a fixed pool of ids (needs at least 4).
+export const buildQuestionsFromPool = (pool: number[], count = 10, random: () => number = Math.random): QuizQuestion[] =>
+  shuffleArray(pool, random).slice(0, count).map((id) => ({
+    id,
+    optionIds: shuffleArray([id, ...shuffleArray(pool.filter((other) => other !== id), random).slice(0, 3)], random),
+  }));

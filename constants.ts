@@ -22,6 +22,13 @@ export const TYPE_COLORS: Record<string, string> = {
   dark: 'bg-gray-800',
 };
 
+// Animated Showdown sprite that cheers next to the quiz title for each type
+export const TYPE_MASCOTS: Record<string, string> = {
+  normal: 'snorlax', fire: 'charizard', water: 'blastoise', electric: 'pikachu', grass: 'venusaur', ice: 'glaceon',
+  fighting: 'machamp', poison: 'weezing', ground: 'diglett', flying: 'pidgeot', psychic: 'alakazam', bug: 'butterfree',
+  rock: 'onix', ghost: 'gengar', dragon: 'dragonite', steel: 'lucario', fairy: 'togekiss', dark: 'umbreon',
+};
+
 export const STAT_LABELS: Record<string, string> = {
   'hp': 'HP',
   'attack': 'Attack',
