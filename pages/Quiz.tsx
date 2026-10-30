@@ -7,7 +7,6 @@ import { buildQuestions, buildQuestionsFromPool, QuizQuestion } from '../utils/q
 import { createRandom, hashString, todayKey } from '../utils/daily';
 import { readStorage, writeStorage } from '../utils/storage';
 import Loader from '../components/Loader';
-import TypeIcon from '../components/TypeIcon';
 import { TYPE_COLORS, TYPE_MASCOTS } from '../constants';
 
 const TOTAL_ROUNDS = 10;
@@ -150,17 +149,16 @@ const Quiz: React.FC = () => {
   if (phase === 'menu') {
     return (
       <div className="container mx-auto px-4 py-12 text-center animate-fade-in">
-        <HelpCircle className="mx-auto h-20 w-20 mb-6 text-purple-500" />
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white">{t.quiz.title}</h1>
-          {selectedType !== 'all' && (
+        {selectedType === 'all' ? (
+          <HelpCircle className="mx-auto h-20 w-20 mb-6 text-purple-500" />
+        ) : (
           <img
             src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
             alt=""
-            className="inline-block h-14 w-14 object-contain animate-bounce"
+            className="mx-auto h-24 w-24 mb-4 object-contain"
           />
         )}
-        </div>
+        <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">{t.quiz.title}</h1>
         <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">{t.quiz.subtitle}</p>
         <div className="flex flex-col items-center gap-4 max-w-sm mx-auto">
           <select
@@ -173,26 +171,16 @@ const Quiz: React.FC = () => {
               <option key={gen.key} value={gen.key}>{generationLabel(gen)}</option>
             ))}
           </select>
-          <div className="flex flex-wrap justify-center gap-1.5">
-            <button
-              type="button"
-              onClick={() => setSelectedType('all')}
-              className={`px-3 py-1 rounded-full text-xs font-bold bg-gray-500 text-white transition-all ${selectedType === 'all' ? 'ring-2 ring-offset-2 ring-purple-500 dark:ring-offset-gray-900' : 'opacity-60 hover:opacity-100'}`}
-            >
-              {t.allTypes}
-            </button>
+          <select
+            value={selectedType}
+            onChange={(e) => setSelectedType(e.target.value)}
+            className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100 capitalize focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+          >
+            <option value="all">{t.allTypes}</option>
             {Object.keys(TYPE_COLORS).map((type) => (
-              <button
-                key={type}
-                type="button"
-                onClick={() => setSelectedType(type)}
-                className={`${TYPE_COLORS[type]} flex items-center gap-1 px-3 py-1 rounded-full text-white text-xs font-bold capitalize transition-all ${selectedType === type ? 'ring-2 ring-offset-2 ring-purple-500 dark:ring-offset-gray-900 scale-105' : 'opacity-60 hover:opacity-100'}`}
-              >
-                <TypeIcon type={type} className="w-3 h-3" />
-                {type}
-              </button>
+              <option key={type} value={type}>{type}</option>
             ))}
-          </div>
+          </select>
           {typeTooFew && <p className="text-sm text-red-500">{t.quiz.typeTooFew}</p>}
           <button
             onClick={start}
@@ -261,16 +249,14 @@ const Quiz: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-3 mb-4">
-        <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white">{t.quiz.title}</h2>
-        {!isDaily && selectedType !== 'all' && (
-          <img
-            src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
-            alt=""
-            className="inline-block h-12 w-12 object-contain animate-bounce"
-          />
-        )}
-      </div>
+      {!isDaily && selectedType !== 'all' && (
+        <img
+          src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
+          alt=""
+          className="mx-auto h-24 w-24 mb-2 object-contain"
+        />
+      )}
+      <h2 className="text-2xl font-extrabold text-center text-gray-800 dark:text-white mb-4">{t.quiz.title}</h2>
 
       <div className="relative flex items-center justify-center h-64 md:h-72 mb-6 bg-white dark:bg-dark-card rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xs">
         {!imageReady && <div className="absolute"><Loader /></div>}
