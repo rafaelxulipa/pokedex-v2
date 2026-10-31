@@ -7,6 +7,7 @@ import { buildQuestions, buildQuestionsFromPool, QuizQuestion } from '../utils/q
 import { createRandom, hashString, todayKey } from '../utils/daily';
 import { readStorage, writeStorage } from '../utils/storage';
 import Loader from '../components/Loader';
+import MultiSelect from '../components/MultiSelect';
 import { TYPE_COLORS, TYPE_MASCOTS } from '../constants';
 
 const TOTAL_ROUNDS = 10;
@@ -25,8 +26,8 @@ const Quiz: React.FC = () => {
   const { t, generations, generationLabel, maxPokemonId } = useGlobal();
   const [names, setNames] = useState<Record<number, string>>({});
   const [loading, setLoading] = useState(true);
-  const [generation, setGeneration] = useState('all');
-  const [selectedType, setSelectedType] = useState('all');
+  const [selectedGens, setSelectedGens] = useState<string[]>([]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [typePool, setTypePool] = useState<number[]>([]);
   const [phase, setPhase] = useState<Phase>('menu');
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -63,27 +64,38 @@ const Quiz: React.FC = () => {
     };
   }, []);
 
-  // Pokemon ids of the chosen type (type lists are cached by the service)
+  // Pokemon ids of the chosen types, union of all of them (type lists are cached by the service)
   useEffect(() => {
-    if (selectedType === 'all') {
+    if (selectedTypes.length === 0) {
       setTypePool([]);
       return;
     }
     let cancelled = false;
-    fetchPokemonOfType(selectedType).then((list) => {
+    Promise.all(selectedTypes.map((type) => fetchPokemonOfType(type))).then((lists) => {
       if (cancelled) return;
-      setTypePool(list.map((p) => idFromUrl(p.url)).filter((id) => id < 10000));
+      const ids = new Set<number>();
+      lists.forEach((list) => list.forEach((p) => {
+        const id = idFromUrl(p.url);
+        if (id < 10000) ids.add(id);
+      }));
+      setTypePool(Array.from(ids));
     });
     return () => {
       cancelled = true;
     };
-  }, [selectedType]);
+  }, [selectedTypes]);
 
-  const range = generations.find((g) => g.key === generation);
-  const rangeStart = range ? range.start : 1;
-  const rangeEnd = range ? range.end : maxPokemonId;
-  const filteredPool = typePool.filter((id) => id >= rangeStart && id <= rangeEnd);
-  const typeTooFew = selectedType !== 'all' && filteredPool.length < MIN_POOL;
+  const ranges = selectedGens.length === 0
+    ? [{ start: 1, end: maxPokemonId }]
+    : generations.filter((g) => selectedGens.includes(g.key));
+  const inRange = (id: number) => ranges.some((r) => id >= r.start && id <= r.end);
+  const hasTypes = selectedTypes.length > 0;
+  const filteredPool = hasTypes
+    ? typePool.filter(inRange)
+    : ranges.flatMap((r) => Array.from({ length: r.end - r.start + 1 }, (_, i) => r.start + i));
+  const useSimpleRange = !hasTypes && ranges.length === 1;
+  const typeTooFew = (hasTypes || ranges.length > 1) && filteredPool.length < MIN_POOL;
+  const mascotType = selectedTypes[0];
   const totalRounds = questions.length || TOTAL_ROUNDS;
 
   const begin = (qs: QuizQuestion[], daily: boolean) => {
@@ -99,8 +111,8 @@ const Quiz: React.FC = () => {
 
   const start = () => {
     if (typeTooFew) return;
-    const qs = selectedType === 'all'
-      ? buildQuestions(rangeStart, rangeEnd, TOTAL_ROUNDS)
+    const qs = useSimpleRange
+      ? buildQuestions(ranges[0].start, ranges[0].end, TOTAL_ROUNDS)
       : buildQuestionsFromPool(filteredPool, TOTAL_ROUNDS);
     begin(qs, false);
   };
@@ -149,11 +161,11 @@ const Quiz: React.FC = () => {
   if (phase === 'menu') {
     return (
       <div className="container mx-auto px-4 py-12 text-center animate-fade-in">
-        {selectedType === 'all' ? (
+        {!mascotType ? (
           <HelpCircle className="mx-auto h-20 w-20 mb-6 text-purple-500" />
         ) : (
           <img
-            src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
+            src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[mascotType]}.gif`}
             alt=""
             className="mx-auto h-24 w-24 mb-4 object-contain"
           />
@@ -161,26 +173,19 @@ const Quiz: React.FC = () => {
         <h1 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">{t.quiz.title}</h1>
         <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">{t.quiz.subtitle}</p>
         <div className="flex flex-col items-center gap-4 max-w-sm mx-auto">
-          <select
-            value={generation}
-            onChange={(e) => setGeneration(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-          >
-            <option value="all">{t.allRegions}</option>
-            {generations.map((gen) => (
-              <option key={gen.key} value={gen.key}>{generationLabel(gen)}</option>
-            ))}
-          </select>
-          <select
-            value={selectedType}
-            onChange={(e) => setSelectedType(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100 capitalize focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-          >
-            <option value="all">{t.allTypes}</option>
-            {Object.keys(TYPE_COLORS).map((type) => (
-              <option key={type} value={type}>{type}</option>
-            ))}
-          </select>
+          <MultiSelect
+            options={generations.map((gen) => ({ value: gen.key, label: generationLabel(gen) }))}
+            selected={selectedGens}
+            onChange={setSelectedGens}
+            allLabel={t.allRegions}
+          />
+          <MultiSelect
+            options={Object.keys(TYPE_COLORS).map((type) => ({ value: type, label: type }))}
+            selected={selectedTypes}
+            onChange={setSelectedTypes}
+            allLabel={t.allTypes}
+            capitalize
+          />
           {typeTooFew && <p className="text-sm text-red-500">{t.quiz.typeTooFew}</p>}
           <button
             onClick={start}
@@ -249,9 +254,9 @@ const Quiz: React.FC = () => {
         </div>
       </div>
 
-      {!isDaily && selectedType !== 'all' && (
+      {!isDaily && mascotType && (
         <img
-          src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[selectedType]}.gif`}
+          src={`https://play.pokemonshowdown.com/sprites/ani/${TYPE_MASCOTS[mascotType]}.gif`}
           alt=""
           className="mx-auto h-24 w-24 mb-2 object-contain"
         />
