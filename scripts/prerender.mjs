@@ -185,6 +185,8 @@ const simple = {
   'pokopia/moradia': { title: 'Calculadora de moradia do Pokopia', description: 'Agrupe os seus Pokémon em casas de Pokémon Pokopia para maximizar as preferências em comum.', h1: 'Calculadora de moradia do Pokopia' },
   'pokopia/especialidades': { title: 'Guia de especialidades do Pokopia', description: 'Encontre os Pokémon ajudantes de Pokémon Pokopia por especialidade e por região.', h1: 'Guia de especialidades do Pokopia' },
   'pokopia/pokemon': { title: 'Pokémon do Pokopia', description: 'Lista dos Pokémon de Pokémon Pokopia e os habitats onde cada um aparece.', h1: 'Pokémon do Pokopia' },
+  'lets-go': { title: "Pokédex de Let's Go Pikachu e Eevee", description: 'Pokédex de Kanto de Pokémon Let\'s Go Pikachu e Let\'s Go Eevee, com os 151 Pokémon, Meltan e Melmetal e onde encontrar cada um no jogo.', h1: "Pokédex de Let's Go Pikachu e Eevee" },
+  'lets-go/catch-combo': { title: "Catch Combo em Let's Go Pikachu e Eevee", description: "Como funciona o Catch Combo em Pokémon Let's Go: o que mantém e o que quebra, e os bônus de IVs, shiny, spawns raros, Candy e experiência.", h1: "Catch Combo em Let's Go Pikachu e Eevee" },
   quiz: { title: 'Quiz: Quem é esse Pokémon?', description: 'Adivinhe o Pokémon pela silhueta. Modo livre por geração e desafio do dia com as mesmas perguntas para todos.', h1: 'Quiz: Quem é esse Pokémon?' },
   'memory-game': { title: 'Jogo da Memória Pokémon', description: 'Jogo da memória com Pokémon: três níveis, escolha de geração, modo shiny e recordes.', h1: 'Jogo da Memória Pokémon' },
 };

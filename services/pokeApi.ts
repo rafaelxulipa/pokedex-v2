@@ -1,5 +1,6 @@
 import { POKEAPI_URL } from '../constants';
 import { GenerationInfo, GenerationResource, rangesFromGenerations } from '../utils/generations';
+import { LetsGoLocationMap, TypeMembers, buildLetsGoTypes } from '../utils/letsGo';
 import { AbilityDetail, MoveDetail, PokemonDetail, PokemonListEntry, PokemonSpecies, EvolutionChainResponse, TypeDetail } from '../types';
 
 // In-memory cache of in-flight/finished requests, keyed by url. Failed requests are evicted
@@ -45,6 +46,9 @@ export const fetchEvolutionChain = (url: string) => cachedFetch<EvolutionChainRe
 export const fetchAbility = (url: string) => cachedFetch<AbilityDetail>(url);
 
 export const fetchMove = (url: string) => cachedFetch<MoveDetail>(url);
+
+// TM/HM item behind a machine url, e.g. { item: { name: 'tm07' } }
+export const fetchMachine = (url: string) => cachedFetch<{ item: { name: string } }>(url);
 
 export const fetchTypeDetails = (url: string) => cachedFetch<TypeDetail>(url);
 
@@ -112,4 +116,21 @@ export const fetchGenerations = async (): Promise<GenerationInfo[] | null> => {
   if (resources.length !== list.results.length) return null;
   const ranges = rangesFromGenerations(resources);
   return ranges.length > 0 ? ranges : null;
+};
+
+// Where to find each Let's Go Pokémon (static file, copied from Pokémon Database)
+export const fetchLetsGoLocations = () => cachedFetch<LetsGoLocationMap>('/lets-go/locations.json');
+
+const LETS_GO_TYPE_NAMES = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'steel', 'fairy', 'dark'];
+
+// Types of the Let's Go Pokémon (id -> ordered types), built from the 18 type endpoints (cached).
+export const fetchLetsGoTypes = async (): Promise<Record<number, string[]> | null> => {
+  const lists = await Promise.all(
+    LETS_GO_TYPE_NAMES.map(async (type) => {
+      const data = await cachedFetch<{ pokemon: TypeMembers['pokemon'] }>(`${POKEAPI_URL}/type/${type}`);
+      return data ? { type, pokemon: data.pokemon } : null;
+    })
+  );
+  if (lists.some((l) => l === null)) return null;
+  return buildLetsGoTypes(lists as TypeMembers[]);
 };

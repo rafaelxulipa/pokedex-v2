@@ -12,6 +12,9 @@ import AdSense from '../components/AdSense';
 import AbilitiesSection from '../components/AbilitiesSection';
 import Seo from '../components/Seo';
 import MovesSection from '../components/MovesSection';
+import LetsGoLocations from '../components/LetsGoLocations';
+import NotFound from './NotFound';
+import { isLetsGoPokemon } from '../utils/letsGo';
 import { LinearEvolutionChain, ChainNode } from '../components/EvolutionChain';
 import { useGlobal, MAX_TEAM } from '../context/GlobalContext';
 import { defensiveMultipliers } from '../utils/typeChart';
@@ -173,7 +176,7 @@ const PokemonDetails: React.FC = () => {
   }, [id]);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center"><Loader /></div>;
-  if (!pokemon) return <div className="text-center mt-20">{t.noPokemonFound}</div>;
+  if (!pokemon) return <NotFound message={t.noPokemonFound} />;
 
   const isFavorite = favorites.includes(pokemon.id);
   const isComparing = comparisonList.includes(pokemon.id);
@@ -444,10 +447,13 @@ const PokemonDetails: React.FC = () => {
         </div>
 
         {/* Abilities and moves */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 items-start">
+        <div className="space-y-6 mb-12">
             <AbilitiesSection abilities={pokemon.abilities} />
             <MovesSection moves={pokemon.moves} />
         </div>
+
+        {/* Where to find it in Let's Go Pikachu/Eevee */}
+        {isLetsGoPokemon(pokemon.id) && <LetsGoLocations id={pokemon.id} name={localName(pokemon)} />}
 
         {/* Linear Evolution Flow */}
         {evolutionTree && (

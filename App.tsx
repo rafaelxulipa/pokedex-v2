@@ -23,6 +23,9 @@ import PokopiaSpawns from './pages/PokopiaSpawns';
 import PokopiaSpecialties from './pages/PokopiaSpecialties';
 import Guides from './pages/Guides';
 import Guide from './pages/Guide';
+import LetsGo from './pages/LetsGo';
+import CatchCombo from './pages/CatchCombo';
+import NotFound from './pages/NotFound';
 import Seo from './components/Seo';
 import RotomCursor from './components/RotomCursor';
 import { Moon, Sun, ChevronDown, Check, BrainCircuit, HelpCircle, Users, BookOpen, Calculator, Menu, X, Sprout } from 'lucide-react';
@@ -219,6 +222,11 @@ const Footer: React.FC = () => {
             >
                 <Youtube size={18} /> Lives de Pokémon FireRed no YouTube
             </a>
+            <div className="mt-3">
+                <Link to="/lets-go" className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                    Pokédex de Let's Go Pikachu e Eevee
+                </Link>
+            </div>
         </footer>
     );
 }
@@ -251,9 +259,12 @@ const App: React.FC = () => {
                 <Route path="/pokopia/especialidades" element={<><Seo title="Guia de especialidades do Pokopia" description="Encontre os Pokémon ajudantes de Pokémon Pokopia por especialidade e por região." path="/pokopia/especialidades" /><PokopiaSpecialties /></>} />
                 <Route path="/pokopia/colegas" element={<><Seo title="Calculadora de colegas de casa do Pokopia" description="Veja quais Pokémon combinam mais com o seu e monte casas em Pokémon Pokopia pelas preferências em comum." path="/pokopia/colegas" /><PokopiaRoommates /></>} />
                 <Route path="/pokopia/mapa" element={<><Seo title="Mapa do Pokopia" description="Mapa interativo de Pokémon Pokopia com receitas, bancadas, Centros Pokémon, diários e itens colecionáveis de cada área." path="/pokopia/mapa" /><PokopiaMap /></>} />
+                <Route path="/lets-go" element={<LetsGo />} />
+                <Route path="/lets-go/catch-combo" element={<CatchCombo />} />
                 <Route path="/detonados" element={<Guides />} />
                 <Route path="/detonados/:slug" element={<Guide />} />
                 <Route path="/detonados/:slug/:n" element={<Guide />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />
